@@ -1,0 +1,24 @@
+[musicspec]
+; Format and options of this spec file:
+options = "+musicspec"
+
+[info]
+artists = "\
+ mqtx \
+"
+
+[files]
+music_start = "mqtx/mqtx-freeciv-music_start-menu.ogg"
+;music_victory = ""
+;music_defeat = ""
+
+music_european_peace = "mqtx/mqtx-freeciv-music_all_game01.ogg"
+music_classical_peace = "mqtx/mqtx-freeciv-music_all_game01.ogg"
+music_tropical_peace = "mqtx/mqtx-freeciv-music_all_game01.ogg"
+music_asian_peace = "mqtx/mqtx-freeciv-music_all_game01.ogg"
+music_babylonian_peace = "mqtx/mqtx-freeciv-music_all_game01.ogg"
+music_celtic_peace = "mqtx/mqtx-freeciv-music_all_game01.ogg"
+music_industrial_peace = "mqtx/mqtx-freeciv-music_all_game01.ogg"
+music_electricage_peace = "mqtx/mqtx-freeciv-music_all_game01.ogg"
+music_modern_peace = "mqtx/mqtx-freeciv-music_all_game01.ogg"
+music_postmodern_peace = "mqtx/mqtx-freeciv-music_all_game01.ogg"
