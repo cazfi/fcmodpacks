@@ -8,7 +8,7 @@ artists = "\
 "
 
 [files]
-music_start = "mqtx/mqtx-freeciv-music_start-menu.ogg"
+music_menu = "mqtx/mqtx-freeciv-music_start-menu.ogg"
 ;music_victory = ""
 ;music_defeat = ""
 
