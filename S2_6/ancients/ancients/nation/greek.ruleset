@@ -14,7 +14,7 @@ leaders = {
 
 flag="greece_ancient"
 flag_alt = "greece"
-city_style = "Classical"
+style    = "Classical"
 ruler_titles = { "government",      "male_title",      "female_title"
                  "Despotism",       _("Despot %s"),       _("Despot %s")
                }

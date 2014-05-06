@@ -29,7 +29,7 @@ leaders = {
 
 flag = "illyria"
 flag_alt = "bosnia"
-city_style = "Classical"
+style    = "Classical"
 
 init_techs=""
 init_buildings=""

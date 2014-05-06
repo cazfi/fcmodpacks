@@ -99,12 +99,9 @@ partisans_pct = 0               ; percentage of own nationality to inspire parti
 ;
 ; graphic     = group of tiles to use, see cities spec for
 ;               more info on city tiles
-; oceanic_graphic      = group of tiles to use for oceanic cities. If this
-;                        is omitted, same graphics as for land cities is used
 ; citizens_graphic     = group of citizens tiles to use, see citizens/small
 ;                        spec for more info on citizens tiles
 ; reqs        = requirements for this city style (see README.effects)
-; replaced_by = which style replaced this one
 
 [citystyle_european]
 name        = _("?citystyle:European")
@@ -112,8 +109,9 @@ graphic     = "city.european"
 graphic_alt = "-"
 citizens_graphic     = "ancient"
 citizens_graphic_alt = "generic"
-; No reqs
-replaced_by = "Renaissance"
+reqs = { "type", "name", "range"
+         "Style", "European", "Player"
+       }
 
 [citystyle_classical]
 name        = _("?citystyle:Classical")
@@ -121,8 +119,9 @@ graphic     = "city.classical"
 graphic_alt = "-"
 citizens_graphic     = "ancient"
 citizens_graphic_alt = "generic"
-; No reqs
-replaced_by = "Renaissance"
+reqs = { "type", "name", "range"
+         "Style", "Classical", "Player"
+       }
 
 ;[citystyle_mesopotamian]
 ;name        = _("?citystyle:Mesopotamian")
@@ -130,8 +129,9 @@ replaced_by = "Renaissance"
 ;graphic_alt = "city.classical"
 ;citizens_graphic     = "ancient"
 ;citizens_graphic_alt = "generic"
-; No reqs
-;replaced_by = "Renaissance"
+;reqs = { "type", "name", "range"
+;         "Style", "Mesopotamian", "Player"
+;       }
 
 [citystyle_arabian]
 name        = _("?citystyle:Arabian")
@@ -139,8 +139,9 @@ graphic     = "city.arabian"
 graphic_alt = "city.classical"
 citizens_graphic     = "ancient"
 citizens_graphic_alt = "generic"
-; No reqs
-replaced_by = "Renaissance"
+reqs = { "type", "name", "range"
+         "Style", "Arabian", "Player"
+       }
 
 ;[citystyle_tropical]
 ;name        = _("?citystyle:Tropical")
@@ -148,8 +149,9 @@ replaced_by = "Renaissance"
 ;graphic_alt = "city.european"
 ;citizens_graphic     = "ancient"
 ;citizens_graphic_alt = "generic"
-; No reqs
-;replaced_by = "Renaissance"
+;reqs = { "type", "name", "range"
+;         "Style", "Tropical", "Player"
+;       }
 
 [citystyle_precolumbian]
 name        = _("?citystyle:Precolumbian")
@@ -157,8 +159,9 @@ graphic     = "city.precolumbian"
 graphic_alt = "city.tropical"
 citizens_graphic     = "ancient"
 citizens_graphic_alt = "generic"
-; No reqs
-replaced_by = "Renaissance"
+reqs = { "type", "name", "range"
+         "Style", "Precolumbian", "Player"
+       }
 
 [citystyle_african]
 name        = _("?citystyle:African")
@@ -166,8 +169,9 @@ graphic     = "city.african"
 graphic_alt = "city.tropical"
 citizens_graphic     = "ancient"
 citizens_graphic_alt = "generic"
-; No reqs
-replaced_by = "Renaissance"
+reqs = { "type", "name", "range"
+         "Style", "African", "Player"
+       }
 
 [citystyle_asian]
 name        = _("?citystyle:Asian")
@@ -175,8 +179,9 @@ graphic     = "city.asian"
 graphic_alt = "city.classical"
 citizens_graphic     = "ancient"
 citizens_graphic_alt = "generic"
-; No reqs
-replaced_by = "Renaissance"
+reqs = { "type", "name", "range"
+         "Style", "Asian", "Player"
+       }
 
 [citystyle_babylonian]
 name        = _("?citystyle:Babylonian")
@@ -184,8 +189,9 @@ graphic     = "city.babylonian"
 graphic_alt = "city.classical"
 citizens_graphic     = "ancient"
 citizens_graphic_alt = "generic"
-; No reqs
-replaced_by = "Renaissance"
+reqs = { "type", "name", "range"
+         "Style", "Babylonian", "Player"
+       }
 
 ;[citystyle_barbarian]
 ;name        = _("?citystyle:Barbarian")
@@ -193,8 +199,9 @@ replaced_by = "Renaissance"
 ;graphic_alt = "city.european"
 ;citizens_graphic     = "ancient"
 ;citizens_graphic_alt = "generic"
-; No reqs
-;replaced_by = "Renaissance"
+;reqs = { "type", "name", "range"
+;         "Style", "Barbarian", "Player"
+;       }
 
 [citystyle_celtic]
 name        = _("?citystyle:Celtic")
@@ -202,8 +209,9 @@ graphic     = "city.celtic"
 graphic_alt = "city.european"
 citizens_graphic     = "ancient"
 citizens_graphic_alt = "generic"
-; No reqs
-replaced_by = "Renaissance"
+reqs = { "type", "name", "range"
+         "Style", "Celtic", "Player"
+       }
 
 [citystyle_renaissance]
 name        = _("?citystyle:Renaissance")
@@ -214,4 +222,3 @@ citizens_graphic_alt = "generic"
 reqs = { "type", "name", "range"
          "tech", "University", "Player"
        }
-replaced_by = "-"

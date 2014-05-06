@@ -24,9 +24,9 @@ leaders = {
  "Magnus Lagabøter", "Male"	; Norwegian king (13th century)
 }
 
-flag="viking"
-flag_alt="norway"	; Used previously
-city_style="European"
+flag     = "viking"
+flag_alt = "norway"   ; Used previously
+style    = "European"
 
 init_techs=""
 init_buildings=""

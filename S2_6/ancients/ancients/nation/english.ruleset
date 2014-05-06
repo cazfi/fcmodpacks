@@ -35,7 +35,7 @@ leaders = {
 
 flag="england"
 flag_alt = "united_kingdom"
-city_style = "European"
+style    = "European"
 ruler_titles = { "government",        "male_title",    "female_title"
                  "Anarchy",           _("Leod %s"),       _("Cwen %s")
                  "Despotism",         _("Hlaford %s"),    _("Hlaefdige %s")

@@ -22,7 +22,7 @@ leaders = {
 
 flag         = "gothic"
 flag_alt     = "poland" ; the Gothic homeland is now in Poland
-city_style   = "European"
+style        = "European"
 ruler_titles = { "government",      "male_title",       "female_title"
                  "Republic",          _("Theod %s"),      _("Theod %s")
                  "Imperial Monarchy", _("Reiks %s"),      _("Reiks %s")

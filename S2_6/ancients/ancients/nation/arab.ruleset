@@ -17,7 +17,7 @@ leaders = {
 
 flag ="arab"
 flag_alt = "-"
-city_style = "Arabian"
+style    = "Arabian"
 
 ruler_titles = { "government",      "male_title",      "female_title"
                  "Petty Monarchy",        _("Caliph %s"),       _("Caliph %s")

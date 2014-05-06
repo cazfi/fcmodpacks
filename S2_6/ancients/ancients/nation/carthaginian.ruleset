@@ -17,7 +17,7 @@ leaders = {
 
 flag="cartago"
 flag_alt = "tunisia"	; Used previously
-city_style = "Classical"
+style    = "Classical"
 
 ruler_titles = { "government",      "male_title",      "female_title"
                  "Republic",        _("Sufettes %s"),       _("Sufettes %s")

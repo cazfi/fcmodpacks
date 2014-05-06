@@ -19,7 +19,7 @@ leaders = {
 
 flag="ethiopia"
 flag_alt = "italy"
-city_style = "Babylonian"
+style    = "Babylonian"
 
 ruler_titles = { "government",       "male_title",    "female_title"
                }

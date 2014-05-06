@@ -25,7 +25,7 @@ leaders = {
 
 flag="france_old"
 flag_alt = "belgium" ; for the Salian Franks
-city_style = "European"
+style    = "European"
 
 ruler_titles = { "government",      "male_title",    "female_title"
                  "Despotism",       _("General %s"),    _("General %s") ; Latin dux

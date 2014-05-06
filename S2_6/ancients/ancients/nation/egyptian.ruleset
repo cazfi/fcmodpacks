@@ -23,7 +23,7 @@ leaders = {
 
 flag="egypt_ancient"
 flag_alt = "egypt"
-city_style = "Babylonian"
+style    = "Babylonian"
 
 ruler_titles = { "government",      "male_title",      "female_title"
                  "Despotism",       _("Pharaoh %s"),       _("Pharaoh %s")

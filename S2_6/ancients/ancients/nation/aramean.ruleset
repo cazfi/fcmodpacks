@@ -19,7 +19,7 @@ leaders = {
 
 flag="aram" 
 flag_alt = "syria" 
-city_style = "Classical" 
+style = "Classical" 
 
 init_techs="" 
 init_buildings="" 

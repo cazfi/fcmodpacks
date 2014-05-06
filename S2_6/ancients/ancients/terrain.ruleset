@@ -148,6 +148,7 @@ fallout_trade_penalty=50
 ;                        with the non-FreshWater terrain.
 ;   - NotGenerated     = Map generator never places this terrain type. It can
 ;                        be added from editor only, or by ingame events (lua scripting)
+;   - NoZoc            = Units on this terrain are not generating or subject to zoc
 ; property_*           = specific property % values used by mapgen.  Most
 ;                        terrains will have 0 for most values.
 ;  - mountainous       = degree to which this terrain is mountainous
@@ -199,7 +200,7 @@ warmer_drier_result  = "Swamp"
 cooler_wetter_result = "Glacier"
 cooler_drier_result  = "Tundra"
 native_to            = "Sea"
-flags                = "NoCities", "NoPollution", "FreshWater"
+flags                = "NoCities", "NoPollution", "FreshWater", "NoZoc"
 property_ocean_depth = 0
 color.r              = 46
 color.g              = 120
@@ -241,7 +242,7 @@ warmer_drier_result  = "Swamp"
 cooler_wetter_result = "Glacier"
 cooler_drier_result  = "Glacier"
 native_to            = "Sea"
-flags                = "NoCities", "NoPollution", "UnsafeCoast"
+flags                = "NoCities", "NoPollution", "UnsafeCoast", "NoZoc"
 property_ocean_depth = 32
 color.r              = 0
 color.g              = 46
@@ -284,7 +285,7 @@ warmer_drier_result  = "no"
 cooler_wetter_result = "no"
 cooler_drier_result  = "no"
 native_to            = "Sea"
-flags                = "NoCities", "NoPollution", "UnsafeCoast"
+flags                = "NoCities", "NoPollution", "UnsafeCoast", "NoZoc"
 property_ocean_depth = 87
 color.r              = 0
 color.g              = 33
@@ -1138,7 +1139,7 @@ native_to      = "Land"
 ; build_time              = How long it takes for a unit to build this base. Value 0
 ;                           means that terrain specific value is used instead.
 ; border_sq               = Base will claim land ownership up to this radius,
-;                           -1 to disable.
+;                           -1 to disable. If enabled, base cannot exist in city tile.
 ; vision_main_sq          = Base will have main layer vision to this radius
 ; vision_invis_sq         = Base will have invisible layer vision to this radius
 ; flags
@@ -1190,6 +1191,8 @@ flags         = "NoAggressive", "NoStackDeath", "DiplomatDefense"
 ; compat_special          = road type used in old savegames with just two road,
 ;                           and one river specials:
 ;                           "Road", "Railroad", "River, or "None"
+; integrates              = List of road types that are suitable next steps
+;                           for travel from this road type.
 ; flags
 ;   - "RequiresBridge"    = Road cannot be built to river tiles without
 ;                           appropriate technologies

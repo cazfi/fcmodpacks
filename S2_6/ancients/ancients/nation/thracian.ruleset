@@ -16,7 +16,7 @@ leaders = {
 
 flag="thrace"
 flag_alt = "bulgaria"
-city_style = "European"
+style    = "European"
 
 ruler_titles = { "government",      "male_title",      "female_title"
                  "Petty Monarchy",  _("Rhesus %s"),       _("Rhesos %s")

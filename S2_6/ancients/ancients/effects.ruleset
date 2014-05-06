@@ -874,13 +874,10 @@ reqs	=
 type    = "Veteran_Build"
 value	= 1
 reqs	=
-    { "type", "name", "range"
-      "Building", "Barracks", "City"
-      "UnitClass", "Land", "Local"
-    }
-nreqs   =
-    { "type", "name", "range"
-      "UnitFlag", "Diplomat", "Local"
+    { "type", "name", "range", "present"
+      "Building", "Barracks", "City", TRUE
+      "UnitClass", "Land", "Local", TRUE
+      "UnitFlag", "Diplomat", "Local", FALSE
     }
 
 [effect_barracks_1]
@@ -896,14 +893,11 @@ reqs	=
 type    = "Veteran_Build"
 value	= 1
 reqs	=
-    { "type", "name", "range"
-      "Building", "Barracks II", "City"
-      "UnitClass", "Land", "Local"
-    }
-nreqs   =
-    { "type", "name", "range"
-      "UnitFlag", "Diplomat", "Local"
-      "Building", "Barracks", "City"
+    { "type", "name", "range", "present"
+      "Building", "Barracks II", "City", TRUE
+      "UnitClass", "Land", "Local", TRUE
+      "UnitFlag", "Diplomat", "Local", FALSE
+      "Building", "Barracks", "City", FALSE
     }
 
 [effect_barracks_ii_1]
@@ -919,15 +913,12 @@ reqs	=
 type    = "Veteran_Build"
 value	= 1
 reqs	=
-    { "type", "name", "range"
-      "Building", "Barracks III", "City"
-      "UnitClass", "Land", "Local"
-    }
-nreqs   =
-    { "type", "name", "range"
-      "UnitFlag", "Diplomat", "Local"
-      "Building", "Barracks", "City"
-      "Building", "Barracks II", "City"
+    { "type", "name", "range", "present"
+      "Building", "Barracks III", "City", TRUE
+      "UnitClass", "Land", "Local", TRUE
+      "UnitFlag", "Diplomat", "Local", FALSE
+      "Building", "Barracks", "City", FALSE
+      "Building", "Barracks II", "City", FALSE
     }
 
 [effect_barracks_iii_1]
@@ -969,13 +960,10 @@ reqs	=
 type    = "Defend_Bonus"
 value	= 200
 reqs	=
-    { "type", "name", "range"
-      "Building", "City Walls", "City"
-      "UnitClass", "Land", "Local"
-    }
-nreqs	=
-    { "type", "name", "range"
-      "Building", "Great Wall", "Continent"
+    { "type", "name", "range", "present"
+      "Building", "City Walls", "City", TRUE
+      "UnitClass", "Land", "Local", TRUE
+      "Building", "Great Wall", "Continent", FALSE
     }
 
 [effect_city_walls_1]
@@ -990,14 +978,11 @@ reqs	=
 type    = "Spy_Resistant"
 value	= 50
 reqs	=
-    { "type", "name", "range"
-      "Building", "City Walls", "City"
-      "UnitClass", "Sea", "Local"
-    }
-nreqs	=
-    { "type", "name", "range"
-      "Building", "Palace", "City"
-      "Building", "Great Wall", "Continent"
+    { "type", "name", "range", "present"
+      "Building", "City Walls", "City", TRUE
+      "UnitClass", "Sea", "Local", TRUE
+      "Building", "Palace", "City", FALSE
+      "Building", "Great Wall", "Continent", FALSE
     }
 
 [effect_city_walls_visible]
@@ -1029,25 +1014,19 @@ reqs	=
 type    = "Output_Waste_Pct"
 value	= 50
 reqs	=
-    { "type", "name", "range"
-      "Building", "Courthouse", "City"
-      "OutputType", "Trade", "Local"
-    }
-nreqs	=
-    { "type", "name", "range"
-      "Building", "Palace", "City"
+    { "type", "name", "range", "present"
+      "Building", "Courthouse", "City", TRUE
+      "OutputType", "Trade", "Local", TRUE
+      "Building", "Palace", "City", FALSE
     }
 
 ;[effect_courthouse_1]
 ;type    = "Waste_Pct"
 ;value	= 50
 ;reqs	=
-;    { "type", "name", "range"
-;      "Building", "Courthouse", "City"
-;    }
-;nreqs	=
-;    { "type", "name", "range"
-;      "Building", "Palace", "City"
+;    { "type", "name", "range", "present"
+;      "Building", "Courthouse", "City", TRUE
+;      "Building", "Palace", "City", FALSE
 ;    }
 
 [effect_courthouse_2]
@@ -1188,14 +1167,6 @@ reqs	=
 [effect_palace_2]
 type    = "Spy_Resistant"
 value	= 50
-reqs	=
-    { "type", "name", "range"
-      "Building", "Palace", "City"
-    }
-
-[effect_palace_3]
-type    = "No_Incite"
-value	= 1
 reqs	=
     { "type", "name", "range"
       "Building", "Palace", "City"
@@ -1545,25 +1516,19 @@ reqs    =
 type    = "Irrigation_Pct"
 value   = 100
 reqs    =
-    { "type", "name", "range"
-      "Extra", "Irrigation", "Local"
-    }
-nreqs   =
-    { "type", "name", "range"
-      "CityTile", "Center", "Local"
+    { "type", "name", "range", "present"
+      "Extra", "Irrigation", "Local", TRUE
+      "CityTile", "Center", "Local", FALSE
     }
 
 [effect_irrigation_2]
 type    = "Irrigation_Pct"
 value   = 100
 reqs    =
-    { "type", "name", "range"
-      "CityTile", "Center", "Local"
-      "TerrainAlter", "CanIrrigate", "Local"
-    }
-nreqs   =
-    { "type", "name", "range"
-      "Extra", "Mine", "Local"
+    { "type", "name", "range", "present"
+      "CityTile", "Center", "Local", TRUE
+      "TerrainAlter", "CanIrrigate", "Local", TRUE
+      "Extra", "Mine", "Local", FALSE
     }
 
 [effect_trade_routes]
@@ -1574,24 +1539,18 @@ value   = 4
 type    = "Output_Tile_Punish_Pct"
 value   = 50
 reqs    =
-    { "type", "name", "range"
-      "Extra", "Pollution", "Local"
-    }
-nreqs   =
-    { "type", "name", "range"
-      "Extra", "Fallout", "Local"
+    { "type", "name", "range", "present"
+      "Extra", "Pollution", "Local", TRUE
+      "Extra", "Fallout", "Local", FALSE
     }
 
 [effect_fallout]
 type    = "Output_Tile_Punish_Pct"
 value   = 50
 reqs    =
-    { "type", "name", "range"
-      "Extra", "Fallout", "Local"
-    }
-nreqs   =
-    { "type", "name", "range"
-      "Extra", "Pollution", "Local"
+    { "type", "name", "range", "present"
+      "Extra", "Fallout", "Local", TRUE
+      "Extra", "Pollution", "Local", FALSE
     }
 
 [effect_pollution_fallout]

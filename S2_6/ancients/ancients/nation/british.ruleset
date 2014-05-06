@@ -13,7 +13,7 @@ leaders = {
 
 flag="briton"
 flag_alt = "cornwall"
-city_style = "Celtic"
+style    = "Celtic"
 ruler_titles = { "government",      "male_title",      "female_title"
                  "Despotism",       _("Chieftain %s"), _("Chieftain %s")
                }
