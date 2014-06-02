@@ -1,0 +1,297 @@
+;================================================
+;Freeland Graphics Tileset 3.0 
+;$Name: freeciv-2_3_x-freeland-3_0_Beta2 $
+;$Revision: 1.15 $ - $Date: 2011-03-18 06:40:29 $
+;================================================
+
+[tilespec]
+
+; Format and options of this tilespec file:
+options = "+Freeciv-tilespec-Devel-2013.Oct.19"
+
+; A simple name for the tileset specified by this file:
+name = "freeland-normal"
+priority = 22
+
+; TODO: add more overall information fields on tiles,
+; eg, description, authors, colors, etc.
+
+; Basic tile sizes:
+normal_tile_width = 64
+normal_tile_height = 32
+small_tile_width = 15
+small_tile_height = 20
+
+; Basic tile style.
+type   = "isometric"
+is_hex = FALSE
+
+; Fogstyle 2, darkness_style 4 : blended fog
+fogstyle       = 2
+darkness_style = 4
+; Which terrain layer darkness is drawn top of (0-2)
+darkness_layer = 0
+
+; offset the flags by this amount when drawing units
+unit_flag_offset_x = 17
+unit_flag_offset_y = 12
+city_flag_offset_x = 17
+city_flag_offset_y = 11
+
+; offset the units by this amount when drawing units
+unit_offset_x = 11
+unit_offset_y = 11
+
+; offset the citybar text by this amount (from the city tile origin)
+citybar_offset_y = 20
+
+; offset the tile label text by this amount
+tilelabel_offset_y = 10
+
+; Font size (points) to use to draw city names and productions:
+city_names_font_size = 9
+city_productions_font_size = 8
+
+; -------------------------------------------------
+; These are special because they get freed and reloaded
+; as required:
+main_intro_file = "misc/intro"
+minimap_intro_file = "misc/radar"
+
+; -------------------------------------------------
+; Below, the graphics spec files; must be somewhere (anywhere) in
+; the data path. Order may be important for color allocation on
+; low-color systems, and if there are any duplicate tags (lattermost
+; tag is used).
+; -------------
+files =
+; General graphics
+  "misc/small.spec",
+  "misc/governments.spec",
+  "misc/specialists.spec",
+  "misc/events.spec",
+  "misc/flags.spec",
+  "misc/shields.spec",
+  "misc/techs.spec",
+  "misc/space.spec",
+  "misc/treaty.spec",
+  "misc/overlays.spec",
+  "misc/cursors.spec",
+  "misc/icons.spec",
+  "misc/citybar.spec",
+  "misc/editor.spec",
+
+  "freeland/common/buildings.spec",
+  "freeland/common/wonders.spec",
+
+  "freeland/normal/tiles.spec",
+  "freeland/normal/misc.spec",
+  "freeland/normal/grid.spec",
+  "freeland/normal/nuke.spec",
+  "freeland/normal/resources.spec",
+  "freeland/normal/fog.spec",
+
+; Units
+  "freeland/normal/units.spec",
+  "freeland/normal/unitextras.spec",
+  "freeland/normal/select.spec",
+
+; Cities adapted from amplio set
+  "freeland/normal/cities/cities.spec",
+  "freeland/normal/cities/misc-cities.spec",
+
+; Base terrains
+  "freeland/normal/terrains/s.spec",
+  "freeland/normal/terrains/g.spec",
+  "freeland/normal/terrains/p.spec",
+  "freeland/normal/terrains/d.spec",
+  "freeland/normal/terrains/t.spec",
+  "freeland/normal/terrains/a.spec",
+  
+; Special terrains
+  "freeland/normal/terrains/oceans.spec",
+  "freeland/normal/terrains/deeps.spec",
+  "freeland/normal/terrains/mountains_bg.spec",
+  "freeland/normal/terrains/mountains.spec",
+  "freeland/normal/terrains/hills.spec",
+  "freeland/normal/terrains/forests_bg.spec",
+  "freeland/normal/terrains/forests.spec",
+  "freeland/normal/terrains/jungles_bg.spec",
+  "freeland/normal/terrains/jungles.spec",
+  "freeland/normal/terrains/swamps.spec",
+  "freeland/normal/terrains/irrigations.spec",
+  "freeland/normal/terrains/farmlands.spec",
+  "freeland/normal/terrains/roads.spec",
+  "freeland/normal/terrains/rails.spec",
+  "freeland/normal/terrains/rivers.spec",
+  "freeland/normal/terrains/river-outlets.spec"
+
+; Include color definitions
+*include "misc/colors.tilespec"
+; -------------------------------------------------
+
+; Terrain info - see README.graphics
+; --------------------------------
+
+[layer0]
+match_types = "s", "g", "p", "d", "t", "a"
+
+[layer1]
+match_types = "ocean", "swamp", "hill", "forest_bg", "jungle_bg", "mountain_bg"
+
+[layer2]
+match_types = "deep", "forest", "jungle", "mountain"
+
+; --------------------------------
+; Water graphics
+[tile_lake]
+blend_layer = 0
+num_layers = 1
+layer0_match_type = "s"
+layer0_match_with = "g", "p", "d", "t", "a"
+layer0_sprite_type = "corner"
+
+[tile_coast]
+blend_layer = 0
+num_layers = 2
+layer0_match_type = "s"
+layer0_match_with = "g", "p", "d", "t", "a"
+layer0_sprite_type = "corner"
+layer1_match_type = "ocean"
+layer1_match_with = "ocean"
+layer1_sprite_type = "corner"
+
+[tile_floor]
+blend_layer = 1
+num_layers = 3
+layer0_match_type = "s"
+layer0_match_with = "g", "p", "d", "t", "a"
+layer0_sprite_type = "corner"
+layer1_match_type = "ocean"
+layer1_match_with = "ocean"
+layer1_sprite_type = "corner"
+layer2_match_type =  "deep"
+layer2_match_with = "deep"
+layer2_sprite_type = "corner"
+
+[tile_swamp]
+blend_layer = 0
+num_layers = 2
+layer0_match_type = "g"
+layer0_match_with = "s", "p", "d", "t", "a"
+layer0_sprite_type = "corner"
+layer1_match_with = "swamp"
+layer1_match_type = "swamp"
+; --------------------------------
+
+; --------------------------------
+[tile_jungle]
+blend_layer = 0
+num_layers = 3
+layer0_match_type = "p"
+layer0_match_with = "s", "g", "d", "t", "a"
+layer0_sprite_type = "corner"
+layer1_match_type = "jungle_bg"
+layer1_match_with = "jungle_bg"
+layer1_is_tall = TRUE
+layer1_offset_y = 4
+layer2_match_type = "jungle"
+layer2_match_with = "jungle"
+layer2_is_tall = TRUE
+layer2_offset_y = 4
+
+[tile_forest]
+blend_layer = 0
+num_layers = 3
+layer0_match_type = "p"
+layer0_match_with = "s", "g", "d", "t", "a"
+layer0_sprite_type = "corner"
+layer1_match_type = "forest_bg"
+layer1_match_with = "forest_bg"
+layer1_is_tall = TRUE
+layer1_offset_y = 4
+layer2_match_type = "forest"
+layer2_match_with = "forest"
+layer2_is_tall = TRUE
+layer2_offset_y = 4
+
+[tile_hills]
+blend_layer = 0
+num_layers = 2
+layer0_match_type = "g"
+layer0_match_with = "s", "p", "d", "t", "a"
+layer0_sprite_type = "corner"
+layer1_match_type = "hill"
+layer1_match_with = "hill"
+
+[tile_mountains]
+blend_layer = 0
+num_layers = 3
+layer0_match_type = "g"
+layer0_match_with = "s", "p", "d", "t", "a"
+layer0_sprite_type = "corner"
+layer1_match_type = "mountain_bg"
+layer1_match_with = "mountain_bg"
+layer1_is_tall = TRUE
+layer1_offset_y = 4
+layer2_match_type = "mountain"
+layer2_match_with = "mountain"
+layer2_is_tall = TRUE
+layer2_offset_y = 4
+; --------------------------------
+
+; --------------------------------
+[tile_grassland]
+blend_layer = 0
+num_layers = 1
+layer0_match_type = "g"
+layer0_match_with = "s", "p", "d", "t", "a"
+layer0_sprite_type = "corner"
+
+[tile_plains]
+blend_layer = 0
+num_layers = 1
+layer0_match_type = "p"
+layer0_match_with = "s", "g", "d", "t", "a"
+layer0_sprite_type = "corner"
+
+[tile_desert]
+blend_layer = 0
+num_layers = 1
+layer0_match_type = "d"
+layer0_match_with = "s", "g", "p", "t", "a"
+layer0_sprite_type = "corner"
+
+[tile_tundra]
+blend_layer = 0
+num_layers = 1
+layer0_match_type = "t"
+layer0_match_with = "s", "g", "p", "d", "a"
+layer0_sprite_type = "corner"
+
+[tile_arctic]
+blend_layer = 0
+num_layers = 1
+layer0_match_type = "a"
+layer0_match_with = "s", "g", "p", "d", "t"
+layer0_sprite_type = "corner"
+; --------------------------------
+
+[extras]
+styles =
+    { "name",          "style"
+      "road.road",     "RoadAllCombined"
+      "road.rail",     "RoadAllCombined"
+      "road.river",    "River"
+      "tx.irrigation", "Cardinals"
+      "tx.farmland",   "Cardinals"
+      "tx.mine",       "Single1"
+      "tx.oil_mine",   "Single1"
+      "tx.pollution",  "Single2"
+      "tx.fallout",    "Single2"
+      "tx.village",    "Single1"
+      "base.fortress", "3Layer"
+      "base.airbase",  "3Layer"
+      "base.buoyu",    "3Layer"
+      "base.ruins",    "3Layer"
+    }
