@@ -480,9 +480,10 @@ sabotage	= 10
 sound		= "b_war_harbour"
 sound_alt	= "b_port_facility"
 helptext	= _("\
-Allows a city to build veteran sea units.  Also, damaged sea units\
- which stay in town for one full turn without moving are completely\
- restored.\
+Allows a city to build veteran sea units. \
+If city has also Lighthouse wonder, sea units are produced Hardened. \
+Also, damaged sea units which stay in town for one full turn without \
+moving have their hitpoints completely restored.\
 ")
 
 [building_sewer_system]
@@ -702,8 +703,9 @@ sabotage	= 1
 sound		= "w_lighthouse"
 sound_alt	= "w_generic"
 helptext	= _("\
-Gives all your sea units 1 additional movement point and eliminates the\
- risk of losing Triremes on the high seas.
+Allows a city to build veteran sea units and gives all your sea units \
+1 additional movement point. \
+If city has also War Harbour, sea units are produced Hardened. \
 ")
 
 [building_sataspes_expedition]
