@@ -964,6 +964,7 @@ reqs	=
       "Building", "City Walls", "City", TRUE
       "UnitClass", "Land", "Local", TRUE
       "Building", "Great Wall", "Continent", FALSE
+      "UnitType", "Onager", "Local", FALSE
     }
 
 [effect_city_walls_1]
@@ -1282,9 +1283,10 @@ reqs	=
 type    = "Defend_Bonus"
 value	= 200
 reqs	=
-    { "type", "name", "range"
-      "Building", "Great Wall", "Continent"
-      "UnitClass", "Land", "Local"
+    { "type", "name", "range", "present"
+      "Building", "Great Wall", "Continent", TRUE
+      "UnitClass", "Land", "Local", TRUE
+      "UnitType", "Onager", "Local", FALSE
     }
 
 [effect_great_wall_1]
