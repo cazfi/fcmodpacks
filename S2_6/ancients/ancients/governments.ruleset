@@ -4,7 +4,7 @@
 
 [datafile]
 description="Ancients governments data for Freeciv"
-options="+Freeciv-ruleset-Devel-2013.May.14"
+options="+Freeciv-ruleset-Devel-2014.September.14c"
 
 [governments]
 during_revolution="Anarchy"
