@@ -1110,34 +1110,6 @@ Later in the game, helicopters may also enter villages, but overflight \
 by other aircraft will cause the villagers to take fright and disband.\
 ")
 
-[extra_farmland]
-name           = _("Farmland")
-category       = "Infra"
-causes         = "Irrigation"
-rmcauses       = "Pillage"
-graphic        = "tx.farmland"
-graphic_alt    = "-"
-activity_gfx   = "None"
-rmact_gfx      = "None"
-build_time     = 0
-reqs           =
-    { "type", "name", "range"
-    }
-buildable      = FALSE
-
-; No nukes, no fallout
-[extra_fallout]
-name           = _("Fallout")
-category       = "Nuisance"
-causes         = "Fallout"
-rmcauses       = "CleanFallout"
-graphic        = "tx.fallout"
-graphic_alt    = "-"
-activity_gfx   = "None"
-rmact_gfx      = "None"
-rmact_gfx_alt  = "-"
-removal_time   = 0
-
 [extra_fortress]
 name           = _("Fortress")
 category       = "Infra"
