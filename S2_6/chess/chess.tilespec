@@ -25,6 +25,11 @@ city_flag_offset_x = 0
 city_flag_offset_y = 0
 unit_offset_x = 0
 unit_offset_y = 0
+
+; offset the cities by this amount
+city_offset_x = 0
+city_offset_y = 0
+
 citybar_offset_y = 45
 tilelabel_offset_y = 20
 city_names_font_size = 10
