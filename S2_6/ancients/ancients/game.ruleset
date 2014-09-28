@@ -389,6 +389,17 @@ start_year = -4000
 ; Year 1 instead of 0.
 skip_year_0 = TRUE
 
+; How many fragments each year has. Value 0 disables year advancement by fragment
+; accumulation.
+fragments = 0
+
+; Calendar fragment names. If name is missing, only a fragment number +1 (so human readable
+; numbers begin froḿ 1 and not 0) is shown.
+
+;fragment_name0 = "Jan"
+;fragment_name1 = "Feb"
+; ...
+
 ; What labels are used for positive and negative years.
 positive_label = _("AD")
 negative_label = _("BC")
