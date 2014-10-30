@@ -987,9 +987,15 @@ shield      = 3 ; glacier used to have 4
 ; build_time              = how long it takes a unit to build this extra.
 ;                           Value of 0 (default) means that terrain- and
 ;                           build activity specific time is used instead.
+; build_time_factor       = This setting take effect only if build_time is 0.
+;                           Terrain and activity specific build time will be
+;                           multiplied by this value (default 1)
 ; removal_time            = how long it takes a unit to remove this extra.
 ;                           Value of 0 (default) means that terrain- and
 ;                           removal activity specific time is used instead.
+; removal_time_factor     = This setting take effect only if removal_time is 0.
+;                           Terrain and activity specific removal time will be
+;                           multiplied by this value (default 1)
 ; defense_bonus           = Percent added to defense when tile has the extra
 ;                           (default none)
 ; native_to               = List of unit classes that are considered to
@@ -1161,6 +1167,7 @@ buildable      = FALSE
 removal_time   = 0
 defense_bonus  = 50
 native_to      = "Land"
+; /* xgettext:no-c-format */
 helptext       = _("\
 Any land terrain type may have a River on it.  A River adds 1\
  trade to the resources produced by that tile.  It also increases a tile's\

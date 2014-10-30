@@ -62,12 +62,18 @@ allowed_styles =
 name=_("?nationset:All")
 rule_name="all"
 
+
 ; Descriptions of nation groups
-; name 		= name of the group
+; These are more cosmetic than sets; they affect the "pick nation" dialog,
+; random nation selection, and possibly ruleset behaviour.
+; It`s OK to not define any nation groups at all.
+; name 		= name of the group (used adjectivally)
+; hidden        = TRUE to not include this group in the "pick nation" dialog
+;                 (for instance if it's for use in a NationGroup requirement).
+;                 Default FALSE.
 ; match		= How much the AI will try to select a nation in the same
 ;                 group
-; Place nations in the regional groups appropriate for their capital
-; or central area, not their maximum extent.
+
 [ngroup_african]
 name=_("?nationgroup:African")
 match=1

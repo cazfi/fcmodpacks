@@ -33,6 +33,28 @@ reqs    =
       "Nation", "Pirate", "Player"
     }
 
+; Barbarian disappearance
+
+[effect_barb_disappear]
+type    = "Retire_Pct"
+value   = 10
+reqs    =
+    { "type", "name", "range", "present"
+      "Nation", "Barbarian", "Player", TRUE
+      "Age", "5", "Local", TRUE
+      "CityTile", "Center", "Local", FALSE
+    }
+
+[effect_pirate_disappear]
+type    = "Retire_Pct"
+value   = 10
+reqs    =
+    { "type", "name", "range", "present"
+      "Nation", "Pirate", "Player", TRUE
+      "Age", "5", "Local", TRUE
+      "CityTile", "Center", "Local", FALSE
+    }
+
 ; Specialist output bonuses
 
 [effect_elvis]
@@ -1390,21 +1412,21 @@ reqs	=
 ;    }
 
 ; experimentally: slow down time during play with techs
-; enable by /set spacerace 1
+; enable by /set victories spacerace
 [effect_slow_down0]
 type    = "Slow_Down_Timeline"
 value   = 1
 reqs    =
-    { "type", "name", "range"
-      "Tech", "Tactics", "World"
+    { "type", "name", "range", "survives"
+      "Tech", "Tactics", "World", TRUE
     }
 
 [effect_slow_down1]
 type    = "Slow_Down_Timeline"
 value   = -1
 reqs    =
-    { "type", "name", "range"
-      "Tech", "Dark Age", "World"
+    { "type", "name", "range", "survives"
+      "Tech", "Dark Age", "World", TRUE
     }
 
 [effect_calendar_base]

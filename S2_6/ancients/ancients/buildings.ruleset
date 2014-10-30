@@ -586,8 +586,8 @@ reqs	=
 graphic	= "b.colossus"
 graphic_alt	= "-"
 obsolete_by	=
-  { "type", "name", "range"
-    "tech", "Dark Age", "World"
+  { "type", "name", "range", "survives"
+    "tech", "Dark Age", "World", TRUE
   }
 build_cost	= 200
 upkeep		= 0
@@ -616,8 +616,8 @@ reqs	=
 graphic	= "b.great_library"
 graphic_alt	= "-"
 obsolete_by	=
-  { "type", "name", "range"
-    "tech", "Dark Age", "World"
+  { "type", "name", "range", "survives"
+    "tech", "Dark Age", "World", TRUE
   }
 build_cost	= 300
 upkeep		= 0
@@ -639,8 +639,8 @@ reqs	=
 graphic	= "b.great_wall"
 graphic_alt	= "-"
 obsolete_by	=
-  { "type", "name", "range"
-    "tech", "Dark Age", "World"
+  { "type", "name", "range", "survives"
+    "tech", "Dark Age", "World", TRUE
   }
 build_cost	= 300
 upkeep		= 0
@@ -663,8 +663,8 @@ reqs	=
 graphic	= "b.hanging_gardens"
 graphic_alt	= "-"
 obsolete_by	=
-  { "type", "name", "range"
-    "tech", "Dark Age", "World"
+  { "type", "name", "range", "survives"
+    "tech", "Dark Age", "World", TRUE
   }
 build_cost	= 200
 upkeep		= 0
@@ -737,8 +737,8 @@ reqs	=
 graphic	= "b.sataspes_expedition"
 graphic_alt	= "b.magellans_expedition"
 obsolete_by	=
-  { "type", "name", "range"
-    "tech", "Dark Age", "World"
+  { "type", "name", "range", "survives"
+    "tech", "Dark Age", "World", TRUE
   }
 build_cost	= 400
 upkeep		= 0
@@ -765,8 +765,8 @@ reqs	=
 graphic	= "b.oracle"
 graphic_alt	= "-"
 obsolete_by	=
-  { "type", "name", "range"
-    "tech", "Dark Age", "World"
+  { "type", "name", "range", "survives"
+    "tech", "Dark Age", "World", TRUE
   }
 build_cost	= 300
 upkeep		= 0
@@ -788,8 +788,8 @@ reqs	=
 graphic	= "b.pyramids"
 graphic_alt	= "-"
 obsolete_by	=
-  { "type", "name", "range"
-    "tech", "Constitution", "World"
+  { "type", "name", "range", "survives"
+    "tech", "Constitution", "World", TRUE
   }
 build_cost	= 200
 upkeep		= 0
