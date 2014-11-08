@@ -4,9 +4,9 @@ Mesopotamia, the Mediterranean, and surrounding regions.
 
 
 ---
-Using the rule-set:
+Using the ruleset:
 
-For network play, be sure the rule-set is available both on the server and on
+For network play, be sure the ruleset is available both on the server and on
 all the clients' systems.
 
 Start the server normally, and issue the following commands:
@@ -25,7 +25,7 @@ will not make any sense as a representation for your units.
 
 
 ---
-Playing under the rule-set:
+Playing under the ruleset:
 
 It is VERY IMPORTANT to remember that you are not playing the standard
 game.  The technology tree is different, and units, technologies, buildings,
@@ -68,7 +68,7 @@ Miscellaneous warnings:
     - All others suffer a 50% chance.
 
  o Settlers can not build roads or irrigate land; you must use Workers to do
-    so.
+   so.
 
 ---
 ChangeLog
@@ -130,7 +130,7 @@ Additional contributers (alphabetical):
 	Daniel Markstedt <himasaram@spray.se>
         William Allen Simpson <wsimpson@greendragon.com>
 
-The rule-set has a Web site at:
+The ruleset has a Web site at:
 
 	http://www.cs.utexas.edu/users/bdbryant/freeciv/ancients.html
 
