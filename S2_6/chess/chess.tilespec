@@ -10,9 +10,8 @@ normal_tile_width  = 60
 normal_tile_height = 60
 small_tile_width   = 16
 small_tile_height  = 20
-type = "overview"
+type = "overhead"
 is_hex = FALSE
-is_full_citybar = 1
 fogstyle = 1
 darkness_style = 0
 
