@@ -19,12 +19,9 @@ small_tile_height  = 20
 type = "overhead"
 is_hex = FALSE
 
-; Use fogstyle 0 (old iso style)
-fogstyle = 2
-
-; Use darkness style 3 (15 sprites)
-darkness_style = 4
-
+; Blended fog
+fog_style      = "Darkness"
+darkness_style = "Corner"
 ; Which terrain layer darkness is drawn top of (0-2)
 darkness_layer = 0
  
