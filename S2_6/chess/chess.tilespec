@@ -12,9 +12,10 @@ small_tile_width   = 16
 small_tile_height  = 20
 type = "overhead"
 is_hex = FALSE
-fogstyle = 1
-darkness_style = 0
 
+
+fog_style      = "Auto"
+darkness_style = "None"
 ; Which terrain layer darkness is drawn top of (0-2)
 darkness_layer = 0
 
