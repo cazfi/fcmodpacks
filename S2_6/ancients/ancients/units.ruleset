@@ -20,7 +20,7 @@ options="+Freeciv-ruleset-Devel-2014.September.14c"
 ; helptxt       = displayed in the help for units with this flag (optional)
 flags =
   { "name", "helptext"
-    "Horse", _("Attack value halved when attacking Halberdiers.")
+    _("Horse"), _("Attack value halved when attacking Halberdiers.")
   }
 
 [veteran_system]

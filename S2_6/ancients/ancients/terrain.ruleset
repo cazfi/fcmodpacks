@@ -21,7 +21,7 @@ options="+Freeciv-ruleset-Devel-2014.September.14c"
 ; helptxt       = displayed in the help for terrains with this flag (optional)
 flags =
  { "name", "helptxt"
-   "NoPollution", _("No Pollution appear here.")
+   _("NoPollution"), _("No Pollution appear here.")
  }
 
 [parameters]
