@@ -512,10 +512,12 @@ reqs	=
 type    = "Inspire_Partisans"
 value   = 1
 reqs	=
-    { "type",       "name",      "range"
-      "Gov", "Ancient Democracy", "Player"
-      "Tech", "Leadership", "Player"
-      "Tech", "Guerilla Warfare", "World"
+    { "type", "name", "range", "present"
+      "Gov", "Ancient Democracy", "Player", TRUE
+      "Tech", "Leadership", "Player", TRUE
+      "Tech", "Guerilla Warfare", "World", TRUE
+      "Nation", "Barbarian", "Player", FALSE
+      "Nation", "Pirate", "Player", FALSE
     }
 
 ; upkeep (general)
