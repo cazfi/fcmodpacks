@@ -97,6 +97,11 @@ match_types = "water"
 [layer2]
 match_types = "water"
 
+[tile_inaccessible]
+blend_layer = 0
+num_layers = 1
+layer0_match_type = "plains"
+
 [tile_arctic]
 blend_layer = 0
 num_layers = 1
