@@ -2,7 +2,7 @@
 [tilespec]
 
 ; Format and options of this tilespec file:
-options = "+Freeciv-tilespec-Devel-2013.Oct.19"
+options = "+Freeciv-tilespec-Devel-2013.Oct.19 duplicates_ok"
 
 ; A simple name for the tileset specified by this file:
 name = "amplio2"
@@ -77,6 +77,7 @@ files =
   "misc/specialists.spec",
   "amplio2/units.spec",
   "amplio2/veterancy.spec",
+  "delta2/units.spec",
   "misc/flags-large.spec",
   "misc/buildings-large.spec",
   "misc/wonders-large.spec",
