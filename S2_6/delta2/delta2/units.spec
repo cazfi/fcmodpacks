@@ -7,8 +7,9 @@ options = "+Freeciv-spec-Devel-2013.Feb.13"
 [info]
 
 artists = "
-  ngunjaca (boat, sail, diplomat, warriors)
-  GriffonSpade (lion)
+  ngunjaca: boat, sail, diplomat, warriors
+  GriffonSpade: lion
+  Bebro, CapTVK (thomas@worldonline.nl), GriffonSpade: cyborg
 "
 
 [file]
@@ -29,6 +30,7 @@ tiles = { "row", "column", "tag"
 
   0,  3, "u.sail"
 
+  1,  0, "u.cyborg"
   1,  2, "u.diplomat"
   1,  3, "u.warriors"
 }
