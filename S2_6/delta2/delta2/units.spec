@@ -6,7 +6,10 @@ options = "+Freeciv-spec-Devel-2013.Feb.13"
 
 [info]
 
-artists = "ngunjaca"
+artists = "
+  ngunjaca (boat, sail, diplomat, warriors)
+  GriffonSpade (lion)
+"
 
 [file]
 gfx = "delta2/units"
@@ -21,6 +24,7 @@ pixel_border = 1
 
 tiles = { "row", "column", "tag"
 
+  0,  0, "u.lion"
   0,  1, "u.boat"
 
   0,  3, "u.sail"
