@@ -1,0 +1,37 @@
+Delta2 is meant to be used with variant2 ruleset. This is list of
+gfx needed by variant2 that is missing from Delta2
+
+Units
+=====
+- Balloon
+- Nuclear Submarine
+- Sea Constructor
+
+Buildings
+=========
+- Blacksmith
+- Dumping Ground
+- Pentagon (Wonder)
+- Town Hall
+- TV Station
+
+Terrain Resources
+=================
+- Thermal Vent
+
+Extras
+======
+- Canal
+
+Tech
+====
+- Aviation
+- Clock
+- Cybernetics
+- Radar
+- Scientific Method
+- Solar Power
+- Television
+- Thermodynamics
+- Guild System
+- Ocean Adaptation
