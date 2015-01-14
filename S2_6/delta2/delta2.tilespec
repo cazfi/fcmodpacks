@@ -99,6 +99,7 @@ files =
   "amplio2/medievalcities.spec",
   "amplio2/moderncities.spec",
   "delta2/units.spec",
+  "delta2/canals.spec",
   "hexemplio/terrain1.spec",
   "hexemplio/terrain2.spec",
   "hexemplio/terrain3.spec",
@@ -297,6 +298,7 @@ styles =
       "road.maglev",   "RoadAllCombined"
       "road.pave",     "RoadAllSeparate"
       "road.river",    "River"
+      "road.canal",    "River"
       "tx.irrigation", "Cardinals"
       "tx.farmland",   "Cardinals"
       "tx.mine",       "Single1"
