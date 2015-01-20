@@ -2,6 +2,7 @@
 
 name=_("Barbarian")
 plural=_("?plural:Barbarians")
+groups = _("Barbarian")
 legend=_("Since the dawn of civilization, barbarians have been a threat to\
  cultured peoples everywhere.")
 

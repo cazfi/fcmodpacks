@@ -3,7 +3,8 @@
 
 [datafile]
 description="Ancients effects data for Freeciv"
-options="+Freeciv-ruleset-Devel-2014.September.14c"
+options="+Freeciv-ruleset-Devel-2015.January.14"
+format_version=10
 
 ; /* <-- avoid gettext warnings
 ;
@@ -33,15 +34,7 @@ type    = "No_Diplomacy"
 value   = 1
 reqs    =
     { "type",   "name", "range"
-      "Nation", "Barbarian", "Player"
-    }
-
-[effect_barb2]
-type    = "No_Diplomacy"
-value   = 1
-reqs    =
-    { "type",   "name", "range"
-      "Nation", "Pirate", "Player"
+      "NationGroup", "Barbarian", "Player"
     }
 
 ; Barbarian disappearance
@@ -51,17 +44,7 @@ type    = "Retire_Pct"
 value   = 10
 reqs    =
     { "type", "name", "range", "present"
-      "Nation", "Barbarian", "Player", TRUE
-      "Age", "5", "Local", TRUE
-      "CityTile", "Center", "Local", FALSE
-    }
-
-[effect_pirate_disappear]
-type    = "Retire_Pct"
-value   = 10
-reqs    =
-    { "type", "name", "range", "present"
-      "Nation", "Pirate", "Player", TRUE
+      "NationGroup", "Barbarian", "Player", TRUE
       "Age", "5", "Local", TRUE
       "CityTile", "Center", "Local", FALSE
     }
@@ -530,8 +513,7 @@ reqs	=
       "Gov", "Ancient Democracy", "Player", TRUE
       "Tech", "Leadership", "Player", TRUE
       "Tech", "Guerilla Warfare", "World", TRUE
-      "Nation", "Barbarian", "Player", FALSE
-      "Nation", "Pirate", "Player", FALSE
+      "NationGroup", "Barbarian", "Player", FALSE
     }
 
 ; upkeep (general)
@@ -1079,12 +1061,29 @@ reqs	=
 ;      "Building", "Palace", "City", FALSE
 ;    }
 
-[effect_courthouse_2]
+[effect_courthouse_incite]
 type    = "Incite_Cost_Pct"
 value   = 300
 reqs    =
     { "type", "name", "range"
       "Building", "Courthouse", "City"
+    }
+
+[effect_courthouse_incite_empty]
+type    = "Incite_Cost_Pct"
+value   = -150
+reqs    =
+    { "type", "name", "range"
+      "Building", "Courthouse", "City"
+      "MaxUnitsOnTile", "0", "Local"
+    }
+
+[effect_incite_empty]
+type    = "Incite_Cost_Pct"
+value   = -50
+reqs    =
+    { "type", "name", "range"
+      "MaxUnitsOnTile", "0", "Local"
     }
 
 [effect_courthouse_content_0]

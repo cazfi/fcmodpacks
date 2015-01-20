@@ -4,14 +4,15 @@
 
 [datafile]
 description="Ancients game rules for Freeciv"
-options="+Freeciv-ruleset-Devel-2014.September.14c"
+options="+Freeciv-ruleset-Devel-2015.January.14"
+format_version=10
 
 [about]
 ; Ruleset name
 name = _("Ancients")
 
 ; Version of the ruleset
-version = "2.6-dev"
+version = "3.0-dev"
 
 ; Description of the ruleset
 description = _("You are playing Freeciv with Ancients ruleset. \
@@ -163,10 +164,10 @@ tired_attack = FALSE
 [actions]
 ; What each action should be called when showing them to the player.
 ; The first %s should be before the mnemonic of the action.
-; The secound %s marks were extra details should be insterted.
+; The second %s marks were extra details should be insterted.
 
 ; /* TRANS: _Poison City (3% chance of success). */
-ui_name_posion_city = _("%sPoison City%s")
+ui_name_poison_city = _("%sPoison City%s")
 
 ; /* TRANS: S_abotage Enemy Unit (3% chance of success). */
 ui_name_sabotage_unit = _("S%sabotage Enemy Unit%s")

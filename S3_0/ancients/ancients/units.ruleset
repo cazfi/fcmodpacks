@@ -11,7 +11,8 @@
 
 [datafile]
 description="Ancients unit_type data for Freeciv"
-options="+Freeciv-ruleset-Devel-2014.September.14c"
+options="+Freeciv-ruleset-Devel-2015.January.14"
+format_version=10
 
 [control]
 ; Names for custom unit type flags. There can be up to 16 of these.
@@ -22,6 +23,7 @@ flags =
   { "name", "helptext"
     _("Horse"), _("Attack value halved when attacking Halberdiers.")
     _("TradeRoute"), _("Can establish trade routes (must travel to target city).")
+    _("HelpWonder"), _("Can help build wonders (adding its full shield cost).")
   }
 
 [veteran_system]
@@ -217,7 +219,6 @@ flags         = "TerrainSpeed", "DamageSlows", "AttackNonNative", "AttFromNonNat
 ;
 ; ** Flags **
 ;
-; "HelpWonder"	= can help build wonders
 ; "IgZOC"       = ignore Zones of Control (ZOC) even if unit class has
 ;                 "ZOC" flag
 ; "HasNoZOC"    = unit has no Zone of Control (ZOC), thus any unit can move
@@ -276,9 +277,6 @@ flags         = "TerrainSpeed", "DamageSlows", "AttackNonNative", "AttFromNonNat
 ;                 rule)
 ; "BarbarianOnly" = only barbarians can build this unit
 ; "Shield2Gold" = Switch from shield upkeep to gold upkeep possible
-; "Capturable"  = can be captured by units with "Capturer" flag
-; "Capturer"    = can capture units with flag "Capturable" instead of
-;                 fighting them
 ;
 ; Following flag strings require extra fields:
 ;  "Paratroopers"
@@ -303,17 +301,17 @@ flags         = "TerrainSpeed", "DamageSlows", "AttackNonNative", "AttFromNonNat
 ; "AttackFast"	= AI hint: quick attacking unit (unused)
 ; "AttackStrong"= AI hint: strong attacker (unused)
 ; "Ferryboat"	= AI hint: useful for ferrying
-; "Barbarian"	= can be created as barbarian
-; "BarbarianTech" = can be created as barbarian, if someone has
-;		    researched its tech requirements
-; "BarbarianBoat" = can be created as barbarian
-; "BarbarianBuild" = can be built by barbarians
-; "BarbarianBuildTech" = can be built by barbarians if someone has
+; "Barbarian"	       = can be created as land barbarian
+; "BarbarianTech"      = can be created as land barbarian, if someone has
 ;		         researched its tech requirements
-; "BarbarianLeader" = this unit is the barbarian leader (only one)
-; "BarbarianSea" = can be created as a sea barbarian
-; "BarbarianSeaTech" = can be created as a sea barbarian if someone
-;		       has researched its tech requirements
+; "BarbarianBoat"      = can be created as boat for sea barbarian
+; "BarbarianBuild"     = can be built by barbarians
+ ; "BarbarianBuildTech" = can be built by barbarians if someone has
+ ;		         researched its tech requirements
+; "BarbarianLeader"    = this unit is the barbarian leader (only one)
+; "BarbarianSea"       = can be created as a barbarian that disembarks from a barbarian boat
+; "BarbarianSeaTech"   = can be created as a barbarian that disembarks from a barbarian boat
+;                        if someone has researched its tech requirements
 ; "Cities"	= can disband to produce a city
 ; "Settlers"	= can irrigate and build roads
 ; "GameLoss"	= losing one of these units means you lose the game, but it
