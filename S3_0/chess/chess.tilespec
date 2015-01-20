@@ -1,0 +1,166 @@
+
+[tilespec]
+options = "+Freeciv-tilespec-Devel-2013.Oct.19"
+
+; A simple name for the tileset specified by this file:
+name = "Chess"
+priority = 5
+
+normal_tile_width  = 60
+normal_tile_height = 60
+small_tile_width   = 16
+small_tile_height  = 20
+type = "overhead"
+is_hex = FALSE
+
+
+fog_style      = "Auto"
+darkness_style = "None"
+; Which terrain layer darkness is drawn top of (0-2)
+darkness_layer = 0
+
+unit_flag_offset_x = 0
+unit_flag_offset_y = 0
+city_flag_offset_x = 0
+city_flag_offset_y = 0
+unit_offset_x = 0
+unit_offset_y = 0
+
+; offset the cities by this amount
+city_offset_x = 0
+city_offset_y = 0
+
+citybar_offset_y = 45
+tilelabel_offset_y = 20
+city_names_font_size = 10
+city_productions_font_size = 8
+main_intro_file    = "misc/intro"
+minimap_intro_file = "misc/radar"
+
+files =
+"chess/terrain.spec",
+"chess/misc.spec",
+"chess/units.spec",
+"chess/edifice.spec",
+"chess/buildings.spec",
+"chess/wonders.spec",
+"chess/space.spec",
+"chess/grid.spec",
+"chess/select.spec",
+"chess/explosions.spec",
+"misc/overlays.spec",
+"misc/citybar.spec",
+"misc/small.spec",
+"misc/governments.spec",
+"misc/specialists.spec",
+"misc/flags.spec",
+"misc/shields-large.spec",
+"misc/cursors.spec",
+"misc/techs.spec",
+"misc/treaty.spec",
+"misc/icons.spec",
+"misc/editor.spec",
+"misc/events.spec"
+
+; Include color definitions
+*include "misc/colors.tilespec"
+
+[layer0]
+match_types = "mountains", "water", "land"
+
+[layer1]
+match_types = "water"
+
+[layer2]
+match_types = "water"
+
+[tile_arctic]
+blend_layer = 0
+num_layers = 1
+layer0_match_type = "land"
+
+[tile_desert]
+blend_layer = 0
+num_layers = 1
+layer0_match_type = "land"
+
+[tile_forest]
+blend_layer = 0
+num_layers = 1
+layer0_match_type = "land"
+
+[tile_grassland]
+blend_layer = 0
+num_layers = 1
+layer0_match_type = "land"
+
+[tile_hills]
+blend_layer = 0
+num_layers = 1
+layer0_match_type = "land"
+
+[tile_jungle]
+blend_layer = 0
+num_layers = 1
+layer0_match_type = "land"
+
+[tile_mountains]
+blend_layer = 0
+num_layers = 1
+layer0_match_type = "mountains"
+layer0_match_with = "mountains"
+
+[tile_coast]
+blend_layer = 0
+num_layers = 2
+layer0_match_type = "water"
+layer1_match_type = "water"
+layer1_match_with = "water"
+
+[tile_lake]
+blend_layer = 0
+num_layers = 2
+layer0_match_type = "water"
+layer1_match_type = "water"
+layer1_match_with = "water"
+
+[tile_floor]
+blend_layer = 0
+num_layers = 3
+layer0_match_type = "water"
+layer1_match_type = "water"
+layer2_match_type = "water"
+layer2_match_with = "water"
+
+[tile_plains]
+blend_layer = 0
+num_layers = 1
+layer0_match_type = "land"
+
+[tile_swamp]
+blend_layer = 0
+num_layers = 1
+layer0_match_type = "land"
+
+[tile_tundra]
+blend_layer = 0
+num_layers = 1
+layer0_match_type = "land"
+
+[extras]
+styles =
+    { "name",          "style"
+      "road.road",     "RoadAllSeparate"
+      "road.rail",     "RoadAllSeparate"
+      "road.river",    "River"
+      "tx.irrigation", "Cardinals"
+      "tx.farmland",   "Cardinals"
+      "tx.mine",       "Single1"
+      "tx.pollution",  "Single2"
+      "tx.fallout",    "Single2"
+      "tx.village",    "Single1"
+      "base.fortress", "3Layer"
+      "base.airbase",  "3Layer"
+      "base.ruins",    "3Layer"
+      "base.buoy",     "3Layer"
+    }

@@ -1,0 +1,78 @@
+[nation_thracian]
+
+name=_("Thracian")
+plural=_("?plural:Thracians")
+groups=_("European")
+legend=_("The second most numerous people in the ancient western world.")
+
+leaders = {
+ "name", "sex"
+ "Thiras", "Male"
+ "Burebista", "Male"
+ "Decebalus", "Male"
+ "Seuthes", "Male"
+ "Spartacus", "Male"
+}
+
+flag="thrace"
+flag_alt = "bulgaria"
+style    = "European"
+
+ruler_titles = { "government",      "male_title",      "female_title"
+                 "Petty Monarchy",  _("Rhesus %s"),       _("Rhesos %s")
+                 "Imperial Monarchy",  _("Rhesus %s"),       _("Rhesos %s")
+               }
+
+init_techs=""
+init_buildings=""
+init_units=""
+civilwar_nations=
+ ; nearby nations:
+ "byzantine", "macedonian", "illyrian"
+
+cities =
+ "Uscudama",
+ "Sarmizegetusa",
+ "Perperikon",
+ "Oescus",
+ "Byzantion",
+ "Agathapara",
+ "Authiparu",
+ "Bazopara",
+ "Bedizos",
+ "Belaidipara",
+ "Bendipara",
+ "Beodizos",
+ "Beripara",
+ "Bessapara",
+ "Bospara",
+ "Breierophara",
+ "Brentopara",
+ "Briparon",
+ "Burtudizos",
+ "Chesdupara",
+ "Dardapara",
+ "Dodoparos",
+ "Drusipara",
+ "Gelupara",
+ "Iamphorynna",
+ "Isgipera",
+ "Ismara",
+ "Isgipera",
+ "Keirpara",
+ "Kistidizos",
+ "Krasalopara",
+ "Longinopara",
+ "Maskiobria",
+ "Mesambria",
+ "Mutzipara",
+ "Orudisza",
+ "Ostudizos",
+ "Poltymbria",
+ "Priskupera",
+ "Skedabria",
+ "Spinopara",
+ "Stratopara",
+ "Subzupara",
+ "Tranupara",
+ "Tyrodiza"
