@@ -1022,6 +1022,7 @@ shield      = 3 ; glacier used to have 4
 ;                           Global Warming
 ;   - "NuclearWinter"     = Instances of this extra on map count towards
 ;                           Nuclear Winter
+;   - "ShowFlag"          = Draw owner's flag
 ; helptext                = optional help text string; should escape all raw
 ;                           newlines so that xgettext parsing works
 ;
@@ -1194,7 +1195,6 @@ Roads and railroads can only be built on River tiles if your\
 ;   - "NoStackDeath"      = Units inside do not die all at once when attacked
 ;   - "DiplomatDefense"   = Diplomats inside get bonus to diplomatic defense
 ;   - "ParadropFrom"      = Paradrop can be initiated from base
-;   - "ShowFlag"          = Draw owner's flag
 ;
 ; */ <-- avoid gettext warnings
 

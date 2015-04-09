@@ -33,15 +33,7 @@ type    = "No_Diplomacy"
 value   = 1
 reqs    =
     { "type",   "name", "range"
-      "Nation", "Barbarian", "Player"
-    }
-
-[effect_barb2]
-type    = "No_Diplomacy"
-value   = 1
-reqs    =
-    { "type",   "name", "range"
-      "Nation", "Pirate", "Player"
+      "NationGroup", "Barbarian", "Player"
     }
 
 ; Barbarian disappearance
@@ -51,17 +43,7 @@ type    = "Retire_Pct"
 value   = 10
 reqs    =
     { "type", "name", "range", "present"
-      "Nation", "Barbarian", "Player", TRUE
-      "Age", "5", "Local", TRUE
-      "CityTile", "Center", "Local", FALSE
-    }
-
-[effect_pirate_disappear]
-type    = "Retire_Pct"
-value   = 10
-reqs    =
-    { "type", "name", "range", "present"
-      "Nation", "Pirate", "Player", TRUE
+      "NationGroup", "Barbarian", "Player", TRUE
       "Age", "5", "Local", TRUE
       "CityTile", "Center", "Local", FALSE
     }
@@ -530,8 +512,7 @@ reqs	=
       "Gov", "Ancient Democracy", "Player", TRUE
       "Tech", "Leadership", "Player", TRUE
       "Tech", "Guerilla Warfare", "World", TRUE
-      "Nation", "Barbarian", "Player", FALSE
-      "Nation", "Pirate", "Player", FALSE
+      "NationGroup", "Barbarian", "Player", FALSE
     }
 
 ; upkeep (general)
@@ -1079,12 +1060,31 @@ reqs	=
 ;      "Building", "Palace", "City", FALSE
 ;    }
 
-[effect_courthouse_2]
+[effect_courthouse_incite_cost]
 type    = "Incite_Cost_Pct"
 value   = 300
 reqs    =
-    { "type", "name", "range"
-      "Building", "Courthouse", "City"
+    { "type", "name", "range", "present"
+      "Building", "Courthouse", "City", TRUE
+      "MaxUnitsOnTile", "0", "Local", FALSE
+    }
+
+[effect_incite_cost_empty_courthouse]
+type = "Incite_Cost_Pct"
+value = 100
+reqs	=
+    { "type", "name", "range", "present"
+      "MaxUnitsOnTile", "0", "Local", TRUE
+      "Building", "Courthouse", "City", TRUE
+    }
+
+[effect_incite_cost_empty]
+type = "Incite_Cost_Pct"
+value = -50
+reqs	=
+    { "type", "name", "range", "present"
+      "MaxUnitsOnTile", "0", "Local", TRUE
+      "Building", "Courthouse", "City", FALSE
     }
 
 [effect_courthouse_content_0]
