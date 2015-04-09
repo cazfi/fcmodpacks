@@ -205,6 +205,12 @@ ui_name_enter_marketplace = _("Enter %sMarketplace%s")
 ; /* TRANS: Help _build Wonder (100% chance of success). */
 ui_name_help_wonder = _("Help %sbuild Wonder%s")
 
+; /* TRANS: _Build City (100% chance of success). */
+ui_name_found_city = _("%sBuild City%s")
+
+; /* TRANS: _Add to City (100% chance of success). */
+ui_name_join_city = _("%sAdd to City%s")
+
 ; /* <-- avoid gettext warnings
 ;
 ; Action enablers:
@@ -378,6 +384,21 @@ actor_reqs    =
       "DiplRel", "Is foreign", "Local", FALSE
     }
 
+[actionenabler_build_city]
+action = "Found City"
+actor_reqs    =
+    { "type",   "name", "range", "present"
+      "Unitflag", "Cities", "Local", TRUE
+      "UnitState", "TransportDependent", "Local", FALSE
+    }
+
+[actionenabler_join_city]
+action = "Join City"
+actor_reqs    =
+    { "type",   "name", "range", "present"
+      "Unitflag", "AddToCity", "Local", TRUE
+    }
+
 [borders]
 ; Base border radius from city.
 radius_sq_city = 17
@@ -547,6 +568,21 @@ settings =
     "Team",       200,   "Cancel",     "Both"
     "TeamIC",     400,   "Cancel",     "Both"
   }
+
+; /* <-- avoid gettext warnings
+;
+; Goods
+;
+; name                    = translatable name as seen by user
+; rule_name               = (optional) name for savegames, rulesets etc; if not
+;                           present, 'name' is used. Since the name used in
+;                           savegames must not change, use this when renaming
+;                           an good after a ruleset has been released.
+;
+; */ <-- avoid gettext warnings
+
+[goods_good]
+name = _("Goods")
 
 [playercolors]
 background.r = 86

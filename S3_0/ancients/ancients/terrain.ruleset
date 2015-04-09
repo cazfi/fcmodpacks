@@ -984,6 +984,7 @@ shield      = 3 ; glacier used to have 4
 ; reqs                    = requirements to build the extra (see effects.ruleset
 ;                           and README.effects for help on requirements)
 ; rmreqs                  = requirements to remove the extra
+; spontaneous_reqs        = spontaneous appearance requirements
 ; buildable               = Can extra be built? Defaults to TRUE
 ; build_time              = how long it takes a unit to build this extra.
 ;                           Value of 0 (default) means that terrain- and
@@ -999,6 +1000,10 @@ shield      = 3 ; glacier used to have 4
 ;                           multiplied by this value (default 1)
 ; defense_bonus           = Percent added to defense when tile has the extra
 ;                           (default none)
+; appearance_chance       = If extra has cause "Spontaneous" and other requirements
+;                           for its appearance are fulfilled, this tells how big
+;                           chance it has to appear each turn. The chance is 1/1000
+;                           times this value.
 ; native_to               = List of unit classes that are considered to
 ;                           be inside the extra when they are on same tile
 ; conflicts               = List of extras that cannot be on the same tile.
@@ -1023,6 +1028,7 @@ shield      = 3 ; glacier used to have 4
 ;                           Global Warming
 ;   - "NuclearWinter"     = Instances of this extra on map count towards
 ;                           Nuclear Winter
+;   - "ShowFlag"          = Draw owner's flag
 ; helptext                = optional help text string; should escape all raw
 ;                           newlines so that xgettext parsing works
 ;
@@ -1195,7 +1201,6 @@ Roads and railroads can only be built on River tiles if your\
 ;   - "NoStackDeath"      = Units inside do not die all at once when attacked
 ;   - "DiplomatDefense"   = Diplomats inside get bonus to diplomatic defense
 ;   - "ParadropFrom"      = Paradrop can be initiated from base
-;   - "ShowFlag"          = Draw owner's flag
 ;
 ; */ <-- avoid gettext warnings
 
