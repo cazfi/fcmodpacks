@@ -2,7 +2,7 @@
 [tilespec]
 
 ; Format and options of this tilespec file:
-options = "+Freeciv-tilespec-Devel-2013.Oct.19 duplicates_ok"
+options = "+Freeciv-tilespec-Devel-2015-Jan-28 duplicates_ok"
 
 ; A simple name for the tileset specified by this file:
 name = "amplio2"
@@ -37,6 +37,10 @@ city_flag_offset_y = 9
 unit_offset_x = 19
 unit_offset_y = 18
 
+; offset of the normal activity icons
+activity_offset_x = 0
+activity_offset_y = 0
+
 ; offset the cities by this amount
 city_offset_x = 0
 city_offset_y = 0
@@ -69,6 +73,8 @@ files =
   "amplio2/ocean.spec",
   "amplio2/water.spec",
   "amplio2/tiles.spec",
+  "amplio2/upkeep.spec",
+  "amplio2/activities.spec",
   "amplio2/fog.spec",
   "deltasquare/canal.spec",
   "misc/small.spec",
@@ -226,7 +232,7 @@ styles =
       "tx.pollution",  "Single2"
       "tx.fallout",    "Single2"
       "tx.village",    "Single1"
-      "base.fort",     "3Layer"
+      "base.outpost",  "3Layer"
       "base.fortress", "3Layer"
       "base.airstrip", "3Layer"
       "base.airbase",  "3Layer"
