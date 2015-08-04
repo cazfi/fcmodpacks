@@ -7,7 +7,7 @@
 [tilespec]
 
 ; Format and options of this tilespec file:
-options = "+Freeciv-tilespec-Devel-2013.Oct.19"
+options = "+Freeciv-tilespec-Devel-2015-Jan-28"
 
 ; A simple name for the tileset specified by this file:
 name = "freeland-normal"
@@ -38,9 +38,17 @@ unit_flag_offset_y = 12
 city_flag_offset_x = 17
 city_flag_offset_y = 11
 
+; offset the city occupied sprite by this amount
+occupied_offset_x = 0
+occupied_offset_y = 0
+
 ; offset the units by this amount
 unit_offset_x = 11
 unit_offset_y = 11
+
+; offset of the normal activity icons
+activity_offset_x = 0
+activity_offset_y = 0
 
 ; offset the cities by this amount
 city_offset_x = 0
