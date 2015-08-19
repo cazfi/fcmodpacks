@@ -19,10 +19,6 @@ Terrain Resources
 =================
 - Thermal Vent
 
-Extras
-======
-- Canal
-
 Tech
 ====
 - Aviation
