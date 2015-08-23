@@ -113,10 +113,11 @@ ocean_resources = FALSE
 ;                        terrain section -- transformation changes to that
 ;                          terrain
 ; transform_time       = time to transform; if 0, cannot transform
-; pillage_time         = time to pillage extra from the tile
-; clean_pollution_time = time to clean pollution
+; pillage_time         = time to pillage extra from the tile (0 = impossible)
 ;                        Nonzero values only affect extras with removal_time 0.
-; clean_fallout_time   = time to clean fallout
+; clean_pollution_time = time to clean pollution (0 = impossible)
+;                        Nonzero values only affect extras with removal_time 0.
+; clean_fallout_time   = time to clean fallout (0 = impossible)
 ;                        Nonzero values only affect extras with removal_time 0.
 ; animal               = unit type that can appear as animal on the terrain
 ; warmer_wetter_result = result of global warming for wet terrains; one of:
@@ -951,6 +952,12 @@ identifier  = "x"
 shield      = 3 ; glacier used to have 4
 # glacier-only.
 
+[extraui]
+
+; Player visible names of the base gui types.
+ui_name_base_fortress = _("?gui_type:Build Fortress")
+ui_name_base_airbase = _("?gui_type:Build Nothing")
+
 ; /* <-- avoid gettext warnings
 ;
 ; Each extra, including bases and roads, must have a section here.
@@ -968,7 +975,7 @@ shield      = 3 ; glacier used to have 4
 ;                           "Infra", "Natural", "Nuisance", or "Bonus"
 ; causes                  = events that can create extra type.
 ;                           "Irrigation", "Mine", "Hut", "Pollution", "Fallout",
-;                           "Base", "Road", or "Spontaneous"
+;                           "Base", "Road", or "Appear"
 ; rmcauses                = events that can remove extra type.
 ;                           "CleanPollution", "CleanFallout", or "Pillage"
 ; graphic                 = tag specifying preferred graphic
@@ -984,7 +991,7 @@ shield      = 3 ; glacier used to have 4
 ; reqs                    = requirements to build the extra (see effects.ruleset
 ;                           and README.effects for help on requirements)
 ; rmreqs                  = requirements to remove the extra
-; spontaneous_reqs        = spontaneous appearance requirements
+; appearance_reqs         = spontaneous appearance requirements
 ; buildable               = Can extra be built? Defaults to TRUE
 ; build_time              = how long it takes a unit to build this extra.
 ;                           Value of 0 (default) means that terrain- and
@@ -1000,7 +1007,7 @@ shield      = 3 ; glacier used to have 4
 ;                           multiplied by this value (default 1)
 ; defense_bonus           = Percent added to defense when tile has the extra
 ;                           (default none)
-; appearance_chance       = If extra has cause "Spontaneous" and other requirements
+; appearance_chance       = If extra has cause "Appear" and other requirements
 ;                           for its appearance are fulfilled, this tells how big
 ;                           chance it has to appear each turn. The chance is 1/1000
 ;                           times this value.

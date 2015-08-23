@@ -22,10 +22,12 @@ format_version=10
 flags =
   { "name", "helptext"
     _("Horse"), _("Attack value halved when attacking Halberdiers.")
+    _("Unbribable")
     _("TradeRoute"), _("Can establish trade routes (must travel to target city).")
     _("HelpWonder")
     _("Cities")
     _("AddToCity")
+    _("Infra"), _("Can build infrastructure.")
   }
 
 [veteran_system]
@@ -76,6 +78,8 @@ veteran_move_bonus = 0, 0, 0, 0
 ;                 "Normal", "Nothing" or "Frighten"
 ; flags         = List of unit class flags (from the following list; you
 ;                 cannot add custom unit class flags)
+; helptext      = optional help text string; should escape all raw newlines
+;                 so that xgettext parsing works
 ;
 ; ** Unit class Flags **
 ;
@@ -232,13 +236,14 @@ flags         = "TerrainSpeed", "DamageSlows", "AttackNonNative", "AttFromNonNat
 ; "OneAttack"	= can only make a single attack, regardless of movement points
 ; "FieldUnit"	= cause unhappiness even when not being aggressive
 ; "Marines"	= can attack from non-native tile (from transport or city)
+; "BeachLander" = won't lose all its movement when moving from non-native
+;                 terrain to native terrain even if slow_invasions is on.
 ; "Partial_Invis" = visible only to adjancent units; does not hide transported
 ;		  units other than missiles
 ; "Settlers"	= can irrigate and build roads
 ; "Diplomat"	= can do diplomat actions (see diplchance server option)
 ; "Spy"		= enhanced diplomat actions. _Must_ be "Diplomat" also
 ; "Trireme"	= (sea only) cannot leave shoreline
-; "Nuclear"	= nuke!
 ; "Paratroopers"= can paradrop
 ; "Only_Native_Attack" = cannot attack targets on non-native tiles even if
 ;                 unit class can
@@ -263,9 +268,6 @@ flags         = "TerrainSpeed", "DamageSlows", "AttackNonNative", "AttFromNonNat
 ; "NoVeteran"   = this unit cannot gain veteran levels through experience
 ;                 (as if both raise_chance and work_raise_chance were zero);
 ;                 it can still gain veterancy through Veteran_Build, etc
-; "Bombarder"   = this unit cannot kill other units, only damage them, but
-;                 also is not harmed by return fire when attacking; the field
-;                 bombard_rate regulates its number of shots
 ; "CityBuster"  = this unit has double firepower against cities
 ; "NoBuild"     = this unit cannot be built
 ; "BadWallAttacker"	= the firepower of this unit is set to 1 if
@@ -284,8 +286,11 @@ flags         = "TerrainSpeed", "DamageSlows", "AttackNonNative", "AttFromNonNat
 ;                         paradropping (whole movement points)
 ;   paratroopers_mr_sub = the move rate which is subtracted after paradropping
 ;                         (whole movement points)
-;  "Bombarder"
+; Following actions require extra fields:
+;  "Bombard"
 ;   bombard_rate = the number of shots fired at enemy units when attacking
+;  "Join City"
+;   pop_cost = the number of population added to the target city
 ;
 ; ** Roles **
 ;
@@ -390,7 +395,7 @@ uk_happy      = 0
 uk_shield     = 1
 uk_food       = 0
 uk_gold       = 0
-flags         = "Settlers", "Cant_Fortify", "NonMil"
+flags         = "Settlers", "Cant_Fortify", "NonMil", "Infra"
 ; No veteran levels (level name is never displayed)
 veteran_names = _("regular")
 veteran_raise_chance = 0
@@ -613,7 +618,7 @@ uk_shield     = 0
 uk_food       = 0
 uk_gold       = 0
 flags         = "IgZOC", "NonMil", "NoBuild", "NoHome", "SuperSpy", 
-                "Undisbandable", "GameLoss", "Unique"
+                "Undisbandable", "GameLoss", "Unique", "Unbribable"
 ; No veteran levels (level name is never displayed)
 veteran_names = _("regular")
 veteran_raise_chance = 0
@@ -650,7 +655,7 @@ uk_happy      = 0
 uk_shield     = 0
 uk_food       = 0
 uk_gold       = 0
-flags         = "IgZOC", "NonMil",
+flags         = "IgZOC", "NonMil", "Unbribable",
                 "Undisbandable", "SuperSpy", "NoHome", "NoBuild"
 ; No veteran levels (level name is never displayed)
 veteran_names = _("regular")
