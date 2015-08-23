@@ -334,8 +334,7 @@ actor_reqs    =
     }
 target_reqs    =
     { "type",   "name", "range", "present"
-      "UnitType", "Leader", "Local", FALSE
-      "UnitType", "Barbarian Leader", "Local", FALSE
+      "UnitFlag", "Unbribable", "Local", FALSE
       "CityTile", "Center", "Local", FALSE
       "MaxUnitsOnTile", "1", "Local", TRUE
     }
@@ -344,7 +343,7 @@ target_reqs    =
 action = "Sabotage Unit"
 actor_reqs    =
     { "type",   "name", "range"
-      "Unitflag", "Spy", "Local"
+      "UnitFlag", "Spy", "Local"
       "DiplRel", "War", "Local"
       "UnitState", "OnLivableTile", "Local"
       "MinMoveFrags", "1", "Local"
@@ -360,21 +359,21 @@ target_reqs    =
 action = "Establish Trade Route"
 actor_reqs    =
     { "type",   "name", "range", "present"
-      "Unitflag", "TradeRoute", "Local", TRUE
+      "UnitFlag", "TradeRoute", "Local", TRUE
     }
 
 [actionenabler_marketplace]
 action = "Enter Marketplace"
 actor_reqs    =
     { "type",   "name", "range", "present"
-      "Unitflag", "TradeRoute", "Local", TRUE
+      "UnitFlag", "TradeRoute", "Local", TRUE
     }
 
 [actionenabler_help_build_wonder]
 action = "Help Wonder"
 actor_reqs    =
     { "type",   "name", "range", "present"
-      "Unitflag", "HelpWonder", "Local", TRUE
+      "UnitFlag", "HelpWonder", "Local", TRUE
       "DiplRel", "Is foreign", "Local", FALSE
     }
 
@@ -451,7 +450,7 @@ free_tech_method = "Goal"
 victory_min_points = 1000
 
 ; Lead needed relative to second best player
-victory_lead_pct   = 300
+victory_lead_pct   = 200
 
 ; How much each culture point affects the migration
 ; from/to the city.

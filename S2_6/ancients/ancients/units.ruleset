@@ -21,6 +21,7 @@ options="+Freeciv-ruleset-Devel-2014.September.14c"
 flags =
   { "name", "helptext"
     _("Horse"), _("Attack value halved when attacking Halberdiers.")
+    _("Unbribable")
     _("TradeRoute"), _("Can establish trade routes (must travel to target city).")
     _("HelpWonder")
   }
@@ -73,6 +74,8 @@ veteran_move_bonus = 0, 0, 0, 0
 ;                 "Normal", "Nothing" or "Frighten"
 ; flags         = List of unit class flags (from the following list; you
 ;                 cannot add custom unit class flags)
+; helptext      = optional help text string; should escape all raw newlines
+;                 so that xgettext parsing works
 ;
 ; ** Unit class Flags **
 ;
@@ -616,7 +619,7 @@ uk_shield     = 0
 uk_food       = 0
 uk_gold       = 0
 flags         = "IgZOC", "NonMil", "NoBuild", "NoHome", "SuperSpy", 
-                "Undisbandable", "GameLoss", "Unique"
+                "Undisbandable", "GameLoss", "Unique", "Unbribable"
 ; No veteran levels (level name is never displayed)
 veteran_names = _("regular")
 veteran_raise_chance = 0
@@ -653,7 +656,7 @@ uk_happy      = 0
 uk_shield     = 0
 uk_food       = 0
 uk_gold       = 0
-flags         = "IgZOC", "NonMil",
+flags         = "IgZOC", "NonMil", "Unbribable",
                 "Undisbandable", "SuperSpy", "NoHome", "NoBuild"
 ; No veteran levels (level name is never displayed)
 veteran_names = _("regular")
