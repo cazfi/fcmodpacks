@@ -5,7 +5,6 @@ Units
 =====
 - Balloon
 - Nuclear Submarine
-- Sea Constructor
 
 Buildings
 =========

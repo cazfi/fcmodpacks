@@ -10,6 +10,7 @@ artists = "
   ngunjaca: boat, sail, diplomat, warriors
   GriffonSpade: lion
   Bebro, CapTVK (thomas@worldonline.nl), GriffonSpade: cyborg
+  VladimirSlavik: Sea Constructor
 "
 
 [file]
@@ -27,7 +28,7 @@ tiles = { "row", "column", "tag"
 
   0,  0, "u.lion"
   0,  1, "u.boat"
-
+  0,  2, "u.sea_constructor"
   0,  3, "u.sail"
 
   1,  0, "u.cyborg"
