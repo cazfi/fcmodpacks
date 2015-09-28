@@ -13,9 +13,12 @@ name = _("Ancients")
 ; Version of the ruleset
 version = "2.6-dev"
 
-; Description of the ruleset
-description = _("You are playing Freeciv with Ancients ruleset. \
+; Summary of the ruleset
+summary = _("You are playing Freeciv with Ancients ruleset. \
 See http://freeciv.wikia.com/wiki/Ancients for more info.")
+
+; Detailed description
+; description = ""
 
 [options]
 global_init_techs=""
