@@ -7,11 +7,11 @@ name = "Chess"
 priority = 5
 
 ; There`s no separate versioning in tilesets part of main freeciv distribution
-;version = ""
+version = "2.3-pre"
 
 ; Summary and full description of the tileset.
 ;summary = ""
-;description = ""
+description = *chess/chess.README*
 
 normal_tile_width  = 60
 normal_tile_height = 60
