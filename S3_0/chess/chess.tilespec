@@ -1,10 +1,17 @@
 
 [tilespec]
-options = "+Freeciv-tilespec-Devel-2013.Oct.19"
+options = "+Freeciv-tilespec-Devel-2015-Jan-28"
 
 ; A simple name for the tileset specified by this file:
 name = "Chess"
 priority = 5
+
+; There`s no separate versioning in tilesets part of main freeciv distribution
+;version = ""
+
+; Summary and full description of the tileset.
+;summary = ""
+;description = ""
 
 normal_tile_width  = 60
 normal_tile_height = 60
@@ -23,8 +30,18 @@ unit_flag_offset_x = 0
 unit_flag_offset_y = 0
 city_flag_offset_x = 0
 city_flag_offset_y = 0
+
+; offset the city occupied sprite by this amount
+occupied_offset_x = 0
+occupied_offset_y = 0
+
+; offset the units by this amount
 unit_offset_x = 0
 unit_offset_y = 0
+
+; offset of the normal activity icons
+activity_offset_x = 0
+activity_offset_y = 0
 
 ; offset the cities by this amount
 city_offset_x = 0
@@ -35,7 +52,6 @@ tilelabel_offset_y = 20
 city_names_font_size = 10
 city_productions_font_size = 8
 main_intro_file    = "misc/intro"
-minimap_intro_file = "misc/radar"
 
 files =
 "chess/terrain.spec",
@@ -75,42 +91,50 @@ match_types = "water"
 match_types = "water"
 
 [tile_arctic]
+tag = "arctic"
 blend_layer = 0
 num_layers = 1
 layer0_match_type = "land"
 
 [tile_desert]
+tag = "desert"
 blend_layer = 0
 num_layers = 1
 layer0_match_type = "land"
 
 [tile_forest]
+tag = "forest"
 blend_layer = 0
 num_layers = 1
 layer0_match_type = "land"
 
 [tile_grassland]
+tag = "grassland"
 blend_layer = 0
 num_layers = 1
 layer0_match_type = "land"
 
 [tile_hills]
+tag = "hills"
 blend_layer = 0
 num_layers = 1
 layer0_match_type = "land"
 
 [tile_jungle]
+tag = "jungle"
 blend_layer = 0
 num_layers = 1
 layer0_match_type = "land"
 
 [tile_mountains]
+tag = "mountains"
 blend_layer = 0
 num_layers = 1
 layer0_match_type = "mountains"
 layer0_match_with = "mountains"
 
 [tile_coast]
+tag = "coast"
 blend_layer = 0
 num_layers = 2
 layer0_match_type = "water"
@@ -118,6 +142,7 @@ layer1_match_type = "water"
 layer1_match_with = "water"
 
 [tile_lake]
+tag = "lake"
 blend_layer = 0
 num_layers = 2
 layer0_match_type = "water"
@@ -125,6 +150,7 @@ layer1_match_type = "water"
 layer1_match_with = "water"
 
 [tile_floor]
+tag = "floor"
 blend_layer = 0
 num_layers = 3
 layer0_match_type = "water"
@@ -133,16 +159,19 @@ layer2_match_type = "water"
 layer2_match_with = "water"
 
 [tile_plains]
+tag = "plains"
 blend_layer = 0
 num_layers = 1
 layer0_match_type = "land"
 
 [tile_swamp]
+tag = "swamp"
 blend_layer = 0
 num_layers = 1
 layer0_match_type = "land"
 
 [tile_tundra]
+tag = "tundra"
 blend_layer = 0
 num_layers = 1
 layer0_match_type = "land"
