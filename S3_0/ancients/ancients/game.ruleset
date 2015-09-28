@@ -14,9 +14,12 @@ name = _("Ancients")
 ; Version of the ruleset
 version = "3.0-dev"
 
-; Description of the ruleset
-description = _("You are playing Freeciv with Ancients ruleset. \
+; Summary of the ruleset
+summary = _("You are playing Freeciv with Ancients ruleset. \
 See http://freeciv.wikia.com/wiki/Ancients for more info.")
+
+; Detailed description
+; description = ""
 
 [options]
 global_init_techs=""
@@ -391,12 +394,28 @@ actor_reqs    =
       "UnitFlag", "TradeRoute", "Local", TRUE
     }
 
-[actionenabler_help_build_wonder]
+[actionenabler_help_build_great_wonder]
 action = "Help Wonder"
 actor_reqs    =
     { "type",   "name", "range", "present"
       "UnitFlag", "HelpWonder", "Local", TRUE
       "DiplRel", "Is foreign", "Local", FALSE
+    }
+target_reqs    =
+    { "type",   "name", "range"
+      "BuildingGenus", "GreatWonder", "Local"
+    }
+
+[actionenabler_help_build_small_wonder]
+action = "Help Wonder"
+actor_reqs    =
+    { "type",   "name", "range", "present"
+      "UnitFlag", "HelpWonder", "Local", TRUE
+      "DiplRel", "Is foreign", "Local", FALSE
+    }
+target_reqs    =
+    { "type",   "name", "range"
+      "BuildingGenus", "SmallWonder", "Local"
     }
 
 [actionenabler_build_city_pioneer]
