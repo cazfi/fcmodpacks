@@ -1,8 +1,6 @@
 
 Chess is a tileset for Freeciv created by Xin Yu.
 
-Update from v2.0 has been made by Marko Lindqvist
-
 This tileset is released under the GNU General Public License (the same
 license as Freeciv itself). For more information on the license, see
 COPYING.
@@ -17,8 +15,6 @@ use them as a template. Thanks also to Daniel Markstedt for helping me
 convert the tileset to a format suitable for Freeciv 2.3, and for sundry
 legal advice.
 
-This is version 2.0 of the tileset.
-
 Copyright (C) 2008 - 2011 Xin Yu
 This work may be redistributed under the terms of the
 GNU GPL version 2 or later.
@@ -27,7 +23,14 @@ www.freeciv.org
 
  - - -
 
+Updates from v2.0 have been made by Marko Lindqvist
+
+ - - -
+
 Changelog:
+
+v2.3
+- Updated to work with Freeciv 2.6
 
 v2.2
 - Updated to work with Freeciv 2.5
