@@ -6,11 +6,14 @@ options = "+Freeciv-tilespec-Devel-2015-Jan-28 duplicates_ok"
 
 ; A simple name for the tileset specified by this file:
 name = "delta2"
-
 priority = 3
 
-; TODO: add more overall information fields on tiles, 
-; eg, description, authors, colors, etc.
+; Version of the tileset
+version = "3.0-dev"
+
+; Summary and full description of the tileset.
+summary = _("Tileset to be used with variant2 ruleset in hex mode (default)")
+;description = ""
 
 ; Basic tile sizes:
 normal_tile_width  = 126
