@@ -13,8 +13,12 @@ options = "+Freeciv-tilespec-Devel-2013.Oct.19"
 name = "freeland-normal"
 priority = 22
 
-; TODO: add more overall information fields on tiles,
-; eg, description, authors, colors, etc.
+; Version information
+version = "3.0-beta2.1-02"
+
+; Summary and full description of the tileset.
+summary = _("Freeland with 64x32 tiles")
+;description = ""
 
 ; Basic tile sizes:
 normal_tile_width = 64
@@ -157,6 +161,7 @@ match_types = "deep", "forest", "jungle", "mountain"
 ; --------------------------------
 ; Water graphics
 [tile_lake]
+tag = "lake"
 blend_layer = 0
 num_layers = 1
 layer0_match_type = "s"
@@ -164,6 +169,7 @@ layer0_match_with = "g", "p", "d", "t", "a"
 layer0_sprite_type = "corner"
 
 [tile_coast]
+tag = "coast"
 blend_layer = 0
 num_layers = 2
 layer0_match_type = "s"
@@ -174,6 +180,7 @@ layer1_match_with = "ocean"
 layer1_sprite_type = "corner"
 
 [tile_floor]
+tag = "floor"
 blend_layer = 1
 num_layers = 3
 layer0_match_type = "s"
@@ -187,6 +194,7 @@ layer2_match_with = "deep"
 layer2_sprite_type = "corner"
 
 [tile_swamp]
+tag = "swamp"
 blend_layer = 0
 num_layers = 2
 layer0_match_type = "g"
@@ -198,6 +206,7 @@ layer1_match_type = "swamp"
 
 ; --------------------------------
 [tile_jungle]
+tag = "jungle"
 blend_layer = 0
 num_layers = 3
 layer0_match_type = "p"
@@ -213,6 +222,7 @@ layer2_is_tall = TRUE
 layer2_offset_y = 4
 
 [tile_forest]
+tag = "forest"
 blend_layer = 0
 num_layers = 3
 layer0_match_type = "p"
@@ -228,6 +238,7 @@ layer2_is_tall = TRUE
 layer2_offset_y = 4
 
 [tile_hills]
+tag = "hills"
 blend_layer = 0
 num_layers = 2
 layer0_match_type = "g"
@@ -237,6 +248,7 @@ layer1_match_type = "hill"
 layer1_match_with = "hill"
 
 [tile_mountains]
+tag = "mountains"
 blend_layer = 0
 num_layers = 3
 layer0_match_type = "g"
@@ -254,6 +266,7 @@ layer2_offset_y = 4
 
 ; --------------------------------
 [tile_grassland]
+tag = "grassland"
 blend_layer = 0
 num_layers = 1
 layer0_match_type = "g"
@@ -261,6 +274,7 @@ layer0_match_with = "s", "p", "d", "t", "a"
 layer0_sprite_type = "corner"
 
 [tile_plains]
+tag = "plains"
 blend_layer = 0
 num_layers = 1
 layer0_match_type = "p"
@@ -268,6 +282,7 @@ layer0_match_with = "s", "g", "d", "t", "a"
 layer0_sprite_type = "corner"
 
 [tile_desert]
+tag = "desert"
 blend_layer = 0
 num_layers = 1
 layer0_match_type = "d"
@@ -275,6 +290,7 @@ layer0_match_with = "s", "g", "p", "t", "a"
 layer0_sprite_type = "corner"
 
 [tile_tundra]
+tag = "tundra"
 blend_layer = 0
 num_layers = 1
 layer0_match_type = "t"
@@ -282,6 +298,7 @@ layer0_match_with = "s", "g", "p", "d", "a"
 layer0_sprite_type = "corner"
 
 [tile_arctic]
+tag = "arctic"
 blend_layer = 0
 num_layers = 1
 layer0_match_type = "a"
