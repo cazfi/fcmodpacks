@@ -20,7 +20,7 @@ format_version=10
 ;                 some circumstances
 ; helptxt       = displayed in the help for units with this flag (optional)
 flags =
-  { "name", "helptext"
+  { "name", "helptxt"
     _("Horse"), _("Attack value halved when attacking Halberdiers.")
     _("Unbribable")
     _("TradeRoute"), _("Can establish trade routes (must travel to target city).")
