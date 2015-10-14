@@ -1079,7 +1079,7 @@ graphic        = "tx.pollution"
 graphic_alt    = "-"
 activity_gfx   = "None"
 rmact_gfx      = "unit.pollution"
-rmact_gfx_alr  = "-"
+rmact_gfx_alt  = "-"
 reqs           =
     { "type", "name", "range", "present"
       "TerrainFlag", "NoPollution", "Local", FALSE
