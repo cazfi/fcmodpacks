@@ -187,6 +187,11 @@ flags         = "TerrainSpeed", "DamageSlows", "AttackNonNative", "AttFromNonNat
 ; bonuses.flag  = flag of the unit that bonus applies against
 ; bonuses.type  = type of the bonus. See below
 ; bonuses.value = value of the bonus. Sum of these is used if multiple apply.
+; bonuses.quiet = don't auto generate help text for this bonus. Use this if
+;                 the bonus is documented in the unit type's help text.
+;                 This is useful when the combination of a unit's bonuses
+;                 becomes complex enough to make the auto generated help
+;                 ugly or inaccurate.
 ; flags         = special flag strings; list of built-in flags described below
 ;                 and/or user flags defined above
 ;
@@ -284,6 +289,9 @@ flags         = "TerrainSpeed", "DamageSlows", "AttackNonNative", "AttFromNonNat
 ; "Capturable"  = can be captured by units with "Capturer" flag
 ; "Capturer"    = can capture units with flag "Capturable" instead of
 ;                 fighting them
+; "NewCityGamesOnly" = unit can't be built on scenarios where founding new cities
+;                 is not allowed. Give this flag to units that would make no sense
+;                 to have in a game with such a scenario
 ;
 ; Following flag strings require extra fields:
 ;  "Paratroopers"
