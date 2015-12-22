@@ -201,8 +201,8 @@ ui_name_bribe_unit = _("Bribe Enemy %sUnit%s")
 ; /* TRANS: _Sabotage City (3% chance of success). */
 ui_name_sabotage_city = _("%sSabotage City%s")
 
-; /* TRANS: Industria_l Sabotage (3% chance of success). */
-ui_name_targeted_sabotage_city = _("Industria%sl Sabotage%s")
+; /* TRANS: Industrial _Sabotage (3% chance of success). */
+ui_name_targeted_sabotage_city = _("Industrial %sSabotage%s")
 
 ; /* TRANS: Incite a Re_volt (3% chance of success). */
 ui_name_incite_city = _("Incite a Re%svolt%s")
@@ -213,8 +213,8 @@ ui_name_establish_embassy = _("Establish %sEmbassy%s")
 ; /* TRANS: Steal _Technology (3% chance of success). */
 ui_name_steal_tech = _("Steal %sTechnology%s")
 
-; /* TRANS: In_dustrial Espionage (3% chance of success). */
-ui_name_targeted_steal_tech = _("In%sdustrial Espionage%s")
+; /* TRANS: Indus_trial Espionage (3% chance of success). */
+ui_name_targeted_steal_tech = _("Indus%strial Espionage%s")
 
 ; /* TRANS: _Investigate City (100% chance of success). */
 ui_name_investigate_city = _("%sInvestigate City%s")
@@ -230,6 +230,9 @@ ui_name_help_wonder = _("Help %sbuild Wonder%s")
 
 ; /* TRANS: _Build City (100% chance of success). */
 ui_name_found_city = _("%sBuild City%s")
+ 
+; /* TRANS: Rec_ycle Unit (100% chance of success). */
+ui_name_recycle_unit = _("Rec%sycle Unit%s")
 
 ; /* TRANS: _Add to City (100% chance of success). */
 ui_name_join_city = _("%sAdd to City%s")
@@ -418,6 +421,13 @@ target_reqs    =
       "BuildingGenus", "SmallWonder", "Local"
     }
 
+[actionenabler_recycle_unit]
+action = "Recycle Unit"
+actor_reqs    =
+    { "type",   "name", "range", "present"
+      "UnitFlag", "Undisbandable", "Local", FALSE
+    }
+
 [actionenabler_build_city_pioneer]
 action = "Found City"
 actor_reqs    =
@@ -526,8 +536,9 @@ victory_min_points = 1000
 victory_lead_pct   = 200
 
 ; How much each culture point affects the migration
-; from/to the city.
-migration_pct = 50
+; from/to the city. Each culture point count as this many permilles
+; of a migration point.
+migration_pml = 50
 
 [calendar]
 ; Year in the beginning of the game
