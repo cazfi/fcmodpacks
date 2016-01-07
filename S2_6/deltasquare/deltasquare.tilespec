@@ -2,7 +2,7 @@
 [tilespec]
 
 ; Format and options of this tilespec file:
-options = "+Freeciv-tilespec-Devel-2013.Oct.19 duplicates_ok"
+options = "+Freeciv-tilespec-Devel-2015.Dec.17 duplicates_ok"
 
 ; A simple name for the tileset specified by this file:
 name = "amplio2"
@@ -58,6 +58,18 @@ citybar_offset_y = 30
 
 ; offset the tile label text by this amount
 tilelabel_offset_y = 15
+
+; offset the upkeep icons by this amount from the top of the unit itself.
+; The default is the normal tile height, which means that the upkeep icons
+; appear below the unit icon if the unit icons are equal to tile height
+; (typical in overhead tileset), or overlay lower part of the unit icon,
+; if unit icon is higher than tiles (typical in iso tilesets)
+;unit_upkeep_offset_y = 0
+
+; Like unit_upkeep_offset_y, but to be used in case there`s only small
+; space for the overall icon produced. Defaults to unit_upkeep_offset_y -
+; not having alternative layout.
+;unit_upkeep_small_offset_y = 0
 
 ; Font size (points) to use to draw city names and productions:
 city_names_font_size = 10
