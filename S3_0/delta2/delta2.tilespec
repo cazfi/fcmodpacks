@@ -5,7 +5,7 @@
 options = "+Freeciv-tilespec-Devel-2015-Dec-17 duplicates_ok"
 
 ; A simple name for the tileset specified by this file:
-name = "delta2"
+name = "Delta2"
 priority = 3
 
 ; Version of the tileset
