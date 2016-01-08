@@ -10,15 +10,15 @@
 options = "+Freeciv-tilespec-Devel-2015-Dec-17"
 
 ; A simple name for the tileset specified by this file:
-name = "freeland-normal"
+name = "Freeland-normal"
 priority = 22
 
 ; Version information
 version = "3.0-beta2.2-pre"
 
 ; Summary and full description of the tileset.
-summary = _("Freeland with 64x32 tiles")
-;description = ""
+summary = _("Freeland tileset with 64x32 tiles")
+description = *freeland/README*
 
 ; Basic tile sizes:
 normal_tile_width = 64
@@ -134,7 +134,7 @@ files =
   "freeland/normal/terrains/d.spec",
   "freeland/normal/terrains/t.spec",
   "freeland/normal/terrains/a.spec",
-  
+
 ; Special terrains
   "freeland/normal/terrains/oceans.spec",
   "freeland/normal/terrains/deeps.spec",
