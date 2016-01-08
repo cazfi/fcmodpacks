@@ -14,7 +14,7 @@ name = "Freeland-normal"
 priority = 22
 
 ; Version information
-version = "3.0-beta2.1-02"
+version = "3.0-beta2.1-03"
 
 ; Summary and full description of the tileset.
 summary = _("Freeland tileset with 64x32 tiles")
