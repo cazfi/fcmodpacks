@@ -10,15 +10,15 @@
 options = "+Freeciv-tilespec-Devel-2015.Dec.17"
 
 ; A simple name for the tileset specified by this file:
-name = "freeland-big"
+name = "Freeland-big"
 priority = 22
 
 ; Version information
 version = "3.0-beta2.1-02"
 
 ; Summary and full description of the tileset.
-summary = _("Freeland with 128x64 tiles")
-;description = ""
+summary = _("Freeland tileset with 128x64 tiles")
+description = *freeland/README*
 
 ; Basic tile sizes:
 normal_tile_width = 128
