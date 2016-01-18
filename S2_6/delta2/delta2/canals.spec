@@ -22,7 +22,7 @@ dy = 64
 pixel_border = 1
 
 tiles = { "row", "column","tag"
-; Canals (as special type), and whether north, south, east, west 
+; Canals (as special type), and whether north, south, east, west
 ; also has river or is ocean:
 
  0,  0, "road.canal_s_n0e0se0s0w0nw0"
