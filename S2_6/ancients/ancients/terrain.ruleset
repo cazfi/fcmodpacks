@@ -984,6 +984,7 @@ ui_name_base_airbase = _("?gui_type:Build Nothing")
 ; activity_gfx            = tag specifying graphic for unit building extra
 ;                           (can be "none")
 ; act_gfx_alt             = tag for alternative graphic for unit building extra
+; act_gfx_alt2            = tag for second alternative graphic for unit building extra
 ; rmact_gfx               = tag specifying graphic for unit removing extra
 ;                           (can be "none")
 ; rmact_gfx_alt           = tag for alternative graphic for unit removing extra
@@ -1049,11 +1050,12 @@ causes         = "Irrigation"
 rmcauses       = "Pillage"
 graphic        = "tx.irrigation"
 graphic_alt    = "-"
-activity_gfx   = "unit.irrigate"
+activity_gfx   = "unit.irrigation"
+act_gfx_alt    = "unit.irrigate"
+act_gfx_alt2   = "-"
 rmact_gfx      = "None"
 build_time     = 0
 removal_time   = 0
-act_gfx_alt    = "-"
 conflicts      = "Mine"
 
 [extra_mine]
@@ -1064,7 +1066,8 @@ rmcauses       = "Pillage"
 graphic        = "tx.mine"
 graphic_alt    = "-"
 activity_gfx   = "unit.mine"
-act_gfx_alt    = "-"
+act_gfx_alt    = "unit.plant"
+act_gfx_alt2   = "-"
 rmact_gfx      = "None"
 build_time     = 0
 removal_time   = 0
@@ -1078,6 +1081,8 @@ rmcauses       = "CleanPollution"
 graphic        = "tx.pollution"
 graphic_alt    = "-"
 activity_gfx   = "None"
+act_gfx_alt    = "-"
+act_gfx_alt2   = "-"
 rmact_gfx      = "unit.pollution"
 rmact_gfx_alt  = "-"
 reqs           =
@@ -1096,6 +1101,8 @@ causes         = "Hut"
 graphic        = "tx.village"
 graphic_alt    = "-"
 activity_gfx   = "None"
+act_gfx_alt    = "-"
+act_gfx_alt2   = "-"
 rmact_gfx      = "None"
 reqs           =
     { "type", "name", "range"
@@ -1125,6 +1132,7 @@ graphic        = "base.fortress"
 graphic_alt    = "-"
 activity_gfx   = "unit.fortress"
 act_gfx_alt    = "-"
+act_gfx_alt2   = "-"
 rmact_gfx      = "None"
 reqs           =
     { "type", "name", "range", "present"
@@ -1147,6 +1155,7 @@ graphic        = "road.road"
 graphic_alt    = "-"
 activity_gfx   = "unit.road"
 act_gfx_alt    = "-"
+act_gfx_alt2   = "-"
 rmact_gfx      = "None"
 reqs           =
     { "type", "name", "range"
@@ -1174,6 +1183,8 @@ causes         = "Road"
 graphic        = "road.river"
 graphic_alt    = "-"
 activity_gfx   = "None"
+act_gfx_alt    = "-"
+act_gfx_alt2   = "-"
 rmact_gfx      = "None"
 reqs           =
     { "type", "name", "range"

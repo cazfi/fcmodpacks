@@ -11,7 +11,7 @@ options="+Freeciv-ruleset-Devel-2014.September.14c"
 name = _("Ancients")
 
 ; Version of the ruleset
-version = "2.6-dev"
+version = "2.6-beta"
 
 ; Summary of the ruleset
 summary = _("You are playing Freeciv with Ancients ruleset. \
