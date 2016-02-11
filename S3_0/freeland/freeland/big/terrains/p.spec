@@ -1,6 +1,9 @@
 [spec]
 
+; Format and options of this spec file:
 options = "+Freeciv-spec-Devel-2015-Mar-25"
+
+[info]
 
 artists = "
 	 Peter Arbor <peter.arbor@gmail.com>
