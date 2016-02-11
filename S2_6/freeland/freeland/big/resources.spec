@@ -24,7 +24,7 @@ pixel_border = 0
 
 ; Terrain special resources:
 tiles = { "row", "column","tag"
-	
+
  0, 0, "ts.oasis"
  0, 1, "ts.oil"
 
@@ -51,10 +51,10 @@ tiles = { "row", "column","tag"
 
  8, 0, "ts.gems"
  8, 1, "ts.fruit"
- 
+
  9, 0, "ts.fish"
  9, 1, "ts.whales"
- 
+
  0, 2, "ts.seals"
  0, 3, "ts.forest_game"
 
@@ -63,10 +63,10 @@ tiles = { "row", "column","tag"
 
  3, 2, "tx.village"
  3, 3, "user.attention"
- 
+
  4, 2, "tx.mine"
- 4, 3, "tx.oil_mine" 
- 
+ 4, 3, "tx.oil_mine", "tx.oil_rig"
+
  9, 2, "tx.fallout"
  9, 3, "tx.pollution"
 
