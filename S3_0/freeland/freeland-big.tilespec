@@ -116,6 +116,7 @@ files =
   "freeland/big/grid.spec",
   "freeland/big/nuke.spec",
   "freeland/big/resources.spec",
+  "freeland/big/paths.spec",
   "freeland/big/fog.spec",
 
 ; Units
