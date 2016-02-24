@@ -18,7 +18,7 @@ x_top_left = 0
 y_top_left = 0
 dx = 64
 dy = 32
-is_pixel_border = 0
+pixel_border = 0
 
 tiles = { "row", "column", "tag"
 0,0, "t.l0.cellgroup_d_s_s_s"
