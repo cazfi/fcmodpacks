@@ -17,8 +17,9 @@ format_version=10
 
 [control]
 ; Names for custom terrain flags. There can be up to 8 of these.
-; name          = rule name; not translateable, but may be displayed in
-;                 some circumstances
+; name          = rule name; In some circumstances user may see this
+;                 as part of some sentences, so try to make it descriptive
+;                 and sensible.
 ; helptxt       = displayed in the help for terrains with this flag (optional)
 flags =
  { "name", "helptxt"
@@ -34,6 +35,14 @@ ocean_reclaim_requirement = 30
 ; Percentage of "water" tiles required to be adjacent to a land tile before
 ; it may be "channeled" into a water tile (0-101; 0=anywhere, default 101=nowhere)
 land_channel_requirement = 10
+
+; Percentage of unfrozen tiles (no "Frozen" flag) required to be adjacent
+; to a frozen tile before it can thaw (0-101; 0=anywhere, default 101=nowhere)
+thaw_requirement = 0
+
+; Percentage of frozen tiles ("Frozen" flag) required to be adjacent to an
+; unfrozen tile before it can freeze (0-101; 0=anywhere, default 101=nowhere)
+freeze_requirement = 0
 
 ; Bodies of water up to this size are considered freshwater lakes, if there is
 ; also terrain type(s) with flag "FreshWater" in the ruleset.
@@ -73,9 +82,11 @@ ocean_resources = FALSE
 ;                        present, 'name' is used. Since the name used in
 ;                        savegames must not change, use this when renaming a
 ;                        terrain after a ruleset has been released.
-; graphic              = preferred graphic [tile_*] in tilespec.
-; graphic_alt          = alternate graphic [tile_*] when preferred is not found;
-;                        otherwise may be "-"
+; graphic              = preferred graphic; Tilespec [tile_*] section
+;                        with 'tag' matching this will be used. 
+; graphic_alt          = alternate graphic. When no tilespec 'tag' matching
+;                        preferred graphic is not found, this will be used.
+;                        Otherwise may be "-"
 ; identifier           = single-character identifier used in savegames.  This
 ;                        must be unique for each terrain, and changing it will
 ;                        break savegame compatibility.
@@ -152,8 +163,14 @@ ocean_resources = FALSE
 ;   - NoZoc            = Units on this terrain are not generating or subject
 ;                        to zoc
 ;   - NoFortify        = Units cannot fortify on this terrain
+;   - Frozen           = Frozen/polar terrain. For water tiles, Frozen terrain
+;                        is generated near poles. Conversion between frozen
+;                        and unfrozen terrain can be controlled with
+;                        thaw_requirement/freeze_requirement, and Frozen
+;                        terrain is shown differently on the overview map.
 ; property_*           = specific property % values used by mapgen.  Most
-;                        terrains will have 0 for most values.
+;                        terrains will have 0 for most values. Properties
+;                        other than ocean_depth are only used for land tiles.
 ;  - mountainous       = degree to which this terrain is mountainous
 ;  - green             = how much life this terrain has
 ;  - foliage           = how much thick undergrowth the terrain has 
@@ -161,6 +178,7 @@ ocean_resources = FALSE
 ;  - temperate         = how "temperate" the terrain is (med temperature)
 ;  - cold              = how "cold" the terrain is (low temperature)
 ;  - frozen            = how "frozen" the terrain is (very low temperature)
+;                        (does not necessarily have to have the "Frozen" flag)
 ;  - wet               = how "wet" the terrain is (moisture)
 ;  - dry               = how "dry" the terrain is (moisture)
 ;  - ocean_depth       = the depth of an ocean, as an average level
@@ -762,9 +780,6 @@ Tundra are broad, cold regions, fit for some agriculture and little\
 ; Notes:
 ;
 ; extra                = name of the extra this resource section is part of
-; graphic              = preferred graphic [tile_*] in tilespec.
-; graphic_alt          = alternate graphic [tile_*] when preferred is not found;
-;                        otherwise may be "-"
 ; identifier           = single-character identifier used in savegames.  This
 ;                        must be unique for each resource, and changing it will
 ;                        break savegame compatibility.
@@ -774,24 +789,18 @@ Tundra are broad, cold regions, fit for some agriculture and little\
 
 [resource_gold]
 extra       = "Gold"
-graphic     = "ts.gold"
-graphic_alt = "-"
 identifier  = "$"
 trade       = 6
 # glacier, hills, mountains.
 
 [resource_iron]
 extra       = "Iron"
-graphic     = "ts.iron"
-graphic_alt = "-"
 identifier  = "/"
 shield      = 3
 # mountains.
 
 [resource_game]
 extra       = "Game"
-graphic     = "ts.tundra_game"
-graphic_alt = "-"
 identifier  = "e"
 food        = 2
 shield      = 1
@@ -799,8 +808,6 @@ shield      = 1
 
 [resource_furs]
 extra       = "Furs"
-graphic     = "ts.furs"
-graphic_alt = "-"
 identifier  = "u"
 food        = 1
 trade       = 3
@@ -808,24 +815,18 @@ trade       = 3
 
 [resource_coal]
 extra       = "Coal"
-graphic     = "ts.coal"
-graphic_alt = "-"
 identifier  = "c"
 shield      = 2
 # hills.
 
 [resource_fish]
 extra       = "Fish"
-graphic     = "ts.fish"
-graphic_alt = "-"
 identifier  = "y"
 food        = 2
 # ocean.
 
 [resource_fruit]
 extra       = "Fruit"
-graphic     = "ts.fruit"
-graphic_alt = "-"
 identifier  = "f"
 food        = 3
 trade       = 1
@@ -833,8 +834,6 @@ trade       = 1
 
 [resource_gems]
 extra       = "Gems"
-graphic     = "ts.gems"
-graphic_alt = "-"
 identifier  = "g"
 trade       = 4
 # jungle.
@@ -843,16 +842,12 @@ trade       = 4
 
 [resource_buffalo]
 extra       = "Buffalo"
-graphic     = "ts.buffalo"
-graphic_alt = "-"
 identifier  = "b"
 shield      = 2
 # plains (horses => buffalo => cattle).
 
 [resource_wheat]
 extra       = "Wheat"
-graphic     = "ts.wheat"
-graphic_alt = "-"
 identifier  = "j"
 food        = 2
 # plains.
@@ -865,24 +860,18 @@ food        = 2
 
 [resource_oasis]
 extra       = "Oasis"
-graphic     = "ts.oasis"
-graphic_alt = "-"
 identifier  = "o"
 food        = 3
 # desert.
 
 [resource_peat]
 extra       = "Peat"
-graphic     = "ts.peat"
-graphic_alt = "-"
 identifier  = "a"
 shield      = 4
 # swamp (petroleum => peat => petroleum).
 
 [resource_pheasant]
 extra       = "Pheasant"
-graphic     = "ts.pheasant"
-graphic_alt = "-"
 identifier  = "p"
 food        = 2
 # forest, forested.
@@ -891,16 +880,12 @@ food        = 2
 
 [resource_bonus]
 extra       = "Resources"
-graphic     = "ts.grassland_resources"
-graphic_alt = "-"
 identifier  = "r"
 shield      = 1
 # grassland.
 
 [resource_icy_ivory]
 extra       = "Ivory"
-graphic     = "ts.arctic_ivory"
-graphic_alt = "-"
 identifier  = "i"
 food        = 1
 shield      = 1
@@ -909,16 +894,12 @@ trade       = 4
 
 [resource_silk]
 extra       = "Silk"
-graphic     = "ts.silk"
-graphic_alt = "-"
 identifier  = "s"
 trade       = 3
 # forest, wooded.
 
 [resource_spice]
 extra       = "Spice"
-graphic     = "ts.spice"
-graphic_alt = "-"
 identifier  = "t"
 food        = 2
 trade       = 4
@@ -928,8 +909,6 @@ trade       = 4
 
 [resource_whales]
 extra       = "Whales"
-graphic     = "ts.whales"
-graphic_alt = "-"
 identifier  = "v"
 food        = 1
 shield      = 1
@@ -937,16 +916,12 @@ shield      = 1
 
 [resource_wine]
 extra       = "Wine"
-graphic     = "ts.wine"
-graphic_alt = "-"
 identifier  = "w"
 trade       = 4
 # hills-only.
 
 [resource_oil]
 extra       = "Oil"
-graphic     = "ts.oil"
-graphic_alt = "-"
 identifier  = "x"
 shield      = 3 ; glacier used to have 4
 # glacier-only.
@@ -984,6 +959,7 @@ ui_name_base_airbase = _("?gui_type:Build Nothing")
 ; activity_gfx            = tag specifying graphic for unit building extra
 ;                           (can be "none")
 ; act_gfx_alt             = tag for alternative graphic for unit building extra
+; act_gfx_alt2            = tag for second alternative graphic for unit building extra
 ; rmact_gfx               = tag specifying graphic for unit removing extra
 ;                           (can be "none")
 ; rmact_gfx_alt           = tag for alternative graphic for unit removing extra
@@ -1058,11 +1034,12 @@ causes         = "Irrigation"
 rmcauses       = "Pillage"
 graphic        = "tx.irrigation"
 graphic_alt    = "-"
-activity_gfx   = "unit.irrigate"
+activity_gfx   = "unit.irrigation"
+act_gfx_alt    = "unit.irrigate"
+act_gfx_alt2   = "-"
 rmact_gfx      = "None"
 build_time     = 0
 removal_time   = 0
-act_gfx_alt    = "-"
 conflicts      = "Mine"
 
 [extra_mine]
@@ -1073,7 +1050,8 @@ rmcauses       = "Pillage"
 graphic        = "tx.mine"
 graphic_alt    = "-"
 activity_gfx   = "unit.mine"
-act_gfx_alt    = "-"
+act_gfx_alt    = "unit.plant"
+act_gfx_alt2   = "-"
 rmact_gfx      = "None"
 build_time     = 0
 removal_time   = 0
@@ -1087,6 +1065,8 @@ rmcauses       = "CleanPollution"
 graphic        = "tx.pollution"
 graphic_alt    = "-"
 activity_gfx   = "None"
+act_gfx_alt    = "-"
+act_gfx_alt2   = "-"
 rmact_gfx      = "unit.pollution"
 rmact_gfx_alt  = "-"
 reqs           =
@@ -1105,6 +1085,8 @@ causes         = "Hut"
 graphic        = "tx.village"
 graphic_alt    = "-"
 activity_gfx   = "None"
+act_gfx_alt    = "-"
+act_gfx_alt2   = "-"
 rmact_gfx      = "None"
 reqs           =
     { "type", "name", "range"
@@ -1134,6 +1116,7 @@ graphic        = "base.fortress"
 graphic_alt    = "-"
 activity_gfx   = "unit.fortress"
 act_gfx_alt    = "-"
+act_gfx_alt2   = "-"
 rmact_gfx      = "None"
 reqs           =
     { "type", "name", "range", "present"
@@ -1156,6 +1139,7 @@ graphic        = "road.road"
 graphic_alt    = "-"
 activity_gfx   = "unit.road"
 act_gfx_alt    = "-"
+act_gfx_alt2   = "-"
 rmact_gfx      = "None"
 reqs           =
     { "type", "name", "range"
@@ -1183,6 +1167,8 @@ causes         = "Road"
 graphic        = "road.river"
 graphic_alt    = "-"
 activity_gfx   = "None"
+act_gfx_alt    = "-"
+act_gfx_alt2   = "-"
 rmact_gfx      = "None"
 reqs           =
     { "type", "name", "range"
@@ -1207,10 +1193,11 @@ name           = _("Gold")
 category       = "Resource"
 causes         = "Resource"
 ;rmcauses       = ""
-graphic        = "None"
+graphic        = "ts.gold"
 graphic_alt    = "-"
 activity_gfx   = "None"
 act_gfx_alt    = "-"
+act_gfx_alt2   = "-"
 rmact_gfx      = "None"
 rmact_gfx_alt  = "-"
 
@@ -1219,10 +1206,11 @@ name           = _("Iron")
 category       = "Resource"
 causes         = "Resource"
 ;rmcauses       = ""
-graphic        = "None"
+graphic        = "ts.iron"
 graphic_alt    = "-"
 activity_gfx   = "None"
 act_gfx_alt    = "-"
+act_gfx_alt2   = "-"
 rmact_gfx      = "None"
 rmact_gfx_alt  = "-"
 
@@ -1231,10 +1219,11 @@ name           = _("?animals:Game")
 category       = "Resource"
 causes         = "Resource"
 ;rmcauses       = ""
-graphic        = "None"
+graphic        = "ts.tundra_game"
 graphic_alt    = "-"
 activity_gfx   = "None"
 act_gfx_alt    = "-"
+act_gfx_alt2   = "-"
 rmact_gfx      = "None"
 rmact_gfx_alt  = "-"
 
@@ -1243,10 +1232,11 @@ name           = _("Furs")
 category       = "Resource"
 causes         = "Resource"
 ;rmcauses       = ""
-graphic        = "None"
+graphic        = "ts.furs"
 graphic_alt    = "-"
 activity_gfx   = "None"
 act_gfx_alt    = "-"
+act_gfx_alt2   = "-"
 rmact_gfx      = "None"
 rmact_gfx_alt  = "-"
 
@@ -1255,10 +1245,11 @@ name           = _("Coal")
 category       = "Resource"
 causes         = "Resource"
 ;rmcauses       = ""
-graphic        = "None"
+graphic        = "ts.coal"
 graphic_alt    = "-"
 activity_gfx   = "None"
 act_gfx_alt    = "-"
+act_gfx_alt2   = "-"
 rmact_gfx      = "None"
 rmact_gfx_alt  = "-"
 
@@ -1267,10 +1258,11 @@ name           = _("Fish")
 category       = "Resource"
 causes         = "Resource"
 ;rmcauses       = ""
-graphic        = "None"
+graphic        = "ts.fish"
 graphic_alt    = "-"
 activity_gfx   = "None"
 act_gfx_alt    = "-"
+act_gfx_alt2   = "-"
 rmact_gfx      = "None"
 rmact_gfx_alt  = "-"
 
@@ -1279,10 +1271,11 @@ name           = _("Fruit")
 category       = "Resource"
 causes         = "Resource"
 ;rmcauses       = ""
-graphic        = "None"
+graphic        = "ts.fruit"
 graphic_alt    = "-"
 activity_gfx   = "None"
 act_gfx_alt    = "-"
+act_gfx_alt2   = "-"
 rmact_gfx      = "None"
 rmact_gfx_alt  = "-"
 
@@ -1291,10 +1284,11 @@ name           = _("Gems")
 category       = "Resource"
 causes         = "Resource"
 ;rmcauses       = ""
-graphic        = "None"
+graphic        = "ts.gems"
 graphic_alt    = "-"
 activity_gfx   = "None"
 act_gfx_alt    = "-"
+act_gfx_alt2   = "-"
 rmact_gfx      = "None"
 rmact_gfx_alt  = "-"
 
@@ -1303,10 +1297,11 @@ name           = _("Buffalo")
 category       = "Resource"
 causes         = "Resource"
 ;rmcauses       = ""
-graphic        = "None"
+graphic        = "ts.buffalo"
 graphic_alt    = "-"
 activity_gfx   = "None"
 act_gfx_alt    = "-"
+act_gfx_alt2   = "-"
 rmact_gfx      = "None"
 rmact_gfx_alt  = "-"
 
@@ -1315,10 +1310,11 @@ name           = _("Wheat")
 category       = "Resource"
 causes         = "Resource"
 ;rmcauses       = ""
-graphic        = "None"
+graphic        = "ts.wheat"
 graphic_alt    = "-"
 activity_gfx   = "None"
 act_gfx_alt    = "-"
+act_gfx_alt2   = "-"
 rmact_gfx      = "None"
 rmact_gfx_alt  = "-"
 
@@ -1327,10 +1323,11 @@ name           = _("Oasis")
 category       = "Resource"
 causes         = "Resource"
 ;rmcauses       = ""
-graphic        = "None"
+graphic        = "ts.oasis"
 graphic_alt    = "-"
 activity_gfx   = "None"
 act_gfx_alt    = "-"
+act_gfx_alt2   = "-"
 rmact_gfx      = "None"
 rmact_gfx_alt  = "-"
 
@@ -1339,10 +1336,11 @@ name           = _("Peat")
 category       = "Resource"
 causes         = "Resource"
 ;rmcauses       = ""
-graphic        = "None"
+graphic        = "ts.peat"
 graphic_alt    = "-"
 activity_gfx   = "None"
 act_gfx_alt    = "-"
+act_gfx_alt2   = "-"
 rmact_gfx      = "None"
 rmact_gfx_alt  = "-"
 
@@ -1351,10 +1349,11 @@ name           = _("Pheasant")
 category       = "Resource"
 causes         = "Resource"
 ;rmcauses       = ""
-graphic        = "None"
+graphic        = "ts.pheasant"
 graphic_alt    = "-"
 activity_gfx   = "None"
 act_gfx_alt    = "-"
+act_gfx_alt2   = "-"
 rmact_gfx      = "None"
 rmact_gfx_alt  = "-"
 
@@ -1363,10 +1362,11 @@ name           = _("Resources")
 category       = "Resource"
 causes         = "Resource"
 ;rmcauses       = ""
-graphic        = "None"
+graphic        = "ts.grassland_resources"
 graphic_alt    = "-"
 activity_gfx   = "None"
 act_gfx_alt    = "-"
+act_gfx_alt2   = "-"
 rmact_gfx      = "None"
 rmact_gfx_alt  = "-"
 
@@ -1375,10 +1375,11 @@ name           = _("Ivory")
 category       = "Resource"
 causes         = "Resource"
 ;rmcauses       = ""
-graphic        = "None"
+graphic        = "ts.arctic_ivory"
 graphic_alt    = "-"
 activity_gfx   = "None"
 act_gfx_alt    = "-"
+act_gfx_alt2   = "-"
 rmact_gfx      = "None"
 rmact_gfx_alt  = "-"
 
@@ -1387,10 +1388,11 @@ name           = _("Silk")
 category       = "Resource"
 causes         = "Resource"
 ;rmcauses       = ""
-graphic        = "None"
+graphic        = "ts.silk"
 graphic_alt    = "-"
 activity_gfx   = "None"
 act_gfx_alt    = "-"
+act_gfx_alt2   = "-"
 rmact_gfx      = "None"
 rmact_gfx_alt  = "-"
 
@@ -1399,10 +1401,11 @@ name           = _("Spice")
 category       = "Resource"
 causes         = "Resource"
 ;rmcauses       = ""
-graphic        = "None"
+graphic        = "ts.spice"
 graphic_alt    = "-"
 activity_gfx   = "None"
 act_gfx_alt    = "-"
+act_gfx_alt2   = "-"
 rmact_gfx      = "None"
 rmact_gfx_alt  = "-"
 
@@ -1411,10 +1414,11 @@ name           = _("Whales")
 category       = "Resource"
 causes         = "Resource"
 ;rmcauses       = ""
-graphic        = "None"
+graphic        = "ts.whales"
 graphic_alt    = "-"
 activity_gfx   = "None"
 act_gfx_alt    = "-"
+act_gfx_alt2   = "-"
 rmact_gfx      = "None"
 rmact_gfx_alt  = "-"
 
@@ -1423,10 +1427,11 @@ name           = _("Wine")
 category       = "Resource"
 causes         = "Resource"
 ;rmcauses       = ""
-graphic        = "None"
+graphic        = "ts.wine"
 graphic_alt    = "-"
 activity_gfx   = "None"
 act_gfx_alt    = "-"
+act_gfx_alt2   = "-"
 rmact_gfx      = "None"
 rmact_gfx_alt  = "-"
 
@@ -1435,10 +1440,11 @@ name           = _("Oil")
 category       = "Resource"
 causes         = "Resource"
 ;rmcauses       = ""
-graphic        = "None"
+graphic        = "ts.oil"
 graphic_alt    = "-"
 activity_gfx   = "None"
 act_gfx_alt    = "-"
+act_gfx_alt2   = "-"
 rmact_gfx      = "None"
 rmact_gfx_alt  = "-"
 
@@ -1515,6 +1521,10 @@ flags         = "NoAggressive", "NoStackDeath", "DiplomatDefense"
 ;                           flowing from land tiles to ocean
 ;   - "UnrestrictedInfra" = Use of the enemy owned road is not restricted
 ;                           even if server setting 'restrictinfra' is set
+;   - "JumpFrom"          = Move to a tile nativity providing "JumpTo"
+;                           road is considered native
+;   - "JumpTo"            = Move from a tile nativity providing "JumpFrom"
+;                           road is considered native
 ;
 ; */ <-- avoid gettext warnings
 

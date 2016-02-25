@@ -15,9 +15,10 @@ options="+Freeciv-ruleset-Devel-2015.January.14"
 format_version=10
 
 [control]
-; Names for custom unit type flags. There can be up to 16 of these.
-; name          = rule name; not translateable, but may be displayed in
-;                 some circumstances
+; Names for custom unit type flags. There can be up to 40 of these.
+; name          = rule name; In some circumstances user may see this
+;                 as part of some sentences, so try to make it descriptive
+;                 and sensible.
 ; helptxt       = displayed in the help for units with this flag (optional)
 flags =
   { "name", "helptxt"
@@ -29,6 +30,16 @@ flags =
     _("AddToCity")
     _("Infra"), _("Can build infrastructure.")
   }
+
+; Names for custom unit class flags. There can be up to 8 of these.
+; name          = rule name; In some circumstances user may see this
+;                 as part of some sentences, so try to make it descriptive
+;                 and sensible.
+; helptxt       = displayed in the help for unit type belonging to a class
+;                 with this flag (optional)
+;class_flags =
+;  { "name", "helptxt"
+;  }
 
 [veteran_system]
 ; What are the names of the levels?
@@ -172,9 +183,9 @@ flags         = "TerrainSpeed", "DamageSlows", "AttackNonNative", "AttFromNonNat
 ; convert_time  = time it takes to convert to another unit type
 ; class         = One of the classes listed above
 ; transport_cap = Number of units (ground, or air/missiles, depending on flags)
-; fuel          = number of turns air units can fly before they crash. For
-;                 barbarians this is used as lifetime instead. If this is zero,
-;                 the unit has unlimited fuel, despite flying.
+; fuel          = Number of turns unit can spend outside refuel points.
+;                 If more time passes without unit refueling over turn change,
+;                 they are lost. If this is zero, unit has no need to refuel
 ; uk_*          = upkeep costs, these are used as base values in the game
 ; cargo         = Unit classes this unit can transport
 ; city_size     = Initial size of the cities built by 'Found City' type units
@@ -251,7 +262,6 @@ flags         = "TerrainSpeed", "DamageSlows", "AttackNonNative", "AttFromNonNat
 ; "Diplomat"	= can do diplomat actions (see diplchance server option)
 ; "Spy"		= enhanced diplomat actions. _Must_ be "Diplomat" also
 ; "Trireme"	= (sea only) cannot leave shoreline
-; "Paratroopers"= can paradrop
 ; "Only_Native_Attack" = cannot attack targets on non-native tiles even if
 ;                 unit class can
 ; "Cant_Fortify" =  cannot fortify even if unit class has "CanFortify" flag
@@ -288,19 +298,30 @@ flags         = "TerrainSpeed", "DamageSlows", "AttackNonNative", "AttFromNonNat
 ; "NewCityGamesOnly" = unit can't be built on scenarios where founding new cities
 ;                 is not allowed. Give this flag to units that would make no sense
 ;                 to have in a game with such a scenario
+; "CanEscape"   = this unit has, given that certain conditions are
+;                 fulfilled, a 50% chance to escape rather than being
+;                 killed when killstack is enabled and the defender of its
+;                 tile is defeated. The conditions are that it has more move
+;                 points than required to move to an adjacent tile plus the
+;                 attackers move points and that the attacker doesn't have
+;                 the "CanKillEscaping" unit type flag.
+; "CanKillEscaping" = an attack from this unit ignores the "CanEscape" unit
+;                 type flag.
 ;
-; Following flag strings require extra fields:
-;  "Paratroopers"
-;   paratroopers_range = the maximal range the unit can be paradropped to
+; Following actions require extra fields:
+;  "Paradrop Unit"
+;   paratroopers_range  = the maximal range the unit can be paradropped to.
+;                         Max range is 65534.
 ;   paratroopers_mr_req = the move rate which is required at least for
 ;                         paradropping (whole movement points)
 ;   paratroopers_mr_sub = the move rate which is subtracted after paradropping
 ;                         (whole movement points)
-; Following actions require extra fields:
 ;  "Bombard"
 ;   bombard_rate = the number of shots fired at enemy units when attacking
 ;  "Join City"
 ;   pop_cost = the number of population added to the target city
+;  "Upgrade Unit"
+;   obsolete_by = the unit type upgraded to.
 ;
 ; ** Roles **
 ;

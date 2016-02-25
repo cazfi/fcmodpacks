@@ -15,6 +15,7 @@ format_version=10
 ;                           See README.effects for list of possible types
 ; value                   = Value added for the effect type when this effect is active,
 ;                           i.e., all requirements are fulfilled
+; multiplier              = Name of the policy that gives a multiplier for effect's value
 ; reqs                    = Requirements for the effect to be active.
 ;                           See README.effects for help on requirements
 ;
@@ -928,7 +929,6 @@ reqs	=
       "Building", "Barracks II", "City", TRUE
       "UnitClass", "Land", "Local", TRUE
       "UnitFlag", "Diplomat", "Local", FALSE
-      "Building", "Barracks", "City", FALSE
     }
 
 [effect_barracks_ii_1]
@@ -948,8 +948,6 @@ reqs	=
       "Building", "Barracks III", "City", TRUE
       "UnitClass", "Land", "Local", TRUE
       "UnitFlag", "Diplomat", "Local", FALSE
-      "Building", "Barracks", "City", FALSE
-      "Building", "Barracks II", "City", FALSE
     }
 
 [effect_barracks_iii_1]
