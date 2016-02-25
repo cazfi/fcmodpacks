@@ -16,8 +16,9 @@ options="+Freeciv-ruleset-Devel-2014.September.14c"
 
 [control]
 ; Names for custom terrain flags. There can be up to 8 of these.
-; name          = rule name; not translateable, but may be displayed in
-;                 some circumstances
+; name          = rule name; In some circumstances user may see this
+;                 as part of some sentences, so try to make it descriptive
+;                 and sensible.
 ; helptxt       = displayed in the help for terrains with this flag (optional)
 flags =
  { "name", "helptxt"
@@ -33,6 +34,14 @@ ocean_reclaim_requirement = 30
 ; Percentage of "water" tiles required to be adjacent to a land tile before
 ; it may be "channeled" into a water tile (0-101; 0=anywhere, default 101=nowhere)
 land_channel_requirement = 10
+
+; Percentage of unfrozen tiles (no "Frozen" flag) required to be adjacent
+; to a frozen tile before it can thaw (0-101; 0=anywhere, default 101=nowhere)
+thaw_requirement = 0
+
+; Percentage of frozen tiles ("Frozen" flag) required to be adjacent to an
+; unfrozen tile before it can freeze (0-101; 0=anywhere, default 101=nowhere)
+freeze_requirement = 0
 
 ; Bodies of water up to this size are considered freshwater lakes, if there is
 ; also terrain type(s) with flag "FreshWater" in the ruleset.
@@ -72,9 +81,11 @@ ocean_resources = FALSE
 ;                        present, 'name' is used. Since the name used in
 ;                        savegames must not change, use this when renaming a
 ;                        terrain after a ruleset has been released.
-; graphic              = preferred graphic [tile_*] in tilespec.
-; graphic_alt          = alternate graphic [tile_*] when preferred is not found;
-;                        otherwise may be "-"
+; graphic              = preferred graphic; Tilespec [tile_*] section
+;                        with 'tag' matching this will be used. 
+; graphic_alt          = alternate graphic. When no tilespec 'tag' matching
+;                        preferred graphic is not found, this will be used.
+;                        Otherwise may be "-"
 ; identifier           = single-character identifier used in savegames.  This
 ;                        must be unique for each terrain, and changing it will
 ;                        break savegame compatibility.
@@ -151,8 +162,14 @@ ocean_resources = FALSE
 ;   - NoZoc            = Units on this terrain are not generating or subject
 ;                        to zoc
 ;   - NoFortify        = Units cannot fortify on this terrain
+;   - Frozen           = Frozen/polar terrain. For water tiles, Frozen terrain
+;                        is generated near poles. Conversion between frozen
+;                        and unfrozen terrain can be controlled with
+;                        thaw_requirement/freeze_requirement, and Frozen
+;                        terrain is shown differently on the overview map.
 ; property_*           = specific property % values used by mapgen.  Most
-;                        terrains will have 0 for most values.
+;                        terrains will have 0 for most values. Properties
+;                        other than ocean_depth are only used for land tiles.
 ;  - mountainous       = degree to which this terrain is mountainous
 ;  - green             = how much life this terrain has
 ;  - foliage           = how much thick undergrowth the terrain has 
@@ -160,6 +177,7 @@ ocean_resources = FALSE
 ;  - temperate         = how "temperate" the terrain is (med temperature)
 ;  - cold              = how "cold" the terrain is (low temperature)
 ;  - frozen            = how "frozen" the terrain is (very low temperature)
+;                        (does not necessarily have to have the "Frozen" flag)
 ;  - wet               = how "wet" the terrain is (moisture)
 ;  - dry               = how "dry" the terrain is (moisture)
 ;  - ocean_depth       = the depth of an ocean, as an average level
@@ -762,9 +780,11 @@ Tundra are broad, cold regions, fit for some agriculture and little\
 ;
 ; name                 = name as seen by user; if "unused", it is not used,
 ;                        but is included for conversion and/or the editor.
-; graphic              = preferred graphic [tile_*] in tilespec.
-; graphic_alt          = alternate graphic [tile_*] when preferred is not found;
-;                        otherwise may be "-"
+; graphic              = tag specifying preferred graphic
+; graphic_alt	       = tag for alternate garphic if preferred graphic is not 
+;		         present; especially if preferred graphic is non-standard, 
+;		         this should be a standard tag.  Otherwise can use eg "-" 
+;		         for no alternate graphic.
 ; identifier           = single-character identifier used in savegames.  This
 ;                        must be unique for each resource, and changing it will
 ;                        break savegame compatibility.

@@ -108,6 +108,7 @@ obsolete_by	=
   { "type", "name", "range"
     "Tech", "Tactics", "Player"
     "Building", "Barracks II", "City"
+    "Building", "Barracks III", "City"
   }
 build_cost	= 40
 upkeep		= 1

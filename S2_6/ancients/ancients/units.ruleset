@@ -14,9 +14,10 @@ description="Ancients unit_type data for Freeciv"
 options="+Freeciv-ruleset-Devel-2014.September.14c"
 
 [control]
-; Names for custom unit type flags. There can be up to 16 of these.
-; name          = rule name; not translateable, but may be displayed in
-;                 some circumstances
+; Names for custom unit type flags. There can be up to 32 of these.
+; name          = rule name; In some circumstances user may see this
+;                 as part of some sentences, so try to make it descriptive
+;                 and sensible.
 ; helptxt       = displayed in the help for units with this flag (optional)
 flags =
   { "name", "helptxt"
@@ -168,9 +169,9 @@ flags         = "TerrainSpeed", "DamageSlows", "AttackNonNative", "AttFromNonNat
 ; convert_time  = time it takes to convert to another unit type
 ; class         = One of the classes listed above
 ; transport_cap = Number of units (ground, or air/missiles, depending on flags)
-; fuel          = number of turns air units can fly before they crash. For
-;                 barbarians this is used as lifetime instead. If this is zero,
-;                 the unit has unlimited fuel, despite flying.
+; fuel          = Number of turns unit can spend outside refuel points.
+;                 If more time passes without unit refueling over turn change,
+;                 they are lost. If this is zero, unit has no need to refuel
 ; uk_*          = upkeep costs, these are used as base values in the game
 ; cargo         = Unit classes this unit can transport
 ; city_size     = Initial size of the cities built by 'Cities' type units

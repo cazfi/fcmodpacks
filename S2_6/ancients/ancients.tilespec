@@ -7,11 +7,13 @@ options = "+Freeciv-tilespec-Devel-2015.Dec.17"
 name = "Ancients"
 priority = 5
 
-; There`s no separate versioning in tilesets part of main freeciv distribution
-;version = ""
+; Version numbering so that until freeciv version a.b has stable format,
+; version here is some a.b-pre, a.b-dev, or a.b-alpha. The first version
+; with the stable format is a.b-0, then a.b-1...
+version = "2.6-pre"
 
 ; Summary and full description of the tileset.
-;summary = ""
+summary = _("Tileset to be used with Ancients ruleset.")
 ;description = ""
 
 ; TODO: add more overall information fields on tiles, 
