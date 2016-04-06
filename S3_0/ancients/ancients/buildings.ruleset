@@ -476,8 +476,11 @@ The cost to enemy Diplomats and Spies of inciting a revolt in a\
  buildings.\
 "), _("\
 Take good care of your capital, as its loss may result in your\
- empire plunging into civil war. Losing your current palace also\
- results in losing whatever spaceship you might have.\
+ empire plunging into civil war.\
+"), _("\
+If the city with palace is in dangerous location, or making some\
+ more central city your capital would give better corruption distribution,\
+ you can move Palace by rebuilding it to an other city.\
 "), _("\
 Under Despotism the palace gives you a +75% production bonus,\
  and under Petty Monarchy a +50% production bonus.\
