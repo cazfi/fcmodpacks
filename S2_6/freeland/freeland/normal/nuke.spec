@@ -1,7 +1,7 @@
 [spec]
 
 ; Format and options of this spec file:
-options = "+Freeciv-spec-Devel-2015-Mar-25"
+options = "+Freeciv-2.6-spec"
 
 [info]
 
@@ -9,7 +9,7 @@ artists = "
     Tatu Rissanen <tatu.rissanen@hut.fi>
     Jeff Mallatt <jjm@codewell.com> (miscellaneous)
 
-	 Adaptation by Peter Arbor <peter.arbor@gmail.com>
+    Adaptation by Peter Arbor <peter.arbor@gmail.com>
 "
 
 [file]
