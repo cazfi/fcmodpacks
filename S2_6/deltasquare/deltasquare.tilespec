@@ -2,14 +2,14 @@
 [tilespec]
 
 ; Format and options of this tilespec file:
-options = "+Freeciv-tilespec-Devel-2015.Dec.17 duplicates_ok"
+options = "+Freeciv-2.6-tilespec duplicates_ok"
 
 ; A simple name for the tileset specified by this file:
 name = "Deltasquare"
 priority = 30
 
 ; Version of the tileset
-version = "2.6-alpha"
+version = "2.6-0"
 
 ; Summary and full description of the tileset.
 summary = _("Tileset to be used with variant2 ruleset in square tiles map.")
