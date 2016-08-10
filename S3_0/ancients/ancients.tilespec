@@ -20,7 +20,7 @@ summary = _("Tileset to be used with Ancients ruleset.")
 ; eg, authors, colors, etc.
 
 ; What is the primary ruleset this tileset is meant for.
-;for_ruleset = ""
+for_ruleset = "ancients"
 
 ; Basic tile sizes:
 normal_tile_width  = 30
