@@ -12,8 +12,8 @@ format_version=10
 ; Below: The individual buildings, one per section.
 ; (Buildings = City Improvements and Wonders)
 ;
-; The actual tag used (the * in [building_*]) does not matter, except 
-; it must be unique within this file, and it may be used in debug 
+; The actual tag used (the * in [building_*]) does not matter, except
+; it must be unique within this file, and it may be used in debug
 ; output when reading this file.
 ;
 ; Notes:
@@ -484,6 +484,10 @@ If the city with palace is in dangerous location, or making some\
 "), _("\
 Under Despotism the palace gives you a +75% production bonus,\
  and under Petty Monarchy a +50% production bonus.\
+"), _("\
+If the capital is in a dangerous location, or a more central capital\
+ would give a better corruption distribution, you can move your palace\
+ by rebuilding it in another city.\
 ")
 
 [building_war_harbour]

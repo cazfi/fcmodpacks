@@ -26,6 +26,17 @@ flags =
    _("NoPollution"), _("No Pollution appear here.")
  }
 
+; Names for custom extra flags. There can be up to 8 of these.
+; name          = rule name; In some circumstances user may see this
+;                 as part of some sentences, so try to make it descriptive
+;                 and sensible.
+; helptxt       = displayed in the help for extra types with this flag
+;                 (optional)
+extra_flags =
+  { "name", "helptxt"
+    _("DiplomatDefense"), _("Diplomatic units get a 25% defense bonus in diplomatic fights.")
+  }
+
 [parameters]
 
 ; Percentage of "land" tiles required to be adjacent to a water tile before
@@ -69,9 +80,7 @@ ocean_resources = FALSE
 ; The individual terrain types, one per section.
 ; Roughly sorted by identifier.
 ; The actual tag used (the * in [terrain_*]) must be unique for each terrain,
-; should contain the specific strings found in the nation city_name lists,
 ; and may be used in debug output when reading this file.
-; Some have been chosen to avoid the city_name lists (_peaks, _water).
 ;
 ; Notes:
 ;
@@ -88,8 +97,7 @@ ocean_resources = FALSE
 ;                        preferred graphic is not found, this will be used.
 ;                        Otherwise may be "-"
 ; identifier           = single-character identifier used in savegames.  This
-;                        must be unique for each terrain, and changing it will
-;                        break savegame compatibility.
+;                        must be unique for each terrain.
 ; class                = Terrain class terrain belongs to: "Land" or "Oceanic"
 ; movement_cost        = in whole movement points, not move_fragments;
 ;                        typically 1 to 3
@@ -152,7 +160,7 @@ ocean_resources = FALSE
 ;                        actual chance of river generation is controlled
 ;                        separately).
 ;   - UnsafeCoast      = This terrain does not provide a safe voyage for
-;                        F_TRIRIEME units.
+;                        units with flag "Trireme".
 ;   - FreshWater       = This terrain is used for small bodies of water.
 ;                        If this becomes adjacent to non-FreshWater terrain,
 ;                        the whole contiguous FreshWater area will be flooded
@@ -222,7 +230,7 @@ warmer_drier_result  = "Swamp"
 cooler_wetter_result = "Glacier"
 cooler_drier_result  = "Tundra"
 native_to            = "Sea"
-flags                = "NoCities", "NoPollution", "FreshWater", "NoZoc", "NoFortify"
+flags                = "NoCities", "NoBarbs", "NoPollution", "FreshWater", "NoZoc", "NoFortify"
 property_ocean_depth = 0
 color.r              = 46
 color.g              = 120
@@ -772,20 +780,24 @@ Tundra are broad, cold regions, fit for some agriculture and little\
  else.\
 ")
 
-; The individual resource types, one per section.
-; Roughly sorted by identifier.
+; /* <-- avoid gettext warnings
+;
+; Resource types:
+;
 ; The actual tag used (the * in [resource_*]) must be unique for each resource,
 ; and may be used in debug output when reading this file.
 ;
 ; Notes:
 ;
 ; extra                = name of the extra this resource section is part of
-; identifier           = single-character identifier used in savegames.  This
+; identifier           = single-character identifier used in old savegames. This
 ;                        must be unique for each resource, and changing it will
-;                        break savegame compatibility.
+;                        break loading those old savegames.
 ; food                 = increased food production
 ; shield               = increased shield production
 ; trade                = increased trade production
+;
+; */ <-- avoid gettext warnings
 
 [resource_gold]
 extra       = "Gold"
@@ -956,18 +968,22 @@ ui_name_base_airbase = _("?gui_type:Build Nothing")
 ; graphic_alt             = tag for alternate graphic if preferred graphic is
 ;                           not present. Can use eg "-" for no alternate
 ;                           graphic
-; activity_gfx            = tag specifying graphic for unit building extra
-;                           (can be "none")
+; activity_gfx            = tag specifying graphic for unit building extra.
+;                           This can be "None" to indicate that graphic sprite
+;                           is not needed.
 ; act_gfx_alt             = tag for alternative graphic for unit building extra
 ; act_gfx_alt2            = tag for second alternative graphic for unit building extra
-; rmact_gfx               = tag specifying graphic for unit removing extra
-;                           (can be "none")
+; rmact_gfx               = tag specifying graphic for unit removing extra.
+;                           This can be "None" to indicate that graphic sprite
+;                           is not needed.
 ; rmact_gfx_alt           = tag for alternative graphic for unit removing extra
 ; reqs                    = requirements to build the extra (see effects.ruleset
 ;                           and README.effects for help on requirements)
 ; rmreqs                  = requirements to remove the extra
 ; appearance_reqs         = spontaneous appearance requirements
-; buildable               = Can extra be built? Defaults to TRUE
+; buildable               = Can extra be built? Defaults to TRUE if extra has
+;                           any causes indicating it can result from worker
+;                           activity.
 ; build_time              = how long it takes a unit to build this extra.
 ;                           Value of 0 (default) means that terrain- and
 ;                           build activity specific time is used instead.
@@ -1022,6 +1038,7 @@ ui_name_base_airbase = _("?gui_type:Build Nothing")
 ;                           on the default "Fortification" defense layer multiplied
 ;                           by the 1 + sum of bonuses from the extras on the
 ;                           "Natural" layer.
+;   - "NoStackDeath"      = Units inside do not die all at once when attacked
 ; helptext                = optional help text string; should escape all raw
 ;                           newlines so that xgettext parsing works
 ;
@@ -1129,6 +1146,7 @@ build_time     = 3
 removal_time   = 0
 defense_bonus  = 100
 native_to      = "Land"
+flags          = "DiplomatDefense", "NoStackDeath"
 
 [extra_road]
 name           = _("Road")
@@ -1454,16 +1472,14 @@ rmact_gfx_alt  = "-"
 ;
 ; extra                   = name of the extra this base section is part of
 ; gui_type                = How gui should handle this base.
-;                           Fortress/Airbase/Other
+;                           Value can be "Fortress", "Airbase", or "Other"
 ; border_sq               = Base will claim land ownership up to this radius,
 ;                           -1 to disable. If enabled, base cannot exist in city tile.
 ; vision_main_sq          = Base will have main layer vision to this radius
 ; vision_invis_sq         = Base will have invisible layer vision to this radius
 ; flags
-;   - "NoAggressive"      = Units inside are not considered aggressive
-;   - "NoStackDeath"      = Units inside do not die all at once when attacked
-;   - "DiplomatDefense"   = Diplomats inside get bonus to diplomatic defense
-;   - "ParadropFrom"      = Paradrop can be initiated from base
+;   - "NoAggressive"      = Units inside are not considered aggressive it there`s
+;                           friendly city within 3 tiles
 ;
 ; */ <-- avoid gettext warnings
 
@@ -1471,7 +1487,7 @@ rmact_gfx_alt  = "-"
 extra         = "Fortress"
 gui_type      = "Fortress"
 border_sq     = 5
-flags         = "NoAggressive", "NoStackDeath", "DiplomatDefense"
+flags         = "NoAggressive"
 
 ; /* <-- avoid gettext warnings
 ;

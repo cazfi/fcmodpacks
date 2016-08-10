@@ -1720,3 +1720,11 @@ reqs    =
     { "type", "name", "range", "present"
       "Action", "Targeted Sabotage City", "Local", TRUE
     }
+
+[effect_diplomat_defense_extra]
+type    = "Spy_Resistant"
+value	= 25
+reqs	=
+    { "type",      "name",            "range"
+      "ExtraFlag", "DiplomatDefense", "Local"
+    }

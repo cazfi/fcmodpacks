@@ -193,9 +193,13 @@ force_bombard = TRUE
 ; in stead.
 force_explode_nuclear = TRUE
 
+; If poison_empties_food_stock is set to TRUE a successful "Poison City"
+; will empty the food stock.
+poison_empties_food_stock = FALSE
+
 ; What each action should be called when showing them to the player.
 ; The first %s should be before the mnemonic of the action.
-; The second %s marks were extra details should be insterted.
+; The second %s marks where extra details should be inserted.
 
 ; /* TRANS: _Poison City (3% chance of success). */
 ui_name_poison_city = _("%sPoison City%s")
@@ -231,7 +235,7 @@ ui_name_investigate_city = _("%sInvestigate City%s")
 ui_name_establish_trade_route = _("Establish Trade %sRoute%s")
 
 ; /* TRANS: Enter _Marketplace (100% chance of success). */
-ui_name_enter_marketplace = _("Enter %sMarketplace%s")
+ui_name_enter_marketplace = _("Sell %sGoods%s")
 
 ; /* TRANS: Help _build Wonder (100% chance of success). */
 ui_name_help_wonder = _("Help %sbuild Wonder%s")
@@ -250,6 +254,15 @@ ui_name_home_city = _("Set %sHome City%s")
 
 ; /* TRANS: _Upgrade Unit (100% chance of success). */
 ui_upgrade_unit = _("%sUpgrade Unit%s")
+
+; /* TRANS: _Attack (100% chance of success). */
+ui_name_attack = _("%sAttack%s")
+
+; Suppress automatic help text generation about what enables and/or
+; disables the following actions.
+;
+; Can make the help text less redundant when you document it your self.
+;quiet_actions = "Targeted Sabotage City", "Targeted Steal Tech"
 
 ; /* <-- avoid gettext warnings
 ;
@@ -294,6 +307,7 @@ actor_reqs    =
       "UnitFlag", "Diplomat", "Local"
       "UnitState", "OnLivableTile", "Local"
       "MinMoveFrags", "1", "Local"
+      "DiplRel", "Is foreign", "Local"
     }
 target_reqs  =
     { "type",   "name", "range", "present"
@@ -307,6 +321,7 @@ actor_reqs    =
       "UnitFlag", "Diplomat", "Local"
       "UnitState", "OnLivableTile", "Local"
       "MinMoveFrags", "1", "Local"
+      "DiplRel", "Is foreign", "Local"
     }
 
 [actionenabler_poison_city]
@@ -317,6 +332,7 @@ actor_reqs    =
       "DiplRel", "War", "Local"
       "UnitState", "OnLivableTile", "Local"
       "MinMoveFrags", "1", "Local"
+      "DiplRel", "Is foreign", "Local"
     }
 target_reqs    =
     { "type",   "name", "range"
@@ -330,6 +346,7 @@ actor_reqs    =
       "UnitFlag", "Diplomat", "Local"
       "UnitState", "OnLivableTile", "Local"
       "MinMoveFrags", "1", "Local"
+      "DiplRel", "Is foreign", "Local"
     }
 target_reqs  =
     { "type",   "name", "range", "present"
@@ -343,6 +360,7 @@ actor_reqs    =
       "UnitFlag", "Spy", "Local"
       "UnitState", "OnLivableTile", "Local"
       "MinMoveFrags", "1", "Local"
+      "DiplRel", "Is foreign", "Local"
     }
 target_reqs  =
     { "type",   "name", "range", "present"
@@ -358,6 +376,7 @@ actor_reqs    =
       "DiplRel", "Team", "Local", FALSE
       "UnitState", "OnLivableTile", "Local", TRUE
       "MinMoveFrags", "1", "Local", TRUE
+      "DiplRel", "Is foreign", "Local", TRUE
     }
 target_reqs  =
     { "type",   "name", "range", "present"
@@ -373,6 +392,7 @@ actor_reqs    =
       "DiplRel", "Team", "Local", FALSE
       "UnitState", "OnLivableTile", "Local", TRUE
       "MinMoveFrags", "1", "Local", TRUE
+      "DiplRel", "Is foreign", "Local", TRUE
     }
 target_reqs    =
     { "type",   "name", "range", "present"
@@ -389,6 +409,7 @@ actor_reqs    =
       "DiplRel", "War", "Local"
       "UnitState", "OnLivableTile", "Local"
       "MinMoveFrags", "1", "Local"
+      "DiplRel", "Is foreign", "Local"
     }
 target_reqs    =
     { "type",   "name", "range", "present"
@@ -439,7 +460,14 @@ target_reqs    =
 action = "Recycle Unit"
 actor_reqs    =
     { "type",   "name", "range", "present"
-      "UnitFlag", "Undisbandable", "Local", FALSE
+      "UnitFlag", "EvacuateFirst", "Local", FALSE
+    }
+
+[actionenabler_disband_unit]
+action = "Disband Unit"
+actor_reqs    =
+    { "type",   "name", "range", "present"
+      "UnitFlag", "EvacuateFirst", "Local", FALSE
     }
 
 [actionenabler_build_city_pioneer]
@@ -474,15 +502,29 @@ actor_reqs    =
       "MinMoveFrags", "1", "Local", TRUE
     }
 
+[actionenabler_attack]
+action = "Attack"
+actor_reqs    =
+    { "type",         "name",   "range", "present"
+      "UnitFlag",     "NonMil", "Local", FALSE
+      "MinMoveFrags", "1",      "Local", TRUE
+    }
+
 [actionenabler_change_home_city]
 action = "Home City"
 actor_reqs    =
     { "type",   "name", "range", "present"
+      "UnitFlag",  "NoHome",      "Local", FALSE
+      "UnitState", "HasHomeCity", "Local", TRUE
       "DiplRel", "Is foreign", "Local", FALSE
     }
 
 [actionenabler_upgrade_unit]
 action = "Upgrade Unit"
+actor_reqs    =
+    { "type",    "name",       "range", "present"
+      "DiplRel", "Is foreign", "Local", FALSE
+    }
 
 [borders]
 ; Base border radius from city.
@@ -503,7 +545,7 @@ radius_sq_city_permanent = 0
 
 [research]
 ; Method of calculating technology costs
-;   "Civ I|II"      - Civ (I|II) style. Every new tech add researchcost to
+;   "Civ I|II"      - Civ (I|II) style. Every new tech add base_tech_cost to
 ;                     cost of next tech.
 ;   "Classic"       - Cost of technology is:
 ;                       base_tech_cost * (1 + reqs) * sqrt(1 + reqs) / 2
@@ -520,7 +562,9 @@ radius_sq_city_permanent = 0
 ;                     generated by style "Experimental".
 tech_cost_style = "Classic"
 
-; Base research cost for tech styles 1 & 2
+; Base research cost. Used in tech cost styles where tech cost is generated.
+; In other words: used everywhere unless the cost of *all* techs are
+; specified and the tech cost style is "Experimental+" or "Classic+".
 base_tech_cost   = 20
 
 ; Technology leak from other civilizations
@@ -576,7 +620,7 @@ skip_year_0 = TRUE
 fragments = 0
 
 ; Calendar fragment names. If name is missing, only a fragment number +1 (so human readable
-; numbers begin froḿ 1 and not 0) is shown.
+; numbers begin from 1 and not 0) is shown.
 
 ;fragment_name0 = "Jan"
 ;fragment_name1 = "Feb"
@@ -667,7 +711,7 @@ settings =
 
 ; /* <-- avoid gettext warnings
 ;
-; Goods
+; Good types:
 ;
 ; name                    = translatable name as seen by user
 ; rule_name               = (optional) name for savegames, rulesets etc; if not
@@ -726,6 +770,16 @@ colorlist =
       168, 153, 230
       255, 250, 205
    }
+
+[teams]
+; freeciv optional team names definition.
+;
+; names =
+; _("Team 1"),
+; _("Team 2"),
+; _("Team 3"),
+; _("Team 4"),
+; etc...
 
 [settings]
 
