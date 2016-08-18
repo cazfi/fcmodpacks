@@ -8,7 +8,7 @@ name = "Delta2"
 priority = 3
 
 ; Version of the tileset
-version = "2.6-alpha"
+version = "2.6-1"
 
 ; Summary and full description of the tileset.
 summary = _("Tileset to be used with variant2 ruleset in hex mode (default)")
