@@ -16,7 +16,7 @@ summary = _("Tileset to be used with variant2 ruleset in hex mode (default)")
 ;description = ""
 
 ; What is the primary ruleset this tileset is meant for.
-;for_ruleset = ""
+for_ruleset = "variant2"
 
 ; Basic tile sizes:
 normal_tile_width  = 126
