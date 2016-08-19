@@ -15,6 +15,9 @@ version = "3.0-dev"
 summary = _("Tileset to be used with variant2 ruleset in hex mode (default)")
 ;description = ""
 
+; What is the primary ruleset this tileset is meant for.
+;for_ruleset = ""
+
 ; Basic tile sizes:
 normal_tile_width  = 126
 normal_tile_height = 64
@@ -36,14 +39,14 @@ darkness_style = "CardinalSingle"
 darkness_layer = 1
 
 ; offset the flags by this amount when drawing units
-unit_flag_offset_x = 46
+unit_flag_offset_x = 45
 unit_flag_offset_y = 39
-city_flag_offset_x = 42
+city_flag_offset_x = 41
 city_flag_offset_y = 10
 
 ; offset the city occupied sprite by this amount
-occupied_offset_x = 40
-occupied_offset_y = 1
+occupied_offset_x = 0
+occupied_offset_y = 0
 
 ; offset the units by this amount
 unit_offset_x = 34
@@ -54,8 +57,8 @@ city_offset_x = 15
 city_offset_y = 20
 
 ; offset of the normal activity icons
-activity_offset_x = 0
-activity_offset_y = 0
+activity_offset_x = 74
+activity_offset_y = 28
 
 ; offset the city bar text by this amount (from the city tile origin)
 citybar_offset_y = 40
@@ -81,8 +84,8 @@ city_productions_font_size = 10
 
 ; For tilesets with oriented units, the directional sprite to use to
 ; represent a unit type rather than a specific unit from the map
-; (e.g., in worklists, editor, and online help). If not specified, such
-; sprites will be oriented randomly.
+; (e.g., in worklists, editor, and online help). Does not have to be a
+; valid direction for the tileset.
 ;unit_default_orientation = "s"
 
 ; These are special because they get freed and reloaded
@@ -114,11 +117,10 @@ files =
   "amplio2/units.spec",
   "amplio2/nuke.spec",
   "amplio2/explosions.spec",
-  "amplio2/ancientcities.spec",
-  "amplio2/medievalcities.spec",
-  "amplio2/moderncities.spec",
+  "amplio2/cities.spec",
   "delta2/units.spec",
   "delta2/canals.spec",
+  "hexemplio/activities.spec",
   "hexemplio/bases.spec",
   "hexemplio/terrain1.spec",
   "hexemplio/terrain2.spec",
@@ -282,7 +284,7 @@ styles =
       "base.airfield", "3Layer"
       "base.airbase",  "3layer"
       "base.buoy",     "3layer"
-      "base.ruins",    "3layer"
+      "extra.ruins",   "3layer"
       "ts.gold",       "Single1"
       "ts.iron",       "Single1"
       "ts.tundra_game", "Single1"
