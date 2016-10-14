@@ -197,8 +197,17 @@ force_explode_nuclear = TRUE
 ; will empty the food stock.
 poison_empties_food_stock = FALSE
 
+; The maximum distance from the actor unit to the target of the "Bombard"
+; action. The value 1 means that the targets must be on a tile adjacent to
+; the actor unit. The special value "unlimited" lifts the maximum distance
+; restriction. The maximum distance can`t be smaller than the minimum
+; distance.
+bombard_max_range = 1
+
 ; What each action should be called when showing them to the player.
-; The first %s should be before the mnemonic of the action.
+; The first %s should be before the mnemonic of the action. A Freeciv client
+; that supports mnemonics will replace it with the in-band signal that marks
+; the following character as a mnemonic in its graphical toolkit.
 ; The second %s marks where extra details should be inserted.
 
 ; /* TRANS: _Poison City (3% chance of success). */
@@ -257,6 +266,9 @@ ui_upgrade_unit = _("%sUpgrade Unit%s")
 
 ; /* TRANS: _Attack (100% chance of success). */
 ui_name_attack = _("%sAttack%s")
+
+; /* TRANS: _Conquer City (100% chance of success). */
+ui_conquer_city = _("%Conquer City%s")
 
 ; Suppress automatic help text generation about what enables and/or
 ; disables the following actions.
@@ -502,12 +514,76 @@ actor_reqs    =
       "MinMoveFrags", "1", "Local", TRUE
     }
 
-[actionenabler_attack]
+[actionenabler_attack_native]
 action = "Attack"
 actor_reqs    =
     { "type",         "name",   "range", "present"
       "UnitFlag",     "NonMil", "Local", FALSE
       "MinMoveFrags", "1",      "Local", TRUE
+      "UnitState",    "OnNativeTile", "Local", TRUE
+    }
+
+[actionenabler_attack_marines]
+action = "Attack"
+actor_reqs    =
+    { "type",         "name",    "range", "present"
+      "UnitFlag",     "NonMil",  "Local", FALSE
+      "MinMoveFrags", "1",       "Local", TRUE
+      "UnitFlag",     "Marines", "Local", TRUE
+    }
+
+[actionenabler_attack_att_from_non_native]
+action = "Attack"
+actor_reqs    =
+    { "type",          "name",             "range", "present"
+      "UnitFlag",      "NonMil",           "Local", FALSE
+      "MinMoveFrags",  "1",                "Local", TRUE
+      "UnitClassFlag", "AttFromNonNative", "Local", TRUE
+    }
+
+[actionenabler_conquer_city_native]
+action = "Conquer City"
+actor_reqs    =
+    { "type",           "name",          "range", "present"
+      "UnitClassFlag",  "CanOccupyCity", "Local", TRUE
+      "UnitFlag",       "NonMil",        "Local", FALSE
+      "DiplRel",        "War",           "Local", TRUE
+      "MinMoveFrags",   "1",             "Local", TRUE
+      "UnitState",      "OnLivableTile", "Local", TRUE
+    }
+target_reqs    =
+    { "type",           "name",          "range", "present"
+      "MaxUnitsOnTile", "0",             "Local", TRUE
+    }
+
+[actionenabler_conquer_city_marines]
+action = "Conquer City"
+actor_reqs    =
+    { "type",           "name",          "range", "present"
+      "UnitClassFlag",  "CanOccupyCity", "Local", TRUE
+      "UnitFlag",       "NonMil",        "Local", FALSE
+      "DiplRel",        "War",           "Local", TRUE
+      "MinMoveFrags",   "1",             "Local", TRUE
+      "UnitFlag",       "Marines",       "Local", TRUE
+    }
+target_reqs    =
+    { "type",           "name",          "range", "present"
+      "MaxUnitsOnTile", "0",             "Local", TRUE
+    }
+
+[actionenabler_conquer_city_att_from_non_native]
+action = "Conquer City"
+actor_reqs    =
+    { "type",           "name",             "range", "present"
+      "UnitClassFlag",  "CanOccupyCity",    "Local", TRUE
+      "UnitFlag",       "NonMil",           "Local", FALSE
+      "DiplRel",        "War",              "Local", TRUE
+      "MinMoveFrags",   "1",                "Local", TRUE
+      "UnitClassFlag",  "AttFromNonNative", "Local", TRUE
+    }
+target_reqs    =
+    { "type",           "name",          "range", "present"
+      "MaxUnitsOnTile", "0",             "Local", TRUE
     }
 
 [actionenabler_change_home_city]
@@ -709,9 +785,14 @@ settings =
     "TeamIC",     400,   "Cancel",     "Both"
   }
 
+; When are goods for the trade route chosen.
+; "Leaving" - Goods to carry are assigned to unit when it`s built, or it changes homecity
+; "Arrival" - Goods are chosen when trade route is established, when unit arrives to destination
+goods_selection = "Arrival"
+
 ; /* <-- avoid gettext warnings
 ;
-; Good types:
+; Goods types:
 ;
 ; name                    = translatable name as seen by user
 ; rule_name               = (optional) name for savegames, rulesets etc; if not
@@ -720,6 +801,18 @@ settings =
 ;                           an good after a ruleset has been released.
 ; reqs                    = requirements for a city to provide goods (see effects.ruleset
 ;                           and README.effects for help on requirements)
+; from_pct                = Income for the sending end of the trade route. Default is 100%
+;                           This value is applied to both ends of bidirectional routes.
+; to_pct                  = Income for the receiving end of the trade route. Default is 100%
+;                           This value is not used at all in case of bidirectional routes.
+; flags
+;   - "Bidirectional"     = Trade route carrying the goods does not have "from" and "to"
+;                           ends, but both ends are considered the same.
+;   - "Depletes"          = Trade route gets cancelled when the source city cannot provide
+;                           goods any more. Bidirectional routes gets cancelled if either
+;                           one of the involved cities cannot provide goods.
+; helptext                = Optional help text string; should escape all raw
+;                           newlines so that xgettext parsing works
 ;
 ; */ <-- avoid gettext warnings
 

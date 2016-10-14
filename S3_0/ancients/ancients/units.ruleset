@@ -29,6 +29,7 @@ flags =
     _("Cities")
     _("AddToCity")
     _("Infra"), _("Can build infrastructure.")
+    _("Marines"), _("Can launch attack from non-native tiles.")
   }
 
 ; Names for custom unit class flags. There can be up to 8 of these.
@@ -37,9 +38,10 @@ flags =
 ;                 and sensible.
 ; helptxt       = displayed in the help for unit types belonging to a class
 ;                 with this flag (optional)
-;class_flags =
-;  { "name", "helptxt"
-;  }
+class_flags =
+  { "name", "helptxt"
+    _("AttFromNonNative"), _("Can launch attack from non-native tiles.")
+  }
 
 [veteran_system]
 ; What are the names of the levels?
@@ -115,11 +117,6 @@ veteran_move_bonus = 0, 0, 0, 0
 ;                       still work that tile
 ; "AttackNonNative"   = Unit can attack units on non-native tiles. Unit type
 ;                       flag "Only_Native_Attack" can override this
-; "AttFromNonNative"  = Unit can launch attack from non-native tile (against
-;                       native one)
-;                       This applies for both attacking from transport or
-;                       cities. If only some unit types of the class should
-;                       get this property, use type flag "Marines"
 ; "KillCitizen"       = Upon successful attack against a city, unit kills one
 ;                       citizen. The effect "Unit_No_Lose_Pop" and the server
 ;                       setting 'killcitizen' can disable this.
@@ -189,6 +186,7 @@ flags         = "TerrainSpeed", "DamageSlows", "AttackNonNative", "AttFromNonNat
 ;                 refuel point
 ; uk_*          = upkeep costs, these are used as base values in the game
 ; cargo         = Unit classes this unit can transport
+; city_slots    = How many of homecity's unit maintenance slots unit takes
 ; city_size     = Initial size of the cities built by 'Found City' type units
 ;                 (but 'Join City' uses pop_cost)
 ; targets       = list of unit classes this unit can attack against even
@@ -254,7 +252,6 @@ flags         = "TerrainSpeed", "DamageSlows", "AttackNonNative", "AttFromNonNat
 ;                 less
 ; "OneAttack"	= can only make a single attack, regardless of movement points
 ; "FieldUnit"	= cause unhappiness even when not being aggressive
-; "Marines"	= can attack from non-native tile (from transport or city)
 ; "BeachLander" = won't lose all its movement when moving from non-native
 ;                 terrain to native terrain even if slow_invasions is on.
 ; "Partial_Invis" = visible only to adjancent units; does not hide transported
@@ -313,6 +310,13 @@ flags         = "TerrainSpeed", "DamageSlows", "AttackNonNative", "AttFromNonNat
 ;                 type flag.
 ;
 ; Following actions require extra fields:
+;  "Attack"
+;   attack = base attack strength
+;  "Bombard"
+;   attack       = base attack strength
+;   bombard_rate = the number of shots fired at enemy units when attacking
+;  "Join City"
+;   pop_cost = the number of population added to the target city
 ;  "Paradrop Unit"
 ;   paratroopers_range  = the maximal range the unit can be paradropped to.
 ;                         Max range is 65534.
@@ -320,10 +324,6 @@ flags         = "TerrainSpeed", "DamageSlows", "AttackNonNative", "AttFromNonNat
 ;                         paradropping (whole movement points)
 ;   paratroopers_mr_sub = the move rate which is subtracted after paradropping
 ;                         (whole movement points)
-;  "Bombard"
-;   bombard_rate = the number of shots fired at enemy units when attacking
-;  "Join City"
-;   pop_cost = the number of population added to the target city
 ;  "Upgrade Unit"
 ;   obsolete_by = the unit type upgraded to.
 ;
@@ -485,10 +485,7 @@ uk_gold       = 0
 flags         = "Diplomat", "IgZOC", "NonMil"
 veteran_names =
 ; /* TRANS: diplomatic rank. */
-; /* TRANS: Unless translated, the last character in "attache" should be */
-; /* TRANS: U+00E9 LATIN SMALL LETTER E WITH ACUTE if available in your */
-; /* TRANS: charset. In ISO-8859-1 (ISO Latin 1) this is 233. */
-  _("?diplomatic_rank:attache"),
+  _("?diplomatic_rank:attaché"),
 ; /* TRANS: diplomatic rank */
   _("?diplomatic_rank:secretary"),
 ; /* TRANS: diplomatic rank */
@@ -668,6 +665,8 @@ veteran_move_bonus = 0
 roles         = "KingStartUnit"
 helptext      = _("\
 This is you. If you lose this unit, you lose the game. So don't.\
+"), _("\
+Won't unleash barbarians from huts.\
 ")
 
 [unit_barbarian_leader]

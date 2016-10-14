@@ -1015,6 +1015,17 @@ reqs	=
       "Building", "Great Wall", "Continent", FALSE
     }
 
+[effect_city_walls_saboteur_resistant]
+type    = "Building_Saboteur_Resistant"
+value	= 50
+reqs	=
+    { "type", "name", "range", "present"
+      "Building", "City Walls", "City", TRUE
+      "UnitClass", "Sea", "Local", TRUE
+      "Building", "Palace", "City", FALSE
+      "Building", "Great Wall", "Continent", FALSE
+    }
+
 [effect_city_walls_visible]
 type    = "Visible_Walls"
 value	= 1
@@ -1211,8 +1222,16 @@ reqs	=
 ;      "Building", "Palace", "City"
 ;    }
 
-[effect_palace_2]
+[effect_palace_spy_resistant]
 type    = "Spy_Resistant"
+value	= 50
+reqs	=
+    { "type", "name", "range"
+      "Building", "Palace", "City"
+    }
+
+[effect_palace_sabotage_resistant]
+type    = "Building_Saboteur_Resistant"
 value	= 50
 reqs	=
     { "type", "name", "range"
@@ -1346,6 +1365,14 @@ reqs	=
 
 [effect_great_wall_2]
 type    = "Spy_Resistant"
+value	= 50
+reqs	=
+    { "type", "name", "range"
+      "Building", "Great Wall", "Continent"
+    }
+
+[effect_great_wall_seboteur_resistant]
+type    = "Building_Saboteur_Resistant"
 value	= 50
 reqs	=
     { "type", "name", "range"
