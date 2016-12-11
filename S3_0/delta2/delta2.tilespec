@@ -57,6 +57,15 @@ city_offset_y = 20
 activity_offset_x = 74
 activity_offset_y = 28
 
+; offset of the selected unit sprites
+select_offset_x = 0
+select_offset_y = 21
+
+; offset the city size number by this amount
+; This is relative to full sprite origin.
+city_size_offset_x = 0
+city_size_offset_y = 0
+
 ; offset the city bar text by this amount (from the city tile origin)
 citybar_offset_y = 40
 
@@ -153,8 +162,11 @@ files =
   "delta2/canals.spec",
   "hexemplio/activities.spec",
   "hexemplio/bases.spec",
-  "hexemplio/terrain1.spec",
-  "hexemplio/terrain2.spec",
+  "hexemplio/terrain.spec",
+  "hexemplio/embellishments.spec",
+  "hexemplio/forests.spec",
+  "hexemplio/hills.spec",
+  "hexemplio/mountains.spec",
   "hexemplio/water1.spec",
   "hexemplio/water2.spec",
   "hexemplio/water3.spec",
@@ -162,6 +174,8 @@ files =
   "hexemplio/grid.spec",
   "hexemplio/rivers.spec",
   "hexemplio/roads.spec",
+  "hexemplio/roads-rails.spec",
+  "hexemplio/roads-maglevs.spec",
   "hexemplio/unitextras.spec",
   "hexemplio/unitcost.spec",
   "hexemplio/select.spec"
@@ -303,8 +317,8 @@ styles =
       "road.pave",     "RoadAllSeparate"
       "road.river",    "River"
       "road.canal",    "River"
-      "tx.irrigation", "Cardinals"
-      "tx.farmland",   "Cardinals"
+      "tx.irrigation", "River"
+      "tx.farmland",   "River"
       "tx.mine",       "Single1"
       "tx.oil_mine",   "Single1"
       "tx.pollution",  "Single2"
