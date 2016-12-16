@@ -172,6 +172,14 @@ slow_invasions = TRUE
 ; have only fractional moves left.
 tired_attack = FALSE
 
+[auto_attack]
+; An auto attack may be triggered when another unit moves to an adjacent
+; tile and the autoattack server setting is enabled. The following details
+; are ruleset controlled.
+;   will_never - units with this unit type flag will never auto attack.
+
+; will_never =
+
 [actions]
 ; If force_trade_route is set to TRUE it is illegal for an actor unit to
 ; enter the marketplace of a city if it can establish a trade route to it
@@ -268,7 +276,7 @@ ui_upgrade_unit = _("%sUpgrade Unit%s")
 ui_name_attack = _("%sAttack%s")
 
 ; /* TRANS: _Conquer City (100% chance of success). */
-ui_conquer_city = _("%Conquer City%s")
+ui_name_conquer_city = _("%Conquer City%s")
 
 ; Suppress automatic help text generation about what enables and/or
 ; disables the following actions.

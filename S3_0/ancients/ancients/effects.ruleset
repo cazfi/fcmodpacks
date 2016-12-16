@@ -1752,6 +1752,6 @@ reqs    =
 type    = "Spy_Resistant"
 value	= 25
 reqs	=
-    { "type",      "name",            "range"
-      "ExtraFlag", "DiplomatDefense", "Local"
+    { "type",  "name",     "range"
+      "Extra", "Fortress", "Local"
     }
