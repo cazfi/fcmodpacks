@@ -29,6 +29,9 @@ See http://freeciv.wikia.com/wiki/Ancients for more info.")
 ; When updating this, update also desciption_file in [ruledit] section to match
 ; description = ""
 
+; What capabilities ruleset provides for the scenarios.
+capabilities = ""
+
 [options]
 global_init_techs=""
 global_init_buildings="Palace"
@@ -239,6 +242,9 @@ ui_name_incite_city = _("Incite a Re%svolt%s")
 ; /* TRANS: Establish _Embassy (100% chance of success). */
 ui_name_establish_embassy = _("Establish %sEmbassy%s")
 
+; /* TRANS: Becom_e Ambassador (100% chance of success). */
+ui_name_establish_embassy_stay = _("Becom%se Ambassador%s")
+
 ; /* TRANS: Steal _Technology (3% chance of success). */
 ui_name_steal_tech = _("Steal %sTechnology%s")
 
@@ -247,6 +253,9 @@ ui_name_targeted_steal_tech = _("Indus%strial Espionage%s")
 
 ; /* TRANS: _Investigate City (100% chance of success). */
 ui_name_investigate_city = _("%sInvestigate City%s")
+
+; /* TRANS: _Investigate City (spends the unit) (100% chance of success). */
+ui_name_investigate_city_spend_unit = _("%sInvestigate City (spends the unit)%s")
 
 ; /* TRANS: Establish Trade _Route (100% chance of success). */
 ui_name_establish_trade_route = _("Establish Trade %sRoute%s")
@@ -321,10 +330,25 @@ actor_reqs    =
     }
 
 [actionenabler_establish_embassy]
+action       = "Establish Embassy Stay"
+actor_reqs    =
+    { "type",         "name",          "range", "present"
+      "UnitFlag",     "Diplomat",      "Local", TRUE
+      "UnitState",    "OnLivableTile", "Local", TRUE
+      "MinMoveFrags", "1",             "Local", TRUE
+      "DiplRel",      "Is foreign",    "Local", TRUE
+      "UnitFlag",     "Spy",           "Local", FALSE
+    }
+target_reqs  =
+    { "type",        "name",      "range",  "present"
+      "NationGroup", "Barbarian", "Player", FALSE
+    }
+
+[actionenabler_establish_embassy_spy]
 action       = "Establish Embassy"
 actor_reqs    =
     { "type",   "name", "range"
-      "UnitFlag", "Diplomat", "Local"
+      "UnitFlag", "Spy", "Local"
       "UnitState", "OnLivableTile", "Local"
       "MinMoveFrags", "1", "Local"
       "DiplRel", "Is foreign", "Local"
@@ -335,10 +359,21 @@ target_reqs  =
     }
 
 [actionenabler_investigate_city]
+action       = "Investigate City Spend Unit"
+actor_reqs    =
+    { "type",   "name", "range", "present"
+      "UnitFlag", "Diplomat", "Local", TRUE
+      "UnitState", "OnLivableTile", "Local", TRUE
+      "MinMoveFrags", "1", "Local", TRUE
+      "DiplRel", "Is foreign", "Local", TRUE
+      "UnitFlag", "Spy", "Local", FALSE
+    }
+
+[actionenabler_investigate_city_spy]
 action       = "Investigate City"
 actor_reqs    =
     { "type",   "name", "range"
-      "UnitFlag", "Diplomat", "Local"
+      "UnitFlag", "Spy", "Local"
       "UnitState", "OnLivableTile", "Local"
       "MinMoveFrags", "1", "Local"
       "DiplRel", "Is foreign", "Local"
@@ -481,6 +516,10 @@ action = "Recycle Unit"
 actor_reqs    =
     { "type",   "name", "range", "present"
       "UnitFlag", "EvacuateFirst", "Local", FALSE
+      "DiplRel",  "War",        "Local", FALSE
+      "DiplRel",  "Cease-fire", "Local", FALSE
+      "DiplRel",  "Armistice",  "Local", FALSE
+      "DiplRel",  "Peace",      "Local", FALSE
     }
 
 [actionenabler_disband_unit]
