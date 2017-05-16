@@ -4,8 +4,8 @@
 
 [datafile]
 description="Ancients game rules for Freeciv"
-options="+Freeciv-ruleset-Devel-2015.January.14"
-format_version=10
+options="+Freeciv-ruleset-Devel-2017.Jan.02"
+format_version=20
 
 ; This section contains meta information for freeciv-ruledit to recreate the ruleset
 ; file in a form wanted. These have no in-game effect whatsoever
@@ -19,7 +19,7 @@ format_version=10
 name = _("Ancients")
 
 ; Version of the ruleset
-version = "3.0-dev"
+version = "3.1-dev"
 
 ; Summary of the ruleset
 summary = _("You are playing Freeciv with Ancients ruleset. \
@@ -28,6 +28,9 @@ See http://freeciv.wikia.com/wiki/Ancients for more info.")
 ; Detailed description
 ; When updating this, update also desciption_file in [ruledit] section to match
 ; description = ""
+
+; What capabilities ruleset provides for the scenarios.
+capabilities = ""
 
 [options]
 global_init_techs=""
@@ -239,6 +242,9 @@ ui_name_incite_city = _("Incite a Re%svolt%s")
 ; /* TRANS: Establish _Embassy (100% chance of success). */
 ui_name_establish_embassy = _("Establish %sEmbassy%s")
 
+; /* TRANS: Becom_e Ambassador (100% chance of success). */
+ui_name_establish_embassy_stay = _("Becom%se Ambassador%s")
+
 ; /* TRANS: Steal _Technology (3% chance of success). */
 ui_name_steal_tech = _("Steal %sTechnology%s")
 
@@ -247,6 +253,9 @@ ui_name_targeted_steal_tech = _("Indus%strial Espionage%s")
 
 ; /* TRANS: _Investigate City (100% chance of success). */
 ui_name_investigate_city = _("%sInvestigate City%s")
+
+; /* TRANS: _Investigate City (spends the unit) (100% chance of success). */
+ui_name_investigate_city_spend_unit = _("%sInvestigate City (spends the unit)%s")
 
 ; /* TRANS: Establish Trade _Route (100% chance of success). */
 ui_name_establish_trade_route = _("Establish Trade %sRoute%s")
@@ -321,13 +330,28 @@ actor_reqs    =
     }
 
 [actionenabler_establish_embassy]
+action       = "Establish Embassy Stay"
+actor_reqs    =
+    { "type",         "name",          "range", "present"
+      "UnitFlag",     "Diplomat",      "Local", TRUE
+      "UnitState",    "OnLivableTile", "Local", TRUE
+      "MinMoveFrags", "1",             "Local", TRUE
+      "DiplRel",      "Foreign",       "Local", TRUE
+      "UnitFlag",     "Spy",           "Local", FALSE
+    }
+target_reqs  =
+    { "type",        "name",      "range",  "present"
+      "NationGroup", "Barbarian", "Player", FALSE
+    }
+
+[actionenabler_establish_embassy_spy]
 action       = "Establish Embassy"
 actor_reqs    =
     { "type",   "name", "range"
-      "UnitFlag", "Diplomat", "Local"
+      "UnitFlag", "Spy", "Local"
       "UnitState", "OnLivableTile", "Local"
       "MinMoveFrags", "1", "Local"
-      "DiplRel", "Is foreign", "Local"
+      "DiplRel", "Foreign", "Local"
     }
 target_reqs  =
     { "type",   "name", "range", "present"
@@ -335,13 +359,24 @@ target_reqs  =
     }
 
 [actionenabler_investigate_city]
+action       = "Investigate City Spend Unit"
+actor_reqs    =
+    { "type",   "name", "range", "present"
+      "UnitFlag", "Diplomat", "Local", TRUE
+      "UnitState", "OnLivableTile", "Local", TRUE
+      "MinMoveFrags", "1", "Local", TRUE
+      "DiplRel", "Foreign", "Local", TRUE
+      "UnitFlag", "Spy", "Local", FALSE
+    }
+
+[actionenabler_investigate_city_spy]
 action       = "Investigate City"
 actor_reqs    =
     { "type",   "name", "range"
-      "UnitFlag", "Diplomat", "Local"
+      "UnitFlag", "Spy", "Local"
       "UnitState", "OnLivableTile", "Local"
       "MinMoveFrags", "1", "Local"
-      "DiplRel", "Is foreign", "Local"
+      "DiplRel", "Foreign", "Local"
     }
 
 [actionenabler_poison_city]
@@ -352,7 +387,7 @@ actor_reqs    =
       "DiplRel", "War", "Local"
       "UnitState", "OnLivableTile", "Local"
       "MinMoveFrags", "1", "Local"
-      "DiplRel", "Is foreign", "Local"
+      "DiplRel", "Foreign", "Local"
     }
 target_reqs    =
     { "type",   "name", "range"
@@ -366,7 +401,7 @@ actor_reqs    =
       "UnitFlag", "Diplomat", "Local"
       "UnitState", "OnLivableTile", "Local"
       "MinMoveFrags", "1", "Local"
-      "DiplRel", "Is foreign", "Local"
+      "DiplRel", "Foreign", "Local"
     }
 target_reqs  =
     { "type",   "name", "range", "present"
@@ -380,7 +415,7 @@ actor_reqs    =
       "UnitFlag", "Spy", "Local"
       "UnitState", "OnLivableTile", "Local"
       "MinMoveFrags", "1", "Local"
-      "DiplRel", "Is foreign", "Local"
+      "DiplRel", "Foreign", "Local"
     }
 target_reqs  =
     { "type",   "name", "range", "present"
@@ -396,7 +431,7 @@ actor_reqs    =
       "DiplRel", "Team", "Local", FALSE
       "UnitState", "OnLivableTile", "Local", TRUE
       "MinMoveFrags", "1", "Local", TRUE
-      "DiplRel", "Is foreign", "Local", TRUE
+      "DiplRel", "Foreign", "Local", TRUE
     }
 target_reqs  =
     { "type",   "name", "range", "present"
@@ -412,7 +447,7 @@ actor_reqs    =
       "DiplRel", "Team", "Local", FALSE
       "UnitState", "OnLivableTile", "Local", TRUE
       "MinMoveFrags", "1", "Local", TRUE
-      "DiplRel", "Is foreign", "Local", TRUE
+      "DiplRel", "Foreign", "Local", TRUE
     }
 target_reqs    =
     { "type",   "name", "range", "present"
@@ -429,7 +464,7 @@ actor_reqs    =
       "DiplRel", "War", "Local"
       "UnitState", "OnLivableTile", "Local"
       "MinMoveFrags", "1", "Local"
-      "DiplRel", "Is foreign", "Local"
+      "DiplRel", "Foreign", "Local"
     }
 target_reqs    =
     { "type",   "name", "range", "present"
@@ -457,7 +492,7 @@ action = "Help Wonder"
 actor_reqs    =
     { "type",   "name", "range", "present"
       "UnitFlag", "HelpWonder", "Local", TRUE
-      "DiplRel", "Is foreign", "Local", FALSE
+      "DiplRel", "Foreign", "Local", FALSE
     }
 target_reqs    =
     { "type",   "name", "range"
@@ -469,7 +504,7 @@ action = "Help Wonder"
 actor_reqs    =
     { "type",   "name", "range", "present"
       "UnitFlag", "HelpWonder", "Local", TRUE
-      "DiplRel", "Is foreign", "Local", FALSE
+      "DiplRel", "Foreign", "Local", FALSE
     }
 target_reqs    =
     { "type",   "name", "range"
@@ -488,6 +523,10 @@ action = "Disband Unit"
 actor_reqs    =
     { "type",   "name", "range", "present"
       "UnitFlag", "EvacuateFirst", "Local", FALSE
+      "DiplRel",  "War",        "Local", FALSE
+      "DiplRel",  "Cease-fire", "Local", FALSE
+      "DiplRel",  "Armistice",  "Local", FALSE
+      "DiplRel",  "Peace",      "Local", FALSE
     }
 
 [actionenabler_build_city_pioneer]
@@ -510,7 +549,7 @@ actor_reqs    =
       "UnitFlag", "Cities", "Local", TRUE
       "UnitState", "OnLivableTile", "Local", TRUE
       "MinMoveFrags", "1", "Local", TRUE
-      "DiplRel", "Is foreign", "Local", FALSE
+      "DiplRel", "Foreign", "Local", FALSE
     }
 
 [actionenabler_join_city]
@@ -518,7 +557,7 @@ action = "Join City"
 actor_reqs    =
     { "type",   "name", "range", "present"
       "UnitFlag", "AddToCity", "Local", TRUE
-      "DiplRel", "Is Foreign", "Local", FALSE
+      "DiplRel", "Foreign", "Local", FALSE
       "MinMoveFrags", "1", "Local", TRUE
     }
 
@@ -600,14 +639,14 @@ actor_reqs    =
     { "type",   "name", "range", "present"
       "UnitFlag",  "NoHome",      "Local", FALSE
       "UnitState", "HasHomeCity", "Local", TRUE
-      "DiplRel", "Is foreign", "Local", FALSE
+      "DiplRel", "Foreign", "Local", FALSE
     }
 
 [actionenabler_upgrade_unit]
 action = "Upgrade Unit"
 actor_reqs    =
     { "type",    "name",       "range", "present"
-      "DiplRel", "Is foreign", "Local", FALSE
+      "DiplRel", "Foreign", "Local", FALSE
     }
 
 [borders]
