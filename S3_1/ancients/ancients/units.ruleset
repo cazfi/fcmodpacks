@@ -197,6 +197,8 @@ flags         = "TerrainSpeed", "DamageSlows", "AttackNonNative", "AttFromNonNat
 ; disembarks    = list of unit classes this unit may unload from while not in
 ;                 native base or city even if transporter has Unreachable unit
 ;                 class flag
+; vision_layer  = At which layer this unit is visible; "Main", "Stealth",
+;                 or "Subsurface"
 ; bonuses       = definitions of combat bonuses against specific other units
 ; bonuses.flag  = flag of the unit that bonus applies against
 ; bonuses.type  = type of the bonus. See below
@@ -254,11 +256,9 @@ flags         = "TerrainSpeed", "DamageSlows", "AttackNonNative", "AttFromNonNat
 ; "FieldUnit"	= cause unhappiness even when not being aggressive
 ; "BeachLander" = won't lose all its movement when moving from non-native
 ;                 terrain to native terrain even if slow_invasions is on.
-; "Partial_Invis" = visible only to adjancent units; does not hide transported
-;		  units other than missiles
 ; "Settlers"	= can irrigate and build roads
 ; "Diplomat"	= can do diplomat actions (see diplchance server option)
-; "Spy"		= enhanced diplomat actions. _Must_ be "Diplomat" also
+; "Spy"         = strong in diplomatic battles. _Must_ be "Diplomat" also
 ; "CoastStrict" = (sea only) cannot leave coast
 ; "Coast"       = (sea only) can refuel on coast. Set fuel to force unit
 ;                 to regularly end turn on coast
@@ -347,8 +347,8 @@ flags         = "TerrainSpeed", "DamageSlows", "AttackNonNative", "AttFromNonNat
 ;		         researched its tech requirements
 ; "BarbarianBoat"      = can be created as boat for sea barbarian
 ; "BarbarianBuild"     = can be built by barbarians
- ; "BarbarianBuildTech" = can be built by barbarians if someone has
- ;		         researched its tech requirements
+; "BarbarianBuildTech" = can be built by barbarians if someone has
+;		         researched its tech requirements
 ; "BarbarianLeader"    = this unit is the barbarian leader (only one)
 ; "BarbarianSea"       = can be created as a barbarian that disembarks from a barbarian boat
 ; "BarbarianSeaTech"   = can be created as a barbarian that disembarks from a barbarian boat

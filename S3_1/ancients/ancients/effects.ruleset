@@ -1668,12 +1668,30 @@ reqs    =
       "DiplRel", "War", "Local", FALSE
     }
 
+[effect_incident_caught_steal_tech_esc]
+type   = "Casus_Belli_Caught"
+value  = 1
+reqs   =
+    { "type",    "name",                       "range", "present"
+      "Action",  "Steal Tech Escape Expected", "Local", TRUE
+      "DiplRel", "War",                        "Local", FALSE
+    }
+
+[effect_incident_success_steal_tech_esc]
+type   = "Casus_Belli_Success"
+value  = 1
+reqs   =
+    { "type",    "name",                       "range", "present"
+      "Action",  "Steal Tech Escape Expected", "Local", TRUE
+      "DiplRel", "War",                        "Local", FALSE
+     }
+
 [effect_incident_caught_tgt_steal_tech]
 type    = "Casus_Belli_Caught"
 value   = 1
 reqs    =
     { "type", "name", "range", "present"
-      "Action", "Targeted Steal Tech", "Local", TRUE
+      "Action", "Targeted Steal Tech Escape Expected", "Local", TRUE
       "DiplRel", "War", "Local", FALSE
     }
 
@@ -1682,7 +1700,7 @@ type    = "Casus_Belli_Success"
 value   = 1
 reqs    =
     { "type", "name", "range", "present"
-      "Action", "Targeted Steal Tech", "Local", TRUE
+      "Action", "Targeted Steal Tech Escape Expected", "Local", TRUE
       "DiplRel", "War", "Local", FALSE
     }
 
@@ -1700,7 +1718,7 @@ type    = "Casus_Belli_Success"
 value   = 1
 reqs    =
    { "type", "name", "range", "present"
-      "Action", "Sabotage Unit", "Local", TRUE
+      "Action", "Sabotage Unit Escape", "Local", TRUE
       "DiplRel", "War", "Local", FALSE
     }
 
@@ -1713,12 +1731,21 @@ reqs    =
       "DiplRel", "War", "Local", FALSE
     }
 
+[effect_incident_success_incite_esc]
+type    = "Casus_Belli_Success"
+value   = 1
+reqs    =
+    { "type", "name", "range", "present"
+      "Action", "Incite City Escape", "Local", TRUE
+      "DiplRel", "War", "Local", FALSE
+    }
+
 [effect_incident_success_poison]
 type    = "Casus_Belli_Success"
 value   = 1
 reqs    =
     { "type", "name", "range", "present"
-      "Action", "Poison City", "Local", TRUE
+      "Action", "Poison City Escape", "Local", TRUE
       "DiplRel", "War", "Local", FALSE
     }
 
@@ -1731,12 +1758,21 @@ reqs    =
       "DiplRel", "War", "Local", FALSE
     }
 
+[effect_incident_success_sabotage_city_esc]
+type    = "Casus_Belli_Success"
+value   = 1
+reqs    =
+    { "type", "name", "range", "present"
+      "Action", "Sabotage City Escape", "Local", TRUE
+      "DiplRel", "War", "Local", FALSE
+    }
+
 [effect_incident_success_tgt_sabotage_city]
 type    = "Casus_Belli_Success"
 value   = 1
 reqs    =
     { "type", "name", "range", "present"
-      "Action", "Targeted Sabotage City", "Local", TRUE
+      "Action", "Targeted Sabotage City Escape", "Local", TRUE
       "DiplRel", "War", "Local", FALSE
     }
 
@@ -1745,7 +1781,7 @@ type    = "Action_Odds_Pct"
 value   = -50
 reqs    =
     { "type", "name", "range", "present"
-      "Action", "Targeted Sabotage City", "Local", TRUE
+      "Action", "Targeted Sabotage City Escape", "Local", TRUE
     }
 
 [effect_diplomat_defense_extra]

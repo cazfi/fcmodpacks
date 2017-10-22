@@ -205,7 +205,7 @@ force_bombard = TRUE
 force_explode_nuclear = TRUE
 
 ; If poison_empties_food_stock is set to TRUE a successful "Poison City"
-; will empty the food stock.
+; or "Poison City Escape" will empty the food stock.
 poison_empties_food_stock = FALSE
 
 ; The maximum distance from the actor unit to the target of the "Bombard"
@@ -222,10 +222,10 @@ bombard_max_range = 1
 ; The second %s marks where extra details should be inserted.
 
 ; /* TRANS: _Poison City (3% chance of success). */
-ui_name_poison_city = _("%sPoison City%s")
+ui_name_poison_city_escape = _("%sPoison City%s")
 
 ; /* TRANS: S_abotage Enemy Unit (3% chance of success). */
-ui_name_sabotage_unit = _("S%sabotage Enemy Unit%s")
+ui_name_sabotage_unit_escape = _("%sSabotage Enemy Unit%s")
 
 ; /* TRANS: Bribe Enemy _Unit (3% chance of success). */
 ui_name_bribe_unit = _("Bribe Enemy %sUnit%s")
@@ -233,11 +233,17 @@ ui_name_bribe_unit = _("Bribe Enemy %sUnit%s")
 ; /* TRANS: _Sabotage City (3% chance of success). */
 ui_name_sabotage_city = _("%sSabotage City%s")
 
+; /* TRANS: _Sabotage City Escape (3% chance of success). */
+ui_name_sabotage_city_escape = _("%sSabotage City Escape%s")
+
 ; /* TRANS: Industrial _Sabotage (3% chance of success). */
-ui_name_targeted_sabotage_city = _("Industrial %sSabotage%s")
+ui_name_targeted_sabotage_city_escape = _("Industrial %sSabotage%s")
 
 ; /* TRANS: Incite a Re_volt (3% chance of success). */
 ui_name_incite_city = _("Incite a Re%svolt%s")
+
+; /* TRANS: Incite a _Revolt and Escape (3% chance of success). */
+ui_name_incite_city_escape = _("Incite a Re%svolt and Escape%s")
 
 ; /* TRANS: Establish _Embassy (100% chance of success). */
 ui_name_establish_embassy = _("Establish %sEmbassy%s")
@@ -248,8 +254,11 @@ ui_name_establish_embassy_stay = _("Becom%se Ambassador%s")
 ; /* TRANS: Steal _Technology (3% chance of success). */
 ui_name_steal_tech = _("Steal %sTechnology%s")
 
+; /* TRANS: Steal _Technology and Escape (3% chance of success). */
+ui_name_steal_tech_escape = _("Steal %sTechnology and Escape%s")
+
 ; /* TRANS: Indus_trial Espionage (3% chance of success). */
-ui_name_targeted_steal_tech = _("Indus%strial Espionage%s")
+ui_name_targeted_steal_tech_escape = _("Indus%strial Espionage%s")
 
 ; /* TRANS: _Investigate City (100% chance of success). */
 ui_name_investigate_city = _("%sInvestigate City%s")
@@ -312,21 +321,32 @@ ui_name_conquer_city = _("%Conquer City%s")
 [actionenabler_sabotage_city]
 action = "Sabotage City"
 actor_reqs    =
-    { "type",   "name", "range"
-      "UnitFlag", "Diplomat", "Local"
-      "DiplRel", "War", "Local"
-      "UnitState", "OnLivableTile", "Local"
-      "MinMoveFrags", "1", "Local"
+    { "type",         "name",          "range", "present"
+      "UnitFlag",     "Diplomat",      "Local", TRUE
+      "UnitFlag",     "Spy",           "Local", FALSE
+      "DiplRel",      "War",           "Local", TRUE
+      "UnitState",    "OnLivableTile", "Local", TRUE
+      "MinMoveFrags", "1",             "Local", TRUE
+    }
+
+[actionenabler_sabotage_city_spy]
+action = "Sabotage City Escape"
+actor_reqs    =
+    { "type",         "name",          "range"
+      "UnitFlag",     "Spy",           "Local"
+      "DiplRel",      "War",           "Local"
+      "UnitState",    "OnLivableTile", "Local"
+      "MinMoveFrags", "1",             "Local"
     }
 
 [actionenabler_sabotage_city_target]
-action = "Targeted Sabotage City"
+action = "Targeted Sabotage City Escape"
 actor_reqs    =
-    { "type",   "name", "range"
-      "DiplRel", "War", "Local"
-      "UnitFlag", "Spy", "Local"
-      "UnitState", "OnLivableTile", "Local"
-      "MinMoveFrags", "1", "Local"
+    { "type",         "name",          "range"
+      "DiplRel",      "War",           "Local"
+      "UnitFlag",     "Spy",           "Local"
+      "UnitState",    "OnLivableTile", "Local"
+      "MinMoveFrags", "1",             "Local"
     }
 
 [actionenabler_establish_embassy]
@@ -380,62 +400,94 @@ actor_reqs    =
     }
 
 [actionenabler_poison_city]
-action = "Poison City"
+action = "Poison City Escape"
 actor_reqs    =
-    { "type",   "name", "range"
-      "UnitFlag", "Spy", "Local"
-      "DiplRel", "War", "Local"
-      "UnitState", "OnLivableTile", "Local"
-      "MinMoveFrags", "1", "Local"
-      "DiplRel", "Foreign", "Local"
+    { "type",         "name",          "range"
+      "UnitFlag",     "Spy",           "Local"
+      "DiplRel",      "War",           "Local"
+      "UnitState",    "OnLivableTile", "Local"
+      "MinMoveFrags", "1",             "Local"
+      "DiplRel",      "Foreign",       "Local"
     }
 target_reqs    =
     { "type",   "name", "range"
-      "MinSize", "2", "City"
+      "MinSize", "2",   "City"
     }
 
 [actionenabler_steal_tech_random]
 action = "Steal Tech"
 actor_reqs    =
-    { "type",   "name", "range"
-      "UnitFlag", "Diplomat", "Local"
-      "UnitState", "OnLivableTile", "Local"
-      "MinMoveFrags", "1", "Local"
-      "DiplRel", "Foreign", "Local"
+    { "type",         "name",          "range", "present"
+      "UnitFlag",     "Diplomat",      "Local", TRUE
+      "UnitFlag",     "Spy",           "Local", FALSE
+      "UnitState",    "OnLivableTile", "Local", TRUE
+      "MinMoveFrags", "1",             "Local", TRUE
+      "DiplRel",      "Foreign",       "Local", TRUE
     }
 target_reqs  =
-    { "type",   "name", "range", "present"
+    { "type",        "name",      "range", "present"
+      "NationGroup", "Barbarian", "Player", FALSE
+    }
+
+[actionenabler_steal_tech_random_esc]
+action = "Steal Tech"
+actor_reqs    =
+    { "type",         "name",          "range"
+      "UnitFlag",     "Spy",           "Local"
+      "UnitState",    "OnLivableTile", "Local"
+      "MinMoveFrags", "1",             "Local"
+      "DiplRel",      "Foreign",       "Local"
+    }
+target_reqs  =
+    { "type",        "name",      "range", "present"
       "NationGroup", "Barbarian", "Player", FALSE
     }
 
 [actionenabler_steal_tech_target]
-action = "Targeted Steal Tech"
+action = "Targeted Steal Tech Escape Expected"
 actor_reqs    =
-    { "type",   "name", "range"
-      "UnitFlag", "Spy", "Local"
-      "UnitState", "OnLivableTile", "Local"
-      "MinMoveFrags", "1", "Local"
-      "DiplRel", "Foreign", "Local"
+    { "type",         "name",          "range"
+      "UnitFlag",     "Spy",           "Local"
+      "UnitState",    "OnLivableTile", "Local"
+      "MinMoveFrags", "1",             "Local"
+      "DiplRel",      "Foreign",       "Local"
     }
 target_reqs  =
-    { "type",   "name", "range", "present"
+    { "type",        "name",      "range", "present"
       "NationGroup", "Barbarian", "Player", FALSE
     }
 
 [actionenabler_incite_city]
 action = "Incite City"
 actor_reqs    =
-    { "type",   "name", "range", "present"
-      "UnitFlag", "Diplomat", "Local", TRUE
-      "DiplRel", "Alliance", "Local", FALSE
-      "DiplRel", "Team", "Local", FALSE
-      "UnitState", "OnLivableTile", "Local", TRUE
-      "MinMoveFrags", "1", "Local", TRUE
-      "DiplRel", "Foreign", "Local", TRUE
+    { "type",         "name",          "range", "present"
+      "UnitFlag",     "Diplomat",      "Local", TRUE
+      "UnitFlag",     "Spy",           "Local", FALSE
+      "DiplRel",      "Alliance",      "Local", FALSE
+      "DiplRel",      "Team",          "Local", FALSE
+      "UnitState",    "OnLivableTile", "Local", TRUE
+      "MinMoveFrags", "1",             "Local", TRUE
+      "DiplRel",      "Foreign",       "Local", TRUE
     }
 target_reqs  =
-    { "type",   "name", "range", "present"
-      "Building", "Palace", "City", FALSE
+    { "type",     "name",   "range", "present"
+      "Building", "Palace", "City",  FALSE
+    }
+
+[actionenabler_incite_city_spy]
+action = "Incite City Escape"
+actor_reqs    =
+    { "type",         "name",          "range", "present"
+      "UnitFlag",     "Spy",           "Local", TRUE
+      "DiplRel",      "Alliance",      "Local", FALSE
+      "DiplRel",      "Team",          "Local", FALSE
+      "UnitState",    "OnLivableTile", "Local", TRUE
+      "MinMoveFrags", "1",             "Local", TRUE
+      "DiplRel",      "Foreign",       "Local", TRUE
+    }
+target_reqs  =
+    { "type",     "name",   "range", "present"
+      "Building", "Palace", "City",  FALSE
     }
 
 [actionenabler_bribe_unit]
@@ -457,20 +509,20 @@ target_reqs    =
     }
 
 [actionenabler_sabotage_unit]
-action = "Sabotage Unit"
+action = "Sabotage Unit Escape"
 actor_reqs    =
-    { "type",   "name", "range"
-      "UnitFlag", "Spy", "Local"
-      "DiplRel", "War", "Local"
-      "UnitState", "OnLivableTile", "Local"
-      "MinMoveFrags", "1", "Local"
-      "DiplRel", "Foreign", "Local"
+    { "type",         "name",          "range"
+      "UnitFlag",     "Spy",           "Local"
+      "DiplRel",      "War",           "Local"
+      "UnitState",    "OnLivableTile", "Local"
+      "MinMoveFrags", "1",             "Local"
+      "DiplRel",      "Foreign",       "Local"
     }
 target_reqs    =
-    { "type",   "name", "range", "present"
-      "CityTile", "Center", "Local", FALSE
-      "MinHitPoints", "2", "Local", TRUE
-      "MaxUnitsOnTile", "1", "Local", TRUE
+    { "type",           "name",   "range", "present"
+      "CityTile",       "Center", "Local", FALSE
+      "MinHitPoints",   "2",      "Local", TRUE
+      "MaxUnitsOnTile", "1",      "Local", TRUE
     }
 
 [actionenabler_traderoute]
@@ -564,10 +616,11 @@ actor_reqs    =
 [actionenabler_attack_native]
 action = "Attack"
 actor_reqs    =
-    { "type",         "name",   "range", "present"
-      "UnitFlag",     "NonMil", "Local", FALSE
-      "MinMoveFrags", "1",      "Local", TRUE
+    { "type",         "name",         "range", "present"
+      "UnitFlag",     "NonMil",       "Local", FALSE
+      "MinMoveFrags", "1",            "Local", TRUE
       "UnitState",    "OnNativeTile", "Local", TRUE
+      "DiplRel",      "War",          "Local", TRUE
     }
 
 [actionenabler_attack_marines]
@@ -577,6 +630,7 @@ actor_reqs    =
       "UnitFlag",     "NonMil",  "Local", FALSE
       "MinMoveFrags", "1",       "Local", TRUE
       "UnitFlag",     "Marines", "Local", TRUE
+      "DiplRel",      "War",     "Local", TRUE
     }
 
 [actionenabler_attack_att_from_non_native]
@@ -586,6 +640,7 @@ actor_reqs    =
       "UnitFlag",      "NonMil",           "Local", FALSE
       "MinMoveFrags",  "1",                "Local", TRUE
       "UnitClassFlag", "AttFromNonNative", "Local", TRUE
+      "DiplRel",       "War",              "Local", TRUE
     }
 
 [actionenabler_conquer_city_native]
@@ -852,6 +907,7 @@ goods_selection = "Arrival"
 ;                           This value is applied to both ends of bidirectional routes.
 ; to_pct                  = Income for the receiving end of the trade route. Default is 100%
 ;                           This value is not used at all in case of bidirectional routes.
+; onetime_pct             = Onetime bonuses when traderoute is established. Default is 100%
 ; flags
 ;   - "Bidirectional"     = Trade route carrying the goods does not have "from" and "to"
 ;                           ends, but both ends are considered the same.
