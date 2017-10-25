@@ -1,9 +1,9 @@
 What freeciv revision modpacks are compatible with.
 
-ancients:    S2_6 / 32309 (S2_6 final)
-mqtx:        S2_6 / 32302 (S2_6 final)
-chess:       S2_6 / 32453 (S2_6 final)
-alienmusic:  S2_6 / 32309 (S2_6 final)
-freeland:    S2_6 / 32535 (S2_6 final)
-delta2:      S2_6 / 34461 (S2_6 final)
-deltasquare: S2_6 / 32535 (S2_6 final) 
+ancients:    S2_6 / 32309 (S2_6 frozen)
+mqtx:        S2_6 / 32302 (S2_6 frozen)
+chess:       S2_6 / 32453 (S2_6 frozen)
+alienmusic:  S2_6 / 32309 (S2_6 frozen)
+freeland:    S2_6 / 32535 (S2_6 frozen)
+delta2:      S2_6 / 34461 (S2_6 frozen)
+deltasquare: S2_6 / 32535 (S2_6 frozen)
