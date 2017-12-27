@@ -11,6 +11,7 @@ artists = "
   GriffonSpade: lion
   Bebro, CapTVK (thomas@worldonline.nl), GriffonSpade: cyborg
   VladimirSlavik: Sea Constructor
+  Clker-Free-Vector-Images: Balloon
 "
 
 [file]
@@ -32,6 +33,7 @@ tiles = { "row", "column", "tag"
   0,  3, "u.sail"
 
   1,  0, "u.cyborg"
+  1,  1, "u.balloon"
   1,  2, "u.diplomat"
   1,  3, "u.warriors"
 }
