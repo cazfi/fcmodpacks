@@ -50,8 +50,8 @@ unit_offset_x = 34
 unit_offset_y = 38
 
 ; offset the cities by this amount
-city_offset_x = 15
-city_offset_y = 20
+city_offset_x = 17
+city_offset_y = 21
 
 ; offset of the normal activity icons
 activity_offset_x = 74
@@ -156,11 +156,11 @@ files =
   "amplio2/units.spec",
   "amplio2/nuke.spec",
   "amplio2/explosions.spec",
-  "amplio2/cities.spec",
   "delta2/units.spec",
   "delta2/canals.spec",
   "hexemplio/activities.spec",
   "hexemplio/bases.spec",
+  "hexemplio/cities.spec",
   "hexemplio/terrain.spec",
   "hexemplio/embellishments.spec",
   "hexemplio/forests.spec",
