@@ -18,10 +18,11 @@ options="+Freeciv-2.6-ruleset"
 ; Notes:
 ;
 ; name          = translatable name as seen by user
-; rule_name     = (optional) name for savegames, rulesets etc; if not
-;                 present, 'name' is used. Since the name used in savegames
-;                 must not change, use this when renaming a building after a
-;                 ruleset has been released.
+; rule_name     = (optional) internal name for savegames, rulesets etc; if
+;                 not present, "name" is used for this purpose too. Since
+;                 the name used in savegames must not change, if you want
+;                 to rename an item after a ruleset has been released, you
+;                 should set "rule_name" to the original value of "name".
 ; genus	        = genus; one of:
 ;                 "GreatWonder", "SmallWonder", "Improvement", "Special".
 ; reqs		= requirements to build the building (see effects.ruleset
@@ -474,9 +475,9 @@ The cost to enemy Diplomats and Spies of inciting a revolt in a\
 Take good care of your capital, as its loss may result in your\
  empire plunging into civil war.\
 "), _("\
-If the city with palace is in dangerous location, or making some\
- more central city your capital would give better corruption distribution,\
- you can move Palace by rebuilding it to an other city.\
+If the capital is in a dangerous location, or a more central capital\
+ would give a better corruption distribution, you can move your palace\
+ by rebuilding it in another city.\
 "), _("\
 Under Despotism the palace gives you a +75% production bonus,\
  and under Petty Monarchy a +50% production bonus.\
