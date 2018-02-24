@@ -10,7 +10,7 @@ artists = "
   ngunjaca: boat, sail, diplomat, warriors
   GriffonSpade: lion
   Bebro, CapTVK (thomas@worldonline.nl), GriffonSpade: cyborg
-  VladimirSlavik: Sea Constructor
+  VladimirSlavik: Sea Constructor, Nuclear Submarine
   Clker-Free-Vector-Images: Balloon
 "
 
@@ -36,4 +36,6 @@ tiles = { "row", "column", "tag"
   1,  1, "u.balloon"
   1,  2, "u.diplomat"
   1,  3, "u.warriors"
+
+  2,  0, "u.nuclear_submarine"
 }
