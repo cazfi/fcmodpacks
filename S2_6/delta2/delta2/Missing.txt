@@ -1,10 +1,6 @@
 Delta2 is meant to be used with variant2 ruleset. This is list of
 gfx needed by variant2 that is missing from Delta2
 
-Units
-=====
-- Nuclear Submarine
-
 Buildings
 =========
 - Blacksmith
