@@ -3,7 +3,6 @@ gfx needed by variant2 that is missing from Delta2
 
 Units
 =====
-- Nuclear Submarine
 
 Buildings
 =========
