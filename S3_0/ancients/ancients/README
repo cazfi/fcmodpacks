@@ -73,6 +73,23 @@ Miscellaneous warnings:
 ---
 ChangeLog
 
+Ancients 2.6-1
+
+* Converted iberian.ruleset to UTF-8
+
+Ancients 2.6-0
+
+* Updated format to be compatible with freeciv 2.6
+
+Ancients 2.5-1
+
+* Fixed definition of Mesopotamian nationgroup
+* Updated ancients tilespec to take advantage of trident improvements
+
+Ancients 2.5-0
+
+* Updated format to be compatible with freeciv 2.5
+
 Ancients 2.4-0
 
 * Updated format to be compatible with freeciv 2.4
