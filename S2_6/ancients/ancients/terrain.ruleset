@@ -72,9 +72,7 @@ ocean_resources = FALSE
 ;
 ; Notes:
 ;
-; name                 = translatable name as seen by user; if "unused", it is
-;                        but is included for conversion and/or the editor. 	;                        not used, but is included for conversion and/or the
-;                        editor.
+; name                 = translatable name as seen by user
 ; rule_name            = (optional) internal name for savegames, rulesets etc;
 ;                        if not present, "name" is used for this purpose too.
 ;                        Since the name used in savegames must not change, if
@@ -781,8 +779,7 @@ Tundra are broad, cold regions, fit for some agriculture and little\
 ;
 ; Notes:
 ;
-; name                 = name as seen by user; if "unused", it is not used,
-;                        but is included for conversion and/or the editor.
+; name                 = name as seen by user
 ; graphic              = tag specifying preferred graphic
 ; graphic_alt	       = tag for alternate garphic if preferred graphic is not 
 ;		         present; especially if preferred graphic is non-standard, 
@@ -999,7 +996,8 @@ ui_name_base_airbase = _("?gui_type:Build Nothing")
 ;                           "Infra", "Natural", "Nuisance", or "Bonus"
 ; causes                  = events that can create extra type.
 ;                           "Irrigation", "Mine", "Hut", "Pollution", "Fallout",
-;                           "Base", or "Road"
+;                           "Base", or "Road" (last two require a corresponding
+;                           [base_*] or [road_*] section)
 ; rmcauses                = events that can remove extra type.
 ;                           "CleanPollution", "CleanFallout", or "Pillage"
 ; graphic                 = tag specifying preferred graphic
@@ -1084,6 +1082,23 @@ rmact_gfx      = "None"
 build_time     = 0
 removal_time   = 0
 conflicts      = "Mine"
+helptext       = _("\
+Building an irrigation system on a suitable tile causes it to \
+produce one extra food each turn. This requires a nearby source of \
+water: an ocean, lake, or river tile, or another tile with an \
+irrigation system, must share an edge (not just a corner) with the \
+target tile. However, once irrigated, land remains so even if the \
+water source is removed.\
+"), _("\
+Building irrigation on a tile with a mine will destroy it.\
+"), _("\
+City center tiles get their terrain's irrigation bonus automatically, \
+if there is no conflicting mine on the tile; however, \
+this does not make cities count as a water source for further \
+irrigation. Irrigation can be built on the city tile simply to allow \
+building further irrigation elsewhere, but will not give the tile any \
+further bonus.\
+")
 
 [extra_mine]
 name           = _("Mine")
@@ -1099,6 +1114,14 @@ rmact_gfx      = "None"
 build_time     = 0
 removal_time   = 0
 conflicts      = "Irrigation"
+helptext       = _("\
+Mines can be built on some types of terrain, which increases the \
+number of production points produced by that tile. Hills get an extra \
+3 production points per tile; other terrains get 1 extra production \
+point.\
+"), _("\
+Building a mine on an irrigated tile will destroy the irrigation.\
+")
 
 [extra_pollution]
 name           = _("Pollution")
@@ -1172,6 +1195,12 @@ build_time     = 3
 removal_time   = 0
 defense_bonus  = 100
 native_to      = "Land"
+helptext       = _("\
+Fortresses improve defense for land units outside cities. Among other \
+effects, a land unit remaining in a fortress for a whole turn without \
+moving recovers all its hit points. With Invention, fortresses \
+gain watchtowers from which land units can see further afield.\
+")
 
 [extra_road]
 name           = _("Road")
@@ -1236,6 +1265,7 @@ Roads and railroads can only be built on River tiles if your\
 ; Base types:
 ;
 ; extra                   = name of the extra this base section is part of
+;                           (must have "Base" in its causes)
 ; gui_type                = How gui should handle this base.
 ;                           Value can be "Fortress", "Airbase", or "Other"
 ; border_sq               = Base will claim land ownership up to this radius,
@@ -1262,6 +1292,7 @@ flags         = "NoAggressive", "NoStackDeath", "DiplomatDefense"
 ; Road types:
 ;
 ; extra                   = name of the extra this road section is part of
+;                           (must have "Road" in its causes)
 ; first_reqs              = additional requirements to build the first part of
 ;                           the road, when none of the adjacent tiles have any
 ;                           integrating roads (see effects.ruleset and
