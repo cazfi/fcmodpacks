@@ -766,7 +766,7 @@ reqs	=
 
 [effect_corruption_anarchy1]
 type    = "Output_Waste_By_Distance"
-value	= 2
+value	= 200
 reqs	=
     { "type", "name", "range"
       "Gov", "Anarchy", "Player"
@@ -784,7 +784,7 @@ reqs	=
 
 [effect_corruption_despotism1]
 type    = "Output_Waste_By_Distance"
-value	= 4
+value	= 400
 reqs	=
     { "type", "name", "range"
       "Gov", "Despotism", "Player"
@@ -802,7 +802,7 @@ reqs	=
 
 [effect_corruption_petty_monarchy1]
 type    = "Output_Waste_By_Distance"
-value	= 2
+value	= 200
 reqs	=
     { "type", "name", "range"
       "Gov", "Petty Monarchy", "Player"
@@ -812,16 +812,6 @@ reqs	=
 [effect_corruption_imperial_monarchy0]
 type    = "Output_Waste"
 value	= 15
-reqs	=
-    { "type", "name", "range"
-      "Gov", "Imperial Monarchy", "Player"
-      "OutputType", "Trade", "Local"
-    }
-
-; might not be possible with const distance?
-[effect_corruption_imperial_monarchy1]
-type    = "Output_Waste_By_Distance"
-value	= 0
 reqs	=
     { "type", "name", "range"
       "Gov", "Imperial Monarchy", "Player"
@@ -839,7 +829,7 @@ reqs	=
 
 [effect_corruption_republic1]
 type    = "Output_Waste_By_Distance"
-value	= 1
+value	= 100
 reqs	=
     { "type", "name", "range"
       "Gov", "Republic", "Player"
@@ -866,7 +856,7 @@ reqs	=
 
 [effect_corruption_ancient_democracy1]
 type    = "Output_Waste_By_Distance"
-value	= 3
+value	= 300
 reqs	=
     { "type", "name", "range"
       "Gov", "Ancient Democracy", "Player"
