@@ -10,7 +10,7 @@ priority = 5
 ; Version numbering so that until freeciv version a.b has stable format,
 ; version here is some a.b-pre, a.b-dev, or a.b-alpha. The first version
 ; with the stable format is a.b-0, then a.b-1...
-version = "2.6-0"
+version = "2.6-0b"
 
 ; Summary and full description of the tileset.
 summary = _("Tileset to be used with Ancients ruleset.")
@@ -76,7 +76,8 @@ tilelabel_offset_y = 10
 ; space below.
 unit_upkeep_small_offset_y = 20
 
-; Font size (points) to use to draw city names and productions:
+; Font size (points) to use to draw city names and productions.
+; (Deprecated, and ignored by many clients.)
 city_names_font_size = 10
 city_productions_font_size = 10
 
