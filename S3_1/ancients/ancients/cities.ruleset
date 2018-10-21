@@ -44,6 +44,7 @@ name		= _("Entertainers")
 ; not designed to be user-visible.)
 rule_name       = "elvis"
 short_name	= _("?Elvis:E")
+graphic         = "specialist.entertainer"
 reqs		=
     { "type", "name", "range"
 ; Nothing
@@ -56,6 +57,7 @@ See the section on Happiness for the effects of luxury points.\
 [specialist_scientist]
 name		= _("scientist")
 short_name	= _("?Scientist:S")
+graphic         = "specialist.scientist"
 reqs		=
     { "type", "name", "range"
       "MinSize", "5", "City"
@@ -68,6 +70,7 @@ per turn.\
 [specialist_taxman]
 name		= _("taxman")
 short_name	= _("?Taxman:T")
+graphic         = "specialist.taxman"
 reqs		=
     { "type", "name", "range"
       "MinSize", "5", "City"
