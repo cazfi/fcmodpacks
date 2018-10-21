@@ -93,9 +93,9 @@ reqs    =
       "OutputType", "gold", "Local"
     }
 
-[effect_conquer_techs_base]
-type    = "Conquer_Techs_Min"
-value   = 1
+[effect_conquest_tech]
+type    = "Conquest_Tech_Pct"
+value   = 100
 
 [effect_navigating_boats]
 type    = "Move_Bonus"
@@ -1784,4 +1784,13 @@ value	= 25
 reqs	=
     { "type",  "name",     "range"
       "Extra", "Fortress", "Local"
+    }
+
+; Double (+100%) buy cost for Great Wonders
+[effect_great_wonder_buy_cost]
+type    = "Building_Buy_Cost_Pct"
+value   = 100
+reqs    =
+    { "type", "name", "range"
+      "BuildingGenus", "GreatWonder", "Local"
     }
