@@ -9,7 +9,7 @@ name = "Deltasquare"
 priority = 30
 
 ; Version of the tileset
-version = "3.0-dev"
+version = "3.1-dev"
 
 ; Summary and full description of the tileset.
 summary = _("Tileset to be used with variant2 ruleset in square tiles map.")
@@ -80,10 +80,6 @@ tilelabel_offset_y = 15
 ; space for the overall icon produced. Defaults to unit_upkeep_offset_y -
 ; not having alternative layout.
 ;unit_upkeep_small_offset_y = 0
-
-; Font size (points) to use to draw city names and productions:
-city_names_font_size = 10
-city_productions_font_size = 8
 
 ; For tilesets with oriented units, the directional sprite to use to
 ; represent a unit type rather than a specific unit from the map
@@ -310,6 +306,7 @@ styles =
       "tx.farmland",   "Cardinals"
       "tx.mine",       "Single1"
       "tx.oil_mine",   "Single1"
+      "tx.oil_rig",    "Single1"
       "tx.pollution",  "Single2"
       "tx.fallout",    "Single2"
       "tx.village",    "Single1"
