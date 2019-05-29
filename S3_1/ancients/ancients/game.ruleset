@@ -36,6 +36,21 @@ capabilities = ""
 global_init_techs=""
 global_init_buildings="Palace"
 
+[tileset]
+; If preferred tileset is set, clients that support the feature will suggest
+; using that tileset with the ruleset.
+; preferred = ""
+
+[soundset]
+; If preferred soundset is set, clients that support the feature will suggest
+; using that soundset with the ruleset.
+; preferred = ""
+
+[musicset]
+; If preferred musicset is set, clients that support the feature will suggest
+; using that musicset with the ruleset.
+; preferred = ""
+
 [civstyle]
 ; Value added to city pollution
 base_pollution   = -20
@@ -175,6 +190,21 @@ slow_invasions = TRUE
 ; have only fractional moves left.
 tired_attack = FALSE
 
+; With some rules it`s possible that neither side of a combat dies.
+; Set this to TRUE if unit should never gain veterancy from such a combat.
+only_killing_makes_veteran = FALSE
+
+; Percentage of population lost by a city after nuclear attak. If set to
+; 100 city is destroyed along with all the units. If set to 0 city does not
+; loose population. Any value below 100 means the city can never be
+; destroyed completely using nuclear
+nuke_pop_loss_pct = 50
+
+; Percentage chance of a city defender surviving nuclear attack. When set
+; to 50 roughly half of defenders will survive nuclear attack. When set to
+; 0 no defenders will survive. When set to 100 all defenders will survive.
+nuke_defender_survival_chance_pct = 0
+
 [auto_attack]
 ; An auto attack may be triggered when another unit moves to an adjacent
 ; tile and the autoattack server setting is enabled. The following details
@@ -292,6 +322,9 @@ ui_name_upgrade_unit = _("%sUpgrade Unit%s")
 
 ; /* TRANS: _Attack (100% chance of success). */
 ui_name_attack = _("%sAttack%s")
+
+; /* TRANS: _Explode Missile (100% chance of success). */
+ui_name_suicide_attack = _("%sExplode Missile%s")
 
 ; /* TRANS: _Conquer City (100% chance of success). */
 ui_name_conquer_city = _("%Conquer City%s")
@@ -628,21 +661,23 @@ actor_reqs    =
 [actionenabler_attack_native]
 action = "Attack"
 actor_reqs    =
-    { "type",         "name",         "range", "present"
-      "UnitFlag",     "NonMil",       "Local", FALSE
-      "MinMoveFrags", "1",            "Local", TRUE
-      "UnitState",    "OnNativeTile", "Local", TRUE
-      "DiplRel",      "War",          "Local", TRUE
+    { "type",          "name",         "range", "present"
+      "UnitFlag",      "NonMil",       "Local", FALSE
+      "UnitClassFlag", "Missile",      "Local", FALSE
+      "MinMoveFrags",  "1",            "Local", TRUE
+      "UnitState",     "OnNativeTile", "Local", TRUE
+      "DiplRel",       "War",          "Local", TRUE
     }
 
 [actionenabler_attack_marines]
 action = "Attack"
 actor_reqs    =
-    { "type",         "name",    "range", "present"
-      "UnitFlag",     "NonMil",  "Local", FALSE
-      "MinMoveFrags", "1",       "Local", TRUE
-      "UnitFlag",     "Marines", "Local", TRUE
-      "DiplRel",      "War",     "Local", TRUE
+    { "type",          "name",    "range", "present"
+      "UnitFlag",      "NonMil",  "Local", FALSE
+      "UnitClassFlag", "Missile", "Local", FALSE
+      "MinMoveFrags",  "1",       "Local", TRUE
+      "UnitFlag",      "Marines", "Local", TRUE
+      "DiplRel",       "War",     "Local", TRUE
     }
 
 [actionenabler_attack_att_from_non_native]
@@ -650,6 +685,7 @@ action = "Attack"
 actor_reqs    =
     { "type",          "name",             "range", "present"
       "UnitFlag",      "NonMil",           "Local", FALSE
+      "UnitClassFlag", "Missile",          "Local", FALSE
       "MinMoveFrags",  "1",                "Local", TRUE
       "UnitClassFlag", "AttFromNonNative", "Local", TRUE
       "DiplRel",       "War",              "Local", TRUE
@@ -900,8 +936,8 @@ fragments = 0
 ; Calendar fragment names. If name is missing, only a fragment number +1 (so human readable
 ; numbers begin from 1 and not 0) is shown.
 
-;fragment_name0 = "Jan"
-;fragment_name1 = "Feb"
+;fragment_name0 = _("Jan")
+;fragment_name1 = _("Feb")
 ; ...
 
 ; What labels are used for positive and negative years.
