@@ -36,6 +36,21 @@ capabilities = ""
 global_init_techs=""
 global_init_buildings="Palace"
 
+[tileset]
+; If preferred tileset is set, clients that support the feature will suggest
+; using that tileset with the ruleset.
+; preferred = ""
+
+[soundset]
+; If preferred soundset is set, clients that support the feature will suggest
+; using that soundset with the ruleset.
+; preferred = ""
+
+[musicset]
+; If preferred musicset is set, clients that support the feature will suggest
+; using that musicset with the ruleset.
+; preferred = ""
+
 [civstyle]
 ; Value added to city pollution
 base_pollution   = -20
@@ -174,6 +189,10 @@ slow_invasions = TRUE
 ; If this is set to FALSE units will attack with full strength even if they
 ; have only fractional moves left.
 tired_attack = FALSE
+
+; With some rules it`s possible that neither side of a combat dies.
+; Set this to TRUE if unit should never gain veterancy from such a combat.
+only_killing_makes_veteran = FALSE
 
 [auto_attack]
 ; An auto attack may be triggered when another unit moves to an adjacent
@@ -793,8 +812,8 @@ fragments = 0
 ; Calendar fragment names. If name is missing, only a fragment number +1 (so human readable
 ; numbers begin from 1 and not 0) is shown.
 
-;fragment_name0 = "Jan"
-;fragment_name1 = "Feb"
+;fragment_name0 = _("Jan")
+;fragment_name1 = _("Feb")
 ; ...
 
 ; What labels are used for positive and negative years.
