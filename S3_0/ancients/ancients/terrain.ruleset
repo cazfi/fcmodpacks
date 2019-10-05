@@ -12,7 +12,7 @@
 
 [datafile]
 description="Ancients terrain data for Freeciv"
-options="+Freeciv-ruleset-Devel-2015.January.14"
+options="+Freeciv-3.0-ruleset"
 format_version=10
 
 [control]
@@ -946,7 +946,11 @@ shield      = 3 ; glacier used to have 4
 [extraui]
 
 ; Player visible names of the base gui types.
+
+; ui_name_base_fortress refers to all bases that have gui_type "Fortress"
 ui_name_base_fortress = _("?gui_type:Build Fortress")
+
+; ui_name_base_airbase refers to all bases that have gui_type "Airbase"
 ui_name_base_airbase = _("?gui_type:Build Nothing")
 
 ; /* <-- avoid gettext warnings
@@ -998,6 +1002,10 @@ ui_name_base_airbase = _("?gui_type:Build Nothing")
 ; buildable               = Can extra be built? Defaults to TRUE if extra has
 ;                           any causes indicating it can result from worker
 ;                           activity.
+;                           If extra is not buildable, it can appear in game
+;                           only if placed in the editor, it's placed by
+;                           map generator, or on city tile if the extra
+;                           also has "AlwaysOnCityCenter" flag set.
 ; generated               = Can map generator place the extra? Applicable
 ;                           for Hut, Resource, and River extras.
 ; build_time              = how long it takes a unit to build this extra.
@@ -1528,6 +1536,7 @@ rmact_gfx_alt  = "-"
 ;                           (must have "Base" in its causes)
 ; gui_type                = How gui should handle this base.
 ;                           Value can be "Fortress", "Airbase", or "Other"
+;                           See also [extraui] section
 ; border_sq               = Base will claim land ownership up to this radius,
 ;                           -1 to disable. If enabled, base cannot exist in
 ;                           city tile.
