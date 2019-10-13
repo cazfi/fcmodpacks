@@ -7,14 +7,14 @@
 [tilespec]
 
 ; Format and options of this tilespec file:
-options = "+Freeciv-tilespec-Devel-2016-Jun-07"
+options = "+Freeciv-3.0-tilespec"
 
 ; A simple name for the tileset specified by this file:
 name = "Freeland-big"
 priority = 22
 
 ; Version information
-version = "3.0-beta2.2-pre"
+version = "3.0-beta2.2-00"
 
 ; Summary and full description of the tileset.
 summary = _("Freeland tileset with 128x64 tiles")
