@@ -2,14 +2,14 @@
 [tilespec]
 
 ; Format and options of this tilespec file:
-options = "+Freeciv-tilespec-Devel-2016-Jun-07 duplicates_ok"
+options = "+Freeciv-3.0-tilespec duplicates_ok"
 
 ; A simple name for the tileset specified by this file:
 name = "Delta2"
 priority = 3
 
 ; Version of the tileset
-version = "3.0-dev"
+version = "3.0-0"
 
 ; Summary and full description of the tileset.
 summary = _("Tileset to be used with variant2 ruleset in hex mode (default)")
