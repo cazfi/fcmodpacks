@@ -132,12 +132,29 @@ reqs	=
       "UnitClass", "Land", "Local"
     }
 
+[effect_fortified]
+type    = "Fortify_Defense_Bonus"
+value   = 50
+reqs    =
+    { "type", "name", "range"
+      "Activity", "Fortified", "Local"
+    }
+
+[effect_city_fortified]
+type    = "Fortify_Defense_Bonus"
+value   = 50
+reqs    =
+    { "type",          "name",         "range", "present"
+      "CityTile",      "Center",       "Local", TRUE
+      "Activity",      "Fortified",    "Local", FALSE
+      "UnitClassFlag", "CanFortify",   "Local", TRUE
+      "UnitFlag",      "Cant_Fortify", "Local", FALSE
+    }
+
 ; Base vision range - radius of vision is sqrt(5) = 2.24
 [effect_city_vision]
 type    = "City_Vision_Radius_Sq"
 value   = 5
-
-
 
 [effect_civil_war_0]
 type    = "Civil_War_Chance"
@@ -1592,6 +1609,10 @@ reqs    =
     { "type", "name", "range", "present"
       "Action", "Found City", "Local", FALSE
       "Action", "Join City", "Local", FALSE
+      "Action", "Transport Board", "Local", FALSE
+      "Action", "Transport Alight", "Local", FALSE
+      "Action", "Transport Disembark", "Local", FALSE
+      "Action", "Transport Disembark 2", "Local", FALSE
     }
 
 [effect_enter_marketplace_bonus_reduction]
@@ -1742,6 +1763,23 @@ reqs    =
       "Action", "Targeted Sabotage City Escape", "Local", TRUE
     }
 
+[effect_incident_success_sabotage_city_production]
+type   = "Casus_Belli_Success"
+value  = 1
+reqs   =
+    { "type", "name", "range", "present"
+      "Action", "Sabotage City Production Escape", "Local", TRUE
+      "DiplRel", "War", "Local", FALSE
+    }
+
+[effect_sabotage_city_production_city_half_chance]
+type   = "Action_Odds_Pct"
+value  = -50
+reqs   =
+    { "type", "name", "range", "present"
+      "Action", "Sabotage City Production Escape", "Local", TRUE
+    }
+
 [effect_diplomat_defense_extra]
 type    = "Spy_Resistant"
 value	= 25
@@ -1757,4 +1795,54 @@ value   = 100
 reqs    =
     { "type", "name", "range"
       "BuildingGenus", "GreatWonder", "Local"
+    }
+
+[effect_action_success_move_cost_embassy]
+type    = "Action_Success_Actor_Move_Cost"
+value   = 1
+reqs    =
+    { "type", "name", "range", "present"
+      "Action", "Establish Embassy", "Local", TRUE
+    }
+
+[effect_action_success_move_cost_investigate]
+type    = "Action_Success_Actor_Move_Cost"
+value   = 1
+reqs    =
+    { "type", "name", "range", "present"
+      "Action", "Investigate City", "Local", TRUE
+    }
+
+[effect_action_success_move_cost_from_non_native]
+type    = "Action_Success_Actor_Move_Cost"
+value   = 65535
+reqs    =
+    { "type",      "name",                  "range", "present"
+      "Action",    "Transport Disembark 2", "Local", TRUE
+      "UnitState", "OnNativeTile",          "Local", TRUE
+    }
+
+[effect_action_success_conquer_cost_from_non_native]
+type    = "Action_Success_Actor_Move_Cost"
+value   = 65535
+reqs    =
+    { "type",      "name",           "range", "present"
+      "Action",    "Conquer City 2", "Local", TRUE
+      "UnitState", "OnNativeTile",   "Local", TRUE
+    }
+
+[effect_unit_shield_value_recycle]
+type    = "Unit_Shield_Value_Pct"
+value   = -50
+reqs    =
+    { "type",   "name",         "range", "present"
+      "Action", "Recycle Unit", "Local", TRUE
+    }
+
+[effect_unit_shield_value_in_upgrade_price_calc]
+type    = "Unit_Shield_Value_Pct"
+value   = -50
+reqs    =
+    { "type",   "name",         "range", "present"
+      "Action", "Upgrade Unit", "Local", TRUE
     }
