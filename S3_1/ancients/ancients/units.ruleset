@@ -28,7 +28,6 @@ flags =
     _("HelpWonder")
     _("Cities")
     _("AddToCity")
-    _("Infra"), _("Can build infrastructure.")
     _("Marines"), _("Can launch attack from non-native tiles.")
     _("Cant_Fortify")
   }
@@ -456,7 +455,7 @@ uk_happy      = 0
 uk_shield     = 1
 uk_food       = 0
 uk_gold       = 0
-flags         = "Settlers", "Cant_Fortify", "NonMil", "Infra"
+flags         = "Settlers", "Cant_Fortify", "NonMil"
 ; No veteran levels (level name is never displayed)
 veteran_names = _("regular")
 veteran_base_raise_chance = 0
