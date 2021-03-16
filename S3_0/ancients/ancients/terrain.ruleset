@@ -1264,7 +1264,7 @@ Any land terrain type may have a River on it.  A River adds 1\
  defense factor by 50%.  Finally, land units may move along a River (but\
  not diagonally) for fast travel.\
 "), _("\
-Roads and railroads can only be built on River tiles if your\
+Roads can only be built on River tiles if your\
  civilization has learned Bridge Building technology.\
 ")
 
