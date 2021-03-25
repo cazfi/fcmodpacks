@@ -159,6 +159,11 @@ gold_upkeep_style = "City"
 ; want this to be some 10^n.
 output_granularity = 1
 
+; Is it possible to airlift even with zero airlift capacity when
+; airliftingstyle server setting has been set to unlimited airlifts?
+airlift_from_always_enabled = FALSE
+airlift_to_always_enabled = TRUE
+
 [illness]
 ; Whether plagues (illness) are possible
 illness_on = FALSE
@@ -218,7 +223,7 @@ nuke_defender_survival_chance_pct = 0
 ;   if_attacker    - this requirement vector must be true before a unit even
 ;                    considers to auto attack.
 
-attack_actions= "Capture Units", "Bombard", "Attack", "Suicide Attack"
+attack_actions = "Attack", "Suicide Attack"
 
 if_attacker =
     { "type",         "name",    "range", "present"
@@ -227,25 +232,56 @@ if_attacker =
     }
 
 [actions]
-; If force_trade_route is set to TRUE it is illegal for an actor unit to
-; enter the marketplace of a city if it can establish a trade route to it
-; in stead.
-force_trade_route = TRUE
+; Forbid "Enter Marketplace" if any one of the listed actions are legal.
+enter_marketplace_blocked_by = "Establish Trade Route"
 
-; If force_capture_units is set to TRUE it is illegal for an actor unit to
-; bombard, explode nuclear or perform a regular attack against a tile if
-; it can capture units on it in stead.
-force_capture_units = TRUE
+; Forbid "Conquer City" if any one of the listed actions are legal.
+conquer_city_blocked_by = "Attack", "Suicide Attack"
 
-; If force_bombard is set to TRUE it is illegal for an actor unit to
-; explode nuclear or perform a regular attack against a tile if it can
-; bombard it in stead.
-force_bombard = TRUE
+; Forbid "Conquer City 2" if any one of the listed actions are legal.
+conquer_city_2_blocked_by = "Attack", "Suicide Attack"
 
-; If force_explode_nuclear is set to TRUE it is illegal for an actor unit
-; to perform a regular attack against a tile if it can do explode nuclear
-; in stead.
-force_explode_nuclear = TRUE
+; Forbid regular unit move if one of the actions below is legal.
+move_is_blocked_by = "Transport Disembark", "Transport Disembark 2",
+                     "Conquer Extras", "Conquer Extras 2",
+                     "Enter Hut", "Enter Hut 2",
+                     "Frighten Hut", "Frighten Hut 2"
+
+; Actor units will - under certain circumstances - be forced to try
+; performing the following actions in the specified order after successfully
+; performing "Bribe Unit".
+bribe_unit_post_success_forced_actions = "Transport Embark",
+                                         "Transport Disembark",
+                                         "Transport Disembark 2",
+                                         "Conquer Extras",
+                                         "Conquer Extras 2",
+                                         "Enter Hut", "Enter Hut 2",
+                                         "Frighten Hut", "Frighten Hut 2",
+                                         "Unit Move"
+
+; Actor units will - under certain circumstances - be forced to try
+; performing the following actions in the specified order after successfully
+; performing "Attack".
+attack_post_success_forced_actions = "Conquer City", "Conquer City 2",
+                                     "Transport Disembark",
+                                     "Transport Disembark 2",
+                                     "Conquer Extras", "Conquer Extras 2",
+                                     "Enter Hut", "Enter Hut 2",
+                                     "Frighten Hut", "Frighten Hut 2",
+                                     "Unit Move"
+
+; The city that made the unit´s current tile native is gone. This is a Hail
+; Mary attempt at survival by performing an action. Evaluated against an
+; adjacent tile. Currently only able to target native tiles.
+escape_city = "Transport Embark", "Enter Hut", "Enter Hut 2",
+              "Frighten Hut", "Frighten Hut 2", "Unit Move"
+
+; The unit`s stack has been defeated and is scheduled for execution but the
+; unit has the CanEscape unit type flag. Evaluated against an adjacent tile.
+;unit_stack_death = "Transport Embark",
+;                   "Conquer Extras", "Conquer Extras 2",
+;                   "Enter Hut", "Enter Hut 2",
+;                   "Frighten Hut", "Unit Move"
 
 ; If poison_empties_food_stock is set to TRUE a successful "Poison City"
 ; or "Poison City Escape" will empty the food stock.
@@ -293,6 +329,11 @@ bombard_2_max_range = 1
 ; distance.
 bombard_3_max_range = 1
 
+; The minimal distance from the actor unit to the target. The value 0 means
+; that the target must be at the tile of the actor unit. The value 1 means
+; that the tile must be a tile adjacent to the actor unit.
+explode_nuclear_min_range = 0;
+
 ; The maximum distance from the actor unit to the target of the
 ; "Explode Nuclear" action. The value 0 means that the target tile must be
 ; the tile of the actor unit. The value 1 means that the tile must be a tile
@@ -301,6 +342,14 @@ bombard_3_max_range = 1
 ; the minimum distance.
 explode_nuclear_max_range = 0
 
+; Will performing this action always consume the actor unit?
+explode_nuclear_consuming_always = TRUE;
+
+; The minimal distance from the actor unit to the target. The value 0 means
+; that the target must be at the tile of the actor unit. The value 1 means
+; that the tile must be a tile adjacent to the actor unit.
+nuke_city_min_range = 1
+
 ; The maximum distance from the actor unit to the target of the
 ; "Nuke City" action. The value 1 means that the tile must be a tile
 ; adjacent to the actor unit. The special value "unlimited" lifts the
@@ -308,12 +357,29 @@ explode_nuclear_max_range = 0
 ; the minimum distance.
 nuke_city_max_range = 1
 
+; Will performing this action always consume the actor unit?
+nuke_city_consuming_always = TRUE;
+
+; The kind of target the "Nuke City" action has. The target requirements of
+; its enablers are evaluated against the target. The target owner is the one
+; that gets a Casus Belli if the ruleset has a Casus Belli for this action.
+; Supported values are "individual cities" and "tiles".
+nuke_city_target_kind = "individual cities"
+
+; The minimal distance from the actor unit to the target. The value 0 means
+; that the target must be at the tile of the actor unit. The value 1 means
+; that the tile must be a tile adjacent to the actor unit.
+nuke_units_min_range = 1
+
 ; The maximum distance from the actor unit to the target of the
 ; "Nuke Units" action. The value 1 means that the tile must be a tile
 ; adjacent to the actor unit. The special value "unlimited" lifts the
 ; maximum distance restriction. The maximum distance can`t be smaller than
 ; the minimum distance.
 nuke_units_max_range = 1
+
+; Will performing this action always consume the actor unit?
+nuke_units_consuming_always = TRUE;
 
 ; The maximum distance from the actor unit to the target of the "Airlift Unit"
 ; action. The value 1 means that the targets must be on a tile adjacent to
@@ -409,6 +475,12 @@ ui_name_conquer_city = _("%Conquer City%s")
 ; /* TRANS: _Conquer City from non native (100% chance of success). */
 ui_name_conquer_city_2 = _("%sConquer City from non native%s")
 
+; /* TRANS: _Capture Fortress (100% chance of success). */
+ui_name_conquer_extras = _("%sCapture Fortress%s")
+
+; /* TRANS: _Capture Fortress from non native (100% chance of success). */
+ui_name_conquer_extras_2 = _("%sCapture Fortress from non native%s")
+
 ; /* TRANS: Transform by _Cultivating (3% chance of success). */
 ui_name_cultivate = _("Transform by %sCultivating%s")
 
@@ -457,6 +529,21 @@ ui_name_transport_disembark_2 = _("%sDisembark from non native%s")
 ; /* TRANS: _Embark (100% chance of success). */
 ui_name_transport_embark = _("%sEmbark%s")
 
+; /* TRANS: Enter _Hut (100% chance of success). */
+ui_name_enter_hut = _("Enter %sHut%s")
+
+; /* TRANS: Enter _Hut from non native (100% chance of success). */
+ui_name_enter_hut_2 = _("Enter %sHut from non native%s")
+
+; /* TRANS: Frighten _Hut (100% chance of success). */
+ui_name_frighten_hut = _("Frighten %sHut%s")
+
+; /* TRANS: Frighten _Hut from non native (100% chance of success). */
+ui_name_frighten_hut_2 = _("Frighten %sHut from non native%s")
+
+; /* TRANS: Regular _Move (100% chance of success). */
+ui_name_unit_move = _("%sKeep moving%s")
+
 ; Blank ruleset defined user actions.
 ; See the section "Ruleset defined actions" is doc/README.actions
 ; Example: set up "User Action 1"
@@ -466,14 +553,32 @@ ui_name_transport_embark = _("%sEmbark%s")
 ;user_action_1_max_range              = 3
 ;user_action_1_actor_consuming_always = FALSE
 
+; Some actions have a action dice roll before the action starts where it can
+; fail. The initial probability of success is 100% unless the action appears
+; in the following list. Then the initial probability comes from the setting
+; diplchance. The initial probability of success is modified by the
+; Action_Odds_Pct effect before the roll happens.
+diplchance_initial_odds = "Sabotage City", "Sabotage City Escape",
+                          "Targeted Sabotage City Escape",
+                          "Sabotage City Production Escape",
+                          "Steal Tech", "Steal Tech Escape Expected",
+                          "Targeted Steal Tech Escape Expected",
+                          "Incite City", "Incite City Escape"
+
 ; Suppress automatic help text generation about what enables and/or
 ; disables the following actions.
 ;
 ; Can make the help text less redundant when you document it your self.
 
 ; "Transport Disembark 2" is "Transport Disembark" but from a non native
-; tile. "Conquer City 2" has the same relation to "Conquer City".
-quiet_actions = "Transport Disembark 2", "Conquer City 2"
+; tile. "Conquer City 2" has the same relation to "Conquer City". So is
+; "Enter Hut 2" for "Enter Hut", "Frighten Hut 2" for "Frighten Hut" and
+; "Conquer Extras" for "Conquer Extras 2".
+; The version from the non native tile and the native tile version won`t
+; appear in the same action selection dialog given their opposite
+; requirements. Avoid double entries in the auto help by silencing it.
+quiet_actions = "Transport Disembark 2", "Conquer City 2", "Enter Hut 2",
+                "Frighten Hut 2", "Conquer Extras 2", "Unit Move"
 
 ; /* <-- avoid gettext warnings
 ;
@@ -1043,6 +1148,92 @@ actor_reqs    =
       "DiplRel",      "Cease-fire", "Local", FALSE
       "DiplRel",      "Peace",      "Local", FALSE
       "DiplRel",      "Never met",  "Local", FALSE
+    }
+
+[actionenabler_regular_move]
+action     = "Unit Move"
+actor_reqs =
+    { "type",         "name",        "range", "present"
+      "MinMoveFrags", "1",           "Local", TRUE
+      "UnitState",    "Transported", "Local", FALSE
+    }
+
+[actionenabler_hut_enter_from_native_tile]
+action        = "Enter Hut"
+actor_reqs    =
+    { "type",          "name",         "range", "present"
+      "MinMoveFrags",  "1",            "Local", TRUE
+      "UnitState",     "OnNativeTile", "Local", TRUE
+      "UnitClassFlag", "HutFrighten",  "Local", FALSE
+    }
+
+[actionenabler_hut_enter_from_non_native]
+action        = "Enter Hut 2"
+actor_reqs    =
+    { "type",           "name",         "range", "present"
+      "MinMoveFrags",   "1",            "Local", TRUE
+      "UnitState",      "OnNativeTile", "Local", FALSE
+      "UnitClassFlag",  "HutFrighten",  "Local", FALSE
+    }
+
+[actionenabler_hut_from_native_tile]
+action        = "Frighten Hut"
+actor_reqs    =
+    { "type",          "name",         "range"
+      "MinMoveFrags",  "1",            "Local"
+      "UnitState",     "OnNativeTile", "Local"
+      "UnitClassFlag", "HutFrighten",  "Local"
+    }
+
+[actionenabler_hut_from_non_native]
+action        = "Frighten Hut 2"
+actor_reqs    =
+    { "type",           "name",         "range", "present"
+      "MinMoveFrags",   "1",            "Local", TRUE
+      "UnitState",      "OnNativeTile", "Local", FALSE
+      "UnitClassFlag",  "HutFrighten",  "Local", TRUE
+    }
+
+[actionenabler_claim_extra_war_from_native_tile]
+action        = "Conquer Extras"
+actor_reqs    =
+    { "type",         "name",         "range"
+      "MinMoveFrags", "1",            "Local"
+      "DiplRel",      "War",          "Local"
+      "UnitState",    "OnNativeTile", "Local"
+    }
+
+[actionenabler_claim_extra_war_from_non_native]
+action        = "Conquer Extras 2"
+actor_reqs    =
+    { "type",         "name",           "range", "present"
+      "MinMoveFrags", "1",              "Local", TRUE
+      "DiplRel",      "War",            "Local", TRUE
+      "UnitState",    "OnNativeTile",   "Local", FALSE
+    }
+
+[actionenabler_claim_extra_unowned_from_native_tile]
+action        = "Conquer Extras"
+actor_reqs    =
+    { "type",         "name",         "range", "present"
+      "MinMoveFrags", "1",            "Local", TRUE
+      "UnitState",    "OnNativeTile", "Local", TRUE
+    }
+target_reqs    =
+    { "type",         "name",         "range", "present"
+      "CityTile",     "Extras Owned", "Local", FALSE
+    }
+
+[actionenabler_claim_extra_unowned_from_non_native]
+action        = "Conquer Extras 2"
+actor_reqs    =
+    { "type",         "name",         "range", "present"
+      "MinMoveFrags", "1",            "Local", TRUE
+      "UnitState",    "OnNativeTile", "Local", FALSE
+    }
+target_reqs    =
+    { "type",         "name",         "range", "present"
+      "CityTile",     "Extras Owned", "Local", FALSE
     }
 
 [borders]
