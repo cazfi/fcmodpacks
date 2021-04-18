@@ -258,6 +258,9 @@ flags         = "TerrainSpeed", "DamageSlows", "AttackNonNative", "AttFromNonNat
 ; "FirePower1"           = Defender firepower is reduced to value 1 when
 ;                          ever this has non-zero value.
 ;                          Bonus is defined in attackers entry.
+; "CityDefensePct"       = In a city, instead of "Defend_Bonus" effect
+;                          uses this bonus.
+;                          Bonus is defined in defenders entry.
 ;
 ;
 ; ** Flags **
@@ -723,8 +726,10 @@ veteran_power_fact = 100
 veteran_move_bonus = 0
 roles         = "BarbarianLeader"
 helptext      = _("\
-When barbarian leader is killed on a tile without any defending units, \
-the 100 gold ransom is paid, but only to land units.\
+When barbarian leader is killed on a tile without any defending units,\
+ the ransom is paid, but only to land units and helicopters.\
+ Usually the ransom is 100 gold, but can be less if the barbarian has\
+ less money.\
 ")
 
 [unit_militia]

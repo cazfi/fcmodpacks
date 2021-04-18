@@ -37,7 +37,7 @@ tiles = { "row", "column", "tag"
   0,  6, "unit.mine"
   0,  7, "unit.pollution"
   0,  8, "unit.road"
-  0,  9, "unit.irrigate"
+  0,  9, "unit.cultivate", "unit.irrigate"
 
   1,  3, "unit.fortifying", "unit.fortress"
   1,  4, "unit.airbase"
