@@ -7,7 +7,7 @@ name = "Chess"
 priority = 5
 
 ; There`s no separate versioning in tilesets part of main freeciv distribution
-version = "2.5-pre"
+version = "2.6-pre"
 
 ; Summary and full description of the tileset.
 ;summary = ""
