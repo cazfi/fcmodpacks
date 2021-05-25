@@ -4,7 +4,7 @@
 
 [datafile]
 description="Ancients game rules for Freeciv"
-options="+Freeciv-ruleset-Devel-2017.Jan.02"
+options="+Freeciv-ruleset-3.1-Devel-2021.May.03"
 format_version=20
 
 ; This section contains meta information for freeciv-ruledit to recreate the ruleset
@@ -26,7 +26,7 @@ summary = _("You are playing Freeciv with Ancients ruleset. \
 See http://www.freeciv.org/wiki/Ancients for more info.")
 
 ; Detailed description
-; When updating this, update also desciption_file in [ruledit] section to match
+; When updating this, update also description_file in [ruledit] section to match
 ; description = ""
 
 ; What capabilities ruleset provides for the scenarios.
@@ -86,7 +86,9 @@ init_vis_radius_sq	= 5
 ; A base bribe cost, modified heavily by other factors
 base_bribe_cost  = 750
 
-; Barbarian leader ransom in gold
+; Barbarian leader ransom in gold. The ransom is taken from
+; the victim (typically a barbarian player), and it`s possible
+; they cannot pay this in full.
 ransom_gold      = 100
 
 ; Number of veteran levels lost when upgrading a unit
@@ -163,6 +165,12 @@ output_granularity = 1
 ; airliftingstyle server setting has been set to unlimited airlifts?
 airlift_from_always_enabled = FALSE
 airlift_to_always_enabled = TRUE
+
+[wonder_visibility]
+; When do opponents know which city, if any, has built the Small Wonder
+; "Always" - Information is always sent
+; "Never"  - Information is never sent
+small_wonders = "Always"
 
 [illness]
 ; Whether plagues (illness) are possible
@@ -899,9 +907,9 @@ actor_reqs    =
       "MinMoveFrags", "1", "Local", TRUE
     }
 
-[actionenabler_attack_native]
-action = "Attack"
-actor_reqs    =
+[actionenabler_attack_from_native]
+action      = "Attack"
+actor_reqs  =
     { "type",          "name",         "range", "present"
       "UnitFlag",      "NonMil",       "Local", FALSE
       "MinMoveFrags",  "1",            "Local", TRUE
@@ -910,8 +918,8 @@ actor_reqs    =
     }
 
 [actionenabler_attack_marines]
-action = "Attack"
-actor_reqs    =
+action      = "Attack"
+actor_reqs  =
     { "type",          "name",    "range", "present"
       "UnitFlag",      "NonMil",  "Local", FALSE
       "MinMoveFrags",  "1",       "Local", TRUE
@@ -920,8 +928,8 @@ actor_reqs    =
     }
 
 [actionenabler_attack_att_from_non_native]
-action = "Attack"
-actor_reqs    =
+action      = "Attack"
+actor_reqs  =
     { "type",          "name",             "range", "present"
       "UnitFlag",      "NonMil",           "Local", FALSE
       "MinMoveFrags",  "1",                "Local", TRUE
@@ -1046,43 +1054,51 @@ actor_reqs    =
     }
 
 [actionenabler_mining]
-action        = "Build Mine"
-actor_reqs    =
-    { "type",          "name",         "range"
-      "UnitFlag",      "Settlers",     "Local"
+action      = "Build Mine"
+actor_reqs  =
+    { "type",         "name",         "range"
+      "UnitFlag",     "Settlers",     "Local"
+    }
+target_reqs =
+    { "type",         "name",    "range"
+      "TerrainAlter", "CanMine", "Local"
     }
 
+
 [actionenabler_irrigate_src_ocean]
-action        = "Build Irrigation"
-actor_reqs    =
-    { "type",          "name",         "range"
-      "UnitFlag",      "Settlers",     "Local"
+action      = "Build Irrigation"
+actor_reqs  =
+    { "type",         "name",        "range"
+      "UnitFlag",     "Settlers",    "Local"
     }
-target_reqs    =
-    { "type",        "name",     "range"
-      "TerrainClass", "Oceanic", "CAdjacent"
+target_reqs =
+    { "type",         "name",        "range"
+      "TerrainClass", "Oceanic",     "CAdjacent"
+      "TerrainAlter", "CanIrrigate", "Local"
     }
 
 [actionenabler_irrigate_src_river]
-action        = "Build Irrigation"
-actor_reqs    =
-    { "type",          "name",         "range"
-      "UnitFlag",      "Settlers",     "Local"
+action      = "Build Irrigation"
+actor_reqs  =
+    { "type",         "name",        "range"
+      "UnitFlag",     "Settlers",    "Local"
     }
-target_reqs    =
-    { "type",    "name",     "range"
-      "Extra",   "River",    "CAdjacent"
+target_reqs =
+    { "type",         "name",        "range"
+      "Extra",        "River",       "CAdjacent"
+      "TerrainAlter", "CanIrrigate", "Local"
     }
 
 [actionenabler_irrigate_src_irrigation]
-action        = "Build Irrigation"
-actor_reqs    =
-    { "type",          "name",         "range"
-      "UnitFlag",      "Settlers",     "Local"
+action      = "Build Irrigation"
+actor_reqs  =
+    { "type",         "name",        "range"
+      "UnitFlag",     "Settlers",    "Local"
     }
-target_reqs    =
-    { "type",    "name",       "range"
-      "Extra",   "Irrigation", "CAdjacent"
+target_reqs =
+    { "type",         "name",        "range"
+      "Extra",        "Irrigation",  "CAdjacent"
+      "TerrainAlter", "CanIrrigate", "Local"
     }
 
 [actionenabler_alight]

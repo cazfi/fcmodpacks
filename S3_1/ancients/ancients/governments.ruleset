@@ -4,7 +4,7 @@
 
 [datafile]
 description="Ancients governments data for Freeciv"
-options="+Freeciv-ruleset-Devel-2017.Jan.02"
+options="+Freeciv-ruleset-3.1-Devel-2021.May.03"
 format_version=20
 
 [governments]
@@ -19,7 +19,7 @@ during_revolution="Anarchy"
 ; output when reading this file.
 ;
 ; For the "official" rulesets, the order of these sections should not
-; be changed because that would break backward compatability with 
+; be changed because that would break backward compatibility with 
 ; savegames.  (In particular, if Fundamentalism is added to default
 ; ruleset, should be added at end.)
 ;
