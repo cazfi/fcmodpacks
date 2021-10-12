@@ -18,7 +18,7 @@ commands that you want to use.
 
 Start the clients with the command:
 
-	freeciv-gtk3 -t ancients
+	freeciv-gtk3.22 -t ancients
 
 If you do not specify -t, then you will get the default tile-set, which
 will not make any sense as a representation for your units.

@@ -47,7 +47,7 @@ I try it on a Core2 2.4GHz machine with 2GB of RAM and true color resolution.
 - Download tarball from Freeciv download Extras page http://www.freeciv.org/index.php/Extras
   or from ftp://ftp.freeciv.org/freeciv/contrib/tilesets/freeland/.
 - Unpack the tarball on your Freeciv 2.3.x "data" directory. The tileset is
-  selectable as any other Freeciv tileset (freeciv-gtk3 -t set-name).
+  selectable as any other Freeciv tileset (freeciv-gtk3.22 -t set-name).
 - Enjoy
 
 -----------------------------------------------------------------------------
