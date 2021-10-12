@@ -1,4 +1,3 @@
-
 ; Modifying this file:
 ; You should not modify this file except to make bugfixes or
 ; for other "maintenance".  If you want to make custom changes
@@ -8,9 +7,9 @@
 ; use your new customized file.
 
 [datafile]
-description="Nation theme data for Freeciv"
-options="+Freeciv-ruleset-Devel-2017.Jan.02"
-format_version=20
+description = "Ancients nation theme data for Freeciv"
+options = "+Freeciv-ruleset-Devel-2021.Feb.06"
+format_version = 30
 
 ; /* <-- avoid gettext warnings
 ;

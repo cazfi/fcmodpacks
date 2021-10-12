@@ -1,11 +1,10 @@
-
 ; Use command "rulesetdir ancients" in the server to have freeciv
 ; use this file.
 
 [datafile]
-description="Ancients buildings data for Freeciv"
-options="+Freeciv-ruleset-Devel-2017.Jan.02"
-format_version=20
+description = "Ancients buildings data for Freeciv"
+options = "+Freeciv-ruleset-Devel-2021.Feb.06"
+format_version = 30
 
 ; /* <-- avoid gettext warnings
 ;
@@ -25,7 +24,8 @@ format_version=20
 ;                 to rename an item after a ruleset has been released, you
 ;                 should set "rule_name" to the original value of "name".
 ; genus	        = genus; one of:
-;                 "GreatWonder", "SmallWonder", "Improvement", "Special".
+;                 "GreatWonder", "SmallWonder", "Improvement", "Special",
+;                 or "Convert".
 ; reqs		= requirements to build the building (see effects.ruleset
 ;		  and README.effects for help on requirements)
 ; graphic	= icon of improvement (used in city dialog)
@@ -46,7 +46,7 @@ format_version=20
 ;                      Should only be used with genus "SmallWonder".
 ; "Gold"             = Not a real building; production turned into gold
 ;                      indefinitely (capitalization/coinage).
-;                      Genus should be "Special".
+;                      Genus should be "Convert".
 ; "DisasterProof"    = Disasters never destroy this building. Is meaningful
 ;                      only for genus "Improvement" buildings as others are
 ;                      automatically disaster proof.
@@ -820,7 +820,7 @@ The amount of stored food lost when one of your cities grows or shrinks\
 
 [building_capitalization]
 name		= _("Coinage")
-genus		= "Special"
+genus		= "Convert"
 flags		= "Gold"
 reqs	=
     { "type", "name", "range"

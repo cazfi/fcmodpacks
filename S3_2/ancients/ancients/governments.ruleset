@@ -1,11 +1,10 @@
-
 ; Use the command "rulesetdir ancients" in the server to have freeciv
 ; use this file.
 
 [datafile]
-description="Ancients governments data for Freeciv"
-options="+Freeciv-ruleset-Devel-2017.Jan.02"
-format_version=20
+description = "Ancients governments data for Freeciv"
+options = "+Freeciv-ruleset-Devel-2021.Feb.06"
+format_version = 30
 
 [governments]
 during_revolution="Anarchy"
@@ -19,7 +18,7 @@ during_revolution="Anarchy"
 ; output when reading this file.
 ;
 ; For the "official" rulesets, the order of these sections should not
-; be changed because that would break backward compatability with 
+; be changed because that would break backward compatibility with
 ; savegames.  (In particular, if Fundamentalism is added to default
 ; ruleset, should be added at end.)
 ;

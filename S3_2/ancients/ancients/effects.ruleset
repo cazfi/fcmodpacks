@@ -2,9 +2,9 @@
 ; use this file.
 
 [datafile]
-description="Ancients effects data for Freeciv"
-options="+Freeciv-ruleset-Devel-2017.Jan.02"
-format_version=20
+description = "Ancients effects data for Freeciv"
+options = "+Freeciv-ruleset-Devel-2021.Feb.06"
+format_version = 30
 
 ; /* <-- avoid gettext warnings
 ;
@@ -1395,7 +1395,7 @@ reqs	=
 type    = "Visible_Walls"
 value	= 1
 reqs	=
-    { "type", "name", "range"
+    { "type",     "name",       "range"
       "Building", "Great Wall", "Continent"
     }
 
@@ -1595,6 +1595,14 @@ reqs    =
       "Extra", "Pollution", "Local", TRUE
     }
 
+[effect_attack_bombard_no_city_destruction]
+type    = "Unit_No_Lose_Pop"
+value   = 1
+reqs    =
+    { "type",    "name",  "range", "present"
+      "MinSize", "2",     "City",  FALSE
+    }
+
 [effect_unit_bribe_cost_settlers]
 type    = "Unit_Bribe_Cost_Pct"
 value   = -50
@@ -1753,12 +1761,76 @@ reqs    =
       "BuildingGenus", "GreatWonder", "Local"
     }
 
-[effect_action_success_move_cost_embassy]
+[effect_action_establish_embassy_success_move_cost]
 type    = "Action_Success_Actor_Move_Cost"
 value   = 1
 reqs    =
-    { "type", "name", "range", "present"
+    { "type",   "name",              "range", "present"
       "Action", "Establish Embassy", "Local", TRUE
+    }
+
+[effect_action_success_poison_city_escape]
+type    = "Action_Success_Actor_Move_Cost"
+value   = 65535
+reqs    =
+    { "type",   "name",               "range", "quiet"
+      "Action", "Poison City Escape", "Local", TRUE
+    }
+
+[effect_action_success_sabotage_city_escape]
+type    = "Action_Success_Actor_Move_Cost"
+value   = 65535
+reqs    =
+    { "type",   "name",                 "range", "quiet"
+      "Action", "Sabotage City Escape", "Local", TRUE
+    }
+
+[effect_action_success_targeted_sabotage_city_escape]
+type    = "Action_Success_Actor_Move_Cost"
+value   = 65535
+reqs    =
+    { "type",   "name",                          "range", "quiet"
+      "Action", "Targeted Sabotage City Escape", "Local", TRUE
+    }
+
+[effect_action_success_sabotage_city_production_escape]
+type    = "Action_Success_Actor_Move_Cost"
+value   = 65535
+reqs    =
+    { "type",   "name",                            "range", "quiet"
+      "Action", "Sabotage City Production Escape", "Local", TRUE
+    }
+
+[effect_action_success_steal_tech_escape_expected]
+type    = "Action_Success_Actor_Move_Cost"
+value   = 65535
+reqs    =
+    { "type",   "name",                       "range", "quiet"
+      "Action", "Steal Tech Escape Expected", "Local", TRUE
+    }
+
+[effect_action_success_targeted_steal_tech_escape_expected]
+type    = "Action_Success_Actor_Move_Cost"
+value   = 65535
+reqs    =
+    { "type",   "name",                                "range", "quiet"
+      "Action", "Targeted Steal Tech Escape Expected", "Local", TRUE
+    }
+
+[effect_action_success_incite_city_escape]
+type    = "Action_Success_Actor_Move_Cost"
+value   = 65535
+reqs    =
+    { "type",   "name",               "range", "quiet"
+      "Action", "Incite City Escape", "Local", TRUE
+    }
+
+[effect_action_success_sabotage_unit_escape]
+type    = "Action_Success_Actor_Move_Cost"
+value   = 65535
+reqs    =
+    { "type",   "name",                 "range", "quiet"
+      "Action", "Sabotage Unit Escape", "Local", TRUE
     }
 
 [effect_action_success_move_cost_investigate]
@@ -1773,19 +1845,69 @@ reqs    =
 type    = "Action_Success_Actor_Move_Cost"
 value   = 65535
 reqs    =
-    { "type",      "name",                  "range", "present"
-      "Action",    "Transport Disembark 2", "Local", TRUE
-      "UnitState", "OnNativeTile",          "Local", TRUE
+    { "type",          "name",                  "range", "present"
+      "Action",        "Transport Disembark 2", "Local", TRUE
+      "UnitState",     "OnNativeTile",          "Local", TRUE
+      "UnitClassFlag", "TerrainSpeed",          "Local", TRUE
     }
 
 [effect_action_success_conquer_cost_from_non_native]
 type    = "Action_Success_Actor_Move_Cost"
 value   = 65535
 reqs    =
-    { "type",      "name",           "range", "present"
-      "Action",    "Conquer City 2", "Local", TRUE
-      "UnitState", "OnNativeTile",   "Local", TRUE
+    { "type",          "name",           "range", "present"
+      "Action",        "Conquer City 2", "Local", TRUE
+      "UnitState",     "OnNativeTile",   "Local", TRUE
+      "UnitClassFlag", "TerrainSpeed",   "Local", TRUE
     }
+
+[effect_action_success_move_cost_hut_entry_from_non_native]
+type    = "Action_Success_Actor_Move_Cost"
+value   = 65535
+reqs    =
+    { "type",          "name",                  "range", "present"
+      "Action",        "Enter Hut 2",           "Local", TRUE
+      "UnitState",     "OnNativeTile",          "Local", TRUE
+      "UnitClassFlag", "TerrainSpeed",          "Local", TRUE
+    }
+
+[effect_action_success_move_cost_hut_frighten_from_non_native]
+type    = "Action_Success_Actor_Move_Cost"
+value   = 65535
+reqs    =
+    { "type",          "name",                  "range", "present"
+      "Action",        "Frighten Hut 2",        "Local", TRUE
+      "UnitState",     "OnNativeTile",          "Local", TRUE
+      "UnitClassFlag", "TerrainSpeed",          "Local", TRUE
+    }
+
+[effect_action_success_move_cost_conquer_extras_from_non_native]
+type    = "Action_Success_Actor_Move_Cost"
+value   = 65535
+reqs    =
+    { "type",          "name",                  "range", "present"
+      "Action",        "Conquer Extras 2",      "Local", TRUE
+      "UnitState",     "OnNativeTile",          "Local", TRUE
+      "UnitClassFlag", "TerrainSpeed",          "Local", TRUE
+    }
+
+[effect_action_success_attack_one_attack]
+type    = "Action_Success_Actor_Move_Cost"
+value   = 65535
+reqs    =
+    { "type",     "name",      "range", "quiet"
+      "Action",   "Attack",    "Local", TRUE
+      "UnitFlag", "OneAttack", "Local", TRUE
+    }
+
+[effect_action_success_attack_normal]
+type    = "Action_Success_Actor_Move_Cost"
+value   = 3
+reqs    =
+    { "type",     "name",      "range", "present"
+      "Action",   "Attack",    "Local", TRUE
+      "UnitFlag", "OneAttack", "Local", FALSE
+     }
 
 [effect_unit_shield_value_recycle]
 type    = "Unit_Shield_Value_Pct"
