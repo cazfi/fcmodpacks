@@ -1180,7 +1180,6 @@ actor_reqs    =
     { "type",          "name",         "range", "present"
       "MinMoveFrags",  "1",            "Local", TRUE
       "UnitState",     "OnNativeTile", "Local", TRUE
-      "UnitClassFlag", "HutFrighten",  "Local", FALSE
     }
 
 [actionenabler_hut_enter_from_non_native]
@@ -1189,25 +1188,6 @@ actor_reqs    =
     { "type",           "name",         "range", "present"
       "MinMoveFrags",   "1",            "Local", TRUE
       "UnitState",      "OnNativeTile", "Local", FALSE
-      "UnitClassFlag",  "HutFrighten",  "Local", FALSE
-    }
-
-[actionenabler_hut_from_native_tile]
-action        = "Frighten Hut"
-actor_reqs    =
-    { "type",          "name",         "range"
-      "MinMoveFrags",  "1",            "Local"
-      "UnitState",     "OnNativeTile", "Local"
-      "UnitClassFlag", "HutFrighten",  "Local"
-    }
-
-[actionenabler_hut_from_non_native]
-action        = "Frighten Hut 2"
-actor_reqs    =
-    { "type",           "name",         "range", "present"
-      "MinMoveFrags",   "1",            "Local", TRUE
-      "UnitState",      "OnNativeTile", "Local", FALSE
-      "UnitClassFlag",  "HutFrighten",  "Local", TRUE
     }
 
 [actionenabler_claim_extra_war_from_native_tile]
