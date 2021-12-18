@@ -211,6 +211,23 @@ tired_attack = FALSE
 ; Set this to TRUE if unit should never gain veterancy from such a combat.
 only_killing_makes_veteran = FALSE
 
+; If either side of the fight is completely powerless, i.e., has
+; zero attack/defense power after modifiers, fight is not considered
+; a real fight. If this setting is enabled, nobody gets made veteran after
+; such a fight.
+only_real_fight_makes_veteran = FALSE
+
+; When this setting is enabled, chance of getting veterancy from a combat
+; gets modified by the strength of the opponent relative to the strength
+; of unit that might gain the veterancy.
+; When this setting is disabled, the modifier is always simply considered
+; to be 100%, i.e, the base veterancy chance from units.ruleset is used as is.
+combat_odds_scaled_veterancy = FALSE
+
+; Does unit`s bombard rate get scaled down by how damaged it is.
+; Even after this unit gets at least one bombard round.
+damage_reduces_bombard_rate = TRUE
+
 ; Percentage of population lost by a city after nuclear attak. If set to
 ; 100 city is destroyed along with all the units. If set to 0 city does not
 ; loose population. Any value below 50 means the city can never be
@@ -250,10 +267,10 @@ conquer_city_blocked_by = "Attack", "Suicide Attack"
 conquer_city_2_blocked_by = "Attack", "Suicide Attack"
 
 ; Forbid regular unit move if one of the actions below is legal.
-move_is_blocked_by = "Transport Disembark", "Transport Disembark 2",
-                     "Conquer Extras", "Conquer Extras 2",
-                     "Enter Hut", "Enter Hut 2",
-                     "Frighten Hut", "Frighten Hut 2"
+move_blocked_by = "Transport Disembark", "Transport Disembark 2",
+                  "Conquer Extras", "Conquer Extras 2",
+                  "Enter Hut", "Enter Hut 2",
+                  "Frighten Hut", "Frighten Hut 2"
 
 ; Actor units will - under certain circumstances - be forced to try
 ; performing the following actions in the specified order after successfully
@@ -395,6 +412,9 @@ nuke_units_consuming_always = TRUE;
 ; restriction. The maximum distance can`t be smaller than the minimum
 ; distance.
 airlift_max_range = "unlimited"
+
+; Will performing this action always consume the actor unit?
+found_city_consuming_always = TRUE
 
 ; What each action should be called when showing them to the player.
 ; The first %s should be before the mnemonic of the action. A Freeciv client
