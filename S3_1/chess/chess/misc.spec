@@ -88,7 +88,7 @@ tiles = { "row", "column", "tag"
 3, 10, "unit.fortified"
 3, 11, "unit.fallout"
 3, 12, "unit.patrol"
-5,  9, "user.attention"
+5,  9, "user.attention", "user.infratile"
 
 5,  9, "path.step"
 5,  7, "path.exhausted_mp"
