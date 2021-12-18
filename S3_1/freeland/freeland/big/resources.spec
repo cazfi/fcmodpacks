@@ -62,7 +62,7 @@ tiles = { "row", "column","tag"
  1, 3, "ts.grassland_resources", "ts.river_resources"
 
  3, 2, "tx.village"
- 3, 3, "user.attention"
+ 3, 3, "user.attention", "user.infratile"
 
  4, 2, "tx.mine"
  4, 3, "tx.oil_mine", "tx.oil_rig"
