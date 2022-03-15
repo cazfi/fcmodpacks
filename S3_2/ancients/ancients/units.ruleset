@@ -66,7 +66,7 @@ veteran_power_fact = 100, 150, 175, 200
 ; terrain.ruleset.
 veteran_move_bonus = 0, 0, 0, 0
 
-; /* <-- avoid gettext warnings 
+; /* <-- avoid gettext warnings
 ;
 ; Unit classes
 ; The number can be variable, up to 32
@@ -141,15 +141,15 @@ flags         = "TerrainSpeed", "DamageSlows", "AttackNonNative", "AttFromNonNat
 ;
 ; Below: The individual unit types, one per section.
 ;
-; The number can be variable, up to 200.  
-; However for the "official" rulesets, units should not be removed 
+; The number can be variable, up to 200.
+; However for the "official" rulesets, units should not be removed
 ; because that would break backward compatibility with savegames.
 ;
 ; The order here matters: later units are considered "better" for
-; a given flag or role.  
+; a given flag or role.
 ;
-; The actual tag used (the * in [unit_*]) does not matter, except 
-; it must be unique within this file, and it may be used in debug 
+; The actual tag used (the * in [unit_*]) does not matter, except
+; it must be unique within this file, and it may be used in debug
 ; output when reading this file.
 ;
 ; ** Fields **
@@ -232,7 +232,7 @@ flags         = "TerrainSpeed", "DamageSlows", "AttackNonNative", "AttFromNonNat
 ; sound_fight	= optional sound effect when the unit fights
 ; sound_fight_alt= optional alternative sound effect if above not
 ;		   supported in client
-; helptext	= optional help text string; should escape all raw newlines 
+; helptext	= optional help text string; should escape all raw newlines
 ;		  so that xgettext parsing works
 ;
 ;
@@ -357,7 +357,7 @@ flags         = "TerrainSpeed", "DamageSlows", "AttackNonNative", "AttFromNonNat
 ; "Explorer"	= unit to use for exploring
 ; "Hut"		= can be found in a hut
 ; "HutTech"	= can be found in a hut, but its techs required
-; "Partisan"	= can be created as a partisan (only one unit can have this 
+; "Partisan"	= can be created as a partisan (only one unit can have this
 ;                 flag), see end of this file for its tech requirements option
 ; "DefendOk"	= AI hint: ok for defending with
 ; "DefendGood"	= AI hint: good for defending with
@@ -678,7 +678,7 @@ uk_happy      = 0
 uk_shield     = 0
 uk_food       = 0
 uk_gold       = 0
-flags         = "IgZOC", "NonMil", "NoBuild", "NoHome", "SuperSpy", 
+flags         = "IgZOC", "NonMil", "NoBuild", "NoHome", "SuperSpy",
                 "EvacuateFirst", "GameLoss", "Unique", "Unbribable"
 ; No veteran levels (level name is never displayed)
 veteran_names = _("regular")

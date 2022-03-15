@@ -32,7 +32,7 @@ tiles = { "row", "column","tag"
   2,    4,  "t.multi_dither_tile_2x0"
   3,    3,  "t.multi_dither_tile_2x1"
   4,    2,  "t.multi_dither_tile_2x2"
-  
+
   1,    0,  "tx.darkness_nw"
   2,    1,  "tx.darkness_w"
   3,    0,  "tx.darkness_sw"

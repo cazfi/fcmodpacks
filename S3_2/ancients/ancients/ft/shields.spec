@@ -51,7 +51,7 @@ tiles = { "row", "column", "tag"
   2,  7, "f.arab"         ; Saudi Arabia
   2,  8, "f.south_africa" ; Republic of South Africa, for Zulus
   2,  9, "f.sweden"
-  3,  0, "f.netherlands", 
+  3,  0, "f.netherlands",
 	 "f.holland"      ; backward compatibility
   3,  1, "f.syria"
   3,  2, "f.macedonia"
@@ -110,7 +110,7 @@ tiles = { "row", "column", "tag"
   8,  6, "f.taiwan"
   8,  7, "f.unknown"      ; useful for alternates
   8,  8, "f.barbarian"
-  
+
 }
 
 

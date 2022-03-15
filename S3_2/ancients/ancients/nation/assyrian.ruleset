@@ -22,7 +22,7 @@ style    = "Babylonian"
 
 ruler_titles = { "government",	"male_title",	"female_title"
 		 "Imperial Monarchy",	_("Malka %s"),	_("Malikta %s")
-	       } 
+	       }
 
 init_techs=""
 init_buildings=""
@@ -33,5 +33,5 @@ cities =
   "Ashur", "Nineveh", "Kalhu", "Arbela", "Edessa", "Osrhoene",
   "Nisibin", "Alqosh", "Urmia", "Kirkuk", "Akkad", "Mosul", "Dohuk",
   "Aqra", "Zibar", "Supna", "Zakho", "Hakkari", "Bohtan", "Ayn-Slibo",
-  "Omed", "Tur-Abdin", "Merdo", "Tella-Shleela", "Kharput", "Perin", 
+  "Omed", "Tur-Abdin", "Merdo", "Tella-Shleela", "Kharput", "Perin",
   "Urhoy", "Ayn-Towo", "Salamas", "Khabour", "Malatya"

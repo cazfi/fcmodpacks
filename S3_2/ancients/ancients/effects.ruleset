@@ -581,7 +581,7 @@ reqs    =
       "Gov", "Imperial Monarchy", "Player"
       "OutputType", "Shield", "Local"
     }
-    
+
 [effect_upkeep_free_units_4]
 type    = "Unit_Upkeep_Free_Per_City"
 value	= 5
@@ -655,7 +655,7 @@ reqs    =
     { "type", "name", "range"
       "Gov", "Ancient Democracy", "Player"
     }
- 
+
 [effect_republic_mil_content]
 type    = "Make_Content_Mil"
 value	= 3
@@ -671,7 +671,7 @@ reqs	=
     { "type", "name", "range"
       "Gov", "Principate", "Player"
     }
-   
+
 [effect_ancient_democracy_mil_content]
 type    = "Make_Content_Mil"
 value	= 2
@@ -681,7 +681,7 @@ reqs	=
     }
 
 ; tile output modifiers
- 
+
 [effect_gov_tile_penalty_0]
 type    = "Output_Penalty_Tile"
 value   = 2
@@ -724,7 +724,7 @@ reqs	=
       "Gov", "Ancient Democracy", "Player"
       "OutputType", "Trade", "Local"
     }
-    
+
 [effect_gov_tile_bonus_cel_0]
 type    = "Output_Inc_Tile_Celebrate"
 value   = 1

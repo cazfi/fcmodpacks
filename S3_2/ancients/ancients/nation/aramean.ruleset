@@ -1,10 +1,10 @@
-[nation_aramean] 
+[nation_aramean]
 
-name=_("Aramean") 
-plural=_("?plural:Arameans") 
+name=_("Aramean")
+plural=_("?plural:Arameans")
 groups="Asian", "Mesopotamian"
 legend=_("According to legend, the Aramean people are the descendants of\
- Aram, the grandson of Noah.") 
+ Aram, the grandson of Noah.")
 
 leaders = {
  "name", "sex"
@@ -17,31 +17,31 @@ leaders = {
  "Abgar VIII", "Male"	; a.k.a. Abgar the Great
 }
 
-flag="aram" 
-flag_alt = "syria" 
-style = "Classical" 
+flag="aram"
+flag_alt = "syria"
+style = "Classical"
 
-init_techs="" 
-init_buildings="" 
-init_units="" 
+init_techs=""
+init_buildings=""
+init_units=""
 civilwar_nations = "assyrian", "babylonian"
 
-cities = 
+cities =
  "Aram",
  "Amid",
  "Mardin",
  "Commagene",
- "Urhoi", 
+ "Urhoi",
  "Haran",
  "Melitene",
  "Nisibin",
  "Guzana",
  "Yamkhat",
- "Hama", 
+ "Hama",
  "Homs",
  "Damascus",
  "Tadmor",
- "Ebla", 
+ "Ebla",
  "Midyat",
  "Tikrit",
- "Bethsaida" 
+ "Bethsaida"

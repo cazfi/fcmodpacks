@@ -92,7 +92,7 @@ ocean_resources = FALSE
 ;                        value of "name".
 ;                        terrain after a ruleset has been released.
 ; graphic              = preferred graphic; Tilespec [tile_*] section
-;                        with 'tag' matching this will be used. 
+;                        with 'tag' matching this will be used.
 ; graphic_alt          = alternate graphic. When no tilespec 'tag' matching
 ;                        preferred graphic is not found, this will be used.
 ;                        Otherwise may be "-"
@@ -186,7 +186,7 @@ ocean_resources = FALSE
 ;                        other than ocean_depth are only used for land tiles.
 ;  - mountainous       = degree to which this terrain is mountainous
 ;  - green             = how much life this terrain has
-;  - foliage           = how much thick undergrowth the terrain has 
+;  - foliage           = how much thick undergrowth the terrain has
 ;  - tropical          = how "tropical" the terrain is (high temperature)
 ;  - temperate         = how "temperate" the terrain is (med temperature)
 ;  - cold              = how "cold" the terrain is (low temperature)
@@ -198,7 +198,7 @@ ocean_resources = FALSE
 ; color.r              = color of the terrain (red value)
 ; color.g              = color of the terrain (green value)
 ; color.b              = color of the terrain (blue value)
-; helptext             = optional help text string; should escape all raw 
+; helptext             = optional help text string; should escape all raw
 ;                        newlines so that xgettext parsing works
 
 [terrain_lake]
@@ -335,7 +335,7 @@ color.g              = 33
 color.b              = 129
 helptext             = _("\
 Deep oceans cover much of the world away from coastlines, and only\
-seaworthy units can travel on them.\ 
+seaworthy units can travel on them.\
 ")
 
 [terrain_glacier]

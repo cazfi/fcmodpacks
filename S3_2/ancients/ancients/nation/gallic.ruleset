@@ -25,7 +25,7 @@ ruler_titles = { "government",      "male_title",      "female_title"
                  "Despotism",         _("Chieftain %s"),       _("Chieftain %s")
                  "Petty Monarchy",    _("Teutorix %s"),        _("Teutorix %s")
                  "Imperial Monarchy", _("Teutorix %s"),        _("Teutorix %s")
-	       } 
+	       }
 
 init_techs=""
 init_buildings=""
@@ -68,10 +68,10 @@ cities =
  "Bibrax",
  "Nyrax",
  "Vesontio",
- "Massalia", 
+ "Massalia",
  "Arausio",
  "Alesia",
  "Arelate",
- "Genava", 
+ "Genava",
  "Agirinum",
  "Rotomagus"

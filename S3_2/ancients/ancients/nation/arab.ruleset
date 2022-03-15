@@ -31,14 +31,14 @@ init_units=""
 ; Should not appear with other Arabic nations from the beginning but...
 ; ...civil war to them.
 
-; Arab Peninsula and Near East.  City names are mostly from the Ummayyad 
+; Arab Peninsula and Near East.  City names are mostly from the Ummayyad
 ; and Abbasid periods.  These are Arab spellings rather than Anglicized ones;
 ; thus, Dimashq = Damascus, Al Qahira = Cairo, etc.
 
 cities =
 
   "Makkah", "Al-Madinah", "Al-Rijadh", "Al-Qahira", "Baghdad",
-  "Timbuktu", "Sijilmasa", "Jidda", "Al-Hufuf", "Buraydah", "At Taif", 
+  "Timbuktu", "Sijilmasa", "Jidda", "Al-Hufuf", "Buraydah", "At Taif",
   "Sana'a", "Al-Hudaydah", "Al'Adan",
   "Al-Mukalla", "Taizz", "Masquat", "Abu Zaby", "Dubayy",
   "Ad-Dawhah", "Al-Manamah", "Ad-Damman", "Al-Kuwayt", "Al-Jahrah",

@@ -111,8 +111,8 @@ tiles = { "row", "column","tag"
  6, 4, "tx.pollution"
  8, 4, "tx.village"
  9, 4, "tx.fallout"
- 
-;extra 
+
+;extra
  10, 5, "t.dither_tile"
  10, 5, "tx.darkness"
   9, 5, "tx.fog"

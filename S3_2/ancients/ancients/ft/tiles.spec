@@ -45,8 +45,8 @@ tiles = { "row", "column", "tag"
   3,  9, "unit.fortified"
   1,  6, "unit.fallout"
   1,  7, "unit.patrol"
- 
-  0, 10, "unit.loaded" 
+
+  0, 10, "unit.loaded"
   3, 10, "unit.lowfuel"
   4, 10, "unit.tired"
 

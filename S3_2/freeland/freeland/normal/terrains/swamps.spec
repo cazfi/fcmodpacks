@@ -30,7 +30,7 @@ tiles = { "row", "column", "tag"
  1,  1, "t.l1.swamp_n0e1s0w1"
  1,  2, "t.l1.swamp_n0e1s1w0"
  1,  3, "t.l1.swamp_n0e1s1w1"
- 
+
  2,  0, "t.l1.swamp_n1e0s0w0"
  2,  1, "t.l1.swamp_n1e0s0w1"
  2,  2, "t.l1.swamp_n1e0s1w0"

@@ -23,7 +23,7 @@ dy = 32
 pixel_border = 1
 
 tiles = { "row", "column","tag"
-; Rivers (as special type), and whether north, south, east, west 
+; Rivers (as special type), and whether north, south, east, west
 ; also has river or is ocean:
 
  2,  0, "tx.s_river_n0e0s0w0"
@@ -127,7 +127,7 @@ tiles = { "row", "column","tag"
  0, 10, "t.ocean_cell_u101"
  0, 12, "t.ocean_cell_u011"
  0, 14, "t.ocean_cell_u111"
- 
+
  1, 0,  "t.ocean_cell_d000"
  1, 2,  "t.ocean_cell_d100"
  1, 4,  "t.ocean_cell_d010"

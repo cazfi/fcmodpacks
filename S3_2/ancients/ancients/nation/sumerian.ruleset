@@ -22,7 +22,7 @@ style    = "Babylonian"
 
 ruler_titles = { "government",	"male_title",	"female_title"
 		 "Petty Monarchy", _("Lugal %s"),	 _("Lugal %s")
-	       } 
+	       }
 
 init_techs=""
 init_buildings=""
@@ -31,6 +31,6 @@ civilwar_nations="babylonian", "assyrian", "persian", "arab"
 
 cities =
   "Uruk", "Eridu", "Ur", "Lagash", "Nippur", "Umma",
-  "Larsa", "Kish", "Adab", "Susa", "Mari", "Hit", 
+  "Larsa", "Kish", "Adab", "Susa", "Mari", "Hit",
   "Babylon", "Dilmun", "Eschnunna", "Der", "Sippur",
   "Karkemish", "Ebla", "Arbel", "Larsa", "Cyprus"

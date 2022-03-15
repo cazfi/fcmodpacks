@@ -38,13 +38,13 @@ format_version = 30
 ;[techclass_default]
 ;name =
 
-; /* <-- avoid gettext warnings 
+; /* <-- avoid gettext warnings
 ;
 ; Below: The individual advances, one per section.
 ; The number can be variable, up to 250.
 ;
-; The actual tag used (the * in [advance_*]) does not matter, except 
-; it must be unique within this file, and it may be used in debug 
+; The actual tag used (the * in [advance_*]) does not matter, except
+; it must be unique within this file, and it may be used in debug
 ; output when reading this file.
 ;
 ; Notes:
@@ -104,7 +104,7 @@ format_version = 30
 ; "Claim_Ocean_Limited" = Oceanic border sources claim ocean tiles even if
 ;                         they are not adjacent to border source
 ;
-; */ <-- avoid gettext warnings 
+; */ <-- avoid gettext warnings
 
 [advance_astronomy]
 name     = _("Astronomy")
@@ -510,7 +510,7 @@ graphic_alt = "-"
 
 [advance_elephantry]
 name = _("Elephantry")
-req1 = "Mounted Archery" 
+req1 = "Mounted Archery"
 req2 = "Trade"
 flags    = ""
 graphic     = "a.elephantry"

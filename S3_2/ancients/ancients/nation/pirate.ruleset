@@ -28,7 +28,7 @@ init_units=""
 ; Various pirate havens
 cities =
  "New Providence",
- "Port Royal", 
+ "Port Royal",
  "Tortuga"
 
 is_playable = FALSE

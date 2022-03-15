@@ -25,4 +25,4 @@ War - A Space Odyssey - First Steps Into Cosmos.ogg
 taken from the CD "Back in Time 3", used with permission. More info at http://www.c64audio.com.
 
 
-Tracks converted to Ogg Vorbis by CapTVK on 2/19/03 
+Tracks converted to Ogg Vorbis by CapTVK on 2/19/03

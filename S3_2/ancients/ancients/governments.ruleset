@@ -44,7 +44,7 @@ during_revolution="Anarchy"
 ;                      own title.
 ; ruler_female_title = The default female ruler title for the government type.
 ;                      See above ruler_male_title.
-; helptext     = optional help text string; should escape all raw newlines 
+; helptext     = optional help text string; should escape all raw newlines
 ;                so that xgettext parsing works
 ;
 ; */ <-- avoid gettext warnings
@@ -236,7 +236,7 @@ Under an Ancient Democracy, an assembly of citizens governs directly\
 ; minimum_turns           = how often multiplier can be changed, or: how long one is stuck
 ;                           with the given value after changing to it
 ; reqs                    = requirements for adjusting this policy (see README.effects)
-; helptext                = optional help text string; should escape all raw 
+; helptext                = optional help text string; should escape all raw
 ;                           newlines so that xgettext parsing works
 ;
 ; */ <-- avoid gettext warnings
