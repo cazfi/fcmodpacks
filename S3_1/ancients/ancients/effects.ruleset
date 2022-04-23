@@ -151,6 +151,26 @@ reqs    =
       "UnitFlag",      "Cant_Fortify", "Local", FALSE
     }
 
+[effect_city_min_hp]
+type    = "Min_HP_Pct"
+value   = 33
+reqs    =
+    { "type",     "name",   "range"
+      "CityTile", "Center", "Tile"
+    }
+
+[effect_fortified_regen]
+type    = "HP_Regen_2"
+value   = 10
+reqs    =
+    { "type",     "name",      "range"
+      "Activity", "Fortified", "Local"
+    }
+
+[effect_base_regen]
+type    = "HP_Regen_2"
+value   = 10
+
 ; Base vision range - radius of vision is sqrt(5) = 2.24
 [effect_city_vision]
 type    = "City_Vision_Radius_Sq"
@@ -1896,14 +1916,14 @@ reqs    =
 type    = "Unit_Shield_Value_Pct"
 value   = -50
 reqs    =
-    { "type",   "name",         "range", "present"
-      "Action", "Recycle Unit", "Local", TRUE
+    { "type",   "name",                 "range"
+      "Action", "Disband Unit Recover", "Local"
     }
 
 [effect_unit_shield_value_in_upgrade_price_calc]
 type    = "Unit_Shield_Value_Pct"
 value   = -50
 reqs    =
-    { "type",   "name",         "range", "present"
-      "Action", "Upgrade Unit", "Local", TRUE
+    { "type",   "name",         "range"
+      "Action", "Upgrade Unit", "Local"
     }

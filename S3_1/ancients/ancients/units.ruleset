@@ -197,6 +197,10 @@ flags         = "TerrainSpeed", "DamageSlows", "AttackNonNative", "AttFromNonNat
 ; city_slots    = How many of homecity's unit maintenance slots unit takes
 ; city_size     = Initial size of the cities built by 'Found City' type units
 ;                 (but 'Join City' uses pop_cost)
+; tp_defense    = Method to decide if unit can be selected as a defender when
+;                 transported.
+;                   "Blocked" - Can't defend when transported
+;                   "Alight"  - Can defend if can alight or unload (current default)
 ; targets       = list of unit classes this unit can attack against even
 ;                 if they have Unreachable unit class flag
 ; embarks       = list of unit classes this unit may load into while not in
@@ -257,7 +261,8 @@ flags         = "TerrainSpeed", "DamageSlows", "AttackNonNative", "AttFromNonNat
 ;                          multiplication with 2/3, etc.
 ;                          Effectively increases *attack* by value percent.
 ;                          Bonus is defined in attackers entry.
-; "LowFirepower"         = Defender firepower is reduced to value 1 when
+; "LowFirepower"         = Defender firepower is reduced to low firepower
+;                          value defined in game.ruleset when
 ;                          ever this has non-zero value.
 ;                          Bonus is defined in attackers entry.
 ; "CityDefensePct"       = In a city, instead of "Defend_Bonus" effect

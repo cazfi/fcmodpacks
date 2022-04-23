@@ -222,11 +222,35 @@ only_real_fight_makes_veteran = FALSE
 ; of unit that might gain the veterancy.
 ; When this setting is disabled, the modifier is always simply considered
 ; to be 100%, i.e, the base veterancy chance from units.ruleset is used as is.
+; This affects both regular and diplomat combat.
 combat_odds_scaled_veterancy = FALSE
 
 ; Does unit`s bombard rate get scaled down by how damaged it is.
 ; Even after this unit gets at least one bombard round.
 damage_reduces_bombard_rate = TRUE
+
+; When the attacker has BadWallAttacker flag, and there`s
+; positive DefendBonus effect applied to the attack, attacker`s
+; firepower gets reduced to this value.
+; If firepower is already lower than this, it won`t be affected.
+low_firepower_badwallattacker = 1
+
+; When the defender has BadCityDefender flag, and it`s
+; defending on a city tile, attacker`s firepower is doubled
+; and defenders firepower is reduced to this value.
+; If firepower is already lower than this, it won`t be affected.
+low_firepower_pearl_harbour = 1
+
+; When the opponent has LowFirepower combat bonus against
+; a unit, it`s firepower is reduced to this value.
+; If firepower is already lower than this, it won`t be affected.
+low_firepower_combat_bonus = 1
+
+; When a unit capable of attacking NonNative tiles does such an
+; attack against NonNatBombardTgt unit, firepower of both sides
+; is reduced to this value.
+; If firepower is already lower than this, it won`t be affected.
+low_firepower_nonnat_bombard = 1
 
 ; Percentage of population lost by a city after nuclear attak. If set to
 ; 100 city is destroyed along with all the units. If set to 0 city does not
@@ -326,12 +350,12 @@ poison_empties_food_stock = FALSE
 help_wonder_max_range = 1
 
 ; The maximum distance from the actor unit to the target of the
-; "Recycle Unit" action. The value 0 means that the target`s tile must be the
+; "Disband Unit Recover" action. The value 0 means that the target`s tile must be the
 ; tile of the actor unit. The value 1 means that the city must be on a tile
 ; adjacent to the actor unit. The special value "unlimited" lifts the
 ; maximum distance restriction. The maximum distance can`t be smaller than
 ; the minimum distance.
-recycle_unit_max_range = 1
+disband_unit_recover_max_range = 1
 
 ; The maximum distance from the actor unit to the target of the "Bombard"
 ; action. The value 1 means that the targets must be on a tile adjacent to
@@ -479,11 +503,14 @@ ui_name_enter_marketplace = _("Sell %sGoods%s")
 ; /* TRANS: Help _build Wonder (100% chance of success). */
 ui_name_help_wonder = _("Help %sbuild Wonder%s")
 
+; /* TRANS: Dis_band recovering production (100% chance of success). */
+ui_name_disband_unit_recover = _("Dis%sband recovering production%s")
+
+; /* TRANS: Dis_band without recovering production (100% chance of success). */
+ui_name_disband_unit = _("Dis%sband without recovering production%s")
+
 ; /* TRANS: _Build City (100% chance of success). */
 ui_name_found_city = _("%sBuild City%s")
- 
-; /* TRANS: Rec_ycle Unit (100% chance of success). */
-ui_name_recycle_unit = _("Rec%sycle Unit%s")
 
 ; /* TRANS: _Add to City (100% chance of success). */
 ui_name_join_city = _("%sAdd to City%s")
@@ -503,11 +530,11 @@ ui_name_conquer_city = _("%Conquer City%s")
 ; /* TRANS: _Conquer City from non native (100% chance of success). */
 ui_name_conquer_city_2 = _("%sConquer City from non native%s")
 
-; /* TRANS: _Capture Fortress (100% chance of success). */
-ui_name_conquer_extras = _("%sCapture Fortress%s")
+; /* TRANS: _Conquer Fortress (100% chance of success). */
+ui_name_conquer_extras = _("%sConquer Fortress%s")
 
-; /* TRANS: _Capture Fortress from non native (100% chance of success). */
-ui_name_conquer_extras_2 = _("%sCapture Fortress from non native%s")
+; /* TRANS: _Conquer Fortress from non native (100% chance of success). */
+ui_name_conquer_extras_2 = _("%sConquer Fortress from non native%s")
 
 ; /* TRANS: Transform by _Cultivating (3% chance of success). */
 ui_name_cultivate = _("Transform by %sCultivating%s")
@@ -573,7 +600,7 @@ ui_name_frighten_hut_2 = _("Frighten %sHut from non native%s")
 ui_name_unit_move = _("%sKeep moving%s")
 
 ; Blank ruleset defined user actions.
-; See the section "Ruleset defined actions" is doc/README.actions
+; See the section "Ruleset defined actions" in doc/README.actions
 ; Example: set up "User Action 1"
 ;ui_name_user_action_1                = _("%sDisrupt Supply Lines%s")
 ;user_action_1_target_kind            = "individual units"
@@ -871,8 +898,8 @@ target_reqs    =
       "BuildingGenus", "GreatWonder", "Local"
     }
 
-[actionenabler_recycle_unit]
-action = "Recycle Unit"
+[actionenabler_disband_unit_recover]
+action = "Disband Unit Recover"
 actor_reqs    =
     { "type",   "name", "range", "present"
       "UnitFlag", "EvacuateFirst", "Local", FALSE
@@ -1446,6 +1473,10 @@ settings =
     "Team",       200,   "Cancel",     "Both"
     "TeamIC",     400,   "Cancel",     "Both"
   }
+
+; Minimum trade a trade route produces, as long as the good has nonzero income
+; for the relevant direction (from_pct / to_pct)
+min_trade_route_val = 0
 
 ; When are goods for the trade route chosen.
 ; "Leaving" - Goods to carry are assigned to unit when it`s built, or it changes homecity
