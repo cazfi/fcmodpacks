@@ -3,7 +3,7 @@
 
 [datafile]
 description = "Ancients effects data for Freeciv"
-options = "+Freeciv-ruleset-Devel-2021.Feb.06"
+options = "+Freeciv-ruleset-3.2-Devel-2022.Feb.02"
 format_version = 30
 
 ; /* <-- avoid gettext warnings
@@ -44,10 +44,10 @@ reqs    =
 type    = "Retire_Pct"
 value   = 10
 reqs    =
-    { "type", "name", "range", "present"
+    { "type",        "name",      "range", "present"
       "NationGroup", "Barbarian", "Player", TRUE
-      "Age", "5", "Local", TRUE
-      "CityTile", "Center", "Local", FALSE
+      "Age",         "5",         "Local",  TRUE
+      "CityTile",    "Center",    "Tile",   FALSE
     }
 
 ; Lone Leader might escape on coast (33% chance)
@@ -57,11 +57,11 @@ reqs    =
 type    = "Retire_Pct"
 value   = 31
 reqs    =
-    { "type", "name", "range"
-      "UnitType", "Barbarian Leader", "Local"
-      "Age", "5", "Local"
-      "TerrainClass", "Oceanic", "Adjacent"
-      "MaxUnitsOnTile", "1", "Local"
+    { "type",           "name",             "range"
+      "UnitType",       "Barbarian Leader", "Local"
+      "Age",            "5",                "Local"
+      "TerrainClass",   "Oceanic",          "Adjacent"
+      "MaxUnitsOnTile", "1",                "Tile"
     }
 
 ; Specialist output bonuses
@@ -111,10 +111,10 @@ reqs    =
 type    = "Unit_Vision_Radius_Sq"
 value   = 8
 reqs    =
-    { "type", "name", "range"
-      "Extra", "Fortress", "tile"
-      "Tech", "Invention", "player"
-      "UnitClass", "Land", "Local"
+    { "type",      "name",      "range"
+      "Extra",     "Fortress",  "Tile"
+      "Tech",      "Invention", "Player"
+      "UnitClass", "Land",      "Local"
     }
 
 ; basic free tech upkeep
@@ -127,9 +127,9 @@ value   = 3
 type    = "HP_Regen"
 value	= 100
 reqs	=
-    { "type", "name", "range"
-      "Extra", "Fortress", "Tile"
-      "UnitClass", "Land", "Local"
+    { "type",      "name",     "range"
+      "Extra",     "Fortress", "Tile"
+      "UnitClass", "Land",     "Local"
     }
 
 [effect_fortified]
@@ -145,11 +145,31 @@ type    = "Fortify_Defense_Bonus"
 value   = 50
 reqs    =
     { "type",          "name",         "range", "present"
-      "CityTile",      "Center",       "Local", TRUE
+      "CityTile",      "Center",       "Tile",  TRUE
       "Activity",      "Fortified",    "Local", FALSE
       "UnitClassFlag", "CanFortify",   "Local", TRUE
       "UnitFlag",      "Cant_Fortify", "Local", FALSE
     }
+
+[effect_city_min_hp]
+type    = "Min_HP_Pct"
+value   = 33
+reqs    =
+    { "type",     "name",   "range"
+      "CityTile", "Center", "Tile"
+    }
+
+[effect_fortified_regen]
+type    = "HP_Regen_2"
+value   = 10
+reqs    =
+    { "type",     "name",      "range"
+      "Activity", "Fortified", "Local"
+    }
+
+[effect_base_regen]
+type    = "HP_Regen_2"
+value   = 10
 
 ; Base vision range - radius of vision is sqrt(5) = 2.24
 [effect_city_vision]
@@ -1094,17 +1114,17 @@ reqs    =
 type    = "Incite_Cost_Pct"
 value   = -150
 reqs    =
-    { "type", "name", "range"
-      "Building", "Courthouse", "City"
-      "MaxUnitsOnTile", "0", "Local"
+    { "type",           "name",       "range"
+      "Building",       "Courthouse", "City"
+      "MaxUnitsOnTile", "0",          "Tile"
     }
 
 [effect_incite_empty]
 type    = "Incite_Cost_Pct"
 value   = -50
 reqs    =
-    { "type", "name", "range"
-      "MaxUnitsOnTile", "0", "Local"
+    { "type",           "name", "range"
+      "MaxUnitsOnTile", "0",    "Tile"
     }
 
 [effect_courthouse_content_0]
@@ -1164,20 +1184,20 @@ reqs	=
 type    = "Output_Add_Tile"
 value	= 1
 reqs	=
-    { "type", "name", "range"
-      "TerrainClass", "Oceanic", "Local"
-      "Building", "Sea Fish Market", "City"
-      "OutputType", "Food", "Local"
+    { "type",         "name",            "range"
+      "TerrainClass", "Oceanic",         "Tile"
+      "Building",     "Sea Fish Market", "City"
+      "OutputType",   "Food",            "Local"
     }
 
 [effect_fish_market_river]
 type    = "Output_Add_Tile"
 value	= 1
 reqs	=
-    { "type", "name", "range"
-      "Extra", "River", "Local"
-      "Building", "River Fish Market", "City"
-      "OutputType", "Food", "Local"
+    { "type",       "name",              "range"
+      "Extra",      "River",             "Tile"
+      "Building",   "River Fish Market", "City"
+      "OutputType", "Food",              "Local"
     }
 
 [effect_library]
@@ -1211,10 +1231,10 @@ reqs	=
 type    = "Output_Add_Tile"
 value	= 1
 reqs	=
-    { "type", "name", "range"
-      "TerrainClass", "Oceanic", "Local"
-      "Building", "Harbour", "City"
-      "OutputType", "Shield", "Local"
+    { "type",         "name",    "range"
+      "TerrainClass", "Oceanic", "Tile"
+      "Building",     "Harbour", "City"
+      "OutputType",   "Shield",  "Local"
     }
 
 [effect_palace]
@@ -1560,27 +1580,27 @@ value   = 1
 type    = "Mining_Pct"
 value   = 100
 reqs    =
-    { "type", "name", "range"
-      "Extra", "Mine", "Local"
+    { "type",  "name", "range"
+      "Extra", "Mine", "Tile"
     }
 
 [effect_irrigation]
 type    = "Irrigation_Pct"
 value   = 100
 reqs    =
-    { "type", "name", "range"
-      "Extra", "Irrigation", "Local"
+    { "type",  "name",       "range"
+      "Extra", "Irrigation", "Tile"
     }
 
 [effect_irrigation_center]
 type    = "Irrigation_Pct"
 value   = 100
 reqs    =
-    { "type", "name", "range", "present"
-      "CityTile", "Center", "Local", TRUE
-      "Extra", "Irrigation", "Local", FALSE
-      "TerrainAlter", "CanIrrigate", "Local", TRUE
-      "Extra", "Mine", "Local", FALSE
+    { "type",         "name",        "range", "present"
+      "CityTile",     "Center",      "Tile",  TRUE
+      "Extra",        "Irrigation",  "Tile",  FALSE
+      "TerrainAlter", "CanIrrigate", "Tile",  TRUE
+      "Extra",        "Mine",        "Tile",  FALSE
     }
 
 [effect_trade_routes]
@@ -1591,8 +1611,8 @@ value   = 4
 type    = "Output_Tile_Punish_Pct"
 value   = 50
 reqs    =
-    { "type", "name", "range", "present"
-      "Extra", "Pollution", "Local", TRUE
+    { "type",  "name",      "range", "present"
+      "Extra", "Pollution", "Tile",  TRUE
     }
 
 [effect_attack_bombard_no_city_destruction]
@@ -1749,7 +1769,7 @@ type    = "Spy_Resistant"
 value	= 25
 reqs	=
     { "type",  "name",     "range"
-      "Extra", "Fortress", "Local"
+      "Extra", "Fortress", "Tile"
     }
 
 ; Double (+100%) buy cost for Great Wonders
@@ -1909,12 +1929,12 @@ reqs    =
       "UnitFlag", "OneAttack", "Local", FALSE
      }
 
-[effect_unit_shield_value_recycle]
+[effect_unit_shield_value_disband_recover]
 type    = "Unit_Shield_Value_Pct"
 value   = -50
 reqs    =
-    { "type",   "name",         "range", "present"
-      "Action", "Recycle Unit", "Local", TRUE
+    { "type",   "name",                 "range", "present"
+      "Action", "Disband Unit Recover", "Local", TRUE
     }
 
 [effect_unit_shield_value_in_upgrade_price_calc]

@@ -8,7 +8,7 @@
 
 [datafile]
 description = "Ancients nation theme data for Freeciv"
-options = "+Freeciv-ruleset-Devel-2021.Feb.06"
+options = "+Freeciv-ruleset-3.2-Devel-2022.Feb.02"
 format_version = 30
 
 ; /* <-- avoid gettext warnings
@@ -71,7 +71,6 @@ name = _("?style:Celtic")
 ;                    more info on city tiles
 ; citizens_graphic = group of citizens tiles to use, see citizens/small
 ;                    spec for more info on citizens tiles
-;                    FIXME: this and _alt not currently used!
 ; reqs             = requirements for this city style (see README.effects)
 ;
 ; */ <-- avoid gettext warnings
@@ -81,7 +80,6 @@ name        = _("?citystyle:European")
 graphic     = "city.european"
 graphic_alt = "-"
 citizens_graphic     = "ancient"
-citizens_graphic_alt = "generic"
 reqs = { "type", "name", "range"
          "Style", "European", "Player"
        }
@@ -91,7 +89,6 @@ name        = _("?citystyle:Classical")
 graphic     = "city.classical"
 graphic_alt = "-"
 citizens_graphic     = "ancient"
-citizens_graphic_alt = "generic"
 reqs = { "type", "name", "range"
          "Style", "Classical", "Player"
        }
@@ -101,7 +98,6 @@ reqs = { "type", "name", "range"
 ;graphic     = "city.mesopotamian"
 ;graphic_alt = "city.classical"
 ;citizens_graphic     = "ancient"
-;citizens_graphic_alt = "generic"
 ;reqs = { "type", "name", "range"
 ;         "Style", "Mesopotamian", "Player"
 ;       }
@@ -111,7 +107,6 @@ name        = _("?citystyle:Arabian")
 graphic     = "city.arabian"
 graphic_alt = "city.classical"
 citizens_graphic     = "ancient"
-citizens_graphic_alt = "generic"
 reqs = { "type", "name", "range"
          "Style", "Arabian", "Player"
        }
@@ -121,7 +116,6 @@ reqs = { "type", "name", "range"
 ;graphic     = "city.tropical"
 ;graphic_alt = "city.european"
 ;citizens_graphic     = "ancient"
-;citizens_graphic_alt = "generic"
 ;reqs = { "type", "name", "range"
 ;         "Style", "Tropical", "Player"
 ;       }
@@ -131,7 +125,6 @@ name        = _("?citystyle:Precolumbian")
 graphic     = "city.precolumbian"
 graphic_alt = "city.tropical"
 citizens_graphic     = "ancient"
-citizens_graphic_alt = "generic"
 reqs = { "type", "name", "range"
          "Style", "Precolumbian", "Player"
        }
@@ -141,7 +134,6 @@ name        = _("?citystyle:African")
 graphic     = "city.african"
 graphic_alt = "city.tropical"
 citizens_graphic     = "ancient"
-citizens_graphic_alt = "generic"
 reqs = { "type", "name", "range"
          "Style", "African", "Player"
        }
@@ -151,7 +143,6 @@ name        = _("?citystyle:Asian")
 graphic     = "city.asian"
 graphic_alt = "city.classical"
 citizens_graphic     = "ancient"
-citizens_graphic_alt = "generic"
 reqs = { "type", "name", "range"
          "Style", "Asian", "Player"
        }
@@ -161,7 +152,6 @@ name        = _("?citystyle:Babylonian")
 graphic     = "city.babylonian"
 graphic_alt = "city.classical"
 citizens_graphic     = "ancient"
-citizens_graphic_alt = "generic"
 reqs = { "type", "name", "range"
          "Style", "Babylonian", "Player"
        }
@@ -171,7 +161,6 @@ reqs = { "type", "name", "range"
 ;graphic     = "city.barbarian"
 ;graphic_alt = "city.european"
 ;citizens_graphic     = "ancient"
-;citizens_graphic_alt = "generic"
 ;reqs = { "type", "name", "range"
 ;         "Style", "Barbarian", "Player"
 ;       }
@@ -181,7 +170,6 @@ name        = _("?citystyle:Celtic")
 graphic     = "city.celtic"
 graphic_alt = "city.european"
 citizens_graphic     = "ancient"
-citizens_graphic_alt = "generic"
 reqs = { "type", "name", "range"
          "Style", "Celtic", "Player"
        }
@@ -191,7 +179,6 @@ name        = _("?citystyle:Renaissance")
 graphic     = "city.industrial"
 graphic_alt = "-"
 citizens_graphic     = "renaissance"
-citizens_graphic_alt = "generic"
 reqs = { "type", "name", "range"
          "tech", "University", "Player"
        }

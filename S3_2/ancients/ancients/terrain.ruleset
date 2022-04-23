@@ -11,7 +11,7 @@
 
 [datafile]
 description = "Ancients terrain data for Freeciv"
-options = "+Freeciv-ruleset-Devel-2021.Feb.06"
+options = "+Freeciv-ruleset-3.2-Devel-2022.Feb.02"
 format_version = 30
 
 [control]
@@ -106,6 +106,11 @@ ocean_resources = FALSE
 ; shield               = normal shield production
 ; trade                = normal trade production
 ; resources            = list of possible resources on this terrain
+; resource_freq        = (optional) list of relative frequencies for each
+;                        possible resource on this terrain. When specified,
+;                        must be the same length as resource list.
+;                        Otherwise, all resources occur with approximately
+;                        equal frequency.
 ; road_food_incr_pct   = percent of road food_incr applied to this terrain
 ; road_shield_incr_pct = percent of road shield_incr applied to this terrain
 ; road_trade_incr_pct  = percent of road trade_incr applied to this terrain
@@ -133,7 +138,7 @@ ocean_resources = FALSE
 ;                        "no"  -- cannot transform
 ;                        terrain rule_name -- transformation changes to that
 ;                          terrain
-; transform_time       = time to transform; if 0, cannot transform
+; transform_time       = time to transform
 ; placing_time         = time for 'placing' an extra; if 0, cannot place
 ;                        Nonzero values only affect extras with build_time 0.
 ;                        Such extras can modify time with build_time_factor.
@@ -228,6 +233,7 @@ mining_shield_incr   = 0
 mining_time          = 0
 transform_result     = "Swamp"
 transform_time       = 36
+placing_time         = 0
 pillage_time         = 1
 clean_pollution_time = 3
 clean_fallout_time   = 3
@@ -273,6 +279,7 @@ mining_shield_incr   = 0
 mining_time          = 0
 transform_result     = "Swamp"
 transform_time       = 36
+placing_time         = 0
 pillage_time         = 1
 clean_pollution_time = 3
 clean_fallout_time   = 3
@@ -319,6 +326,7 @@ mining_shield_incr   = 0
 mining_time          = 0
 transform_result     = "no"
 transform_time       = 0
+placing_time         = 0
 pillage_time         = 1
 clean_pollution_time = 3
 clean_fallout_time   = 3
@@ -365,6 +373,7 @@ mining_shield_incr   = 1
 mining_time          = 10
 transform_result     = "Tundra"
 transform_time       = 24
+placing_time         = 4
 pillage_time         = 1
 clean_pollution_time = 3
 clean_fallout_time   = 3
@@ -412,6 +421,7 @@ mining_shield_incr   = 1
 mining_time          = 5
 transform_result     = "Plains"
 transform_time       = 24
+placing_time         = 2
 pillage_time         = 1
 clean_pollution_time = 3
 clean_fallout_time   = 3
@@ -460,6 +470,7 @@ mining_shield_incr   = 0
 mining_time          = 0
 transform_result     = "Grassland"
 transform_time       = 24
+placing_time         = 4
 pillage_time         = 1
 clean_pollution_time = 3
 clean_fallout_time   = 3
@@ -509,6 +520,7 @@ mining_shield_incr   = 0
 mining_time          = 0
 transform_result     = "Hills"
 transform_time       = 24
+placing_time         = 2
 pillage_time         = 1
 clean_pollution_time = 3
 clean_fallout_time   = 3
@@ -555,6 +567,7 @@ mining_shield_incr   = 3
 mining_time          = 10
 transform_result     = "Plains"
 transform_time       = 24
+placing_time         = 4
 pillage_time         = 1
 clean_pollution_time = 3
 clean_fallout_time   = 3
@@ -602,6 +615,7 @@ mining_shield_incr   = 0
 mining_time          = 0
 transform_result     = "Plains"
 transform_time       = 24
+placing_time         = 4
 pillage_time         = 1
 clean_pollution_time = 3
 clean_fallout_time   = 3
@@ -650,6 +664,7 @@ mining_shield_incr   = 1
 mining_time          = 10
 transform_result     = "Hills"
 transform_time       = 24
+placing_time         = 6
 pillage_time         = 1
 clean_pollution_time = 3
 clean_fallout_time   = 3
@@ -696,6 +711,7 @@ mining_shield_incr   = 0
 mining_time          = 0
 transform_result     = "Grassland"
 transform_time       = 24
+placing_time         = 2
 pillage_time         = 1
 clean_pollution_time = 3
 clean_fallout_time   = 3
@@ -743,6 +759,7 @@ mining_shield_incr   = 0
 mining_time          = 0
 transform_result     = "Lake"
 transform_time       = 36
+placing_time         = 4
 pillage_time         = 1
 clean_pollution_time = 3
 clean_fallout_time   = 3
@@ -792,6 +809,7 @@ mining_shield_incr   = 0
 mining_time          = 0
 transform_result     = "Desert"
 transform_time       = 24
+placing_time         = 2
 pillage_time         = 1
 clean_pollution_time = 3
 clean_fallout_time   = 3
@@ -1173,8 +1191,8 @@ act_gfx_alt2   = "-"
 rmact_gfx      = "unit.pollution"
 rmact_gfx_alt  = "-"
 reqs           =
-    { "type", "name", "range", "present"
-      "TerrainFlag", "NoPollution", "Local", FALSE
+    { "type",        "name",        "range", "present"
+      "TerrainFlag", "NoPollution", "Tile",  FALSE
     }
 removal_time   = 0
 flags          = "GlobalWarming"
@@ -1192,8 +1210,8 @@ act_gfx_alt    = "-"
 act_gfx_alt2   = "-"
 rmact_gfx      = "None"
 reqs           =
-    { "type", "name", "range"
-      "TerrainClass", "Land", "Local"
+    { "type",         "name", "range"
+      "TerrainClass", "Land", "Tile"
     }
 removal_time   = 0
 helptext = _("\
@@ -1222,11 +1240,11 @@ act_gfx_alt    = "-"
 act_gfx_alt2   = "-"
 rmact_gfx      = "None"
 reqs           =
-    { "type", "name", "range", "present"
-      "Tech", "Construction", "Player", TRUE
-      "TerrainClass", "Land", "Local", TRUE
-      "UnitFlag", "Settlers", "Local", TRUE
-      "CityTile", "Center", "Local", FALSE
+    { "type",         "name",         "range", "present"
+      "Tech",         "Construction", "Player", TRUE
+      "TerrainClass", "Land",         "Tile",   TRUE
+      "UnitFlag",     "Settlers",     "Local",  TRUE
+      "CityTile",     "Center",       "Tile",   FALSE
     }
 build_time     = 3
 removal_time   = 0
@@ -1258,9 +1276,9 @@ act_gfx_alt    = "-"
 act_gfx_alt2   = "-"
 rmact_gfx      = "None"
 reqs           =
-    { "type", "name", "range"
-      "UnitFlag", "Settlers", "Local"
-      "TerrainClass", "Land", "Local"
+    { "type",         "name",     "range"
+      "UnitFlag",     "Settlers", "Local"
+      "TerrainClass", "Land",     "Tile"
     }
 build_time     = 0
 removal_time   = 0

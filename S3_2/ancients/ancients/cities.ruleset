@@ -3,7 +3,7 @@
 
 [datafile]
 description = "Ancients cities data for Freeciv"
-options = "+Freeciv-ruleset-Devel-2021.Feb.06"
+options = "+Freeciv-ruleset-3.2-Devel-2022.Feb.02"
 format_version = 30
 
 ; /* <-- avoid gettext warnings
@@ -123,5 +123,5 @@ food_wipe         = TRUE
 gold_wipe         = TRUE
 
 shield_protected  = "EvacuateFirst"
-shield_unit_act   = "Help Wonder", "Recycle Unit", "Disband Unit"
+shield_unit_act   = "Help Wonder", "Disband Unit Recover", "Disband Unit"
 shield_wipe       = FALSE
