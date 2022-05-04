@@ -26,7 +26,7 @@ summary = _("You are playing Freeciv with Ancients ruleset. \
 See http://www.freeciv.org/wiki/Ancients for more info.")
 
 ; Detailed description
-; When updating this, update also desciption_file in [ruledit] section to match
+; When updating this, update also description_file in [ruledit] section to match
 ; description = ""
 
 ; What capabilities ruleset provides for the scenarios.
@@ -84,7 +84,9 @@ init_vis_radius_sq	= 5
 ; A base bribe cost, modified heavily by other factors
 base_bribe_cost  = 750
 
-; Barbarian leader ransom in gold
+; Barbarian leader ransom in gold. The ransom is taken from
+; the victim (typically a barbarian player), and it`s possible
+; they cannot pay this in full.
 ransom_gold      = 100
 
 ; Number of veteran levels lost when upgrading a unit
@@ -297,8 +299,8 @@ ui_name_help_wonder = _("Help %sbuild Wonder%s")
 ; /* TRANS: _Build City (100% chance of success). */
 ui_name_found_city = _("%sBuild City%s")
  
-; /* TRANS: Rec_ycle Unit (100% chance of success). */
-ui_name_recycle_unit = _("Rec%sycle Unit%s")
+; /* TRANS: Dis_band recovering production (100% chance of success). */
+ui_name_recycle_unit = _("Dis%sband recovering production%s")
 
 ; /* TRANS: _Add to City (100% chance of success). */
 ui_name_join_city = _("%sAdd to City%s")
