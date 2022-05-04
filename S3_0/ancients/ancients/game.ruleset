@@ -19,7 +19,7 @@ format_version=10
 name = _("Ancients")
 
 ; Version of the ruleset
-version = "3.0-1"
+version = "3.0-2"
 
 ; Summary of the ruleset
 summary = _("You are playing Freeciv with Ancients ruleset. \
@@ -313,7 +313,7 @@ ui_name_upgrade_unit = _("%sUpgrade Unit%s")
 ui_name_attack = _("%sAttack%s")
 
 ; /* TRANS: _Conquer City (100% chance of success). */
-ui_name_conquer_city = _("%Conquer City%s")
+ui_name_conquer_city = _("%sConquer City%s")
 
 ; Suppress automatic help text generation about what enables and/or
 ; disables the following actions.

@@ -525,7 +525,7 @@ ui_name_upgrade_unit = _("%sUpgrade Unit%s")
 ui_name_attack = _("%sAttack%s")
 
 ; /* TRANS: _Conquer City (100% chance of success). */
-ui_name_conquer_city = _("%Conquer City%s")
+ui_name_conquer_city = _("%sConquer City%s")
 
 ; /* TRANS: _Conquer City from non native (100% chance of success). */
 ui_name_conquer_city_2 = _("%sConquer City from non native%s")
