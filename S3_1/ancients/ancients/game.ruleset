@@ -23,7 +23,7 @@ version = "3.1-dev"
 
 ; Summary of the ruleset
 summary = _("You are playing Freeciv with Ancients ruleset. \
-See http://www.freeciv.org/wiki/Ancients for more info.")
+See https://www.freeciv.org/wiki/Ancients for more info.")
 
 ; Detailed description
 ; When updating this, update also description_file in [ruledit] section to match
