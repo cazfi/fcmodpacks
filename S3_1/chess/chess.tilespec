@@ -1,13 +1,13 @@
 
 [tilespec]
-options = "+Freeciv-tilespec-Devel-2019-Jul-03"
+options = "+Freeciv-3.1-tilespec"
 
 ; A simple name for the tileset specified by this file:
 name = "Chess"
 priority = 5
 
 ; There`s no separate versioning in tilesets part of main freeciv distribution
-version = "2.5-pre"
+version = "2.5"
 
 ; Summary and full description of the tileset.
 ;summary = ""
