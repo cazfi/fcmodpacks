@@ -4,7 +4,7 @@
 
 [datafile]
 description="Ancients game rules for Freeciv"
-options="+Freeciv-ruleset-3.1-Devel-2021.May.03"
+options="+Freeciv-3.1-ruleset"
 format_version=20
 
 ; This section contains meta information for freeciv-ruledit to recreate the ruleset
@@ -19,7 +19,7 @@ format_version=20
 name = _("Ancients")
 
 ; Version of the ruleset
-version = "3.1-dev"
+version = "3.1-0"
 
 ; Summary of the ruleset
 summary = _("You are playing Freeciv with Ancients ruleset. \

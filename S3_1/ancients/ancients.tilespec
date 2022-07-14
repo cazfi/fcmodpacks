@@ -1,7 +1,7 @@
 [tilespec]
 
 ; Format and options of this tilespec file:
-options = "+Freeciv-tilespec-Devel-2019-Jul-03"
+options = "+Freeciv-3.1-tilespec"
 
 ; A simple name for the tileset specified by this file:
 name = "Ancients"
@@ -10,7 +10,7 @@ priority = 5
 ; Version numbering so that until freeciv version a.b has stable format,
 ; version here is some a.b-pre, a.b-dev, or a.b-alpha. The first version
 ; with the stable format is a.b-0, then a.b-1...
-version = "3.1-pre"
+version = "3.1-0"
 
 ; Summary and full description of the tileset.
 summary = _("Tileset to be used with Ancients ruleset.")
