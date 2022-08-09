@@ -112,7 +112,7 @@ type    = "Unit_Vision_Radius_Sq"
 value   = 8
 reqs    =
     { "type", "name", "range"
-      "Extra", "Fortress", "tile"
+      "Extra", "Fortress", "Local"
       "Tech", "Invention", "player"
       "UnitClass", "Land", "Local"
     }
@@ -128,7 +128,7 @@ type    = "HP_Regen"
 value	= 100
 reqs	=
     { "type", "name", "range"
-      "Extra", "Fortress", "Tile"
+      "Extra", "Fortress", "Local"
       "UnitClass", "Land", "Local"
     }
 
