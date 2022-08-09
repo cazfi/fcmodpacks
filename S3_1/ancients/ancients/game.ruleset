@@ -19,7 +19,7 @@ format_version=20
 name = _("Ancients")
 
 ; Version of the ruleset
-version = "3.1-0"
+version = "3.1-1"
 
 ; Summary of the ruleset
 summary = _("You are playing Freeciv with Ancients ruleset. \
@@ -566,8 +566,8 @@ ui_name_build_mine = _("Build %sMine%s")
 ; /* TRANS: Build _Irrigation (100% chance of success). */
 ui_name_irrigate = _("Build %sIrrigation%s")
 
-; /* TRANS: _Alight (100% chance of success). */
-ui_name_transport_alight = _("%sAlight%s")
+; /* TRANS: _Deboard (100% chance of success). */
+ui_name_transport_alight = _("%sDeboard%s")
 
 ; /* TRANS: _Board (100% chance of success). */
 ui_name_transport_board = _("%sBoard%s")
