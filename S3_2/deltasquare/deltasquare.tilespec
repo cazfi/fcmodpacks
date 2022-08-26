@@ -2,14 +2,14 @@
 [tilespec]
 
 ; Format and options of this tilespec file:
-options = "+Freeciv-tilespec-Devel-2019-Jul-03 duplicates_ok"
+options = "+Freeciv-tilespec-3.2-Devel-2022-Jun-21 duplicates_ok"
 
 ; A simple name for the tileset specified by this file:
 name = "Deltasquare"
 priority = 30
 
 ; Version of the tileset
-version = "3.1-dev"
+version = "3.2-dev"
 
 ; Summary and full description of the tileset.
 summary = _("Tileset to be used with variant2 ruleset in square tiles map.")
@@ -53,6 +53,10 @@ activity_offset_y = 0
 ; offset of the selected unit sprites
 select_offset_x = 0
 select_offset_y = 0
+
+; offset of the unit stack size number sprites
+stack_size_offset_x = 20
+stack_size_offset_y = 10
 
 ; offset the cities by this amount
 city_offset_x = 0
