@@ -1,9 +1,9 @@
 [nation_macedonian]
 
-name=_("Macedonian")
-plural=_("?plural:Macedonians")
-groups=_("European"), _("Mediterranean")
-legend=_("The Kingdom of Macedon, homeland of Alexander the Great.")
+name   = _("Macedonian")
+plural = _("?plural:Macedonians")
+groups = _("European"), _("Mediterranean")
+legend = _("The Kingdom of Macedon, homeland of Alexander the Great.")
 
 leaders = {
  "name", "sex"
@@ -16,17 +16,17 @@ leaders = {
  "Cleopatra VII", "Female"
 }
 
-flag="macedonia"
+flag     = "macedonia"
 flag_alt = "-"
 style    = "Classical"
 ruler_titles = { "government",      "male_title",      "female_title"
                  "Despotism",       _("Despot %s"),       _("Despot %s")
                }
 
-init_techs=""
-init_buildings=""
-init_units=""
-civilwar_nations="egyptian", "byzantine"
+init_techs = ""
+init_buildings = ""
+init_units = ""
+civilwar_nations = "egyptian", "byzantine"
 
 cities =
  "Aegae",

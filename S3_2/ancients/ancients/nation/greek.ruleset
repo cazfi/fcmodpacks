@@ -1,9 +1,9 @@
 [nation_hellene]
 
-name=_("Greek")
-plural=_("?plural:Greeks")
-groups=_("European"), _("Mediterranean")
-legend=_("The ancient Greeks, between Mycenae and the rise of Macedonia.")
+name   = _("Greek")
+plural = _("?plural:Greeks")
+groups = _("European"), _("Mediterranean")
+legend = _("The ancient Greeks, between Mycenae and the rise of Macedonia.")
 
 leaders = {
  "name", "sex"
@@ -12,17 +12,17 @@ leaders = {
  "Perikles", "Male"
 }
 
-flag="greece_ancient"
+flag     = "greece_ancient"
 flag_alt = "greece"
 style    = "Classical"
 ruler_titles = { "government",      "male_title",      "female_title"
                  "Despotism",       _("Despot %s"),       _("Despot %s")
                }
 
-init_techs=""
-init_buildings=""
-init_units=""
-civilwar_nations="macedonian", "byzantine", "persian", "egyptian"
+init_techs = ""
+init_buildings = ""
+init_units = ""
+civilwar_nations = "macedonian", "byzantine", "persian", "egyptian"
 
 cities =
 ; Early cities

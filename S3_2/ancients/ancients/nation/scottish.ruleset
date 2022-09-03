@@ -1,9 +1,9 @@
 [nation_scottish]
 
-name=_("Scottish")
-plural=_("?plural:Scots")
-groups=_("Medieval"), _("European"), _("Atlantic")
-legend=_("Scotland, originally settled in late Roman times by Irish\
+name   = _("Scottish")
+plural = _("?plural:Scots")
+groups = _("Medieval"), _("European"), _("Atlantic")
+legend = _("Scotland, originally settled in late Roman times by Irish\
  raiders who displaced the native Picts, was an independent kingdom from\
  around 1034AD.")
 
@@ -13,7 +13,7 @@ leaders = {
  "William Wallace", "Male"
 }
 
-flag="scotland"
+flag     = "scotland"
 flag_alt = "united_kingdom"
 style    = "Celtic"
 
@@ -23,9 +23,9 @@ ruler_titles = { "government",  "male_title",         "female_title"
                  "Ancient Democracy", _("First Minister %s"),  _("First Minister %s")
                }
 
-init_techs=""
-init_buildings=""
-init_units=""
+init_techs = ""
+init_buildings =""
+init_units = ""
 civilwar_nations = "british", "irish"
 
 cities =

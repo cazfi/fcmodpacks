@@ -1,9 +1,9 @@
 [nation_roman]
 
-name=_("Roman")
-plural=_("?plural:Romans")
-groups=_("European"), _("Mediterranean")
-legend=_("Rome was, in legend, founded by Romulus in 753 BC.  At its\
+name   = _("Roman")
+plural = _("?plural:Romans")
+groups = _("European"), _("Mediterranean")
+legend = _("Rome was, in legend, founded by Romulus in 753 BC.  At its\
  height, Rome controlled nearly all of Europe, northern Africa and\
  Mesopotamia.")
 
@@ -21,9 +21,9 @@ leaders = {
  "Valeria Messalina", "Female"
 }
 
-flag = "rome"
+flag     = "rome"
 flag_alt = "italy"
-style = "Classical"
+style    = "Classical"
 
 ruler_titles = { "government",      "male_title",      "female_title"
                  "Despotism",       _("Dictator %s"),     _("Dictatrix %s")
@@ -31,9 +31,9 @@ ruler_titles = { "government",      "male_title",      "female_title"
                  "Anarchy",         _("Usurper %s"),      _("Usurper %s")
 }
 
-init_techs=""
-init_buildings=""
-init_units=""
+init_techs = ""
+init_buildings = ""
+init_units = ""
 civilwar_nations = "byzantine", "palmyrene", "frankish", "british", "gothic"
 
 cities =

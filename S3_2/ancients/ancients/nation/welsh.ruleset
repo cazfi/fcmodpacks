@@ -1,20 +1,20 @@
 [nation_welsh]
 
-name=_("Welsh")
-plural=_("?plural:Welsh")
-groups= _("Medieval"), _("European"), _("Atlantic")
-legend=_("The Welsh at one time controlled all of what is now England\
+name   = _("Welsh")
+plural = _("?plural:Welsh")
+groups = _("Medieval"), _("European"), _("Atlantic")
+legend = _("The Welsh at one time controlled all of what is now England\
  until being driven into the mountainous western reaches by invading\
  Saxons.")
 
 leaders = {
- "name", "sex"
+ "name",                 "sex"
  "Llywelyn ap Gruffudd", "Male"
- "Hywel Dda", "Male"
- "Owain Glyndwr", "Male"
+ "Hywel Dda",            "Male"
+ "Owain Glyndwr",        "Male"
 }
 
-flag="wales"
+flag     = "wales"
 flag_alt = "united_kingdom"
 style    = "Celtic"
 
@@ -30,11 +30,11 @@ ruler_titles = { "government",      "male_title",      "female_title",
                  "Ancient Democracy", _("Prime Minister %s"), _("Prime Minister %s")
                }
 
-init_techs=""
-init_buildings=""
+init_techs = ""
+init_buildings = ""
 
-init_units=""
-civilwar_nations="british"
+init_units = ""
+civilwar_nations = "british"
 
 cities =
   ; Possible pre-urban nuclei,
@@ -51,5 +51,3 @@ cities =
   "Caerphily", "Methyr Tydfil", "Pembroke", "Fishguard", "Aberystwyth",
   "Lampeter", "Llandovery", "Brecon", "Flint", "Caemarfon", "Llanfyllin",
   "Holyhead", "Tywyn", "Llandeilo", "Cwmbran"
-
-

@@ -1,9 +1,9 @@
 [nation_ethiopian]
 
-name=_("Ethiopian")
-plural=_("?plural:Ethiopians")
-groups=_("African")
-legend=_("Ethiopia is the oldest nation in Africa.")
+name   = _("Ethiopian")
+plural = _("?plural:Ethiopians")
+groups = _("African")
+legend = _("Ethiopia is the oldest nation in Africa.")
 
 leaders = {
  "name", "sex"
@@ -17,17 +17,17 @@ leaders = {
  "Tewodros II", "Male"
 }
 
-flag="ethiopia"
+flag     = "ethiopia"
 flag_alt = "italy"
 style    = "Babylonian"
 
 ruler_titles = { "government",       "male_title",    "female_title"
                }
 
-init_techs=""
-init_buildings=""
-init_units=""
-civilwar_nations="egyptian"
+init_techs = ""
+init_buildings = ""
+init_units = ""
+civilwar_nations = "egyptian"
 
 cities =
   "Addis Abeba", "Dire Dawa", "Gonder", "Nazret", "Harer", "Mek'ele",

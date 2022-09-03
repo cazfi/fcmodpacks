@@ -1,9 +1,9 @@
 [nation_irish]
 
-name = _("Irish")
+name   = _("Irish")
 plural = _("?plural:Irish")
-groups=_("Medieval"), _("European"), _("Atlantic")
-legend=_("Ireland held out against the Romans and Vikings but was \
+groups = _("Medieval"), _("European"), _("Atlantic")
+legend = _("Ireland held out against the Romans and Vikings but was \
 conquered by the Normans in 1171. \
 Scotland was settled in late Roman times by Irish \
 raiders who displaced the native Picts.")
@@ -34,7 +34,7 @@ leaders = {
  "Tiernan O'Rourke", "Male"
 }
 
-flag="stpatrick"
+flag     = "stpatrick"
 flag_alt = "ireland"
 style    = "Celtic"
 
@@ -44,11 +44,11 @@ ruler_titles = { "government",        "male_title",      "female_title"
                  "Ancient Democracy", _("Taoiseach %s"),    _("Taoiseach %s")
                }
 
-init_techs=""
-init_buildings=""
-init_units=""
+init_techs = ""
+init_buildings = ""
+init_units = ""
 
-conflicts_with="italian", "etruscan"	; Similar flags
+conflicts_with = "italian", "etruscan"  ; Similar flags
 civilwar_nations = "scottish", "viking"
 
 cities =
@@ -161,4 +161,3 @@ cities =
   "Portarlington (swamp, !ocean)",
   "Cahir (hills)",
   "Trim (grassland, river)"
-

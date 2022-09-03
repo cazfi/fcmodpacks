@@ -1,9 +1,9 @@
 [nation_indian]
 
-name=_("Indian")
-plural=_("?plural:Indians")
-groups=_("Medieval"), _("Asian")
-legend=_("The cradle of Ancient Indian civilization lay in the Indus river\
+name   = _("Indian")
+plural = _("?plural:Indians")
+groups = _("Medieval"), _("Asian")
+legend = _("The cradle of Ancient Indian civilization lay in the Indus river\
  valley in modern-day Pakistan.")
 
 leaders = {
@@ -12,7 +12,7 @@ leaders = {
  "Chandragupta", "Male"
 }
 
-flag="india"
+flag     = "india"
 flag_alt = "-"
 style    = "Asian"
 
@@ -22,9 +22,9 @@ ruler_titles = { "government",      "male_title",      "female_title"
                  "Republic",        _("Mahatma %s"),      _("Mahatma %s")
                }
 
-init_techs=""
-init_buildings=""
-init_units=""
+init_techs = ""
+init_buildings = ""
+init_units = ""
 civilwar_nations = "arab", "persian"
 
 cities =

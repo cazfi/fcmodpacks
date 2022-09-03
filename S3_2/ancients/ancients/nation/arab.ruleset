@@ -1,9 +1,9 @@
 [nation_arab]
 
-name=_("Arab")
-plural=_("?plural:Arabs")
-groups="Medieval" , "Asian" ; Place the Arabs according to the location of Mecca
-legend=_("The Arab/Islamic civilization of 622AD-1495AD.")
+name   = _("Arab")
+plural = _("?plural:Arabs")
+groups = "Medieval" , "Asian" ; Place the Arabs according to the location of Mecca
+legend = _("The Arab/Islamic civilization of 622AD-1495AD.")
 
 leaders = {
  "name", "sex"
@@ -15,7 +15,7 @@ leaders = {
  "Al-Hakim", "Male"
 }
 
-flag ="arab"
+flag     = "arab"
 flag_alt = "-"
 style    = "Arabian"
 
@@ -24,9 +24,9 @@ ruler_titles = { "government",      "male_title",      "female_title"
                  "Imperial Monarchy",     _("Caliph %s"),       _("Caliph %s")
                }
 
-init_techs=""
-init_buildings=""
-init_units=""
+init_techs = ""
+init_buildings = ""
+init_units = ""
 
 ; Should not appear with other Arabic nations from the beginning but...
 ; ...civil war to them.

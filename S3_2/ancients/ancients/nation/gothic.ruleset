@@ -2,7 +2,7 @@
 
 name   = _("Gothic")
 plural = _("?plural:Goths")
-groups  = _("European")
+groups = _("European")
 
 legend = _("The Goths were a Germanic people\
  who originated in what is now Poland.\
@@ -29,10 +29,10 @@ ruler_titles = { "government",      "male_title",       "female_title"
                }
 
 init_techs = ""
-init_buildings=""
-init_units=""
+init_buildings = ""
+init_units = ""
 
-;civilwar_nations=""
+;civilwar_nations = ""
 
 cities =
  ; See The Goths, P Heather, Blackwell 1991 for information.

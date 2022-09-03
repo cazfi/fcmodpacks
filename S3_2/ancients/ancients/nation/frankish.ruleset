@@ -1,9 +1,9 @@
 [nation_franks]
 
-name=_("Frankish")
-plural=_("?plural:Franks")
-groups=_("Medieval"), _("European"), _("Atlantic")
-legend=_("The Franks were a Germanic confederation\
+name   = _("Frankish")
+plural = _("?plural:Franks")
+groups = _("Medieval"), _("European"), _("Atlantic")
+legend = _("The Franks were a Germanic confederation\
  that formed in what is now north western Germany \
  in the third century AD.\
  In the late fifth century they conquered northern Roman Gaul.")
@@ -23,7 +23,7 @@ leaders = {
  "Charlemagne", "Male"
 }
 
-flag="france_old"
+flag     = "france_old"
 flag_alt = "belgium" ; for the Salian Franks
 style    = "European"
 
@@ -31,10 +31,10 @@ ruler_titles = { "government",      "male_title",    "female_title"
                  "Despotism",       _("General %s"),    _("General %s") ; Latin dux
                }
 
-init_techs=""
-init_buildings=""
-init_units=""
-civilwar_nations="gallic"
+init_techs = ""
+init_buildings = ""
+init_units = ""
+civilwar_nations = "gallic"
 
 cities =
   ; Important towns of the Merovigians
@@ -56,5 +56,3 @@ cities =
   "Nancy", "Besançon", "St. Etienne", "Brest", "Perpignan",
   "Vichy", "Rennes", "Le Havre", "La Rochelle", "Poitiers",
   "St. Nazaire", "Bourges", "Le Mans", "Valenciennes", "Montlucon"
-
-

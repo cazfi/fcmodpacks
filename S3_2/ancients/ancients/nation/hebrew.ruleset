@@ -1,9 +1,9 @@
 [nation_hebrew]
 
-name=_("Hebrew")
-plural=_("?plural:Hebrews")
-groups=_("Asian"), _("Mediterranean")
-legend=_("The ancient Kingdom of Israel was founded around 1000 BC,\
+name   = _("Hebrew")
+plural = _("?plural:Hebrews")
+groups = _("Asian"), _("Mediterranean")
+legend = _("The ancient Kingdom of Israel was founded around 1000 BC,\
  but the first reference to the people of Israel was 200 years earlier.")
 
 leaders = {
@@ -15,16 +15,16 @@ leaders = {
  "Bar Kochba", "Male"
 }
 
-flag="israel"
+flag     = "israel"
 flag_alt = "-"
 style    = "Babylonian"
 
 ruler_titles = { "government",      "male_title",      "female_title"
                }
 
-init_techs=""
-init_buildings=""
-init_units=""
+init_techs = ""
+init_buildings = ""
+init_units = ""
 
 civilwar_nations = "arab"
 

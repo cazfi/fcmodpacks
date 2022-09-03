@@ -1,9 +1,9 @@
 [nation_assyrian]
 
-name=_("Assyrian")
-plural=_("?plural:Assyrians")
-groups="Asian", "Mesopotamian"
-legend=_("Assyria was an empire in northern Mesopotamia, named after its\
+name   = _("Assyrian")
+plural = _("?plural:Assyrians")
+groups = "Asian", "Mesopotamian"
+legend = _("Assyria was an empire in northern Mesopotamia, named after its\
  capital Ashur.")
 
 leaders = {
@@ -16,7 +16,7 @@ leaders = {
  "Naoum Faik", "Male"
 }
 
-flag = "assyria"
+flag     = "assyria"
 flag_alt = "-"
 style    = "Babylonian"
 
@@ -24,10 +24,10 @@ ruler_titles = { "government",	"male_title",	"female_title"
 		 "Imperial Monarchy",	_("Malka %s"),	_("Malikta %s")
 	       }
 
-init_techs=""
-init_buildings=""
-init_units=""
-civilwar_nations="babylonian", "hebrew", "aramean"
+init_techs = ""
+init_buildings = ""
+init_units = ""
+civilwar_nations = "babylonian", "hebrew", "aramean"
 
 cities =
   "Ashur", "Nineveh", "Kalhu", "Arbela", "Edessa", "Osrhoene",

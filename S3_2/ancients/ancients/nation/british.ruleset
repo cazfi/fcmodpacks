@@ -1,9 +1,9 @@
 [nation_british]
 
-name=_("British")
-plural=_("?plural:Britons")
-groups="European", "Atlantic"
-legend=_("The Iron Age inhabitants of what is now Great Britain.")
+name   = _("British")
+plural = _("?plural:Britons")
+groups = "European", "Atlantic"
+legend = _("The Iron Age inhabitants of what is now Great Britain.")
 
 leaders = {
  "name", "sex"
@@ -11,16 +11,16 @@ leaders = {
  "Cassivellaunus", "Male"
 }
 
-flag="briton"
+flag     = "briton"
 flag_alt = "cornwall"
 style    = "Celtic"
 ruler_titles = { "government",      "male_title",      "female_title"
                  "Despotism",       _("Chieftain %s"), _("Chieftain %s")
                }
 
-init_techs=""
-init_buildings=""
-init_units=""
+init_techs = ""
+init_buildings = ""
+init_units = ""
 
 cities =
  ; pre-Roman trading ports

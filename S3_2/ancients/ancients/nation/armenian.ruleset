@@ -1,9 +1,9 @@
 [nation_armenian]
 
-name=_("Armenian")
-plural=_("?plural:Armenians")
-groups="Asian"
-legend=_("Armenians colonised the Kingdom of Urartu\
+name   = _("Armenian")
+plural = _("?plural:Armenians")
+groups = "Asian"
+legend = _("Armenians colonised the Kingdom of Urartu\
  in about 600 BC, forming a state in 190 BC.\
  Ancient Armenia lasted until conquered by the Romans in 66 BC.")
 
@@ -16,13 +16,13 @@ leaders = {
  "Trdat III", "Male"
 }
 
-flag="armenia"
+flag = "armenia"
 flag_alt = "-"
 style    = "Classical"
 
-init_techs=""
-init_buildings=""
-init_units=""
+init_techs = ""
+init_buildings = ""
+init_units = ""
 civilwar_nations = "assyrian"
 
 cities =

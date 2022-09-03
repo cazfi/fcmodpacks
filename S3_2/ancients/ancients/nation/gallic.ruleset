@@ -1,9 +1,9 @@
 [nation_gallic]
 
-name=_("Gallic")
-plural=_("?plural:Gauls")
-groups=_("European"), _("Atlantic"), _("Mediterranean")
-legend=_("The Gauls were a Celtic people occupying what is now France and\
+name   = _("Gallic")
+plural = _("?plural:Gauls")
+groups = _("European"), _("Atlantic"), _("Mediterranean")
+legend = _("The Gauls were a Celtic people occupying what is now France and\
  Belgium.")
 
 leaders = {
@@ -17,7 +17,7 @@ leaders = {
  "Leonnorius", "Male"
 }
 
-flag="gaul"
+flag     = "gaul"
 flag_alt = "france"
 style    = "Celtic"
 
@@ -27,10 +27,10 @@ ruler_titles = { "government",      "male_title",      "female_title"
                  "Imperial Monarchy", _("Teutorix %s"),        _("Teutorix %s")
 	       }
 
-init_techs=""
-init_buildings=""
-init_units=""
-civilwar_nations="british", "frankish"
+init_techs = ""
+init_buildings = ""
+init_units = ""
+civilwar_nations = "british", "frankish"
 
 ; City names from various articles on Wikipedia:
 ; http://en.wikipedia.org/wiki/Category:Ancient_Gauls

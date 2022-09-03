@@ -1,9 +1,9 @@
 [nation_thracian]
 
-name=_("Thracian")
-plural=_("?plural:Thracians")
-groups=_("European")
-legend=_("The second most numerous people in the ancient western world.")
+name   = _("Thracian")
+plural = _("?plural:Thracians")
+groups = _("European")
+legend = _("The second most numerous people in the ancient western world.")
 
 leaders = {
  "name", "sex"
@@ -14,7 +14,7 @@ leaders = {
  "Spartacus", "Male"
 }
 
-flag="thrace"
+flag     = "thrace"
 flag_alt = "bulgaria"
 style    = "European"
 
@@ -23,10 +23,10 @@ ruler_titles = { "government",      "male_title",      "female_title"
                  "Imperial Monarchy",  _("Rhesus %s"),       _("Rhesos %s")
                }
 
-init_techs=""
-init_buildings=""
-init_units=""
-civilwar_nations=
+init_techs = ""
+init_buildings = ""
+init_units = ""
+civilwar_nations =
  ; nearby nations:
  "byzantine", "macedonian", "illyrian"
 

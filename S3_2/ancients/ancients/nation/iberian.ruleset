@@ -1,9 +1,9 @@
 [nation_iberian]
 
-name=_("Iberian")
-plural=_("?plural:Iberians")
-groups=_("European"), _("Atlantic"), _("Mediterranean")
-legend=_("The inhabitants of the Iberian Peninsula\
+name   = _("Iberian")
+plural = _("?plural:Iberians")
+groups = _("European"), _("Atlantic"), _("Mediterranean")
+legend = _("The inhabitants of the Iberian Peninsula\
  before its conquest by the Romans.")
 
 leaders = {
@@ -13,13 +13,13 @@ leaders = {
  "Neton", "Male" ; Iberian war god
 }
 
-flag="iberian"
+flag     = "iberian"
 flag_alt = "spain"
 style    = "Celtic"
 
-init_techs=""
-init_buildings=""
-init_units=""
+init_techs = ""
+init_buildings = ""
+init_units = ""
 civilwar_nations =
  "roman", ; conquered by
  "gothic" ; the Visigoths

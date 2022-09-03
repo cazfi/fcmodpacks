@@ -1,9 +1,9 @@
 [nation_babylonian]
 
-name=_("Babylonian")
-plural=_("?plural:Babylonians")
-groups="Asian", "Mesopotamian"
-legend=_("Babylon was the dominant city of Mesopotamia from the 18th to\
+name   = _("Babylonian")
+plural = _("?plural:Babylonians")
+groups = "Asian", "Mesopotamian"
+legend = _("Babylon was the dominant city of Mesopotamia from the 18th to\
  7th centuries BC under a succession of peoples including Amorites,\
  Kassites, Assyrians, and Chaldeans.")
 
@@ -17,9 +17,9 @@ leaders = {
  "Nabonassar", "Male"
 }
 
-flag = "babylon"
+flag     = "babylon"
 flag_alt = "iraq_old"
-style = "Babylonian"
+style    = "Babylonian"
 
 ruler_titles = { "government",        "male_title", "female_title"
 		 "Despotism",         _("Lugal %s"),   _("Lugal %s")
@@ -27,9 +27,9 @@ ruler_titles = { "government",        "male_title", "female_title"
                  "Imperial Monarchy", _("Lugal %s"),   _("Lugal %s")
                }
 
-init_techs=""
-init_buildings=""
-init_units=""
+init_techs = ""
+init_buildings = ""
+init_units = ""
 civilwar_nations = "sumerian", "hebrew", "persian", "aramean"
 
 cities =

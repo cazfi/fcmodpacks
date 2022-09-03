@@ -1,9 +1,9 @@
 [nation_phoenician]
 
-name=_("Phoenician")
-plural=_("?plural:Phoenicians")
-groups=_("Asian"), _("Mediterranean")
-legend=_("Phoenicia was an ancient civilization, based in what is now the\
+name   = _("Phoenician")
+plural = _("?plural:Phoenicians")
+groups = _("Asian"), _("Mediterranean")
+legend = _("Phoenicia was an ancient civilization, based in what is now the\
  coastal regions of Lebanon and Syria.")
 
 leaders = {
@@ -16,20 +16,20 @@ leaders = {
  "Abd'ashtart", "Male"
 }
 
-flag="phoenicia"
+flag     = "phoenicia"
 flag_alt = "-"
 style    = "Classical"
 
-init_techs=""
-init_buildings=""
-init_units=""
-civilwar_nations="palmyrene", "hittite", "carthaginian", "hebrew"
+init_techs = ""
+init_buildings = ""
+init_units = ""
+civilwar_nations = "palmyrene", "hittite", "carthaginian", "hebrew"
 
 cities =
- "Sur", 	; English: "Tyre"
+ "Sur",         ; English: "Tyre"
  "Sidon",
- "Birot",	; Greek: "Berytos"; Modern "Beirut"
- "Gebal",	; Greek: "Byblos"
+ "Birot",       ; Greek: "Berytos"; Modern "Beirut"
+ "Gebal",       ; Greek: "Byblos"
  "Arados",
  "Batrun",
  "Tripoli",
@@ -38,11 +38,11 @@ cities =
  "Arvad",
  "Joppa",
  "Kition",
- "Leptis",	; Same as "Leptis Magna"?
- "Oia",		; alt.spelling "Oea"
+ "Leptis",      ; Same as "Leptis Magna"?
+ "Oia",         ; alt.spelling "Oea"
  "Sebrata",
  "Massalia",
- "Carthago",	; Phoenician: "Kart-Hadasht"
+ "Carthago",    ; Phoenician: "Kart-Hadasht"
  "Gadir",
  "Ebusos",
  "Hadrumetum",
@@ -68,7 +68,7 @@ cities =
  "Solus",
  "Motye",
  "Gaulos",
- "Melita",	; Latin Melite, modern Malta (Medina-Rabat)
+ "Melita",      ; Latin Melite, modern Malta (Medina-Rabat)
  "Sulci",
  "Karteia",
  "Panormos",

@@ -4,7 +4,7 @@ name   = _("Germanic")
 plural = _("?plural:Germanics")
 groups = _("Medieval"), _("European")
 
-legend=_("The Germanic inhabitants of central Europe.")
+legend = _("The Germanic inhabitants of central Europe.")
 
 leaders = {
  "name", "sex"
@@ -18,10 +18,10 @@ ruler_titles = { "government",      "male_title",       "female_title"
                }
 
 init_techs = ""
-init_buildings=""
-init_units=""
+init_buildings = ""
+init_units = ""
 
-civilwar_nations=
+civilwar_nations =
 ; Germanic language-group nations
  "gothic", "english", "frankish", "viking"
 

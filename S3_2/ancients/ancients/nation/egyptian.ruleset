@@ -1,10 +1,10 @@
 [nation_egyptian]
 
-name=_("Egyptian")
-plural=_("?plural:Egyptians")
-groups="African", "Mediterranean"
-conflicts_with="iraqi", "dutch", "croatian"	; Similar flags
-legend=_("Egypt was the second-oldest of the world's civilizations. Since\
+name   = _("Egyptian")
+plural = _("?plural:Egyptians")
+groups = "African", "Mediterranean"
+conflicts_with = "iraqi", "dutch", "croatian"    ; Similar flags
+legend = _("Egypt was the second-oldest of the world's civilizations. Since\
  ancient times it has been unusually urbanized, supporting a large\
  population on silt deposited by the annual floodings of the Nile.")
 ; Ptolemy & Cleopatra are actually Macedonian ***
@@ -21,7 +21,7 @@ leaders = {
  "Akhenaten", "Male"
 }
 
-flag="egypt_ancient"
+flag     = "egypt_ancient"
 flag_alt = "egypt"
 style    = "Babylonian"
 
@@ -31,10 +31,10 @@ ruler_titles = { "government",      "male_title",      "female_title"
                  "Imperial Monarchy",  _("Pharaoh %s"),       _("Pharaoh %s")
                }
 
-init_techs=""
-init_buildings=""
-init_units=""
-civilwar_nations="arab", "hebrew", "ethiopian"
+init_techs = ""
+init_buildings = ""
+init_units = ""
+civilwar_nations = "arab", "hebrew", "ethiopian"
 
 ; Source: http://www.narmer.pl/map/nomy_en.htm
 ; Alternative names in comment

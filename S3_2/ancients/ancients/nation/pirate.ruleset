@@ -1,9 +1,9 @@
 [nation_pirate]
 
-name=_("Pirate")
-plural=_("?plural:Pirates")
+name   = _("Pirate")
+plural = _("?plural:Pirates")
 groups = _("Barbarian")
-legend=_("As long as honest men have sailed the seas, pirates have been a\
+legend = _("As long as honest men have sailed the seas, pirates have been a\
  scourge of them and of all coastal dwelling peoples.")
 
 leaders = {
@@ -17,13 +17,13 @@ leaders = {
  "Bartolomeo Portugues", "Male"
 }
 
-flag="pirate"
+flag     = "pirate"
 flag_alt = "-"
 style    = "European"
 
-init_techs=""
-init_buildings=""
-init_units=""
+init_techs = ""
+init_buildings = ""
+init_units = ""
 
 ; Various pirate havens
 cities =
