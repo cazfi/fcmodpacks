@@ -43,7 +43,9 @@ class_flags =
   { "name", "helptxt"
     _("AttFromNonNative"), _("Can launch attack from non-native tiles.")
     _("CanPillage")
-    _("CanFortify"), _("Gets a 50% defensive bonus while in cities.")
+    _("CanFortify"),
+    ; /* xgettext:no-c-format */
+                     _("Gets a 50% defensive bonus while in cities.")
   }
 
 [veteran_system]
@@ -167,10 +169,8 @@ flags         = "TerrainSpeed", "DamageSlows", "AttackNonNative", "AttFromNonNat
 ;                 present; especially if preferred graphic is non-standard,
 ;                 this should be a standard tag.  Otherwise can use eg "-"
 ;                 for no alternate graphic.
-; tech_req      = required advance, names from techs.ruleset, or special:
-;                 "None" => available from start
-; impr_req	= required city improvement, names from buildings.ruleset
-; gov_req       = required government, names from governments.ruleset
+; reqs          = requirements to build the unit (see effects.ruleset
+;                 and README.effects for help on requirements)
 ; obsolete_by   = can be upgraded to and made obsolete by another unit by name
 ; build_cost    = production shields required to build
 ; pop_cost      = population removed from city when built; for 'Join City'
@@ -231,15 +231,15 @@ flags         = "TerrainSpeed", "DamageSlows", "AttackNonNative", "AttFromNonNat
 ; veteran_power_fact =
 ; veteran_move_bonus =
 ;
-; roles         = special role strings
-; sound_move	= optional sound effect when the unit moves
-; sound_move_alt= optional alternative sound effect if above not
-;		  supported in client
-; sound_fight	= optional sound effect when the unit fights
-; sound_fight_alt= optional alternative sound effect if above not
-;		   supported in client
-; helptext	= optional help text string; should escape all raw newlines
-;		  so that xgettext parsing works
+; roles           = special role strings
+; sound_move      = optional sound effect when the unit moves
+; sound_move_alt  = optional alternative sound effect if above not
+;                   supported in client
+; sound_fight     = optional sound effect when the unit fights
+; sound_fight_alt = optional alternative sound effect if above not
+;	            supported in client
+; helptext        = optional help text string; should escape all raw newlines
+;                   so that xgettext parsing works
 ;
 ;
 ; ** Bonuses **
@@ -400,7 +400,7 @@ flags         = "TerrainSpeed", "DamageSlows", "AttackNonNative", "AttFromNonNat
 [unit_settlers]
 name          = _("Settlers")
 class         = "Land"
-tech_req      = "None"
+;reqs      =
 obsolete_by   = "None"
 graphic       = "u.settlers"
 graphic_alt   = "-"
@@ -422,6 +422,7 @@ uk_happy      = 0
 uk_shield     = 1
 uk_food       = 1
 uk_gold       = 0
+tp_defense    = "Alight"
 flags         = "NonMil", "AddToCity", "Cities"
 ; No veteran levels (level name is never displayed)
 veteran_names = _("regular")
@@ -446,7 +447,10 @@ Use settlers to found cities.\
 [unit_worker]
 name          = _("?unit:Workers")
 class         = "Land"
-tech_req      = "Surveying"
+reqs          =
+  { "type", "name", "range"
+    "Tech", "Surveying", "Player"
+  }
 obsolete_by   = "None"
 graphic       = "u.worker"
 graphic_alt   = "u.settlers" ; for compatibility
@@ -468,6 +472,7 @@ uk_happy      = 0
 uk_shield     = 1
 uk_food       = 0
 uk_gold       = 0
+tp_defense    = "Alight"
 flags         = "Settlers", "Cant_Fortify", "NonMil"
 ; No veteran levels (level name is never displayed)
 veteran_names = _("regular")
@@ -493,7 +498,10 @@ Several Workers may work together to decrease the\
 [unit_diplomat]
 name          = _("Diplomat")
 class         = "Land"
-tech_req      = "Code of Laws"
+reqs          =
+  { "type", "name", "range"
+    "Tech", "Code of Laws", "Player"
+  }
 obsolete_by   = "None"
 graphic       = "u.diplomat"
 graphic_alt   = "-"
@@ -515,6 +523,7 @@ uk_happy      = 0
 uk_shield     = 0
 uk_food       = 0
 uk_gold       = 0
+tp_defense    = "Alight"
 flags         = "Diplomat", "IgZOC", "NonMil"
 veteran_names =
 ; /* TRANS: diplomatic rank. */
@@ -542,7 +551,10 @@ Use diplomats for honest diplomatic functions such as establishing\
 [unit_spy]
 name          = _("Spy")
 class         = "Land"
-tech_req      = "Espionage"
+reqs          =
+  { "type", "name", "range"
+    "Tech", "Espionage", "Player"
+  }
 obsolete_by   = "None"
 graphic       = "u.spy"
 graphic_alt   = "-"
@@ -564,6 +576,7 @@ uk_happy      = 0
 uk_shield     = 0
 uk_food       = 0
 uk_gold       = 0
+tp_defense    = "Alight"
 flags         = "Diplomat", "IgZOC", "NonMil", "Spy"
 veteran_names =
 ; /* TRANS: diplomatic rank. */
@@ -593,7 +606,10 @@ Use spys for spying on your rivals. Deny knowing them when they get\
 [unit_caravan]
 name          = _("Caravan")
 class         = "Land"
-tech_req      = "Caravan"
+reqs          =
+  { "type", "name", "range"
+    "Tech", "Caravan", "Player"
+  }
 obsolete_by   = "None"
 graphic       = "u.caravan"
 graphic_alt   = "-"
@@ -615,6 +631,7 @@ uk_happy      = 0
 uk_shield     = 0
 uk_food       = 0
 uk_gold       = 0
+tp_defense    = "Alight"
 flags         = "TradeRoute", "HelpWonder", "IgZOC", "NonMil"
 roles         = ""
 helptext      = _("\
@@ -628,7 +645,7 @@ Send caravans to distant cities to establish trade routes and boost\
 [unit_explorer]
 name          = _("Explorer")
 class         = "Land"
-tech_req      = "None"
+;reqs          =
 obsolete_by   = "None"
 graphic       = "u.explorer"
 graphic_alt   = "-"
@@ -650,6 +667,7 @@ uk_happy      = 0
 uk_shield     = 0
 uk_food       = 0
 uk_gold       = 0
+tp_defense    = "Alight"
 flags         = "IgZOC", "NonMil"
 roles         = "Explorer", "ExplorerStartUnit"
 helptext      = _("\
@@ -665,7 +683,7 @@ Use explorers to survey the lands around your early settlements, so\
 [unit_leader]
 name          = _("?unit:Leader")
 class         = "Land"
-tech_req      = "None"
+;reqs          =
 obsolete_by   = "None"
 graphic       = "u.leader"
 graphic_alt   = "u.explorer"
@@ -687,6 +705,7 @@ uk_happy      = 0
 uk_shield     = 0
 uk_food       = 0
 uk_gold       = 0
+tp_defense    = "Alight"
 flags         = "IgZOC", "NonMil", "NoBuild", "NoHome", "SuperSpy",
                 "EvacuateFirst", "GameLoss", "Unique", "Unbribable"
 ; No veteran levels (level name is never displayed)
@@ -705,7 +724,7 @@ Won't unleash barbarians from huts.\
 [unit_barbarian_leader]
 name          = _("Barbarian Leader")
 class         = "Land"
-tech_req      = "None"
+;reqs          =
 obsolete_by   = "None"
 graphic       = "u.barbarian_leader"
 graphic_alt   = "u.explorer"
@@ -727,6 +746,7 @@ uk_happy      = 0
 uk_shield     = 0
 uk_food       = 0
 uk_gold       = 0
+tp_defense    = "Alight"
 flags         = "IgZOC", "NonMil", "Unbribable",
                 "EvacuateFirst", "SuperSpy", "NoHome", "NoBuild"
 ; No veteran levels (level name is never displayed)
@@ -746,7 +766,7 @@ When barbarian leader is killed on a tile without any defending units,\
 [unit_militia]
 name          = _("Militia")
 class         = "Land"
-tech_req      = "None"
+;reqs          =
 obsolete_by   = "None"
 graphic       = "u.militia"
 graphic_alt   = "u.warriors"
@@ -768,6 +788,7 @@ uk_happy      = 1
 uk_shield     = 1
 uk_food       = 0
 uk_gold       = 0
+tp_defense    = "Alight"
 flags         = ""
 roles         = "DefendOk", "DefendOkStartUnit", "FirstBuild"
 helptext      = _("\
@@ -784,7 +805,7 @@ Notice that the low movement rate makes it have difficulty keeping\
 [unit_levy]
 name          = _("Levy")
 class         = "Land"
-tech_req      = "None"
+;reqs          =
 obsolete_by   = "None"
 graphic       = "u.levy"
 graphic_alt   = "u.warriors"
@@ -806,6 +827,7 @@ uk_happy      = 1
 uk_shield     = 1
 uk_food       = 0
 uk_gold       = 0
+tp_defense    = "Alight"
 flags         = ""
 roles         = "DefendGood", "DefendGoodStartUnit"
 helptext      = _("\
@@ -822,7 +844,10 @@ This unit will be greatly outclassed by phalanxes of hoplites or\
 [unit_marines]
 name          = _("Marines")
 class         = "Land"
-tech_req      = "Tactics"
+reqs          =
+  { "type", "name", "range"
+    "Tech", "Tactics", "Player"
+  }
 obsolete_by   = "Warband"
 graphic       = "u.marines"
 graphic_alt   = "-"
@@ -844,6 +869,7 @@ uk_happy      = 1
 uk_shield     = 1
 uk_food       = 0
 uk_gold       = 0
+tp_defense    = "Alight"
 flags         = "Marines"
 roles         = "DefendOk", "DefendOkStartUnit", "BarbarianSeaTech"
 helptext      = _("\
@@ -862,7 +888,10 @@ In the ancient world such troops were most often used for shipboard\
 [unit_archers]
 name          = _("Archers")
 class         = "Land"
-tech_req      = "Improved Bow"
+reqs          =
+  { "type", "name", "range"
+    "Tech", "Improved Bow", "Player"
+  }
 obsolete_by   = "None"
 graphic       = "u.archers"
 graphic_alt   = "-"
@@ -884,6 +913,7 @@ uk_happy      = 1
 uk_shield     = 1
 uk_food       = 0
 uk_gold       = 0
+tp_defense    = "Alight"
 flags         = ""
 roles         = "Hut", "BarbarianBuild"
 helptext      = _("\
@@ -901,7 +931,10 @@ Archers have a higher firepower but lower hit points than other\
 [unit_catapult]
 name          = _("Catapult")
 class         = "Land"
-tech_req      = "Catapult"
+reqs          =
+  { "type", "name", "range"
+    "Tech", "Catapult", "Player"
+  }
 obsolete_by   = "None"
 graphic       = "u.catapult"
 graphic_alt   = "-"
@@ -923,6 +956,7 @@ uk_happy      = 1
 uk_shield     = 1
 uk_food       = 0
 uk_gold       = 0
+tp_defense    = "Alight"
 flags         = "OneAttack"
 roles         = "AttackStrongStartUnit"
 helptext      = _("\
@@ -939,7 +973,10 @@ For attacking fortified positions, use the stone-throwing onager or\
 [unit_auxiliaries]
 name          = _("Auxiliaries")
 class         = "Land"
-tech_req      = "Principate"
+reqs          =
+  { "type", "name", "range"
+    "Tech", "Principate", "Player"
+  }
 obsolete_by   = "Warband"
 graphic       = "u.auxiliaries"
 graphic_alt   = "u.warriors"
@@ -961,6 +998,7 @@ uk_happy      = 1
 uk_shield     = 1
 uk_food       = 0
 uk_gold       = 0
+tp_defense    = "Alight"
 flags         = ""
 roles         = "DefendOk", "DefendOkStartUnit", "HutTech",
                 "BarbarianTech", "BarbarianBuildTech"
@@ -977,7 +1015,10 @@ Use auxiliaries for operations in poor terrain, or to pad out your\
 [unit_guerillas]
 name          = _("Guerillas")
 class         = "Land"
-tech_req      = "Guerilla Warfare"
+reqs          =
+  { "type", "name", "range"
+    "Tech", "Guerilla Warfare", "Player"
+  }
 obsolete_by   = "None"
 graphic       = "u.guerillas"
 graphic_alt   = "u.partisan"
@@ -999,6 +1040,7 @@ uk_happy      = 1
 uk_shield     = 1
 uk_food       = 0
 uk_gold       = 0
+tp_defense    = "Alight"
 flags         = "IgZOC"
 roles         = "DefendOk", "DefendOkStartUnit", "Partisan"
 helptext      = _("\
@@ -1029,7 +1071,10 @@ Use them as you would expect guerillas to operate: move fast,\
 [unit_spear_phalanx]
 name          = _("Spear Phalanx")
 class         = "Land"
-tech_req      = "Bronze Working"
+reqs          =
+  { "type", "name", "range"
+    "Tech", "Bronze Working", "Player"
+  }
 obsolete_by   = "Pike Phalanx"
 graphic       = "u.spearphalanx"
 graphic_alt   = "u.phalanx"
@@ -1051,6 +1096,7 @@ uk_happy      = 1
 uk_shield     = 1
 uk_food       = 0
 uk_gold       = 0
+tp_defense    = "Alight"
 flags         = ""
 roles         = "DefendGood", "DefendGoodStartUnit"
 helptext      = _("\
@@ -1071,7 +1117,10 @@ Unlike the standard game, this unit is equally competent in both\
 [unit_warband]
 name          = _("Warband")
 class         = "Land"
-tech_req      = "Dark Age"
+reqs          =
+  { "type", "name", "range"
+    "Tech", "Dark Age", "Player"
+  }
 obsolete_by   = "Men-at-Arms"
 graphic       = "u.warband"
 graphic_alt   = "u.warriors"
@@ -1093,6 +1142,7 @@ uk_happy      = 1
 uk_shield     = 1
 uk_food       = 0
 uk_gold       = 0
+tp_defense    = "Alight"
 flags         = ""
 roles         = "DefendGood", "DefendGoodStartUnit",  "HutTech",
                 "BarbarianTech", "BarbarianSeaTech", "BarbarianBuildTech"
@@ -1115,7 +1165,10 @@ The warband also has a slightly raised movement rating, increasing\
 [unit_pike_phalanx]
 name          = _("Pike Phalanx")
 class         = "Land"
-tech_req      = "Tactics"
+reqs          =
+  { "type", "name", "range"
+    "Tech", "Tactics", "Player"
+  }
 obsolete_by   = "Legionaires"
 graphic       = "u.pikephalanx"
 graphic_alt   = "u.pikemen"
@@ -1137,6 +1190,7 @@ uk_happy      = 1
 uk_shield     = 1
 uk_food       = 0
 uk_gold       = 0
+tp_defense    = "Alight"
 flags         = ""
 roles         = "DefendGood", "DefendGoodStartUnit", "AttackStrongStartUnit"
 helptext      = _("\
@@ -1156,7 +1210,10 @@ Unlike the standard game, this unit is equally competent in both\
 [unit_onager]
 name          = _("Onager")
 class         = "Land"
-tech_req      = "Invention"
+reqs          =
+  { "type", "name", "range"
+    "Tech", "Invention", "Player"
+  }
 obsolete_by   = "None"
 graphic       = "u.onager"
 graphic_alt   = "u.catapult"
@@ -1178,6 +1235,7 @@ uk_happy      = 1
 uk_shield     = 1
 uk_food       = 0
 uk_gold       = 0
+tp_defense    = "Alight"
 flags         = "OneAttack"
 roles         = "AttackStrongStartUnit"
 helptext      = _("\
@@ -1192,7 +1250,10 @@ Onagers are more powerful in the attack than catapults, but are\
 [unit_legionaires]
 name          = _("Legionaires")
 class         = "Land"
-tech_req      = "Legion"
+reqs          =
+  { "type", "name", "range"
+    "Tech", "Legion", "Player"
+  }
 obsolete_by   = "Warband"
 graphic       = "u.legionaires"
 graphic_alt   = "u.legion"
@@ -1214,6 +1275,7 @@ uk_happy      = 1
 uk_shield     = 1
 uk_food       = 0
 uk_gold       = 0
+tp_defense    = "Alight"
 flags         = ""
 roles         = "DefendGood", "DefendGoodStartUnit", "AttackStrongStartUnit"
 helptext      = _("\
@@ -1233,7 +1295,10 @@ Unlike the standard game, this unit is equally competent in both\
 [unit_men_at_arms]
 name          = _("Men-at-Arms")
 class         = "Land"
-tech_req      = "Feudalism"
+reqs          =
+  { "type", "name", "range"
+    "Tech", "Feudalism", "Player"
+  }
 obsolete_by   = "None"
 graphic       = "u.men_at_arms"
 graphic_alt   = "u.legion"
@@ -1255,6 +1320,7 @@ uk_happy      = 1
 uk_shield     = 1
 uk_food       = 0
 uk_gold       = 0
+tp_defense    = "Alight"
 flags         = ""
 roles         = "DefendGood", "DefendGoodStartUnit", "AttackStrongStartUnit"
 helptext      = _("\
@@ -1269,7 +1335,10 @@ Men-at-Arms are excellent at both attack and defense, but are quite\
 [unit_halberdiers]
 name          = _("Halberdiers")
 class         = "Land"
-tech_req      = "Medieval Republic"
+reqs          =
+  { "type", "name", "range"
+    "Tech", "Medieval Republic", "Player"
+  }
 obsolete_by   = "None"
 graphic       = "u.halberdiers"
 graphic_alt   = "u.pikemen"
@@ -1291,6 +1360,7 @@ uk_happy      = 1
 uk_shield     = 1
 uk_food       = 0
 uk_gold       = 0
+tp_defense    = "Alight"
 bonuses       =
   { "flag", "type", "value"
     "Horse", "DefenseMultiplier", 1
@@ -1313,7 +1383,10 @@ Halberdiers will cut most other infantry units into small ribbons,\
 [unit_skirmishers]
 name          = _("Skirmishers")
 class         = "Land"
-tech_req      = "Archery"
+reqs          =
+  { "type", "name", "range"
+    "Tech", "Archery", "Player"
+  }
 obsolete_by   = "None"
 graphic       = "u.skirmishers"
 graphic_alt   = "u.warriors"
@@ -1335,6 +1408,7 @@ uk_happy      = 1
 uk_shield     = 1
 uk_food       = 0
 uk_gold       = 0
+tp_defense    = "Alight"
 flags         = ""
 roles         = "Hut", "Barbarian", "BarbarianBuild", "BarbarianSea"
 helptext      = _("\
@@ -1349,7 +1423,10 @@ Skirmishers are very weak, but cheap and fairly fast, so you will\
 [unit_light_cavalry]
 name          = _("Light Cavalry")
 class         = "Land"
-tech_req      = "Horseback Riding"
+reqs          =
+  { "type", "name", "range"
+    "Tech", "Horseback Riding", "Player"
+  }
 obsolete_by   = "None"
 graphic       = "u.lightcavalry"
 graphic_alt   = "u.horsemen"
@@ -1371,6 +1448,7 @@ uk_happy      = 1
 uk_shield     = 1
 uk_food       = 0
 uk_gold       = 0
+tp_defense    = "Alight"
 flags         = "Horse", "IgZOC"
 roles         = "Hut", "Barbarian", "BarbarianBuild"
 helptext      = _("\
@@ -1384,7 +1462,10 @@ Light cavalry is cheap, fast, and weak, and thus appropriate for\
 [unit_early_chariots]
 name          = _("Early Chariots")
 class         = "Land"
-tech_req      = "Crude Wheel"
+reqs          =
+  { "type", "name", "range"
+    "Tech", "Crude Wheel", "Player"
+  }
 obsolete_by   = "Later Chariots"
 graphic       = "u.earlychariots"
 graphic_alt   = "u.chariot"
@@ -1406,6 +1487,7 @@ uk_happy      = 1
 uk_shield     = 1
 uk_food       = 0
 uk_gold       = 0
+tp_defense    = "Alight"
 flags         = ""
 roles         = "AttackStrongStartUnit", "Hut", "Barbarian", "BarbarianBuild"
 helptext      = _("\
@@ -1424,7 +1506,10 @@ Use early chariots as an assault unit early in the game, but notice\
 [unit_heavy_cavalry]
 name          = _("Heavy Cavalry")
 class         = "Land"
-tech_req      = "Saddle"
+reqs          =
+  { "type", "name", "range"
+    "Tech", "Saddle", "Player"
+  }
 obsolete_by   = "None"
 graphic       = "u.heavycavalry"
 graphic_alt   = "u.cavalry"
@@ -1446,6 +1531,7 @@ uk_happy      = 1
 uk_shield     = 1
 uk_food       = 0
 uk_gold       = 0
+tp_defense    = "Alight"
 flags         = "Horse"
 roles         = "AttackFastStartUnit", "Hunter", "BarbarianBuildTech"
 helptext      = _("\
@@ -1467,7 +1553,10 @@ Use heavy cavalry for mobile operations and fast reserves, to chase\
 [unit_later_chariots]
 name          = _("Later Chariots")
 class         = "Land"
-tech_req      = "Improved Wheel"
+reqs          =
+  { "type", "name", "range"
+    "Tech", "Improved Wheel", "Player"
+  }
 obsolete_by   = "Early Lancers"
 graphic       = "u.laterchariots"
 graphic_alt   = "u.chariot"
@@ -1489,6 +1578,7 @@ uk_happy      = 1
 uk_shield     = 1
 uk_food       = 0
 uk_gold       = 0
+tp_defense    = "Alight"
 flags         = ""
 roles         = "AttackFastStartUnit", "Hunter"
 helptext      = _("\
@@ -1505,7 +1595,10 @@ Chariots are expensive, but fast and powerful in the assault. Use\
 [unit_early_lancers]
 name          = _("Early Lancers")
 class         = "Land"
-tech_req      = "Stirrup"
+reqs          =
+  { "type", "name", "range"
+    "Tech", "Stirrup", "Player"
+  }
 obsolete_by   = "Knights"
 graphic       = "u.earlylancers"
 graphic_alt   = "u.cavalry"
@@ -1527,6 +1620,7 @@ uk_happy      = 1
 uk_shield     = 1
 uk_food       = 0
 uk_gold       = 0
+tp_defense    = "Alight"
 flags         = "Horse"
 roles         = "AttackFastStartUnit", "Hunter"
 helptext      = _("\
@@ -1542,7 +1636,10 @@ Early lancers are deadly on the attack, but expensive and somewhat\
 [unit_knights]
 name          = _("Knights")
 class         = "Land"
-tech_req      = "Chivalry"
+reqs          =
+  { "type", "name", "range"
+    "Tech", "Chivalry", "Player"
+  }
 obsolete_by   = "None"
 graphic       = "u.knights"
 graphic_alt   = "-"
@@ -1564,6 +1661,7 @@ uk_happy      = 1
 uk_shield     = 1
 uk_food       = 0
 uk_gold       = 0
+tp_defense    = "Alight"
 flags         = "Horse"
 roles         = "AttackFastStartUnit", "Hunter"
 helptext      = _("\
@@ -1578,7 +1676,10 @@ Knights are expensive, but deadly. Use them to run down most\
 [unit_elephants]
 name          = _("Elephants")
 class         = "Land"
-tech_req      = "Elephantry"
+reqs          =
+  { "type", "name", "range"
+    "Tech", "Elephantry", "Player"
+  }
 obsolete_by   = "Legionaires"
 graphic       = "u.elephants"
 graphic_alt   = "-"
@@ -1600,6 +1701,7 @@ uk_happy      = 1
 uk_shield     = 1
 uk_food       = 0
 uk_gold       = 0
+tp_defense    = "Alight"
 flags         = "Horse"
 roles         = "AttackStrongStartUnit", "HutTech",
                 "BarbarianTech", "BarbarianBuildTech"
@@ -1619,7 +1721,10 @@ Elephants are superb in the assault, but expensive and somewhat\
 [unit_boats]
 name          = _("Boats")
 class         = "Sea"
-tech_req      = "Boating"
+reqs          =
+  { "type", "name", "range"
+    "Tech", "Boating", "Player"
+  }
 obsolete_by   = "Light Transport"
 graphic       = "u.boats"
 graphic_alt   = "u.trireme"
@@ -1641,6 +1746,7 @@ uk_happy      = 1
 uk_shield     = 1
 uk_food       = 0
 uk_gold       = 0
+tp_defense    = "Alight"
 cargo         = "Land"
 flags         = "CoastStrict", "BadCityDefender"
 roles         = "Ferryboat", "FerryStartUnit"
@@ -1655,7 +1761,10 @@ Boats are useless for sea combat, and quite slow, but they are\
 [unit_warships]
 name          = _("Warships")
 class         = "Sea"
-tech_req      = "Sailing"
+reqs          =
+  { "type", "name", "range"
+    "Tech", "Sailing", "Player"
+  }
 obsolete_by   = "Triremes"
 graphic       = "u.warships"
 graphic_alt   = "u.trireme"
@@ -1677,6 +1786,7 @@ uk_happy      = 1
 uk_shield     = 1
 uk_food       = 0
 uk_gold       = 0
+tp_defense    = "Alight"
 cargo         = "Land"
 flags         = "CoastStrict", "BadCityDefender", "FieldUnit"
 roles         = "Ferryboat", "FerryStartUnit"
@@ -1694,7 +1804,10 @@ Warships are pretty weak for sea combat, but should suffice for\
 [unit_light_transport]
 name          = _("Light Transport")
 class         = "Sea"
-tech_req      = "Sailing"
+reqs          =
+  { "type", "name", "range"
+    "Tech", "Sailing", "Player"
+  }
 obsolete_by   = "None"
 graphic       = "u.lighttransport"
 graphic_alt   = "u.galleon"
@@ -1716,6 +1829,7 @@ uk_happy      = 1
 uk_shield     = 1
 uk_food       = 0
 uk_gold       = 0
+tp_defense    = "Alight"
 cargo         = "Land"
 flags         = "CoastStrict", "BadCityDefender"
 roles         = "Ferryboat", "FerryStartUnit"
@@ -1731,7 +1845,10 @@ Transports are extremely vulnerable to predation by warships, but\
 [unit_heavy_transport]
 name          = _("Heavy Transport")
 class         = "Sea"
-tech_req      = "Map Making"
+reqs          =
+  { "type", "name", "range"
+    "Tech", "Map Making", "Player"
+  }
 obsolete_by   = "None"
 graphic       = "u.heavytransport"
 graphic_alt   = "u.galleon"
@@ -1753,6 +1870,7 @@ uk_happy      = 1
 uk_shield     = 1
 uk_food       = 0
 uk_gold       = 0
+tp_defense    = "Alight"
 cargo         = "Land"
 flags         = "BadCityDefender"
 roles         = "Ferryboat", "FerryStartUnit"
@@ -1769,7 +1887,10 @@ Transports are extremely vulnerable to predation by warships, but\
 [unit_longboats]
 name          = _("Longboats")
 class         = "Sea"
-tech_req      = "Dark Age"
+reqs          =
+  { "type", "name", "range"
+    "Tech", "Dark Age", "Player"
+  }
 obsolete_by   = "None"
 graphic       = "u.longboats"
 graphic_alt   = "u.trireme"
@@ -1791,6 +1912,7 @@ uk_happy      = 1
 uk_shield     = 1
 uk_food       = 0
 uk_gold       = 0
+tp_defense    = "Alight"
 cargo         = "Land"
 flags         = "BadCityDefender", "FieldUnit"
 roles         = "Ferryboat", "FerryStartUnit",
@@ -1815,7 +1937,10 @@ Use longboats to sweep the seas clean of lesser ships and to conduct\
 [unit_triremes]
 name          = _("Triremes")
 class         = "Sea"
-tech_req      = "Tactics"
+reqs          =
+  { "type", "name", "range"
+    "Tech", "Tactics", "Player"
+  }
 obsolete_by   = "Longboats"
 graphic       = "u.triremes"
 graphic_alt   = "u.trireme"
@@ -1837,6 +1962,7 @@ uk_happy      = 1
 uk_shield     = 1
 uk_food       = 0
 uk_gold       = 0
+tp_defense    = "Alight"
 cargo         = "Land"
 flags         = "BadCityDefender", "FieldUnit"
 roles         = "Ferryboat", "FerryStartUnit", "AttackFastStartUnit", "Hunter"

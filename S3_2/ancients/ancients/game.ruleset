@@ -34,8 +34,8 @@ See https://www.freeciv.org/wiki/Ancients for more info.")
 capabilities = "std-terrains"
 
 [options]
-global_init_techs=""
-global_init_buildings="Palace"
+global_init_techs = ""
+global_init_buildings = "Palace"
 
 [tileset]
 ; If preferred tileset is set, clients that support the feature will suggest

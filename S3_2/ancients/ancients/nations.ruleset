@@ -87,8 +87,8 @@ allowed_styles =
 ; description   = Optional short user description of this set.
 
 [nset_all]
-name=_("?nationset:All")
-rule_name="all"
+name = _("?nationset:All")
+rule_name = "all"
 
 
 ; Descriptions of nation groups
@@ -103,31 +103,31 @@ rule_name="all"
 ;                 group
 
 [ngroup_african]
-name=_("?nationgroup:African")
-match=1
+name = _("?nationgroup:African")
+match = 1
 [ngroup_asian]
-name=_("?nationgroup:Asian")
-match=1
+name = _("?nationgroup:Asian")
+match = 1
 [ngroup_european]
-name=_("?nationgroup:European")
-match=1
+name = _("?nationgroup:European")
+match = 1
 [ngroup_medieval]
-name=_("?nationgroup:Medieval")
-match=1
+name = _("?nationgroup:Medieval")
+match = 1
 [ngroup_atlantic]
-name=_("?nationgroup:Atlantic")
-match=1
+name = _("?nationgroup:Atlantic")
+match = 1
 [ngroup_mediterranean]
-name=_("?nationgroup:Mediterranean")
-match=1
+name = _("?nationgroup:Mediterranean")
+match = 1
 [ngroup_mesopotamian]
-name=_("?nationgroup:Mesopotamian")
-match=1
+name = _("?nationgroup:Mesopotamian")
+match = 1
 
 [ngroup_barbarian]
-name=_("?nationgroup:Barbarian")
-match=0
-hidden=true
+name = _("?nationgroup:Barbarian")
+match = 0
+hidden = true
 
 ; Below: nations data in sections [nation_*] for
 ; all nations available. If you want to have more
