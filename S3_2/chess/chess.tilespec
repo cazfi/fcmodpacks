@@ -1,6 +1,6 @@
 
 [tilespec]
-options = "+Freeciv-tilespec-Devel-2019-Jul-03"
+options = "+Freeciv-tilespec-3.2-Devel-2022-Jun-21"
 
 ; A simple name for the tileset specified by this file:
 name = "Chess"
@@ -49,6 +49,10 @@ activity_offset_y = 0
 ; offset of the selected unit sprites
 select_offset_x = 0
 select_offset_y = 0
+
+; offset of the unit stack size number sprites
+stack_size_offset_x = 20
+stack_size_offset_y = 10
 
 ; offset the cities by this amount
 city_offset_x = 0
@@ -123,6 +127,10 @@ unit_upkeep_small_offset_y = 20
 ; This is special because it gets freed and reloaded as required:
 main_intro_file    = "misc/intro"
 
+; Below, the graphics spec files; must be somewhere (anywhere) in
+; the data path. Order may be important for color allocation on
+; low-color systems, and if there are any duplicate tags (lattermost
+; tag is used).
 files =
 "chess/terrain.spec",
 "chess/misc.spec",

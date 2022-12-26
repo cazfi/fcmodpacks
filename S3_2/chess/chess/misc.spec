@@ -1,6 +1,6 @@
 
 [spec]
-options = "+Freeciv-spec-Devel-2019-Jul-03"
+options = "+Freeciv-3.1-spec"
 
 [info]
 artists = "Xin Yu"
@@ -81,14 +81,15 @@ tiles = { "row", "column", "tag"
 3,  3, "unit.plant"
 3,  4, "unit.pollution"
 3,  5, "unit.road"
-3,  6, "unit.irrigate"
+3,  6, "unit.cultivate",
+       "unit.irrigate" ; For rulesets still using this tag
 3,  7, "unit.fortifying", "unit.fortress"
 3,  8, "unit.airbase"
 3,  9, "unit.pillage"
 3, 10, "unit.fortified"
 3, 11, "unit.fallout"
 3, 12, "unit.patrol"
-5,  9, "user.attention"
+5,  9, "user.attention", "user.infratile"
 
 5,  9, "path.step"
 5,  7, "path.exhausted_mp"
