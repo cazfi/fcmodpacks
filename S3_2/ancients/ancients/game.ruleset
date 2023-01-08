@@ -156,6 +156,10 @@ paradrop_to_transport    = FALSE
 ;            upkeep are disbanded.
 gold_upkeep_style = "City"
 
+; Whether also homeless units pay gold upkeep. Enabling requires that
+; gold_upkeep_style is not "City"
+homeless_gold_upkeep = FALSE
+
 ; How many points of output one basic unit consists of. Typically you
 ; want this to be some 10^n.
 output_granularity = 1
@@ -254,7 +258,7 @@ low_firepower_nonnat_bombard = 1
 
 ; Percentage of population lost by a city after nuclear attak. If set to
 ; 100 city is destroyed along with all the units. If set to 0 city does not
-; loose population. Any value below 50 means the city can never be
+; lose population. Any value below 50 means the city can never be
 ; destroyed completely using nuclear.
 nuke_pop_loss_pct = 49
 
@@ -553,6 +557,9 @@ ui_name_plant = _("Transform by %sPlanting%s")
 
 ; /* TRANS: Pilla_ge (100% chance of success). */
 ui_name_pillage = _("Pilla%sge%s")
+
+; /* TRANS: Clean (100% chance of success). */
+ui_name_clean = _("%sClean%s")
 
 ; /* TRANS: Clean _Pollution (100% chance of success). */
 ui_name_clean_pollution = _("Clean %sPollution%s")
@@ -1059,6 +1066,13 @@ action        = "Pillage"
 actor_reqs    =
     { "type",          "name",         "range"
       "UnitClassFlag", "CanPillage",   "Local"
+    }
+
+[actionenabler_clean]
+action        = "Clean"
+actor_reqs    =
+    { "type",          "name",         "range", "present"
+      "UnitFlag",      "Settlers",     "Local", TRUE
     }
 
 [actionenabler_clean_pollution]
@@ -1579,6 +1593,24 @@ type = "Vision"
 
 [clause_embassy]
 type = "Embassy"
+
+; /* <-- avoid gettext warnings
+;Counter types
+;
+;name                    = translatable name as seen by user
+;rule_name               = (optional) internal name for savegames, rulesets
+;                          etc; if not present, "name" is used for this
+;                          purpose too. Since the name used in savegames must
+;                          not change, if you want to rename an item after a
+;                          ruleset has been released, you should set
+;                          "rule_name" to the original value of "name".
+;checkpoint              = Trigger value of the counter. When counter`s
+;                          value is at least this much, the "Counter" requirement
+;                          is fulfilled.
+;def                     = Initial value of the counter.
+;type                    = Behavior of the counter:
+;                          "Owned" - Increased each turn, zeroed when city changes owner
+; */ <-- avoid gettext warnings
 
 [playercolors]
 background.r = 86
