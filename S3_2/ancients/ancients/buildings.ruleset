@@ -6,6 +6,18 @@ description = "Ancients buildings data for Freeciv"
 options = "+Freeciv-ruleset-3.2-Devel-2022.Feb.02"
 format_version = 30
 
+[control]
+; Names for custom building flags. There can be up to 8 of these.
+; name          = rule name; In some circumstances user may see this
+;                 as part of some sentences, so try to make it descriptive
+;                 and sensible.
+; helptxt       = displayed in the help for building types with this flag
+;                 (optional)
+building_flags =
+  { "name", "helptxt"
+    "Barracks"
+  }
+
 ; /* <-- avoid gettext warnings
 ;
 ; Below: The individual buildings, one per section.
@@ -120,6 +132,7 @@ upkeep		= 1
 sabotage	= 10
 sound		= "b_barracks_i"
 sound_alt	= "b_generic"
+flags           = "Barracks"
 helptext	= _("\
 With a Barracks, each new land unit built in a city will\
  automatically have Veteran status, which means that its attack and\
@@ -148,6 +161,7 @@ upkeep		= 1
 sabotage	= 10
 sound		= "b_barracks_ii"
 sound_alt	= "b_generic"
+flags           = "Barracks"
 helptext	= _("\
 With a Barracks, each new land unit built in a city will\
  automatically have Veteran status, which means that its attack and\
@@ -174,6 +188,7 @@ upkeep		= 1
 sabotage	= 10
 sound		= "b_barracks_iii"
 sound_alt	= "b_generic"
+flags           = "Barracks"
 helptext	= _("\
 With a Barracks, each new land unit built in a city will\
  automatically have Veteran status, which means that its attack and\
