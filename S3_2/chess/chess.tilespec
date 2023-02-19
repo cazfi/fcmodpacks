@@ -132,29 +132,34 @@ main_intro_file    = "misc/intro"
 ; low-color systems, and if there are any duplicate tags (lattermost
 ; tag is used).
 files =
-"chess/terrain.spec",
-"chess/misc.spec",
-"chess/units.spec",
-"chess/edifice.spec",
-"chess/buildings.spec",
-"chess/wonders.spec",
-"chess/space.spec",
-"chess/grid.spec",
-"chess/select.spec",
-"chess/explosions.spec",
-"misc/overlays.spec",
-"misc/citybar.spec",
-"misc/small.spec",
-"misc/governments.spec",
-"misc/specialists.spec",
-"misc/flags.spec",
-"misc/shields-large.spec",
-"misc/cursors.spec",
-"misc/techs.spec",
-"misc/treaty.spec",
-"misc/icons.spec",
-"misc/editor.spec",
-"misc/events.spec"
+ "chess/terrain.spec",
+ "chess/misc.spec",
+ "chess/units.spec",
+ "chess/edifice.spec",
+ "chess/buildings.spec",
+ "chess/wonders.spec",
+ "chess/space.spec",
+ "chess/grid.spec",
+ "chess/select.spec",
+ "chess/explosions.spec",
+ "misc/overlays.spec",
+ "misc/citybar.spec",
+ "misc/small.spec",
+ "misc/governments.spec",
+ "misc/specialists.spec",
+ "misc/flags.spec",
+ "misc/shields-large.spec",
+ "misc/cursors.spec",
+ "misc/techs.spec",
+ "misc/treaty.spec",
+ "misc/icons.spec",
+ "misc/editor.spec",
+ "misc/events.spec"
+
+; No need for svgflags specific list, as misc/flags.spec always used
+;files_svg =
+;files_pixel =
+
 
 ; Include color definitions
 *include "misc/colors.tilespec"
