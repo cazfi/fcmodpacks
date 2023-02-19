@@ -2,7 +2,7 @@
 [spec]
 
 ; Format and options of this spec file:
-options = "+Freeciv-3.1-spec"
+options = "+Freeciv-spec-3.2-Devel-2023.Jan.01"
 
 [info]
 
@@ -27,15 +27,15 @@ pixel_border = 1
 
 tiles = { "row", "column", "tag"
 
-  0,  0, "u.lion"
-  0,  1, "u.boat"
-  0,  2, "u.sea_constructor"
-  0,  3, "u.sail"
+  0,  0, "u.lion_Idle"
+  0,  1, "u.boat_Idle"
+  0,  2, "u.sea_constructor_Idle"
+  0,  3, "u.sail_Idle"
 
-  1,  0, "u.cyborg"
-  1,  1, "u.balloon"
-  1,  2, "u.diplomat"
-  1,  3, "u.warriors"
+  1,  0, "u.cyborg_Idle"
+  1,  1, "u.balloon_Idle"
+  1,  2, "u.diplomat_Idle"
+  1,  3, "u.warriors_Idle"
 
-  2,  0, "u.nuclear_submarine"
+  2,  0, "u.nuclear_submarine_Idle"
 }

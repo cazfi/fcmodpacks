@@ -1,9 +1,9 @@
-What freeciv revision modpacks are compatible with.
+What freeciv commit modpacks are compatible with.
 
 ancients:    7f3a494d83 (08-Jan-23)
-mqtx:        33172
+mqtx:        33172 (svn)
 chess:       1e92938399 (26-Dec-22)
-alienmusic:  32309
+alienmusic:  32309 (svn)
 freeland:    1e92938399 (26-Dec-22)
-delta2:      bd7e0884eb (26-Aug-22)
+delta2:      092e29201f (19-Feb-23)
 deltasquare: bd7e0884eb (26-Aug-22)
