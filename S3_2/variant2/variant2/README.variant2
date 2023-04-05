@@ -1,0 +1,33 @@
+
+ Vision
+========
+
+* Base city vision radius sq 5
+* City vision radius increased in size 15 cities
+* City vision radius increased when player knows Radar
+
+
+ Migration
+===========
+
+* People may spontaneously migrate to better city
+* Culture affects city migration score slightly
+
+
+Veteran Levels
+==============
+
+* Military units have four veterancy levels
+* Workers have three veterancy levels and their speed increases
+  as they gain those levels
+* Diplomat units have three veterancy levels
+* Regular buildings enabling building of veteran units give two veterancy
+  levels. Wonders giving such bonuses give just one veteran level.
+  Effects from regular buildings and wonders are cumulative.
+
+
+Getting tech with city conquest
+===============================
+
+* Base chance of getting also a tech when conquring a city is 25%
+* Knowledge of Writing and University increase this chance by 15% each

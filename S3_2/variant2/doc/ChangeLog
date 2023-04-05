@@ -1,0 +1,280 @@
+26-Dec-22
+	- Added Eliminate Spy action
+
+20-Oct-21
+	- Information about Small Wonders is not sent to opponents
+
+12-Oct-21
+	- Military units can do "Wipe Units" attack against defenseless unit stacks
+
+02-Jul-21
+	- Made it unlikely that one gets also a tech when conquering a city, though
+	  exact chance depends on tech level of the conqueror
+
+22-Apr-21
+	- Corrected amount of ransom paid from Barbarian Leader in help
+
+16-Oct-18
+	- Removed unit autoupgrade bonus from the AI
+	- base_bribe_cost reduced to 700
+	- Veterancy bonuses of Diplomats, Spies, and Cyborgs reduced
+
+19-Feb-18
+	- Restored corruption of governments later than Despotism to the levels
+          used before 23-Oct-17
+	- Cheating AI combat bonuses (Attack_Bonus and Defend_Bonus)
+	  reduced to 15
+	- Distance based component of Despotism's corruption and waste reduced
+	- Distance based component of waste removed from Fundamentalism and
+	  Democracy
+	- Traderoutes produce some income even when with an enemy
+	- Fundamentalism makes two citizens content in each city
+
+25-Oct-17
+	- Military units now have four veterancy levels
+	- All Barracks, Port Facility, and Airport give two veterancy levels
+
+23-Oct-17
+	- "Random" map generator used by default
+	- Diplomat cost reduced to 30
+	- By default, one Warrior is included to starting units
+	- Increased corruption of all the government forms after Despotism
+
+12-Jul-17
+        - Reduced initial max number of trade routes to 1
+        - Discovery of Clock increases max number of trade routes by one
+	- Cheating AI gets 35% bonus to traderoute income
+	- Farmland and Supermarket are no longer needed together.
+	  Instead each of them gives 35% food bonus
+
+02-Nov-16
+	- Barbarian Leader ransom lowered to 50 gold
+
+01-Nov-16
+	- Cheating AI has 20% bonus to both attack and defense
+
+27-Sep-16
+	- "Enter Marketplace" action not possible
+
+01-Jul-16
+	- Fracture map generator used by default
+	- Fortress and Airbase conflict with each other
+	- Caravans and Freights are subject to Zones of Control
+	- Early ships (upto Magnetism) must replenish their stock regularly
+
+26-Feb-16
+	- Small Wonders Great Library and Satellite Networks can't be moved around
+	  by rebuilding them
+	- Glaciers cannot be transformed
+	- Mountains can be transformed only when Miniaturization is known
+
+07-Jan-16
+	- Added knowledge about increased output to specialist help
+	- Added ruleset description file 'README.variant2'
+	- Effect of knowing Radar to city vision radius adjusts to map topology
+
+21-Dec-15
+	- SDI Defense protects from allied nukes too
+
+08-Dec-15
+	- Gave Cheating AI bonus of one automatic unit upgrade each turn
+	- Each culture point counts only as 10 permilles of a migration point
+	- Made Settlers and Sea Constructors unavailable on scenarios with cityfounding
+	  disabled
+	- Added penalties for Handicapped AI level
+
+23-Aug-15
+	- Enabled timer based autosaves once a hour
+
+11-Aug-15
+	- Coastal Defense does not affect cities vision range
+	- Size 15 and above cities have higher vision range
+	- Once Radar is known, cities get higher vision range
+	- There's only one barbarian nation that operates everywhere
+	- Owner of the Hanging Gardens can't built Oracle, nor the other way around
+
+03-Aug-15
+	- Disallowed building cities to Deep Ocean tiles
+
+15-May-15
+	- Disabled animals by removing Animal Kingdom nation
+	- Use Hex topology
+
+27-Apr-15
+        - Naval Border Control gives only oceanic cities the power to claim more ocean
+          tiles
+	- Marco Polo cost 300, gives embassy only with those nations one already has
+	  contact with
+
+26-Jan-15
+	- Gave Cheating AI 20% Incite Cost bonus
+
+19-Jan-15
+	- Increased free upkeep under Fundamentalism from 5 to 6 shields
+
+11-Jan-15
+	- Building Farmland costs 5 moves on any terrain
+	- Corrected Road to have terrain specific build cost, Railroad and Maglev not
+	- Dropped variant2 animals.ruleset in favor of default one
+
+05-Jan-15
+	- Submarine attack increased to 12, Nuclear Sub's to 15
+
+13-Dec-14
+	- Barbarians and Pirates never get Partisans granted
+	- Enabled culture victory
+
+06-Dec-14
+	- Buoys show owner's flag
+	- There's no gold loss in diplomatic treaties
+	- Revolution length is of type RANDQUICK and max length is 7
+
+24-Oct-14
+	- Some buildings produce History style Culture
+	- When traderoute is established, there's no one-time bonus to Science
+
+03-Oct-14
+	- Fixed Fallout not to appear on Oceanic terrains
+
+25-Sep-14
+	- Setting "huts" is locked
+	- 6 AI players are created to use "threaded" ai module
+
+12-Sep-14
+	- Workers and Engineers can fortify, Settlers cannot
+	- Removed Minor Tribe Village extra
+
+22-Aug-14
+	- Set ranges for AI traits for nations to get randomly selected value from
+
+01-Aug-14
+	- Added Animal Kingdom nation of barbarian type animal
+	- Plains and Grasslands have Lions
+
+29-Jun-14
+	- No unit can help in building of wonders (except by normal disband bonus)
+
+26-Jun-14
+	- 30% of the city citizens of the nationality whose home country
+	  we're in war with, is one point extra unhappy
+
+24-Jun-14
+	- Explorers do not create Zones of Control around them
+
+22-Jun-14
+	- Tripled veteran move bonus for Workers and Engineers, to match
+	  increase in move_fragments
+	- Removed veteran move bonus from Spies and Cyborgs
+	- Some units do not create Zones of Control around them:
+	  Settlers, Workers, Engineers, Caravan, Freight, Balloon
+
+13-Jun-14
+	- Planes and Stealth Fighters get their defense doubled when
+	  being attacked by air units.
+
+28-Apr-14
+	- Mechanized Infantry obsoletes Riflemen
+
+13-Apr-14
+	- Increased diplchance from 40% to 55%
+
+22-Mar-14
+	- Added tech "Naval Border Control" that has "Claim_Ocean" flag
+	- Removed "Claim_Ocean" flag from "Ocean Adaptation"
+
+17-Mar-14
+	- AI gets +1 trade bonus from city center tile
+
+14-Mar-14
+	- As their existence breaks AI, removed recent oceanic changes
+	  - Removed Utility Boats and Engineering Ships
+	  - Removed Garbage Islands and Nets
+	  - Land units can build Buoys
+	- Traderoutes with the enemy are inactive during the war
+	- Halved production based pollution
+
+25-Feb-14
+	- Added +15% Migration bonus for the Republic, +30% bonus for Democracy
+
+22-Feb-14
+	- Added helptext for Canal
+	- Pollution or Garbage Island never appear on city center tile
+
+18-Feb-14
+	- Building a Canal requires Economics instead of Construction
+	- Canal cannot be digged to Hills, Mountains, or Glacier tiles
+	- Canal digging time constant 9 instead of terrain road time
+
+12-Feb-14
+	- Fixed Garbage Island to reduce tile output
+
+06-Feb-14
+	- Fixed Blacksmith helptext
+
+31-Jan-14
+	- One can steal or gain from Great Library only such techs for which
+	  prerequisites are already known
+
+22-Jan-14
+	- One cannot use Railroads or Maglevs on enemy territory. Roads are usable
+
+04-Jan-14
+	- Only Utility Boats and Engineering Ships can clean Garbage Islands
+
+31-Dec-13
+	- Added Garbage Island extra that may appear on Oceanic tiles as an
+	  result of pollution
+	- Enabled foggedborders
+
+30-Dec-13
+	- Given -30% production penalty for Barbarians and Pirates
+
+28-Dec-13
+	- Added unit types "Utility Boat" and "Engineering Ship" that are the
+	  only units that can place Buoys.
+	- Added Nets extra that Utility Boats and Engineering Ships can build
+
+10-Oct-13
+	- Most wonder effects previously affecting player range now affect all allied players
+
+02-Oct-13
+	- Palace is rebuilt to another city if capital is lost
+
+29-Sep-13
+	- Added road type "Canal"
+	   - Buildable when Construction known
+	   - Trireme and Sea units can travel it
+	   - Must be cardinally adjacent to oceanic tile - so can go through
+	     two land tiles, both adjacent to their own oceans, but no longer
+
+24-Sep-13
+	- Added unit vision bonuses for map knowledge achievements
+	   - 5% map known achievement increases Worker and Engineer vision sq +2
+	   - 20% map known achievement increases Caravan and Freight vision sq +2
+	   - 100% map known achievement increases vision sq of Sea units by +1
+
+21-Sep-13
+	- Instead of having free-gold-upkeep effect separately for each
+	  government, shown in their help, have single always-active effect
+	- Reduced free shield-upkeep under Monarchy and Communism from 3 to 2
+
+17-Sep-13
+	- Maglev hides earlier road types from view
+
+12-Sep-13
+	- Added achievements for map knowledge of 5%, 20%, and 100%
+
+10-Sep-13
+	- Changed AI level to Cheating
+
+01-Sep-13
+	- Trade output about 75% from what it used to be
+	- Movement cost via Railroad 1/9 (was: 0)
+	- Added Maglev
+
+21-Aug-13
+	- Population based pollution doubled
+	- Industrialization increases population based pollution
+
+19-Aug-13
+	- Added "Freight Ship" unit
