@@ -9,7 +9,7 @@ name = "Deltasquare"
 priority = 30
 
 ; Version of the tileset
-version = "3.2-dev"
+version = "3.3-dev"
 
 ; Summary and full description of the tileset.
 summary = _("Tileset to be used with variant2 ruleset in square tiles map.")
