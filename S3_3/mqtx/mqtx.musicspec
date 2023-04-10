@@ -1,0 +1,47 @@
+[musicspec]
+; Format and options of this spec file:
+options = "+Freeciv-2.6-musicset"
+
+[info]
+artists = "\
+ mqtx (http://soundcloud.com/mqtx) \
+"
+
+[files]
+music_menu = "mqtx/mqtx-freeciv-music_start-menu.ogg"
+music_victory = "mqtx/mqtx-freeciv-new-game.ogg"
+music_defeat = "mqtx/mqtx-freeciv-new-game.ogg"
+
+music_european_peace_0 = "mqtx/mqtx-freeciv-music_all-game01.ogg"
+music_european_peace_1 = "mqtx/mqtx-freeciv-music_all-game03.ogg"
+music_european_combat = "mqtx/mqtx-freeciv-music_all-game02.ogg"
+music_classical_peace_0 = "mqtx/mqtx-freeciv-music_all-game01.ogg"
+music_classical_peace_1 = "mqtx/mqtx-freeciv-music_all-game03.ogg"
+music_classical_combat = "mqtx/mqtx-freeciv-music_all-game02.ogg"
+music_tropical_peace_0 = "mqtx/mqtx-freeciv-music_all-game01.ogg"
+music_tropical_peace_1 = "mqtx/mqtx-freeciv-music_all-game03.ogg"
+music_tropical_combat = "mqtx/mqtx-freeciv-music_all-game02.ogg"
+music_asian_peace_0 = "mqtx/mqtx-freeciv-music_all-game01.ogg"
+music_asian_peace_1 = "mqtx/mqtx-freeciv-music_all-game03.ogg"
+music_asian_combat = "mqtx/mqtx-freeciv-music_all-game02.ogg"
+music_babylonian_peace_0 = "mqtx/mqtx-freeciv-music_all-game01.ogg"
+music_babylonian_peace_1 = "mqtx/mqtx-freeciv-music_all-game03.ogg"
+music_babylonian_combat = "mqtx/mqtx-freeciv-music_all-game02.ogg"
+music_celtic_peace_0 = "mqtx/mqtx-freeciv-music_all-game01.ogg"
+music_celtic_peace_1 = "mqtx/mqtx-freeciv-music_all-game03.ogg"
+music_celtic_combat = "mqtx/mqtx-freeciv-music_all-game02.ogg"
+music_renaissance_peace_0 = "mqtx/mqtx-freeciv-music_all-game01.ogg"
+music_renaissance_peace_1 = "mqtx/mqtx-freeciv-music_all-game03.ogg"
+music_renaissance_combat = "mqtx/mqtx-freeciv-music_all-game02.ogg"
+music_industrial_peace_0 = "mqtx/mqtx-freeciv-music_all-game01.ogg"
+music_industrial_peace_1 = "mqtx/mqtx-freeciv-music_all-game03.ogg"
+music_industrial_combat = "mqtx/mqtx-freeciv-music_all-game02.ogg"
+music_electricage_peace_0 = "mqtx/mqtx-freeciv-music_all-game01.ogg"
+music_electricage_peace_1 = "mqtx/mqtx-freeciv-music_all-game03.ogg"
+music_electricage_combat = "mqtx/mqtx-freeciv-music_all-game02.ogg"
+music_modern_peace_0 = "mqtx/mqtx-freeciv-music_all-game01.ogg"
+music_modern_peace_1 = "mqtx/mqtx-freeciv-music_all-game03.ogg"
+music_modern_combat = "mqtx/mqtx-freeciv-music_all-game02.ogg"
+music_postmodern_peace_0 = "mqtx/mqtx-freeciv-music_all-game01.ogg"
+music_postmodern_peace_1 = "mqtx/mqtx-freeciv-music_all-game03.ogg"
+music_postmodern_combat = "mqtx/mqtx-freeciv-music_all-game02.ogg"

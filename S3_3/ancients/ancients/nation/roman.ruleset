@@ -1,0 +1,56 @@
+[nation_roman]
+
+name   = _("Roman")
+plural = _("?plural:Romans")
+groups = _("European"), _("Mediterranean")
+legend = _("Rome was, in legend, founded by Romulus in 753 BC.  At its\
+ height, Rome controlled nearly all of Europe, northern Africa and\
+ Mesopotamia.")
+
+leaders = {
+ "name", "sex"
+ "Caesar", "Male"
+ "Augustus", "Male"
+ "Vespasianus", "Male"
+ "Nero", "Male"
+ "Traianus", "Male"
+ "Marcus Aurelius", "Male"
+ "Tiberius", "Male"
+ "Constantinus I", "Male"
+ "Livia Drusilla", "Female"
+ "Valeria Messalina", "Female"
+}
+
+flag     = "rome"
+flag_alt = "italy"
+style    = "Classical"
+
+ruler_titles = { "government",      "male_title",      "female_title"
+                 "Despotism",       _("Dictator %s"),     _("Dictatrix %s")
+                 "Principate",      _("Princeps %s"),     _("Princeps %s")
+                 "Anarchy",         _("Usurper %s"),      _("Usurper %s")
+}
+
+init_techs = ""
+init_buildings = ""
+init_units = ""
+civilwar_nations = "byzantine", "palmyrene", "frankish", "british", "gothic"
+
+cities =
+  "Roma", "Beneventum", "Corfinium", "Ancona",
+  "Tarentum", "Brundisium", "Ravenna", "Pisa", "Genova", "Mediolanum",
+  "Aquileia", "Florentia", "Bononia", "Verona", "Ostia", "Agrigentum",
+  "Syracusae", "Neapolis", "Pompeii", "Salernum", "Tarraco",
+  "Carthago", "Numantia", "Carthago Nova", "Baiae",
+  "Noviomagus", "Vindobona", "Atuatuca", "Caesarea", "Ierusalem",
+  "Trapezus", "Durocortorum", "Lutetia", "Burdigala", "Portus Namnetum",
+  "Utica", "Lugdunum", "Londinium", "Aquae Sulis", "Camulodunum", "Dubris",
+  "Eburacum", "Coriovallum", "Leptis Magna", "Corduba", "Edessa",
+  "Ariminum", "Narbo Martius", "Pergamum", "Vienna", "Hispalis",
+  "Salonae", "Cyrenae", "Dyrrachium", "Luni", "Noreia", "Ephesus",
+  "Panoramus", "Ancyra", "Caralis", "Patavium", "Petra", "Tolosa",
+  "Pisae", "Tyrus", "Arenate", "Brigantium",
+  "Lix", "Sala", "Berytus", "Naissus", "Nicomedia", "Berenice",
+  "Sabrata", "Attalea", "Sinope", "Hippo Regius", "Gesoriacum",
+  "Velia", "Segesta", "Aleria", "Colonia Agrippina",
+  "Agentoracum", "Moguntiacum", "Altinum", "Tarsus"

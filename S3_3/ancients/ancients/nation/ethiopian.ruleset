@@ -1,0 +1,37 @@
+[nation_ethiopian]
+
+name   = _("Ethiopian")
+plural = _("?plural:Ethiopians")
+groups = _("African")
+legend = _("Ethiopia is the oldest nation in Africa.")
+
+leaders = {
+ "name", "sex"
+ "Zara Yakob", "Male"
+ "Menelik II", "Male"
+ "Haile Selassies", "Male"
+ "Zoskales", "Male"
+ "Gedara", "Male"
+ "Lalibela", "Male"
+ "Yekuno Amlak", "Male"
+ "Tewodros II", "Male"
+}
+
+flag     = "ethiopia"
+flag_alt = "italy"
+style    = "Babylonian"
+
+ruler_titles = { "government",       "male_title",    "female_title"
+               }
+
+init_techs = ""
+init_buildings = ""
+init_units = ""
+civilwar_nations = "egyptian"
+
+cities =
+  "Addis Abeba", "Dire Dawa", "Gonder", "Nazret", "Harer", "Mek'ele",
+  "Jima", "Dese", "Bahir Dar (river)", "Jijiga", "Gambela", "Werder",
+  "Moyale", "Dolo Odo", "Weldiya", "Kelem", "Awasa", "Debre Mark'os",
+  "Nek'ernte", "Asosa", "Gore", "Goba", "Asela", "Arba Minch'",
+  "Debre Zevit", "Geladi", "Imi", "Degeh Bur"

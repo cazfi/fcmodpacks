@@ -1,0 +1,56 @@
+
+Chess is a tileset for Freeciv created by Xin Yu.
+
+This tileset is released under the GNU General Public License (the same
+license as Freeciv itself). For more information on the license, see
+COPYING.
+
+This tileset is inspired by the Stratege tileset and by the game Kriegspiel.
+
+It is recommended to use the citybar with this tileset. (Unless you like
+staring at white-on-white writing.)
+
+Thanks to the creators of the Amplio and Trident tilesets for letting me
+use them as a template. Thanks also to Daniel Markstedt for helping me
+convert the tileset to a format suitable for Freeciv 2.3, and for sundry
+legal advice.
+
+Copyright (C) 2008 - 2011 Xin Yu
+This work may be redistributed under the terms of the
+GNU GPL version 2 or later.
+
+www.freeciv.org
+
+ - - -
+
+Updates from v2.0 have been made by Marko Lindqvist
+
+ - - -
+
+Changelog:
+
+v2.5
+- Updated to work with Freeciv 3.1
+
+v2.4
+- Updated to work with Freeciv 3.0
+
+v2.3
+- Updated to work with Freeciv 2.6
+
+v2.2
+- Updated to work with Freeciv 2.5
+
+v2.1
+- Updated to work with Freeciv 2.4
+
+v2.0
+- Added graphics for buildings and wonders
+- Changed graphics for settler, spy
+- Tweaked city icons and terrain graphics
+- Rebalanced colors
+- Reduced size of roads and railroads
+- New design for city size numbers
+- Changed player colors
+- Changed font of yields display
+- Formatted to work with Freeciv 2.3
