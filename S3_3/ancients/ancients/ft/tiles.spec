@@ -26,7 +26,7 @@ pixel_border = 1
 tiles = { "row", "column", "tag"
 ; Unit activity letters:  (note unit icons have just "u.")
 
-  1,  8, "unit.auto_attack", "unit.auto_settler"
+  1,  8, "unit.auto_attack", "unit.auto_worker"
   2,  9, "unit.stack"
   2,  3, "unit.connect"
   1,  9, "unit.auto_explore"
