@@ -1048,8 +1048,8 @@ ui_name_base_airbase = _("?gui_type:Build Airbase")
 ;                           (the last three require a corresponding
 ;                           [resource_*] / [base_*] / [road_*] section)
 ; rmcauses                = events that can remove extra type.
-;                           "CleanPollution", "CleanFallout", "Pillage",
-;                           "Disappear", or "Enter"
+;                           "Clean", "Pillage", "Disappear", or "Enter"
+;                           For now also "CleanPollution", "CleanFallout"
 ; infracost               = Number of infrapoints it costs to place this
 ;                           extra. 0, the default, means extra cannot be placed.
 ; graphic                 = tag specifying preferred graphic
@@ -1065,6 +1065,7 @@ ui_name_base_airbase = _("?gui_type:Build Airbase")
 ;                           This can be "None" to indicate that graphic sprite
 ;                           is not needed.
 ; rmact_gfx_alt           = tag for alternative graphic for unit removing extra
+; rmact_gfx_alt2          = tag for second alternative graphic for unit removing extra
 ; reqs                    = requirements to build the extra (see effects.ruleset
 ;                           and README.effects for help on requirements)
 ; rmreqs                  = requirements to remove the extra
@@ -1161,6 +1162,7 @@ act_gfx_alt    = "unit.cultivate"
 act_gfx_alt2   = "-"
 rmact_gfx      = "None"
 rmact_gfx_alt  = "-"
+rmact_gfx_alt2 = "-"
 reqs           =
   { "type",         "name", "range"
     "TerrainClass", "Land", "Tile"
@@ -1199,6 +1201,7 @@ further bonus.\
 ;act_gfx_alt2   = "-"
 ;rmact_gfx      = "None"
 ;rmact_gfx_alt  = "-"
+;rmact_gfx_alt2 = "-"
 ;reqs           =
 ;  { "type", "name", "range"
 ;    "TerrainClass", "Oceanic", "Tile"
@@ -1219,6 +1222,7 @@ act_gfx_alt    = "unit.plant"
 act_gfx_alt2   = "-"
 rmact_gfx      = "None"
 rmact_gfx_alt  = "-"
+rmact_gfx_alt2 = "-"
 build_time     = 0
 removal_time   = 0
 conflicts      = "Irrigation", "Farmland"
@@ -1235,7 +1239,7 @@ Building a mine on an irrigated tile will destroy the irrigation.\
 name           = _("Pollution")
 category       = "Nuisance"
 causes         = "Pollution"
-rmcauses       = "CleanPollution"
+rmcauses       = "Clean", "CleanPollution"
 graphic        = "tx.pollution"
 graphic_alt    = "-"
 activity_gfx   = "None"
@@ -1243,6 +1247,7 @@ act_gfx_alt    = "-"
 act_gfx_alt2   = "-"
 rmact_gfx      = "unit.pollution"
 rmact_gfx_alt  = "-"
+rmact_gfx_alt2 = "-"
 reqs           =
   { "type", "name", "range", "present"
     "TerrainClass", "Land", "Tile", TRUE
@@ -1295,7 +1300,7 @@ all the more severe when it does occur.\
 ;name           = _("Garbage Island")
 ;category       = "Nuisance"
 ;causes         = "Pollution"
-;rmcauses       = "CleanPollution"
+;rmcauses       = "Clean", "CleanPollution"
 ;graphic        = "tx.garbage_island"
 ;graphic_alt    = "tx.pollution"
 ;activity_gfx   = "None"
@@ -1303,6 +1308,7 @@ all the more severe when it does occur.\
 ;act_gfx_alt2   = "-"
 ;rmact_gfx      = "unit.pollution"
 ;rmact_gfx_alt  = "-"
+;rmact_gfx_alt2 = "-"
 ;reqs           =
 ;  { "type", "name", "range", "present"
 ;    "TerrainClass", "Oceanic", "Tile", TRUE
@@ -1327,6 +1333,7 @@ act_gfx_alt    = "unit.irrigation"
 act_gfx_alt2   = "unit.cultivate"
 rmact_gfx      = "None"
 rmact_gfx_alt  = "-"
+rmact_gfx_alt2 = "-"
 reqs           =
   { "type",  "name",          "range"
     "Tech",  "Refrigeration", "Player"
@@ -1350,7 +1357,7 @@ Increases tile food production by 35%.\
 name           = _("Fallout")
 category       = "Nuisance"
 causes         = "Fallout"
-rmcauses       = "CleanFallout"
+rmcauses       = "Clean", "CleanFallout"
 graphic        = "tx.fallout"
 graphic_alt    = "-"
 activity_gfx   = "None"
@@ -1358,6 +1365,7 @@ act_gfx_alt    = "-"
 act_gfx_alt2   = "-"
 rmact_gfx      = "unit.fallout"
 rmact_gfx_alt  = "-"
+rmact_gfx_alt2 = "-"
 reqs           =
   { "type", "name", "range"
     "TerrainClass", "Land", "Tile"
@@ -1387,6 +1395,7 @@ act_gfx_alt    = "-"
 act_gfx_alt2   = "-"
 rmact_gfx      = "None"
 rmact_gfx_alt  = "-"
+rmact_gfx_alt2 = "-"
 reqs           =
     { "type", "name", "range", "present"
       "Tech", "Construction", "Player", TRUE
@@ -1418,6 +1427,7 @@ act_gfx_alt    = "-"
 act_gfx_alt2   = "-"
 rmact_gfx      = "None"
 rmact_gfx_alt  = "-"
+rmact_gfx_alt2 = "-"
 reqs           =
     { "type", "name", "range", "present"
       "Tech", "Radio", "Player", TRUE
@@ -1449,6 +1459,7 @@ act_gfx_alt    = "unit.fortress"
 act_gfx_alt2   = "-"
 rmact_gfx      = "None"
 rmact_gfx_alt  = "-"
+rmact_gfx_alt2 = "-"
 reqs           =
     { "type", "name", "range", "present"
       "Tech", "Radar", "Player", TRUE
@@ -1476,6 +1487,7 @@ act_gfx_alt    = "-"
 act_gfx_alt2   = "-"
 rmact_gfx      = "None"
 rmact_gfx_alt  = "-"
+rmact_gfx_alt2 = "-"
 reqs           =
     { "type", "name", "range", "present"
       "TerrainClass", "Land", "Tile", TRUE
@@ -1500,6 +1512,7 @@ act_gfx_alt    = "-"
 act_gfx_alt2   = "-"
 rmact_gfx      = "None"
 rmact_gfx_alt  = "-"
+rmact_gfx_alt2 = "-"
 reqs           =
     { "type", "name", "range"
       "UnitFlag", "Settlers", "Local"
@@ -1532,6 +1545,7 @@ act_gfx_alt    = "unit.road"
 act_gfx_alt2   = "-"
 rmact_gfx      = "None"
 rmact_gfx_alt  = "-"
+rmact_gfx_alt2 = "-"
 reqs           =
     { "type", "name", "range"
       "Tech", "Railroad", "Player"
@@ -1570,6 +1584,7 @@ act_gfx_alt    = "unit.road"
 act_gfx_alt2   = "-"
 rmact_gfx      = "None"
 rmact_gfx_alt  = "-"
+rmact_gfx_alt2 = "-"
 reqs           =
     { "type", "name", "range"
       "Tech", "Superconductors", "Player"
@@ -1602,6 +1617,7 @@ act_gfx_alt    = "-"
 act_gfx_alt2   = "-"
 rmact_gfx      = "None"
 rmact_gfx_alt  = "-"
+rmact_gfx_alt2 = "-"
 buildable      = FALSE
 defense_bonus  = 50
 native_to      = "Land"
@@ -1628,6 +1644,7 @@ act_gfx_alt    = "unit.road"
 act_gfx_alt2   = "-"
 rmact_gfx      = "None"
 rmact_gfx_alt  = "-"
+rmact_gfx_alt2 = "-"
 reqs           =
     { "type", "name", "range"
       "TerrainFlag", "Low Land", "Tile"
@@ -1658,6 +1675,7 @@ act_gfx_alt    = "-"
 act_gfx_alt2   = "-"
 rmact_gfx      = "None"
 rmact_gfx_alt  = "-"
+rmact_gfx_alt2 = "-"
 
 [extra_iron]
 name           = _("Iron")
@@ -1671,6 +1689,7 @@ act_gfx_alt    = "-"
 act_gfx_alt2   = "-"
 rmact_gfx      = "None"
 rmact_gfx_alt  = "-"
+rmact_gfx_alt2 = "-"
 
 [extra_game]
 name           = _("?animals:Game")
@@ -1684,6 +1703,7 @@ act_gfx_alt    = "-"
 act_gfx_alt2   = "-"
 rmact_gfx      = "None"
 rmact_gfx_alt  = "-"
+rmact_gfx_alt2 = "-"
 
 [extra_furs]
 name           = _("Furs")
@@ -1697,6 +1717,7 @@ act_gfx_alt    = "-"
 act_gfx_alt2   = "-"
 rmact_gfx      = "None"
 rmact_gfx_alt  = "-"
+rmact_gfx_alt2 = "-"
 
 [extra_coal]
 name           = _("Coal")
@@ -1710,6 +1731,7 @@ act_gfx_alt    = "-"
 act_gfx_alt2   = "-"
 rmact_gfx      = "None"
 rmact_gfx_alt  = "-"
+rmact_gfx_alt2 = "-"
 
 [extra_fish]
 name           = _("Fish")
@@ -1723,6 +1745,7 @@ act_gfx_alt    = "-"
 act_gfx_alt2   = "-"
 rmact_gfx      = "None"
 rmact_gfx_alt  = "-"
+rmact_gfx_alt2 = "-"
 
 [extra_fruit]
 name           = _("Fruit")
@@ -1736,6 +1759,7 @@ act_gfx_alt    = "-"
 act_gfx_alt2   = "-"
 rmact_gfx      = "None"
 rmact_gfx_alt  = "-"
+rmact_gfx_alt2 = "-"
 
 [extra_gems]
 name           = _("Gems")
@@ -1749,6 +1773,7 @@ act_gfx_alt    = "-"
 act_gfx_alt2   = "-"
 rmact_gfx      = "None"
 rmact_gfx_alt  = "-"
+rmact_gfx_alt2 = "-"
 
 [extra_buffalo]
 name           = _("Buffalo")
@@ -1762,6 +1787,7 @@ act_gfx_alt    = "-"
 act_gfx_alt2   = "-"
 rmact_gfx      = "None"
 rmact_gfx_alt  = "-"
+rmact_gfx_alt2 = "-"
 
 [extra_wheat]
 name           = _("Wheat")
@@ -1775,6 +1801,7 @@ act_gfx_alt    = "-"
 act_gfx_alt2   = "-"
 rmact_gfx      = "None"
 rmact_gfx_alt  = "-"
+rmact_gfx_alt2 = "-"
 
 [extra_oasis]
 name           = _("Oasis")
@@ -1788,6 +1815,7 @@ act_gfx_alt    = "-"
 act_gfx_alt2   = "-"
 rmact_gfx      = "None"
 rmact_gfx_alt  = "-"
+rmact_gfx_alt2 = "-"
 
 [extra_peat]
 name           = _("Peat")
@@ -1801,6 +1829,7 @@ act_gfx_alt    = "-"
 act_gfx_alt2   = "-"
 rmact_gfx      = "None"
 rmact_gfx_alt  = "-"
+rmact_gfx_alt2 = "-"
 
 [extra_pheasant]
 name           = _("Pheasant")
@@ -1814,6 +1843,7 @@ act_gfx_alt    = "-"
 act_gfx_alt2   = "-"
 rmact_gfx      = "None"
 rmact_gfx_alt  = "-"
+rmact_gfx_alt2 = "-"
 
 [extra_bonus]
 name           = _("Resources")
@@ -1827,6 +1857,7 @@ act_gfx_alt    = "-"
 act_gfx_alt2   = "-"
 rmact_gfx      = "None"
 rmact_gfx_alt  = "-"
+rmact_gfx_alt2 = "-"
 
 [extra_ivory]
 name           = _("Ivory")
@@ -1840,6 +1871,7 @@ act_gfx_alt    = "-"
 act_gfx_alt2   = "-"
 rmact_gfx      = "None"
 rmact_gfx_alt  = "-"
+rmact_gfx_alt2 = "-"
 
 [extra_silk]
 name           = _("Silk")
@@ -1853,6 +1885,7 @@ act_gfx_alt    = "-"
 act_gfx_alt2   = "-"
 rmact_gfx      = "None"
 rmact_gfx_alt  = "-"
+rmact_gfx_alt2 = "-"
 
 [extra_spice]
 name           = _("Spice")
@@ -1866,6 +1899,7 @@ act_gfx_alt    = "-"
 act_gfx_alt2   = "-"
 rmact_gfx      = "None"
 rmact_gfx_alt  = "-"
+rmact_gfx_alt2 = "-"
 
 [extra_whales]
 name           = _("Whales")
@@ -1879,6 +1913,7 @@ act_gfx_alt    = "-"
 act_gfx_alt2   = "-"
 rmact_gfx      = "None"
 rmact_gfx_alt  = "-"
+rmact_gfx_alt2 = "-"
 
 [extra_wine]
 name           = _("Wine")
@@ -1892,6 +1927,7 @@ act_gfx_alt    = "-"
 act_gfx_alt2   = "-"
 rmact_gfx      = "None"
 rmact_gfx_alt  = "-"
+rmact_gfx_alt2 = "-"
 
 [extra_oil]
 name           = _("Oil")
@@ -1905,6 +1941,7 @@ act_gfx_alt    = "-"
 act_gfx_alt2   = "-"
 rmact_gfx      = "None"
 rmact_gfx_alt  = "-"
+rmact_gfx_alt2 = "-"
 
 [extra_vent]
 name           = _("Thermal Vent")
@@ -1918,6 +1955,7 @@ act_gfx_alt    = "-"
 act_gfx_alt2   = "-"
 rmact_gfx      = "None"
 rmact_gfx_alt  = "-"
+rmact_gfx_alt2 = "-"
 
 ; /* <-- avoid gettext warnings
 ;
