@@ -50,8 +50,9 @@ building_flags =
 ;                 or "Convert".
 ; reqs		= requirements to build the building (see effects.ruleset
 ;		  and README.effects for help on requirements)
-; graphic	= icon of improvement (used in city dialog)
-; graphic_alt	= alternate icon of improvement
+; graphic       = icon of improvement (used in city dialog)
+; graphic_alt   = alternate icon of improvement
+; graphic_alt2  = second alternative icon.
 ; obsolete_by	= requirements for the building to become obsolete
 ; build_cost	= production shields required to build
 ; upkeep	= monetary upkeep value
@@ -82,8 +83,9 @@ reqs	=
     { "type", "name", "range"
       "Tech", "Radio", "Player"
     }
-graphic	= "b.airport"
-graphic_alt	= "-"
+graphic         = "b.airport"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -114,8 +116,9 @@ reqs	=
     { "type", "name", "range"
       "Tech", "Construction", "Player"
     }
-graphic	= "b.aqueduct"
-graphic_alt	= "-"
+graphic         = "b.aqueduct"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -137,8 +140,9 @@ reqs	=
       "Tech", "Banking", "Player"
       "Building", "Marketplace", "City"
     }
-graphic	= "b.bank"
-graphic_alt	= "-"
+graphic         = "b.bank"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -159,8 +163,9 @@ genus		= "Improvement"
 reqs	=
     { "type", "name", "range"
     }
-graphic	= "b.barracks_i"
-graphic_alt	= "-"
+graphic         = "b.barracks_i"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
     "Tech", "Gunpowder", "Player"
@@ -189,8 +194,9 @@ reqs	=
     { "type", "name", "range"
       "Tech", "Gunpowder", "Player"
     }
-graphic	= "b.barracks_ii"
-graphic_alt	= "b.barracks_i"
+graphic         = "b.barracks_ii"
+graphic_alt     = "b.barracks_i"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
     "Tech", "Mobile Warfare", "Player"
@@ -218,8 +224,9 @@ reqs	=
     { "type", "name", "range"
       "Tech", "Mobile Warfare", "Player"
     }
-graphic	= "b.barracks_iii"
-graphic_alt	= "b.barracks_i"
+graphic         = "b.barracks_iii"
+graphic_alt     = "b.barracks_i"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -247,6 +254,7 @@ reqs	        =
     }
 graphic         = "b.blacksmith"
 graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -268,8 +276,9 @@ reqs	=
     { "type", "name", "range"
       "Tech", "Monotheism", "Player"
     }
-graphic	= "b.cathedral"
-graphic_alt	= "-"
+graphic         = "b.cathedral"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -294,8 +303,9 @@ reqs	=
     { "type", "name", "range"
       "Tech", "Masonry", "Player"
     }
-graphic	= "b.city_walls"
-graphic_alt	= "-"
+graphic         = "b.city_walls"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -320,8 +330,9 @@ reqs	=
       "Tech", "Metallurgy", "Player"
       "TerrainClass", "Oceanic", "Adjacent"
     }
-graphic	= "b.coastal_defense"
-graphic_alt	= "-"
+graphic         = "b.coastal_defense"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -342,8 +353,9 @@ reqs	=
     { "type", "name", "range"
       "Tech", "Engineering", "Player"
     }
-graphic	= "b.colosseum"
-graphic_alt	= "-"
+graphic         = "b.colosseum"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -369,8 +381,9 @@ reqs	=
     { "type", "name", "range"
       "Tech", "Code of Laws", "Player"
     }
-graphic	= "b.courthouse"
-graphic_alt	= "-"
+graphic         = "b.courthouse"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -391,8 +404,9 @@ reqs	=
     { "type", "name", "range"
       "Tech", "Industrialization", "Player"
     }
-graphic	= "b.dumping_ground"
-graphic_alt	= "-"
+graphic         = "b.dumping_ground"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -413,8 +427,9 @@ reqs	=
     { "type", "name", "range"
       "Tech", "Industrialization", "Player"
     }
-graphic	= "b.factory"
-graphic_alt	= "-"
+graphic         = "b.factory"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -436,8 +451,9 @@ reqs	=
     { "type", "name", "range"
       "Tech", "Pottery", "Player"
     }
-graphic	= "b.granary"
-graphic_alt	= "-"
+graphic         = "b.granary"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -464,8 +480,9 @@ reqs	=
       "Tech", "Seafaring", "Player"
       "TerrainClass", "Oceanic", "Adjacent"
     }
-graphic	= "b.harbour"
-graphic_alt	= "-"
+graphic         = "b.harbour"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -488,8 +505,9 @@ reqs	=
       "Building", "Factory", "City"
       "Extra", "River", "Adjacent"
     }
-graphic	= "b.hydro_plant"
-graphic_alt	= "-"
+graphic         = "b.hydro_plant"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -517,8 +535,9 @@ reqs	=
     { "type", "name", "range"
       "Tech", "Writing", "Player"
     }
-graphic	= "b.library"
-graphic_alt	= "-"
+graphic         = "b.library"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -541,8 +560,9 @@ reqs	=
     { "type", "name", "range"
       "Tech", "Currency", "Player"
     }
-graphic	= "b.marketplace"
-graphic_alt	= "-"
+graphic         = "b.marketplace"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -563,8 +583,9 @@ reqs	=
     { "type", "name", "range"
       "Tech", "Mass Production", "Player"
     }
-graphic	= "b.mass_transit"
-graphic_alt	= "-"
+graphic         = "b.mass_transit"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -585,8 +606,9 @@ reqs	=
       "Tech", "Robotics", "Player"
       "Building", "Factory", "City"
     }
-graphic	= "b.mfg_plant"
-graphic_alt	= "-"
+graphic         = "b.mfg_plant"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -609,8 +631,9 @@ reqs	=
       "Tech", "Nuclear Power", "Player"
       "Building", "Factory", "City"
     }
-graphic	= "b.nuclear_plant"
-graphic_alt	= "-"
+graphic         = "b.nuclear_plant"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -646,8 +669,9 @@ reqs	=
       "Tech", "Miniaturization", "Player"
       "TerrainClass", "Oceanic", "Adjacent"
     }
-graphic	= "b.offshore_platform"
-graphic_alt	= "-"
+graphic         = "b.offshore_platform"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -669,8 +693,9 @@ reqs	=
     { "type", "name", "range"
       "Tech", "Masonry", "Player"
     }
-graphic	= "b.palace"
-graphic_alt	= "-"
+graphic         = "b.palace"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -711,8 +736,9 @@ reqs	=
     { "type", "name", "range"
       "Tech", "Communism", "Player"
     }
-graphic	= "b.police_station"
-graphic_alt	= "-"
+graphic         = "b.police_station"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -739,8 +765,9 @@ reqs	=
       "Tech", "Amphibious Warfare", "Player"
       "TerrainClass", "Oceanic", "Adjacent"
     }
-graphic	= "b.port_facility"
-graphic_alt	= "-"
+graphic         = "b.port_facility"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -765,8 +792,9 @@ reqs	=
       "Tech", "Refining", "Player"
       "Building", "Factory", "City"
     }
-graphic	= "b.power_plant"
-graphic_alt	= "-"
+graphic         = "b.power_plant"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -797,8 +825,9 @@ reqs	=
     { "type", "name", "range"
       "Tech", "Recycling", "Player"
     }
-graphic	= "b.recycling_center"
-graphic_alt	= "-"
+graphic         = "b.recycling_center"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -821,8 +850,9 @@ reqs	=
       "Tech", "Computers", "Player"
       "Building", "Library", "City"
     }
-graphic	= "b.research_lab"
-graphic_alt	= "-"
+graphic         = "b.research_lab"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -846,8 +876,9 @@ reqs	=
     { "type", "name", "range"
       "Tech", "Rocketry", "Player"
     }
-graphic	= "b.sam_battery"
-graphic_alt	= "-"
+graphic         = "b.sam_battery"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -869,8 +900,9 @@ reqs	=
       "Tech", "Orbital Flight", "Player", TRUE
       "Building", "Satellite Network", "Player", FALSE
     }
-graphic	= "b.satellite_network"
-graphic_alt	= "b.palace"
+graphic         = "b.satellite_network"
+graphic_alt     = "b.palace"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -890,8 +922,9 @@ reqs	=
     { "type", "name", "range"
       "Tech", "Laser", "Player"
     }
-graphic	= "b.sdi_defense"
-graphic_alt	= "-"
+graphic         = "b.sdi_defense"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -918,8 +951,9 @@ reqs	=
       "Tech", "Sanitation", "Player"
       "Building", "Aqueduct", "City"
     }
-graphic	= "b.sewer_system"
-graphic_alt	= "-"
+graphic         = "b.sewer_system"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -941,8 +975,9 @@ reqs	=
       "Tech", "Solar Power", "Player"
       "Building", "Factory", "City"
     }
-graphic	= "b.solar_plant"
-graphic_alt	= "-"
+graphic         = "b.solar_plant"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -969,8 +1004,9 @@ reqs	=
     { "type", "name", "range"
       "Tech", "Plastics", "Player"
     }
-graphic	= "b.space_component"
-graphic_alt	= "-"
+graphic         = "b.space_component"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -995,8 +1031,9 @@ reqs	=
     { "type", "name", "range"
       "Tech", "Superconductors", "Player"
     }
-graphic	= "b.space_modules"
-graphic_alt	= "-"
+graphic         = "b.space_modules"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -1030,8 +1067,9 @@ reqs	=
     { "type", "name", "range"
       "Tech", "Space Flight", "Player"
     }
-graphic	= "b.space_structural"
-graphic_alt	= "-"
+graphic         = "b.space_structural"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -1057,8 +1095,9 @@ reqs	=
       "Tech", "Economics", "Player"
       "Building", "Bank", "City"
     }
-graphic	= "b.stock_exchange"
-graphic_alt	= "-"
+graphic         = "b.stock_exchange"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -1082,8 +1121,9 @@ reqs	=
     { "type", "name", "range"
       "Tech", "Automobile", "Player"
     }
-graphic	= "b.super_highways"
-graphic_alt	= "-"
+graphic         = "b.super_highways"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -1106,8 +1146,9 @@ reqs	=
     { "type", "name", "range"
       "Tech", "Refrigeration", "Player"
     }
-graphic	= "b.supermarket"
-graphic_alt	= "-"
+graphic         = "b.supermarket"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -1129,8 +1170,9 @@ reqs	=
     { "type", "name", "range"
       "Tech", "Ceremonial Burial", "Player"
     }
-graphic	= "b.temple"
-graphic_alt	= "-"
+graphic         = "b.temple"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -1153,7 +1195,8 @@ reqs	=
       "Tech", "Code of Laws", "Player"
     }
 graphic         = "b.townhall"
-graphic_alt	= "-"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -1180,8 +1223,9 @@ reqs	=
     { "type", "name", "range"
       "Tech", "Television", "Player"
     }
-graphic	= "b.tvstation"
-graphic_alt	= "-"
+graphic         = "b.tvstation"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -1202,8 +1246,9 @@ reqs	=
       "Tech", "University", "Player"
       "Building", "Library", "City"
     }
-graphic	= "b.university"
-graphic_alt	= "-"
+graphic         = "b.university"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -1227,8 +1272,9 @@ reqs	=
     { "type", "name", "range"
       "Tech", "Space Flight", "Player"
     }
-graphic	= "b.apollo_program"
-graphic_alt	= "-"
+graphic         = "b.apollo_program"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -1244,23 +1290,24 @@ Entire map becomes visible for the player who owns it. \
 ")
 
 ;[building_asmiths_trading_co]
-;name		= _("A.Smith's Trading Co.")
-;genus		= "GreatWonder"
+;name            = _("A.Smith's Trading Co.")
+;genus           = "GreatWonder"
 ;reqs	=
 ;    { "type", "name", "range"
 ;      "Tech", , "Player"
 ;    }
-;graphic	= "b.asmiths_trading_co"
-;graphic_alt	= "-"
-;obsolete_by	=
+;graphic         = "b.asmiths_trading_co"
+;graphic_alt     = "-"
+;graphic_alt2    = "-"
+;obsolete_by     =
 ;  { "type", "name", "range"
 ;  }
-;build_cost	= 400
-;upkeep		= 0
-;sabotage	= 0
-;sound		= "w_asmiths_trading_co"
-;sound_alt	= "w_generic"
-;helptext	= _("\
+;build_cost      = 400
+;upkeep          = 0
+;sabotage        = 0
+;sound           = "w_asmiths_trading_co"
+;sound_alt       = "w_generic"
+;helptext        = _("\
 ;City improvements which would normally have an upkeep of 1 are free\
 ; of upkeep, for all your cities.\
 ;")
@@ -1272,8 +1319,9 @@ reqs	=
     { "type", "name", "range"
       "Tech", "Bronze Working", "Player"
     }
-graphic	= "b.colossus"
-graphic_alt	= "-"
+graphic         = "b.colossus"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range", "survives"
     "Tech", "Flight", "World", TRUE
@@ -1295,8 +1343,9 @@ reqs	=
     { "type", "name", "range"
       "Tech", "Astronomy", "Player"
     }
-graphic	= "b.copernicus_observatory"
-graphic_alt	= "-"
+graphic         = "b.copernicus_observatory"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -1317,8 +1366,9 @@ reqs	=
     { "type", "name", "range"
       "Tech", "Genetic Engineering", "Player"
     }
-graphic	= "b.cure_for_cancer"
-graphic_alt	= "-"
+graphic         = "b.cure_for_cancer"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -1341,8 +1391,9 @@ reqs	=
     { "type", "name", "range"
       "Tech", "Railroad", "Player"
     }
-graphic	= "b.darwins_voyage"
-graphic_alt	= "-"
+graphic         = "b.darwins_voyage"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -1364,8 +1415,9 @@ reqs	=
     { "type", "name", "range"
       "Tech", "Steam Engine", "Player"
     }
-graphic	= "b.eiffel_tower"
-graphic_alt	= "-"
+graphic         = "b.eiffel_tower"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -1389,8 +1441,9 @@ reqs	=
       "Tech", "Literacy", "Player", TRUE
       "Building", "Great Library", "Player", FALSE
     }
-graphic	= "b.great_library"
-graphic_alt	= "-"
+graphic         = "b.great_library"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
     "Tech", "Electricity", "Player"
@@ -1406,24 +1459,25 @@ Civilizations with the Great Library get every advance\
 ")
 
 ;[building_great_wall]
-;name		= _("Great Wall")
-;genus		= "GreatWonder"
+;name            = _("Great Wall")
+;genus           = "GreatWonder"
 ;reqs	=
 ;    { "type", "name", "range"
 ;      "Tech", , "Player"
 ;    }
-;graphic	= "b.great_wall"
-;graphic_alt	= "-"
-;obsolete_by	=
+;graphic         = "b.great_wall"
+;graphic_alt     = "-"
+;graphic_alt2    = "-"
+;obsolete_by     =
 ;  { "type", "name", "range", "survives"
 ;    "Tech", "Metallurgy", "World", TRUE
 ;  }
-;build_cost	= 300
-;upkeep		= 0
-;sabotage	= 0
-;sound		= "w_great_wall"
-;sound_alt	= "w_generic"
-;helptext	= _("\
+;build_cost      = 300
+;upkeep          = 0
+;sabotage        = 0
+;sound           = "w_great_wall"
+;sound_alt       = "w_generic"
+;helptext        = _("\
 ;Works as a City Wall in all your cities.\
 ;")
 ; NOTE:
@@ -1438,8 +1492,9 @@ reqs	=
       "Tech", "Pottery", "Player", TRUE
       "Building", "Oracle", "Player", FALSE
     }
-graphic	= "b.hanging_gardens"
-graphic_alt	= "-"
+graphic         = "b.hanging_gardens"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range", "survives"
     "Tech", "Railroad", "World", TRUE
@@ -1459,23 +1514,24 @@ Makes one content citizen happy in every allied city. Makes two extra\
 ")
 
 ;[building_hoover_dam]
-;name		= _("Hoover Dam")
-;genus		= "GreatWonder"
+;name            = _("Hoover Dam")
+;genus           = "GreatWonder"
 ;reqs	=
 ;    { "type", "name", "range"
 ;      "Tech", "Electronics", "Player"
 ;    }
-;graphic	= "b.hoover_dam"
-;graphic_alt	= "-"
-;obsolete_by	=
+;graphic         = "b.hoover_dam"
+;graphic_alt     = "-"
+;graphic_alt2    = "-"
+;obsolete_by     =
 ;  { "type", "name", "range"
 ;  }
-;build_cost	= 600
-;upkeep		= 0
-;sabotage	= 0
-;sound		= "w_hoover_dam"
-;sound_alt	= "w_generic"
-;helptext	= _("\
+;build_cost      = 600
+;upkeep          = 0
+;sabotage        = 0
+;sound           = "w_hoover_dam"
+;sound_alt       = "w_generic"
+;helptext        = _("\
 ;Works as if you had a Hydro Plant in every city.  (This reduces\
 ; pollution and increases the effects of Factories and Mfg. Plants.)\
 ;")
@@ -1487,8 +1543,9 @@ reqs	=
     { "type", "name", "range"
       "Tech", "Theory of Gravity", "Player"
     }
-graphic	= "b.isaac_newtons_college"
-graphic_alt	= "-"
+graphic         = "b.isaac_newtons_college"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -1509,8 +1566,9 @@ reqs	=
     { "type", "name", "range"
       "Tech", "Theology", "Player"
     }
-graphic	= "b.js_bachs_cathedral"
-graphic_alt	= "-"
+graphic         = "b.js_bachs_cathedral"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -1531,8 +1589,9 @@ reqs	=
     { "type", "name", "range"
       "Tech", "Engineering", "Player"
     }
-graphic	= "b.king_richards_crusade"
-graphic_alt	= "-"
+graphic         = "b.king_richards_crusade"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range", "survives"
     "Tech", "Industrialization", "World", TRUE
@@ -1554,8 +1613,9 @@ reqs	=
     { "type", "name", "range"
       "Tech", "Physics", "Player"
     }
-graphic	= "b.leonardos_workshop"
-graphic_alt	= "-"
+graphic         = "b.leonardos_workshop"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range", "survives"
     "Tech", "Automobile", "World", TRUE
@@ -1577,8 +1637,9 @@ reqs	=
       "Tech", "Seafaring", "Player"
       "TerrainClass", "Oceanic", "Adjacent"
     }
-graphic	= "b.lighthouse"
-graphic_alt	= "-"
+graphic         = "b.lighthouse"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range", "survives"
     "Tech", "Physics", "World", TRUE
@@ -1601,8 +1662,9 @@ reqs	=
       "Tech", "Navigation", "Player"
       "TerrainClass", "Oceanic", "Adjacent"
     }
-graphic	= "b.magellans_expedition"
-graphic_alt	= "-"
+graphic         = "b.magellans_expedition"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -1623,8 +1685,9 @@ reqs	=
     { "type", "name", "range"
       "Tech", "Nuclear Fission", "Player"
     }
-graphic	= "b.manhattan_project"
-graphic_alt	= "-"
+graphic         = "b.manhattan_project"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -1643,8 +1706,9 @@ reqs	=
     { "type", "name", "range"
       "Tech", "Trade", "Player"
     }
-graphic	= "b.marco_polos_embassy"
-graphic_alt	= "-"
+graphic         = "b.marco_polos_embassy"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range", "survives"
     "Tech", "Communism", "World", TRUE
@@ -1659,22 +1723,24 @@ The player who owns it gets an embassy with all players one has ever met.\
 ")
 
 ;[building_michelangelos_chapel]
-;name		= _("Michelangelo's Chapel")
+;name            = _("Michelangelo's Chapel")
+;genus           = "GreatWonder"
 ;reqs	=
 ;    { "type", "name", "range"
 ;      "Tech", , "Player"
 ;    }
-;graphic	= "b.michelangelos_chapel"
-;graphic_alt	= "-"
-;obsolete_by	=
+;graphic         = "b.michelangelos_chapel"
+;graphic_alt     = "-"
+;graphic_alt2    = "-"
+;obsolete_by     =
 ;  { "type", "name", "range"
 ;  }
-;build_cost	= 400
-;upkeep		= 0
-;sabotage	= 0
-;sound		= "w_michelangelos_chapel"
-;sound_alt	= "w_generic"
-;helptext	= _("\
+;build_cost      = 400
+;upkeep          = 0
+;sabotage        = 0
+;sound           = "w_michelangelos_chapel"
+;sound_alt       = "w_generic"
+;helptext        = _("\
 ;Counts as having a Cathedral in each of your cities.  This makes 3\
 ; unhappy citizens content in each city.  The discovery of Theology\
 ; increases the effect of a Cathedral, making an additional unhappy\
@@ -1691,8 +1757,9 @@ reqs	=
       "Tech", "Mysticism", "Player", TRUE
       "Building", "Hanging Gardens", "Player", FALSE
     }
-graphic	= "b.oracle"
-graphic_alt	= "-"
+graphic         = "b.oracle"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range", "survives"
     "Tech", "Theology", "World", TRUE
@@ -1715,6 +1782,7 @@ reqs	=
     }
 graphic         = "b.pentagon"
 graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -1734,8 +1802,9 @@ reqs	=
     { "type", "name", "range"
       "Tech", "Masonry", "Player"
     }
-graphic	= "b.pyramids"
-graphic_alt	= "-"
+graphic         = "b.pyramids"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -1752,23 +1821,24 @@ Affects all allied players.\
 ")
 
 ;[building_seti_program]
-;name		= _("SETI Program")
-;genus		= "GreatWonder"
+;name            = _("SETI Program")
+;genus           = "GreatWonder"
 ;reqs	=
 ;    { "type", "name", "range"
 ;      "Tech", , "Player"
 ;    }
-;graphic	= "b.seti_program"
-;graphic_alt	= "-"
-;obsolete_by	=
+;graphic         = "b.seti_program"
+;graphic_alt     = "-"
+;graphic_alt2    = "-"
+;obsolete_by     =
 ;  { "type", "name", "range"
 ;  }
-;build_cost	= 600
-;upkeep		= 0
-;sabotage	= 0
-;sound		= "w_seti_program"
-;sound_alt	= "w_generic"
-;helptext	= _("\
+;build_cost      = 600
+;upkeep          = 0
+;sabotage        = 0
+;sound           = "w_seti_program"
+;sound_alt       = "w_generic"
+;helptext        = _("\
 ;Counts as having a Research Lab in all of your cities.\
 ;")
 
@@ -1780,8 +1850,9 @@ reqs	=
     { "type", "name", "range"
       "Tech", "Medicine", "Player"
     }
-graphic	= "b.shakespeares_theatre"
-graphic_alt	= "-"
+graphic         = "b.shakespeares_theatre"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -1802,8 +1873,9 @@ reqs	=
     { "type", "name", "range"
       "Tech", "Democracy", "Player"
     }
-graphic	= "b.statue_of_liberty"
-graphic_alt	= "-"
+graphic         = "b.statue_of_liberty"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -1824,8 +1896,9 @@ reqs	=
     { "type", "name", "range"
       "Tech", "Feudalism", "Player"
     }
-graphic	= "b.sun_tzus_war_academy"
-graphic_alt	= "-"
+graphic         = "b.sun_tzus_war_academy"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -1848,8 +1921,9 @@ reqs	=
     { "type", "name", "range"
       "Tech", "Communism", "Player"
     }
-graphic	= "b.united_nations"
-graphic_alt	= "-"
+graphic         = "b.united_nations"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -1863,23 +1937,24 @@ All allied units regain two extra hitpoints per turn.\
 ")
 
 ;[building_womens_suffrage]
-;name		= _("Women's Suffrage")
-;genus		= "GreatWonder"
+;name            = _("Women's Suffrage")
+;genus           = "GreatWonder"
 ;reqs	=
 ;    { "type", "name", "range"
 ;      "Tech", "Industrialization", "Player"
 ;    }
-;graphic	= "b.womens_suffrage"
-;graphic_alt	= "-"
-;obsolete_by	=
+;graphic         = "b.womens_suffrage"
+;graphic_alt     = "-"
+;graphic_alt2    = "-"
+;obsolete_by     =
 ;  { "type", "name", "range"
 ;  }
-;build_cost	= 600
-;upkeep		= 0
-;sabotage	= 0
-;sound		= "w_womens_suffrage"
-;sound_alt	= "w_generic"
-;helptext	= _("\
+;build_cost      = 600
+;upkeep          = 0
+;sabotage        = 0
+;sound           = "w_womens_suffrage"
+;sound_alt       = "w_generic"
+;helptext        = _("\
 ;Counts as a Police Station in every city.  (That is, for each city,\
 ; reduces unhappiness for military units outside the city by 2 under\
 ; Democracy and 1 under Republic.  This wonder has no effect under\
@@ -1897,8 +1972,9 @@ reqs	=
     { "type", "name", "range"
 ;      "Tech", "The Corporation", "Player"
     }
-graphic	= "b.capitalization"
-graphic_alt	= "-"
+graphic         = "b.capitalization"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
   }

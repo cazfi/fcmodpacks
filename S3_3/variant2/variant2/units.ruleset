@@ -335,13 +335,13 @@ flags         = "Unreachable", "DoesntOccupyTile", "HutFrighten"
 ;                 "ZOC" flag
 ; "HasNoZOC"    = unit has no Zone of Control (ZOC), thus any unit can move
 ;                 around it freely
-; "NonMil"     = a non-military unit: no attacks; no martial law; can enter
+; "NonMil"      = a non-military unit: no attacks; no martial law; can enter
 ;                 peaceful borders; DoesntOccupyTile
 ; "IgTer"       = use constant move cost defined in igter_cost (terrain.ruleset)
 ;                 rather than terrain/road etc cost, unless terrain cost is
 ;                 less
-; "FieldUnit"	= cause unhappiness even when not being aggressive
-; "Settlers"	= can irrigate and build roads
+; "FieldUnit"   = cause unhappiness even when not being aggressive
+; "Settlers"    = can irrigate and build roads
 ; "Diplomat"    = can defend against diplomat actions (see diplchance
 ;                 server option)
 ; "Spy"         = strong in diplomatic battles. _Must_ be "Diplomat" also
@@ -368,15 +368,12 @@ flags         = "Unreachable", "DoesntOccupyTile", "HutFrighten"
 ; "NoHome"      = this unit is built with no homecity, free of all upkeep, and
 ;                 therefore will not revolt along with its city of origin should
 ;                 it be incited
-; "NoVeteran"   = this unit cannot gain veteran levels through experience
-;                 (as if both base_raise_chance and work_raise_chance were zero);
-;                 it can still gain veterancy through Veteran_Build, etc
 ; "CityBuster"  = this unit has double firepower against cities
 ; "NoBuild"     = this unit cannot be built
-; "BadWallAttacker"    = the firepower of this unit is set to 1 if
+; "BadWallAttacker" = the firepower of this unit is set to 1 if
 ;                 attacking a city
 ;                 defended by a city wall (or other city building defense)
-; "BadCityDefender"    = if attacked while in a city, firepower is set to 1
+; "BadCityDefender" = if attacked while in a city, firepower is set to 1
 ;                 and firepower of attacker is doubled (the Pearl Harbour
 ;                 rule)
 ; "BarbarianOnly" = only barbarians can build this unit
@@ -438,7 +435,7 @@ flags         = "Unreachable", "DoesntOccupyTile", "HutFrighten"
 ;                           researched its tech requirements
 ; "BarbarianBuild"        = can be built by barbarians
 ; "BarbarianBuildTech"    = can be built by barbarians if someone has
-;                        researched its tech requirements
+;                           researched its tech requirements
 ; "BarbarianLeader"       = this unit is the barbarian leader (only one)
 ; "BarbarianSea"          = can be created as a barbarian that disembarks from a barbarian boat
 ; "BarbarianSeaTech"      = can be created as a barbarian that disembarks from a barbarian boat
