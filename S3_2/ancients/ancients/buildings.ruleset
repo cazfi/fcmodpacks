@@ -40,8 +40,9 @@ building_flags =
 ;                 or "Convert".
 ; reqs		= requirements to build the building (see effects.ruleset
 ;		  and README.effects for help on requirements)
-; graphic	= icon of improvement (used in city dialog)
-; graphic_alt	= alternate icon of improvement
+; graphic       = icon of improvement (used in city dialog)
+; graphic_alt   = alternate icon of improvement
+; graphic_alt2  = second alternative icon.
 ; obsolete_by	= requirements for the building to become obsolete
 ; build_cost	= production shields required to build
 ; upkeep	= monetary upkeep value
@@ -72,8 +73,9 @@ reqs	=
     { "type", "name", "range"
       "Tech", "Bridge Building", "Player"
     }
-graphic	= "b.aqueduct"
-graphic_alt	= "-"
+graphic         = "b.aqueduct"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
     "tech", "Dark Age", "Player"
@@ -96,8 +98,9 @@ reqs	=
       "Tech", "Usury", "Player"
       "Building", "Caravanserai", "City"
     }
-graphic	= "b.bank"
-graphic_alt	= "-"
+graphic         = "b.bank"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -119,8 +122,9 @@ reqs	=
     { "type", "name", "range"
       "Tech", "Warrior Code", "Player"
     }
-graphic	= "b.barracks_i"
-graphic_alt	= "-"
+graphic         = "b.barracks_i"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
     "Tech", "Tactics", "Player"
@@ -149,8 +153,9 @@ reqs	=
     { "type", "name", "range"
       "Tech", "Tactics", "Player"
     }
-graphic	= "b.barracks_ii"
-graphic_alt	= "b.barracks_i"
+graphic         = "b.barracks_ii"
+graphic_alt     = "b.barracks_i"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
     "Tech", "Dark Age", "Player"
@@ -178,8 +183,9 @@ reqs	=
     { "type", "name", "range"
       "Tech", "Chivalry", "Player"
     }
-graphic	= "b.barracks_iii"
-graphic_alt	= "b.barracks_i"
+graphic         = "b.barracks_iii"
+graphic_alt     = "b.barracks_i"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -205,8 +211,9 @@ reqs	=
     { "type", "name", "range"
       "Tech", "Dark Age", "Player"
     }
-graphic	= "b.cathedral"
-graphic_alt	= "-"
+graphic         = "b.cathedral"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -230,8 +237,9 @@ reqs	=
     { "type", "name", "range"
       "Tech", "Masonry", "Player"
     }
-graphic	= "b.city_walls"
-graphic_alt	= "-"
+graphic         = "b.city_walls"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -262,8 +270,9 @@ reqs	=
     { "type", "name", "range"
       "Tech", "Construction", "Player"
     }
-graphic	= "b.colosseum"
-graphic_alt	= "-"
+graphic         = "b.colosseum"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
     "tech", "Monotheism", "Player"
@@ -284,8 +293,9 @@ reqs	=
     { "type", "name", "range"
       "Tech", "Principate", "Player"
     }
-graphic	= "b.courthouse"
-graphic_alt	= "-"
+graphic         = "b.courthouse"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
     "tech", "Dark Age", "Player"
@@ -310,8 +320,9 @@ reqs	=
     { "type", "name", "range"
       "Tech", "Engineering", "Player"
     }
-graphic	= "b.factory"
-graphic_alt	= "-"
+graphic         = "b.factory"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -332,8 +343,9 @@ reqs	=
     { "type", "name", "range"
       "Tech", "Bookkeeping", "Player"
     }
-graphic	= "b.granary"
-graphic_alt	= "-"
+graphic         = "b.granary"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -356,8 +368,9 @@ reqs	=
       "Tech", "Sailing", "Player"
       "Extra", "River", "Adjacent"
     }
-graphic	= "b.fish_market"
-graphic_alt	= "b.harbour"
+graphic         = "b.fish_market"
+graphic_alt     = "b.harbour"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -379,8 +392,9 @@ reqs	=
       "Tech", "Sailing", "Player"
       "TerrainClass", "Oceanic", "Adjacent"
     }
-graphic	= "b.fish_market"
-graphic_alt	= "b.harbour"
+graphic         = "b.fish_market"
+graphic_alt     = "b.harbour"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -401,8 +415,9 @@ reqs	=
     { "type", "name", "range"
       "Tech", "Papyrus", "Player"
     }
-graphic	= "b.library"
-graphic_alt	= "-"
+graphic         = "b.library"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
     "tech", "Dark Age", "Player"
@@ -424,8 +439,9 @@ reqs	=
     { "type", "name", "range"
       "Tech", "Caravan", "Player"
     }
-graphic	= "b.caravanserai"
-graphic_alt	= "b.marketplace"
+graphic         = "b.caravanserai"
+graphic_alt     = "b.marketplace"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -447,8 +463,9 @@ reqs	=
       "Tech", "Navigation", "Player"
       "TerrainClass", "Oceanic", "Adjacent"
     }
-graphic	= "b.harbour"
-graphic_alt	= "b.offshore_platform"
+graphic         = "b.harbour"
+graphic_alt     = "b.offshore_platform"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -470,8 +487,9 @@ reqs	=
     { "type", "name", "range"
       "Tech", "Masonry", "Player"
     }
-graphic	= "b.palace"
-graphic_alt	= "-"
+graphic         = "b.palace"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -517,8 +535,9 @@ reqs	=
       "Tech", "Construction", "Player"
       "TerrainClass", "Oceanic", "Adjacent"
     }
-graphic	= "b.war_harbour"
-graphic_alt	= "b.port_facility"
+graphic         = "b.war_harbour"
+graphic_alt     = "b.port_facility"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
     "tech", "Dark Age", "Player"
@@ -544,8 +563,9 @@ reqs	=
       "Building", "Aqueduct", "City"
       "Extra", "River", "Adjacent"
     }
-graphic	= "b.sewer_system"
-graphic_alt	= "-"
+graphic         = "b.sewer_system"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
     "tech", "Dark Age", "Player"
@@ -567,8 +587,9 @@ reqs	=
     { "type", "name", "range"
       "Tech", "Polytheism", "Player"
     }
-graphic	= "b.temple"
-graphic_alt	= "-"
+graphic         = "b.temple"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
     "tech", "Dark Age", "Player"
@@ -591,8 +612,9 @@ reqs	=
     { "type", "name", "range"
       "Tech", "University", "Player"
     }
-graphic	= "b.university"
-graphic_alt	= "-"
+graphic         = "b.university"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -614,8 +636,9 @@ reqs	=
     { "type", "name", "range"
       "Tech", "Siegecraft", "Player"
     }
-graphic	= "b.colossus"
-graphic_alt	= "-"
+graphic         = "b.colossus"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range", "survives"
     "tech", "Dark Age", "World", TRUE
@@ -644,8 +667,9 @@ reqs	=
       "Tech", "Papyrus", "Player"
       "Building", "Library", "City"
     }
-graphic	= "b.great_library"
-graphic_alt	= "-"
+graphic         = "b.great_library"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range", "survives"
     "tech", "Dark Age", "World", TRUE
@@ -667,8 +691,9 @@ reqs	=
     { "type", "name", "range"
       "Tech", "Construction", "Player"
     }
-graphic	= "b.great_wall"
-graphic_alt	= "-"
+graphic         = "b.great_wall"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range", "survives"
     "tech", "Dark Age", "World", TRUE
@@ -691,8 +716,9 @@ reqs	=
       "Tech", "Masonry", "Player"
       "Extra", "River", "Adjacent"
     }
-graphic	= "b.hanging_gardens"
-graphic_alt	= "-"
+graphic         = "b.hanging_gardens"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range", "survives"
     "tech", "Dark Age", "World", TRUE
@@ -719,8 +745,9 @@ reqs	=
       "Tech", "Theology", "Player"
       "Building", "Cathedral", "City"
     }
-graphic	= "b.pilgrimage_site"
-graphic_alt	= "b.cathedral"
+graphic         = "b.pilgrimage_site"
+graphic_alt     = "b.cathedral"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -741,8 +768,9 @@ reqs	=
       "Tech", "Sailing", "Player"
       "TerrainClass", "Oceanic", "Adjacent"
     }
-graphic	= "b.lighthouse"
-graphic_alt	= "-"
+graphic         = "b.lighthouse"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -765,8 +793,9 @@ reqs	=
       "Tech", "Navigation", "Player"
       "TerrainClass", "Oceanic", "Adjacent"
     }
-graphic	= "b.sataspes_expedition"
-graphic_alt	= "b.magellans_expedition"
+graphic         = "b.sataspes_expedition"
+graphic_alt     = "b.magellans_expedition"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range", "survives"
     "tech", "Dark Age", "World", TRUE
@@ -793,8 +822,9 @@ reqs	=
       "Tech", "Polytheism", "Player"
       "Building", "Temple", "City"
     }
-graphic	= "b.oracle"
-graphic_alt	= "-"
+graphic         = "b.oracle"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range", "survives"
     "tech", "Dark Age", "World", TRUE
@@ -816,8 +846,9 @@ reqs	=
       "Tech", "Geometry", "Player"
       "Extra", "River", "Adjacent"
     }
-graphic	= "b.pyramids"
-graphic_alt	= "-"
+graphic         = "b.pyramids"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range", "survives"
     "tech", "Constitution", "World", TRUE
@@ -841,8 +872,9 @@ reqs	=
     { "type", "name", "range"
       "Tech", "Coinage", "Player"
     }
-graphic	= "b.capitalization"
-graphic_alt	= "-"
+graphic         = "b.capitalization"
+graphic_alt     = "-"
+graphic_alt2    = "-"
 obsolete_by	=
   { "type", "name", "range"
   }
