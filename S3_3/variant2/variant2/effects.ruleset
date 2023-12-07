@@ -1504,7 +1504,7 @@ reqs	=
       "Building", "Granary",  "City"
     }
 
-[effect_harbour]
+[effect_harbor]
 type    = "Output_Add_Tile"
 value	= 1
 reqs	=
@@ -2860,7 +2860,7 @@ value   = 2
 reqs    =
     { "type", "name", "range"
       "Achievement", "Map Known 5 pct", "Player"
-      "UnitFlag", "Settlers", "Local"
+      "UnitFlag", "Workers", "Local"
     }
 
 [effect_map20pct]
@@ -3184,6 +3184,24 @@ reqs    =
     { "type",     "name",      "range", "present"
       "Action",   "Attack",    "Local", TRUE
       "UnitFlag", "OneAttack", "Local", FALSE
+    }
+
+[effect_action_success_ransom_one_attack]
+type    = "Action_Success_Actor_Move_Cost"
+value   = 65535
+reqs    =
+    { "type",     "name",           "range", "quiet"
+      "Action",   "Collect Ransom", "Local", TRUE
+      "UnitFlag", "OneAttack",      "Local", TRUE
+    }
+
+[effect_action_success_ransom_normal]
+type    = "Action_Success_Actor_Move_Cost"
+value   = 3
+reqs    =
+    { "type",     "name",           "range", "present"
+      "Action",   "Collect Ransom", "Local", TRUE
+      "UnitFlag", "OneAttack",      "Local", FALSE
     }
 
 [effect_unit_shield_value_recycle]

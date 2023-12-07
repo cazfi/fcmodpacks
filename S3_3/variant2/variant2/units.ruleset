@@ -112,7 +112,7 @@ veteran_move_bonus = 0, 0, 0, 0
 ; min_speed           = Minimum speed after damage and effects (whole movement points)
 ; hp_loss_pct         = Hitpoints lost each turn if unit not in city or native base
 ; non_native_def_pct  = Defense power percentage applying when defending on
-;                       non-native terrain (such as ship in harbour)
+;                       non-native terrain (such as ship in harbor)
 ; flags               = List of unit class flags (from the following list; you
 ;                       cannot add custom unit class flags)
 ; helptext            = optional help text string; should escape all raw newlines
@@ -244,7 +244,7 @@ flags         = "Unreachable", "DoesntOccupyTile", "HutFrighten"
 ; convert_time  = number of movement points it takes to convert to
 ;                 another unit type
 ; class         = One of the classes listed above
-; transport_cap = Number of units (ground, or air/missiles, depending on flags)
+; transport_cap = Max number of units that can be transported.
 ; fuel          = Number of turns unit can spend outside refuel points.
 ;                 If more time passes without unit refueling over turn change,
 ;                 they are lost. If this is zero, unit has no need to refuel
@@ -341,7 +341,7 @@ flags         = "Unreachable", "DoesntOccupyTile", "HutFrighten"
 ;                 rather than terrain/road etc cost, unless terrain cost is
 ;                 less
 ; "FieldUnit"   = cause unhappiness even when not being aggressive
-; "Settlers"    = can irrigate and build roads
+; "Workers"     = can irrigate and build roads
 ; "Diplomat"    = can defend against diplomat actions (see diplchance
 ;                 server option)
 ; "Spy"         = strong in diplomatic battles. _Must_ be "Diplomat" also
@@ -399,6 +399,13 @@ flags         = "Unreachable", "DoesntOccupyTile", "HutFrighten"
 ;                 is enabled and the unit class is unreachable
 ; "RandomMovement" = Unit makes random movements in the beginning of the turn,
 ;                 player has no control over its movement
+; "Flagless"      = Unit national flag is not shown on client, except for
+;                 the owner.
+;                 Note that currently the information is available for
+;                 the client anyway, so this is not a rule like a feature yet.
+; "ProvidesRansom" = Enemies can collect ransom from the unit. This only happens
+;                 if all the units on tile have this flag - any other kind of
+;                 unit protects them.
 ;
 ; Following actions require extra fields:
 ;  "Attack" and "Suicide Attack"
@@ -516,7 +523,7 @@ uk_shield     = 1
 uk_food       = 0
 uk_gold       = 0
 tp_defense    = "Alight"
-flags         = "Settlers", "NonMil", "Airbase", "HasNoZOC"
+flags         = "Workers", "NonMil", "Airbase", "HasNoZOC"
 roles         = "WorkerStartUnit", "Settlers"
 veteran_names =
   _("beginner"), _("seasoned"), _("senior")
@@ -570,7 +577,7 @@ uk_shield     = 1
 uk_food       = 0
 uk_gold       = 0
 tp_defense    = "Alight"
-flags         = "Settlers", "NonMil", "Transform", "Airbase", "HasNoZOC"
+flags         = "Workers", "NonMil", "Transform", "Airbase", "HasNoZOC"
 roles         = "WorkerStartUnit", "Settlers"
 veteran_names =
   _("beginner"), _("seasoned"), _("senior")
@@ -2326,7 +2333,7 @@ The Freight Ship is used to establish traderoutes to ocean cities\
 ;uk_food       = 0
 ;uk_gold       = 0
 ;tp_defense    = "Alight"
-;flags         = "Settlers", "Cant_Fortify", "SeaSettlers"
+;flags         = "Workers", "Cant_Fortify", "SeaSettlers"
 ;helptext      = _("\
 ;Coastal equivalent of Worker unit.\
 ;")
@@ -2360,7 +2367,7 @@ The Freight Ship is used to establish traderoutes to ocean cities\
 ;uk_food       = 0
 ;uk_gold       = 0
 ;tp_defense    = "Alight"
-;flags         = "Settlers", "Cant_Fortify", "SeaSettlers"
+;flags         = "Workers", "Cant_Fortify", "SeaSettlers"
 ;helptext      = _("\
 ;Sea equivalent of Worker unit.\
 ;")
@@ -2890,7 +2897,7 @@ uk_shield     = 0
 uk_food       = 0
 uk_gold       = 0
 tp_defense    = "Alight"
-flags         = "IgZOC", "NonMil",
+flags         = "IgZOC", "NonMil", "ProvidesRansom",
                 "EvacuateFirst", "NoHome", "NoBuild"
 roles         = "BarbarianLeader"
 helptext      = _("\
