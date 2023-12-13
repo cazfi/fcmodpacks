@@ -369,8 +369,8 @@ reqs	=
       "Extra", "River", "Adjacent"
     }
 graphic         = "b.fish_market"
-graphic_alt     = "b.harbour"
-graphic_alt2    = "-"
+graphic_alt     = "b.harbor"
+graphic_alt2    = "b.harbour"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -380,7 +380,7 @@ sabotage	= 50
 sound		= "b_fish_harbour"
 sound_alt	= "b_harbour"
 helptext	= _("\
-Gives one extra food resource on all River tiles.  The city needs\
+Gives one extra food resource on all River tiles. The city needs\
  to be riverine to build this improvement.\
 ")
 
@@ -393,8 +393,8 @@ reqs	=
       "TerrainClass", "Oceanic", "Adjacent"
     }
 graphic         = "b.fish_market"
-graphic_alt     = "b.harbour"
-graphic_alt2    = "-"
+graphic_alt     = "b.harbor"
+graphic_alt2    = "b.harbour"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -528,7 +528,8 @@ If the capital is in a dangerous location, or a more central capital\
 ")
 
 [building_war_harbour]
-name		= _("War Harbour")
+name		= _("War Harbor")
+rule_name       = "War Harbour"
 genus		= "Improvement"
 reqs	=
     { "type", "name", "range"
@@ -782,7 +783,7 @@ sound_alt	= "w_generic"
 helptext	= _("\
 Allows a city to build veteran sea units and gives all your sea units \
 1 additional movement point. \
-If city has also War Harbour, sea units are produced Hardened. \
+If city has also War Harbor, sea units are produced Hardened. \
 ")
 
 [building_sataspes_expedition]

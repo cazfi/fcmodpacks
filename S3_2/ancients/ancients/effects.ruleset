@@ -1212,7 +1212,7 @@ reqs	=
       "OutputType", "Luxury", "Local"
     }
 
-[effect_harbour]
+[effect_harbor]
 type    = "Output_Add_Tile"
 value	= 1
 reqs	=
@@ -1291,7 +1291,7 @@ reqs   =
       "OutputType", "Shield", "Local"
     }
 
-[effect_war_harbour]
+[effect_war_harbor]
 type    = "Veteran_Build"
 value	= 1
 reqs	=
@@ -1301,7 +1301,7 @@ reqs	=
       "Building", "Lighthouse", "Player", FALSE
     }
 
-[effect_war_harbour_1]
+[effect_war_harbor_1]
 type    = "HP_Regen"
 value	= 100
 reqs	=
@@ -1920,6 +1920,24 @@ reqs    =
     { "type",     "name",      "range", "present"
       "Action",   "Attack",    "Local", TRUE
       "UnitFlag", "OneAttack", "Local", FALSE
+     }
+
+[effect_action_success_ransom_one_attack]
+type    = "Action_Success_Actor_Move_Cost"
+value   = 65535
+reqs    =
+    { "type",     "name",           "range", "quiet"
+      "Action",   "Collect Ransom", "Local", TRUE
+      "UnitFlag", "OneAttack",      "Local", TRUE
+    }
+
+[effect_action_success_ransom_normal]
+type    = "Action_Success_Actor_Move_Cost"
+value   = 3
+reqs    =
+    { "type",     "name",           "range", "present"
+      "Action",   "Collect Ransom", "Local", TRUE
+      "UnitFlag", "OneAttack",      "Local", FALSE
      }
 
 [effect_unit_shield_value_disband_recover]
