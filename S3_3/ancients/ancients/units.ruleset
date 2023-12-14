@@ -93,7 +93,7 @@ veteran_move_bonus = 0, 0, 0, 0
 ; min_speed     = Minimum speed after damage and effects (whole movement points)
 ; hp_loss_pct   = Hitpoints lost each turn if unit not in city or native base
 ; non_native_def_pct = Defense power percentage applying when defending on
-;                      non-native terrain (such as ship in harbour)
+;                      non-native terrain (such as ship in harbor)
 ; flags         = List of unit class flags (from the following list; you
 ;                 cannot add custom unit class flags)
 ; helptext      = optional help text string; should escape all raw newlines
@@ -187,7 +187,7 @@ flags         = "TerrainSpeed", "DamageSlows", "AttackNonNative", "AttFromNonNat
 ; convert_time  = number of movement points it takes to convert to
 ;                 another unit type
 ; class         = One of the classes listed above
-; transport_cap = Number of units (ground, or air/missiles, depending on flags)
+; transport_cap = Max number of units that can be transported.
 ; fuel          = Number of turns unit can spend outside refuel points.
 ;                 If more time passes without unit refueling over turn change,
 ;                 they are lost. If this is zero, unit has no need to refuel
@@ -340,6 +340,13 @@ flags         = "TerrainSpeed", "DamageSlows", "AttackNonNative", "AttFromNonNat
 ;                 is enabled and the unit class is unreachable
 ; "RandomMovement" = Unit makes random movements in the beginning of the turn,
 ;                 player has no control over its movement
+; "Flagless"      = Unit national flag is not shown on client, except for
+;                 the owner.
+;                 Note that currently the information is available for
+;                 the client anyway, so this is not a rule like a feature yet.
+; "ProvidesRansom" = Enemies can collect ransom from the unit. This only happens
+;                 if all the units on tile have this flag - any other kind of
+;                 unit protects them.
 ;
 ; Following actions require extra fields:
 ;  "Attack" and "Suicide Attack"
@@ -381,7 +388,7 @@ flags         = "TerrainSpeed", "DamageSlows", "AttackNonNative", "AttFromNonNat
 ; "BarbarianSea"          = can be created as a barbarian that disembarks from a barbarian boat
 ; "BarbarianSeaTech"      = can be created as a barbarian that disembarks from a barbarian boat
 ;                           if someone has researched its tech requirements
-; "Settlers"              = can irrigate and build roads
+; "Workers"               = can irrigate and build roads
 ; "Hunter"                = AI hint: good for hunting other units
 ; "CitiesStartUnit"       = Gets granted as 'c' startunit
 ; "WorkerStartUnit"       = Gets granted as 'w' startunit
@@ -472,7 +479,7 @@ uk_shield     = 1
 uk_food       = 0
 uk_gold       = 0
 tp_defense    = "Alight"
-flags         = "Settlers", "Cant_Fortify", "NonMil"
+flags         = "Workers", "Cant_Fortify", "NonMil"
 ; No veteran levels (level name is never displayed)
 veteran_names = _("regular")
 veteran_base_raise_chance = 0
@@ -746,7 +753,7 @@ uk_shield     = 0
 uk_food       = 0
 uk_gold       = 0
 tp_defense    = "Alight"
-flags         = "IgZOC", "NonMil", "Unbribable",
+flags         = "IgZOC", "NonMil", "Unbribable", "ProvidesRansom",
                 "EvacuateFirst", "SuperSpy", "NoHome", "NoBuild"
 ; No veteran levels (level name is never displayed)
 veteran_names = _("regular")

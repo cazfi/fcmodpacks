@@ -369,8 +369,8 @@ reqs	=
       "Extra", "River", "Adjacent"
     }
 graphic         = "b.fish_market"
-graphic_alt     = "b.harbour"
-graphic_alt2    = "-"
+graphic_alt     = "b.harbor"
+graphic_alt2    = "b.harbour"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -380,7 +380,7 @@ sabotage	= 50
 sound		= "b_fish_harbour"
 sound_alt	= "b_harbour"
 helptext	= _("\
-Gives one extra food resource on all River tiles.  The city needs\
+Gives one extra food resource on all River tiles. The city needs\
  to be riverine to build this improvement.\
 ")
 
@@ -393,8 +393,8 @@ reqs	=
       "TerrainClass", "Oceanic", "Adjacent"
     }
 graphic         = "b.fish_market"
-graphic_alt     = "b.harbour"
-graphic_alt2    = "-"
+graphic_alt     = "b.harbor"
+graphic_alt2    = "b.harbour"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -404,7 +404,7 @@ sabotage	= 50
 sound		= "b_fish_harbour"
 sound_alt	= "b_harbour"
 helptext	= _("\
-Gives one extra food resource on all Ocean tiles.  The city needs\
+Gives one extra food resource on all Ocean tiles. The city needs\
  to be coastal to build this improvement.\
 ")
 
@@ -455,17 +455,18 @@ helptext	= _("\
 Increases the luxury and tax output in a city by 50%.\
 ")
 
-[building_harbour]
-name		= _("Harbour")
+[building_harbor]
+name		= _("Harbor")
+rule_name       = "Harbour"
 genus		= "Improvement"
 reqs	=
     { "type", "name", "range"
       "Tech", "Navigation", "Player"
       "TerrainClass", "Oceanic", "Adjacent"
     }
-graphic         = "b.harbour"
-graphic_alt     = "b.offshore_platform"
-graphic_alt2    = "-"
+graphic         = "b.harbor"
+graphic_alt     = "b.harbour"
+graphic_alt2    = "b.offshore_platform"
 obsolete_by	=
   { "type", "name", "range"
   }
@@ -475,7 +476,7 @@ sabotage	= 50
 sound		= "b_harbour"
 sound_alt	= "b_generic"
 helptext	= _("\
-Adds 1 extra shield resource on all Ocean squares in a city.  The\
+Adds 1 extra shield resource on all Ocean squares in a city. The\
  city needs to be coastal to build this improvement.\
 ")
 
@@ -528,16 +529,17 @@ If the capital is in a dangerous location, or a more central capital\
 ")
 
 [building_war_harbour]
-name		= _("War Harbour")
+name		= _("War Harbor")
+rule_name       = "War Harbour"
 genus		= "Improvement"
 reqs	=
     { "type", "name", "range"
       "Tech", "Construction", "Player"
       "TerrainClass", "Oceanic", "Adjacent"
     }
-graphic         = "b.war_harbour"
-graphic_alt     = "b.port_facility"
-graphic_alt2    = "-"
+graphic         = "b.war_harbor"
+graphic_alt     = "b.war_harbour"
+graphic_alt2    = "b.port_facility"
 obsolete_by	=
   { "type", "name", "range"
     "tech", "Dark Age", "Player"
@@ -782,7 +784,7 @@ sound_alt	= "w_generic"
 helptext	= _("\
 Allows a city to build veteran sea units and gives all your sea units \
 1 additional movement point. \
-If city has also War Harbour, sea units are produced Hardened. \
+If city has also War Harbor, sea units are produced Hardened. \
 ")
 
 [building_sataspes_expedition]
