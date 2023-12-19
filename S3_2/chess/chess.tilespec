@@ -22,6 +22,9 @@ normal_tile_height = 60
 small_tile_width   = 16
 small_tile_height  = 20
 
+; The height svg flags should be drawn to, if they are used
+svg_height = 44
+
 ; Basic tile style.
 type = "overhead"
 is_hex = FALSE
