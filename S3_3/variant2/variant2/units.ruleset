@@ -28,7 +28,7 @@ options = "+Freeciv-ruleset-3.3-Devel-2023.Feb.24"
 format_version = 40
 
 [control]
-; Names for custom unit type flags. There can be up to 51 of these.
+; Names for custom unit type flags. There can be up to 52 of these.
 ; name          = rule name; In some circumstances user may see this
 ;                 as part of some sentences, so try to make it descriptive
 ;                 and sensible.
@@ -202,7 +202,7 @@ flags         = "Unreachable", "DoesntOccupyTile", "HutFrighten"
 ;
 ; Below: The individual unit types, one per section.
 ;
-; The number can be variable, up to 200.
+; The number can be variable, up to 300.
 ; However for the "official" rulesets, units should not be removed
 ; because that would break backward compatibility with savegames.
 ;
@@ -381,15 +381,7 @@ flags         = "Unreachable", "DoesntOccupyTile", "HutFrighten"
 ; "NewCityGamesOnly" = unit can't be built on scenarios where founding new cities
 ;                 is not allowed. Give this flag to units that would make no sense
 ;                 to have in a game with such a scenario
-; "CanEscape"   = this unit has, given that certain conditions are
-;                 fulfilled, a 50% chance to escape rather than being
-;                 killed when killstack is enabled and the defender of its
-;                 tile is defeated. The conditions are that it has more move
-;                 points than required to move to an adjacent tile plus the
-;                 attackers move points and that the attacker doesn't have
-;                 the "CanKillEscaping" unit type flag.
-; "CanKillEscaping" = an attack from this unit ignores the "CanEscape" unit
-;                 type flag.
+; "CanKillEscaping" = an attack from this unit prevents the "Escape" action.
 ; "Provoking" =   a unit considering to auto attack this unit will choose to
 ;                 do so even if has better odds when defending against it
 ;                 then when attacking it. Applies when the autoattack server
@@ -400,9 +392,8 @@ flags         = "Unreachable", "DoesntOccupyTile", "HutFrighten"
 ; "RandomMovement" = Unit makes random movements in the beginning of the turn,
 ;                 player has no control over its movement
 ; "Flagless"      = Unit national flag is not shown on client, except for
-;                 the owner.
-;                 Note that currently the information is available for
-;                 the client anyway, so this is not a rule like a feature yet.
+;                 the owner. Unit can attack, and it can be attacked,
+;                 regardless of diplomatic pacts between actual unit owners.
 ; "ProvidesRansom" = Enemies can collect ransom from the unit. This only happens
 ;                 if all the units on tile have this flag - any other kind of
 ;                 unit protects them.
