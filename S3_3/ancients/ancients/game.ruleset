@@ -363,6 +363,10 @@ history_interest_pml = 0
 ; of a migration point.
 migration_pml = 50
 
+[world_peace]
+; How many turns of world peace is required for a World Peace Victory
+victory_turns = 20
+
 [calendar]
 ; Year in the beginning of the game
 start_year = -4000
@@ -402,6 +406,7 @@ negative_label = _("BC")
 ;   - "EmptyProdStock"    = Destroy current production
 ;   - "Pollution"         = One tile surrounding city polluted
 ;   - "Fallout"           = One tile surrounding city polluted with fallout
+;   - "Robbery"           = Player loses city's five turn trade worth of gold
 ;
 ; */ <-- avoid gettext warnings
 
@@ -497,6 +502,8 @@ goods_selection = "Arrival"
 ; to_pct                  = Income for the receiving end of the trade route. Default is 100%
 ;                           This value is not used at all in case of bidirectional routes.
 ; onetime_pct             = Onetime bonuses when trade route gets established. Default is 100%
+; select_priority         = Available good with highest select_priority get selected for
+;                           the traderoute, random among the same select_pririty.
 ; priority                = Trade routes get replaced by higher priority goods, or higher
 ;                           trade value when priority is the same.
 ; flags
@@ -506,7 +513,7 @@ goods_selection = "Arrival"
 ;                           goods any more. Bidirectional routes gets cancelled if either
 ;                           one of the involved cities cannot provide goods.
 ;   - "Self-Provided"     = Good requirement (in requirement lists of other rules)
-;                           is fullfilled also for the city exporting, or capable of exporting,
+;                           is fulfilled also for the city exporting, or capable of exporting,
 ;                           the good. Otherwise it would be true only for cities importing the
 ;                           good from elsewhere.
 ; helptext                = Optional help text string; should escape all raw
@@ -527,9 +534,10 @@ priority       = 1
 ; type                   = Type of the clause, one of "Advance", "Gold", "Map", "Seamap",
 ;                          "City", "Ceasefire", "Peace", "Alliance", "Vision", "Embassy",
 ;                          "SharedTiles"
-; giver_reqs             = requirements that the giving side of the clause needs to fulfill
+; giver_reqs             = requirements that the giving side of the clause needs to meet
 ;                          (see effects.ruleset and README.effects for help on requirements)
-; receiver_reqs          = requirements that the receiving side of the clause needs to fulfill
+; receiver_reqs          = requirements that the receiving side of the clause needs to meet
+; either_reqs            = requirements that either side of the clause transaction would need to meet
 ;
 ; */ <-- avoid gettext warnings
 

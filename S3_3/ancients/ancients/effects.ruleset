@@ -721,16 +721,18 @@ reqs	=
 type    = "Output_Penalty_Tile"
 value   = 2
 reqs	=
-    { "type",       "name",      "range"
-      "Gov", "Anarchy", "Player"
+    { "type",       "name",       "range",  "present"
+      "Gov",        "Anarchy",    "Player", TRUE
+      "CityStatus", "Celebration", "City",  FALSE
     }
 
 [effect_gov_tile_penalty_1]
 type    = "Output_Penalty_Tile"
 value   = 2
 reqs	=
-    { "type",       "name",      "range"
-      "Gov", "Despotism", "Player"
+    { "type",       "name",        "range",  "present"
+      "Gov",        "Despotism",   "Player", TRUE
+      "CityStatus", "Celebration", "City",   FALSE
     }
 
 [effect_gov_tile_bonus_0]
@@ -1557,6 +1559,10 @@ reqs    =
 
 [effect_tech_cost_base]
 type    = "Tech_Cost_Factor"
+value   = 1
+
+[effect_tech_leakage]
+type    = "Tech_Leakage"
 value   = 1
 
 ; Cities can always work tiles

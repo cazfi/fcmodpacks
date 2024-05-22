@@ -8,7 +8,7 @@ format_version = 40
 
 ; /* <-- avoid gettext warnings
 ;
-; A specialist is a city citizen who is not a tile worker.  Usually the
+; A specialist is a city citizen who is not a tile worker. Usually the
 ; player can control what specialist each citizen is, so long as the
 ; requirements for that specialist are met.
 ;
@@ -24,7 +24,7 @@ format_version = 40
 ;                 to rename an item after a ruleset has been released, you
 ;                 should set "rule_name" to the original value of "name".
 ; short_name    = one-character "short name" used (for instance) in cityrep;
-;                 should be first character/abbrevation of "name"
+;                 should be first character/abbreviation of "name"
 ; graphic_alt   = fallback graphic tag in case the specialist graphic isn't
 ;                 found. Example value: "specialist.scientist_0"
 ;                 The specialist graphic allow different images based on
