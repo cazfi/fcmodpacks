@@ -24,6 +24,9 @@ normal_tile_height = 64
 small_tile_width   = 15
 small_tile_height  = 20
 
+; The height svg flags should be drawn to, if they are used
+svg_height = 44
+
 ; Basic tile style.
 hex_side = 16
 is_hex = TRUE
@@ -339,6 +342,7 @@ styles =
       "tx.pollution",  "Single2"
       "tx.fallout",    "Single2"
       "tx.village",    "Single1"
+      "tx.nets",       "Single1"
       "base.outpost",  "3Layer"
       "base.fortress", "3Layer"
       "base.airstrip", "3Layer"
