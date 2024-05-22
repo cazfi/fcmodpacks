@@ -93,7 +93,7 @@ format_version = 40
 ;                 information on how much a tech costs
 ;
 ; Special values for req1 and req2 are "None" (first section below)
-; and "Never" (never available).  If only one tech is required,
+; and "Never" (never available). If only one tech is required,
 ; it should be listed as req1.
 ;
 ; As well as custom flags defined above, the following flag strings are
