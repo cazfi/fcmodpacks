@@ -24,7 +24,7 @@ format_version = 30
 ;                 to rename an item after a ruleset has been released, you
 ;                 should set "rule_name" to the original value of "name".
 ; short_name    = one-character "short name" used (for instance) in cityrep;
-;                 should be first character/abbrevation of "name"
+;                 should be first character/abbreviation of "name"
 ; graphic_alt   = fallback graphic tag in case the specialist graphic isn't
 ;                 found. Example value: "specialist.scientist_0"
 ;                 The specialist graphic allow different images based on

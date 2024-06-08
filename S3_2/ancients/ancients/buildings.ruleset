@@ -47,6 +47,9 @@ building_flags =
 ; build_cost	= production shields required to build
 ; upkeep	= monetary upkeep value
 ; sabotage	= percent chance of diplomat sabotage being successful
+; sound         = tag of the sound to play when building finished
+; sound_alt     = alternate sound tag
+; sound_alt2    = second alternative sound tag
 ; flags         = special flag strings
 ;
 ; ** Building flags **
@@ -85,6 +88,7 @@ upkeep		= 2
 sabotage	= 50
 sound		= "b_aqueduct"
 sound_alt	= "b_generic"
+sound_alt2      = "-"
 helptext	= _("\
 Allows a city to grow larger than size 8.  A Sewer System is also\
  required for a city to grow larger than size 12.\
@@ -109,6 +113,7 @@ upkeep		= 3
 sabotage	= 50
 sound		= "b_bank"
 sound_alt	= "b_generic"
+sound_alt2      = "-"
 ; /* xgettext:no-c-format */
 helptext	= _("\
 Together with the Caravanserai improvement, a Bank increases the\
@@ -136,6 +141,7 @@ upkeep		= 1
 sabotage	= 10
 sound		= "b_barracks_i"
 sound_alt	= "b_generic"
+sound_alt2      = "-"
 flags           = "Barracks"
 helptext	= _("\
 With a Barracks, each new land unit built in a city will\
@@ -166,6 +172,7 @@ upkeep		= 1
 sabotage	= 10
 sound		= "b_barracks_ii"
 sound_alt	= "b_generic"
+sound_alt2      = "-"
 flags           = "Barracks"
 helptext	= _("\
 With a Barracks, each new land unit built in a city will\
@@ -194,6 +201,7 @@ upkeep		= 1
 sabotage	= 10
 sound		= "b_barracks_iii"
 sound_alt	= "b_generic"
+sound_alt2      = "-"
 flags           = "Barracks"
 helptext	= _("\
 With a Barracks, each new land unit built in a city will\
@@ -222,6 +230,7 @@ upkeep		= 3
 sabotage	= 50
 sound		= "b_cathedral"
 sound_alt	= "b_generic"
+sound_alt2      = "-"
 helptext	= _("\
 A Cathedral makes 3 unhappy citizens content in a city, making it\
  easier to maintain order in that city.  The discovery of Theology\
@@ -248,6 +257,7 @@ upkeep		= 0
 sabotage	= 10
 sound		= "b_city_walls"
 sound_alt	= "b_generic"
+sound_alt2      = "-"
 helptext	= _("\
 Units in a walled city have their defence strengths tripled against\
  attacks by most ground units.\
@@ -282,6 +292,7 @@ upkeep		= 4
 sabotage	= 50
 sound		= "b_colosseum"
 sound_alt	= "b_generic"
+sound_alt2      = "-"
 helptext	= _("\
 Entertains the citizens of a city, making 3 unhappy citizens content. \
 ")
@@ -305,6 +316,7 @@ upkeep		= 1
 sabotage	= 50
 sound		= "b_courthouse"
 sound_alt	= "b_generic"
+sound_alt2      = "-"
 helptext	= _("\
 Reduces the corruption and waste in a city by 50%, except when city \
 already has a palace to do that. \
@@ -331,6 +343,7 @@ upkeep		= 4
 sabotage	= 50
 sound		= "b_tannery"
 sound_alt	= "b_factory"
+sound_alt2      = "-"
 helptext	= _("\
 Increases the shield production in a city by 50%.  This increase may\
  also contribute significantly to pollution.\
@@ -354,6 +367,7 @@ upkeep		= 1
 sabotage	= 50
 sound		= "b_granary"
 sound_alt	= "b_generic"
+sound_alt2      = "-"
 helptext	= _("\
 The amount of stored food will be set to half full whenever a city\
  with a Granary shrinks or grows. This helps a city to grow faster\
@@ -378,7 +392,8 @@ build_cost	= 20
 upkeep		= 1
 sabotage	= 50
 sound		= "b_fish_harbour"
-sound_alt	= "b_harbour"
+sound_alt	= "b_harbor"
+sound_alt2      = "b_harbour"
 helptext	= _("\
 Gives one extra food resource on all River tiles. The city needs\
  to be riverine to build this improvement.\
@@ -402,7 +417,8 @@ build_cost	= 50
 upkeep		= 1
 sabotage	= 50
 sound		= "b_fish_harbour"
-sound_alt	= "b_harbour"
+sound_alt	= "b_harbor"
+sound_alt2      = "b_harbour"
 helptext	= _("\
 Gives one extra food resource on all Ocean tiles.  The city needs\
  to be coastal to build this improvement.\
@@ -427,6 +443,7 @@ upkeep		= 1
 sabotage	= 50
 sound		= "b_library"
 sound_alt	= "b_generic"
+sound_alt2      = "-"
 ; /* xgettext:no-c-format */
 helptext	= _("\
 Increases the science output in a city by 50%.\
@@ -450,6 +467,7 @@ upkeep		= 1
 sabotage	= 50
 sound		= "b_caravanserai"
 sound_alt	= "b_generic"
+sound_alt2      = "-"
 ; /* xgettext:no-c-format */
 helptext	= _("\
 Increases the luxury and tax output in a city by 50%.\
@@ -474,6 +492,7 @@ upkeep		= 3
 sabotage	= 50
 sound		= "b_harbour"
 sound_alt	= "b_generic"
+sound_alt2      = "-"
 helptext	= _("\
 Adds 1 extra shield resource on all Ocean squares in a city.  The\
  city needs to be coastal to build this improvement.\
@@ -498,6 +517,7 @@ upkeep		= 0
 sabotage	= 1
 sound		= "b_palace"
 sound_alt	= "b_generic"
+sound_alt2      = "-"
 ; /* xgettext:no-c-format */
 helptext	= _("\
 Makes a city the capital and the center of your government. \
@@ -548,6 +568,7 @@ upkeep		= 3
 sabotage	= 10
 sound		= "b_war_harbour"
 sound_alt	= "b_port_facility"
+sound_alt2      = "-"
 helptext	= _("\
 Allows a city to build veteran sea units. \
 If city has also Lighthouse wonder, sea units are produced Hardened. \
@@ -576,6 +597,7 @@ upkeep		= 2
 sabotage	= 50
 sound		= "b_sewer_system"
 sound_alt	= "b_generic"
+sound_alt2      = "-"
 helptext	= _("\
 Allows a city to grow larger than size 12.  An Aqueduct is first\
  required for a city to grow larger than size 8.\
@@ -600,9 +622,10 @@ upkeep		= 1
 sabotage	= 50
 sound		= "b_temple"
 sound_alt	= "b_generic"
+sound_alt2      = "-"
 helptext	= _("\
-Makes one unhappy citizen content.  Both the Mysticism advance\
- and the Oracle wonder double this effect.  With both Mysticism\
+Makes one unhappy citizen content. Both the Mysticism advance\
+ and the Oracle wonder double this effect. With both Mysticism\
  and the Oracle, 4 citizens are made content.\
 ")
 
@@ -624,6 +647,7 @@ upkeep		= 3
 sabotage	= 50
 sound		= "b_university"
 sound_alt	= "b_generic"
+sound_alt2      = "-"
 ; /* xgettext:no-c-format */
 helptext	= _("\
 A University increases the science\
@@ -649,6 +673,7 @@ upkeep		= 0
 sabotage	= 1
 sound		= "w_colossus"
 sound_alt	= "w_generic"
+sound_alt2      = "-"
 helptext	= _("\
 Each square around the city where this wonder is built that is already\
  generating some trade produces one extra trade resource.\
@@ -680,6 +705,7 @@ upkeep		= 0
 sabotage	= 1
 sound		= "w_great_library"
 sound_alt	= "w_generic"
+sound_alt2      = "-"
 helptext	= _("\
 The civilization which builds the Great Library gets every advance\
  that at least three other civilizations have achieved.\
@@ -704,6 +730,7 @@ upkeep		= 0
 sabotage	= 1
 sound		= "w_great_wall"
 sound_alt	= "w_generic"
+sound_alt2      = "-"
 helptext	= _("\
 Works as a City Wall in all your cities\
  on that island or continent.\
@@ -729,6 +756,7 @@ upkeep		= 0
 sabotage	= 1
 sound		= "w_hanging_gardens"
 sound_alt	= "w_generic"
+sound_alt2      = "-"
 helptext	= _("\
 Makes one content citizen happy in every city\
  on the island that has it. Makes two extra\
@@ -757,6 +785,7 @@ upkeep		= 0
 sabotage	= 1
 sound		= "w_pilgrimage_site"
 sound_alt	= "w_generic"
+sound_alt2      = "-"
 helptext	= _("\
 Makes two unhappy citizens content in every city.\
 ")
@@ -780,6 +809,7 @@ upkeep		= 0
 sabotage	= 1
 sound		= "w_lighthouse"
 sound_alt	= "w_generic"
+sound_alt2      = "-"
 helptext	= _("\
 Allows a city to build veteran sea units and gives all your sea units \
 1 additional movement point. \
@@ -806,6 +836,7 @@ upkeep		= 0
 sabotage	= 1
 sound		= "w_sataspes_expedition"
 sound_alt	= "w_magellans_expedition"
+sound_alt2      = "-"
 helptext	= _("\
 Gives all your sea units 1 additional movement points.\
 \n\n\
@@ -835,6 +866,7 @@ upkeep		= 0
 sabotage	= 1
 sound		= "w_oracle"
 sound_alt	= "w_generic"
+sound_alt2      = "-"
 helptext	= _("\
 Makes two of your unhappy citizens content in every city with a temple.\
 ")
@@ -859,6 +891,7 @@ upkeep		= 0
 sabotage	= 1
 sound		= "w_pyramids"
 sound_alt	= "w_generic"
+sound_alt2      = "-"
 helptext	= _("\
 The amount of stored food lost when one of your cities grows or shrinks\
  is reduced by 25%.  This helps a city to grow faster and more easily\
@@ -891,7 +924,7 @@ sabotage	= 0
 ;")
 ; */
 helptext	= _("\
-This is not a normal improvement.  Instead, setting a city's\
+This is not a normal improvement. Instead, setting a city's\
  production to Coinage means its shield production is\
  converted to tax output (money, coins!).\
 ")
