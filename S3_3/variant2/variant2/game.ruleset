@@ -352,7 +352,7 @@ tech_leakage = "None"
 ; Method of paying tech upkeep
 ; "None"   - no upkeep
 ; "Basic"  - upkeep is calculated as:
-;     <Cost of technology> / tech_upkeep_divider - tech_upkeep_free
+;     <Cost of technology> / tech_upkeep_divider - <Free tech upkeep>
 ; "Cities" - upkeep is calculated like "Basic", but multiplied by number of cities
 tech_upkeep_style = "None"
 
@@ -544,7 +544,7 @@ goods_selection = "Arrival"
 ; onetime_pct             = Onetime bonuses when trade route gets established. Default is 100%
 ; select_priority         = Available good with highest select_priority get selected for
 ;                           the traderoute, random among the same select_pririty.
-; priority                = Trade routes get replaced by higher priority goods, or higher
+; replace_priority        = Trade routes get replaced by higher priority goods, or higher
 ;                           trade value when priority is the same.
 ; flags
 ;   - "Bidirectional"     = Trade route carrying the goods does not have "from" and "to"
@@ -562,8 +562,8 @@ goods_selection = "Arrival"
 ; */ <-- avoid gettext warnings
 
 [goods_good]
-name           = _("Goods")
-priority       = 1
+name             = _("Goods")
+replace_priority = 1
 
 ; /* <-- avoid gettext warnings
 ;

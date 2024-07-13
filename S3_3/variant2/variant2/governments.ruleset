@@ -40,13 +40,15 @@ during_revolution = "Anarchy"
 ;                to rename an item after a ruleset has been released, you
 ;                should set "rule_name" to the original value of "name".
 ; reqs         = requirements for this government (see README.effects)
-; graphic      = tag specifing preferred graphic
+; graphic      = tag specifying preferred graphic
 ; graphic_alt  = alternate graphics tag if preferred is not found;
 ;                should be a standard tag if preferred is not;
 ;                otherwise may be "-"
 ; sound        = Sound tag for the audio to play when palyer switch
 ;                to government.
 ; sound_alt    = Alternative sound tag, in case primary one is not found.
+; sound_alt2   = Second alternative sound tag, in case neither primary tag
+;                nor the first alt tag is found.
 ; ai_better    = AI will not consider this government for use if the
 ;                government listed here is available
 ; ruler_male_title   = The default male ruler title for the government type.
@@ -70,6 +72,7 @@ graphic     = "gov.anarchy"
 graphic_alt = "-"
 sound       = "g_anarchy"
 sound_alt   = "-"
+sound_alt2  = "-"
 
 ruler_male_title = _("Mr. %s")
 ruler_female_title = _("Ms. %s")
@@ -106,7 +109,8 @@ name        = _("Despotism")
 graphic     = "gov.despotism"
 graphic_alt = "-"
 sound       = "g_despotism"
-sound_alt   = "-"
+sound_alt   = "g_generic"
+sound_alt2  = "-"
 ai_better   = "Monarchy"
 
 ruler_male_title = _("Emperor %s")
@@ -147,7 +151,8 @@ reqs = { "type", "name", "range"
 graphic     = "gov.monarchy"
 graphic_alt = "-"
 sound       = "g_monarchy"
-sound_alt   = "-"
+sound_alt   = "g_generic"
+sound_alt2  = "-"
 ai_better   = "Communism"
 
 ruler_male_title = _("King %s")
@@ -187,7 +192,8 @@ reqs = { "type", "name", "range"
 graphic     = "gov.communism"
 graphic_alt = "-"
 sound       = "g_communism"
-sound_alt   = "-"
+sound_alt   = "g_generic"
+sound_alt2  = "-"
 
 ruler_male_title = _("Comrade %s")
 ruler_female_title = _("?female:Comrade %s")
@@ -234,7 +240,8 @@ reqs = { "type", "name", "range"
 graphic     = "gov.republic"
 graphic_alt = "-"
 sound       = "g_republic"
-sound_alt   = "-"
+sound_alt   = "g_generic"
+sound_alt2  = "-"
 
 ruler_male_title = _("Consul %s")
 ruler_female_title = _("Consul %s")
@@ -285,7 +292,8 @@ reqs = { "type", "name", "range"
 graphic     = "gov.democracy"
 graphic_alt = "-"
 sound       = "g_democracy"
-sound_alt   = "-"
+sound_alt   = "g_generic"
+sound_alt2  = "-"
 
 ruler_male_title = _("President %s")
 ruler_female_title = _("President %s")
@@ -338,7 +346,8 @@ reqs = { "type", "name", "range"
 graphic     = "gov.fundamentalism"
 graphic_alt = "-"
 sound       = "g_fundamentalism"
-sound_alt   = "-"
+sound_alt   = "g_generic"
+sound_alt2  = "-"
 ai_better   = "Communism"
 
 ruler_male_title = _("Highpriest %s")

@@ -105,10 +105,6 @@ format_version = 40
 ;                         extra. See "bridged_over" extra property in
 ;                         terrain.ruleset.
 ; "Build_Airborne"      = from now on can build air units (for use by AI)
-; "Claim_Ocean"    = Player claims ocean tiles even if they are not
-;                    adjacent to border source
-; "Claim_Ocean_Limited" = Oceanic border sources claim ocean tiles even if
-;                         they are not adjacent to border source
 ;
 ; */ <-- avoid gettext warnings
 
@@ -607,7 +603,7 @@ helptext = _("Improves the effect of Temples.")
 name        = _("Naval Border Control")
 req1        = "Ocean Adaptation"
 req2        = "Flight"
-flags       = "Claim_Ocean_Limited"
+flags       = ""
 graphic     = "a.naval_border_control"
 graphic_alt = "-"
 helptext    = _("\
