@@ -63,6 +63,8 @@ building_flags =
 ; "Gold"             = Not a real building; production turned into gold
 ;                      indefinitely (capitalization/coinage).
 ;                      Genus should be "Convert".
+; "Infra"            = Not a real building; production turned into infrapoints
+;                      indefinitely. Genus should be "Convert".
 ; "DisasterProof"    = Disasters never destroy this building. Is meaningful
 ;                      only for genus "Improvement" buildings as others are
 ;                      automatically disaster proof.
@@ -920,13 +922,13 @@ sabotage	= 0
 ; FIXME: this is the real helptext; restore when have a subordnate analogue
 ; /* (ignore for gettext until fixed)
 ;helptext	= _("\
-;This is not a normal improvement.  Instead, setting a city's\
+;This is not a normal improvement. Instead, setting a city's\
 ; production to Capitalization means its shield production is\
 ; converted to tax output (money).\
 ;")
 ; */
 helptext	= _("\
-This is not a normal improvement.  Instead, setting a city's\
+This is not a normal improvement. Instead, setting a city's\
  production to Coinage means its shield production is\
  converted to tax output (money, coins!).\
 ")

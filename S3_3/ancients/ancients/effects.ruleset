@@ -1874,10 +1874,10 @@ reqs    =
 type    = "Action_Success_Actor_Move_Cost"
 value   = 65535
 reqs    =
-    { "type",          "name",           "range", "present"
-      "Action",        "Conquer City 2", "Local", TRUE
-      "UnitState",     "OnNativeTile",   "Local", TRUE
-      "UnitClassFlag", "TerrainSpeed",   "Local", TRUE
+    { "type",          "name",                  "range", "present"
+      "Action",        "Conquer City Shrink 2", "Local", TRUE
+      "UnitState",     "OnNativeTile",          "Local", TRUE
+      "UnitClassFlag", "TerrainSpeed",          "Local", TRUE
     }
 
 [effect_action_success_move_cost_hut_entry_from_non_native]
@@ -1960,4 +1960,45 @@ value   = -50
 reqs    =
     { "type",   "name",         "range", "present"
       "Action", "Upgrade Unit", "Local", TRUE
+    }
+
+; Note: There are no oceanic border sources, so we don't need to check
+;       the tiles' terrain class
+[effect_claim_land]
+type    = "Tile_Claimable"
+value   = 1
+reqs    =
+    { "type",         "name",        "range"
+;     "TerrainClass", "Land",        "Tile"
+      "TileRel",      "Same Region", "Tile"
+    }
+
+[effect_claim_ocean_adj]
+type    = "Tile_Claimable"
+value   = 1
+reqs    =
+    { "type",          "name",    "range"
+;     "TerrainClass",  "Oceanic", "Tile"
+      "MaxDistanceSq", "2",       "Tile"
+    }
+
+[effect_claim_ocean_lake]
+type    = "Tile_Claimable"
+value   = 1
+reqs    =
+    { "type",           "name",              "range"
+;     "TerrainClass",   "Oceanic",           "Tile"
+      "MaxRegionTiles", "20",                "Continent"
+      "TileRel",        "Region Surrounded", "Tile"
+    }
+
+[effect_claim_ocean_bay]
+type    = "Tile_Claimable"
+value   = 1
+reqs    =
+    { "type",           "name",              "range"
+;     "TerrainClass",   "Oceanic",           "Tile"
+      "MaxRegionTiles", "3",                 "Adjacent"
+      "TileRel",        "Only Other Region", "Adjacent"
+      "TileRel",        "Same Region",       "Adjacent"
     }
