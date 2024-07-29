@@ -1289,7 +1289,7 @@ reqs           =
     { "type",         "name",         "range", "present"
       "Tech",         "Construction", "Player", TRUE
       "TerrainClass", "Land",         "Tile",   TRUE
-      "UnitFlag",     "Workers",      "Local",  TRUE
+      "UnitTypeFlag", "Workers",      "Local",  TRUE
       "CityTile",     "Center",       "Tile",   FALSE
     }
 build_time     = 3
@@ -1323,7 +1323,7 @@ act_gfx_alt2   = "-"
 rmact_gfx      = "None"
 reqs           =
     { "type",         "name",     "range"
-      "UnitFlag",     "Workers",  "Local"
+      "UnitTypeFlag", "Workers",  "Local"
       "TerrainClass", "Land",     "Tile"
     }
 build_time     = 0
