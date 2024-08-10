@@ -892,7 +892,7 @@ target_reqs   =
     }
 
 [actionenabler_conquer_city_marines]
-action        = "Conquer City"
+action        = "Conquer City 2"
 actor_reqs    =
     { "type",           "name",          "range", "present"
       "UnitClassFlag",  "CanOccupyCity", "Local", TRUE
