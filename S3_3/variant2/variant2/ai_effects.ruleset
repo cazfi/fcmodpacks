@@ -73,10 +73,10 @@ reqs    =
 type    = "Veteran_Build"
 value   = 1
 reqs	=
-    { "type",       "name",      "range"
-      "Gov", "Democracy", "Player"
-      "UnitFlag", "Diplomat", "Local"
-      "AI", "Cheating", "Player"
+    { "type",         "name",      "range"
+      "Gov",          "Democracy", "Player"
+      "UnitTypeFlag", "Diplomat",  "Local"
+      "AI",           "Cheating",  "Player"
     }
 
 [effect_aidemrevolution_0]
