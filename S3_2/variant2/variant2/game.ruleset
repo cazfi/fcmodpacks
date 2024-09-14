@@ -11,7 +11,7 @@
 
 [datafile]
 description = "Variant2 game rules for Freeciv"
-options = "+Freeciv-ruleset-3.2-Devel-2022.Feb.02"
+options = "+Freeciv-3.2-ruleset"
 format_version = 30
 
 ; This section contains meta information for freeciv-ruledit to recreate the ruleset
@@ -26,7 +26,7 @@ description_file = "variant2/README.variant2"
 name = _("Variant2")
 
 ; Version of the ruleset
-version = "3.2-dev"
+version = "3.2-1"
 
 ; When about to migrate ruleset under a new name in the future version, set
 ; alt_dir to the name of that future directory. Then savegames saved with this
