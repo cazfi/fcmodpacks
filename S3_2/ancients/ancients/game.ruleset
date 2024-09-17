@@ -3,7 +3,7 @@
 
 [datafile]
 description = "Ancients game rules for Freeciv"
-options = "+Freeciv-ruleset-3.2-Devel-2022.Feb.02"
+options = "+Freeciv-3.2-ruleset"
 format_version = 30
 
 ; This section contains meta information for freeciv-ruledit to recreate the ruleset
@@ -18,7 +18,7 @@ format_version = 30
 name = _("Ancients")
 
 ; Version of the ruleset
-version = "3.2-dev"
+version = "3.2-1"
 
 ; Summary of the ruleset
 summary = _("You are playing Freeciv with Ancients ruleset. \
@@ -333,7 +333,7 @@ tech_leakage = "None"
 ; Method of paying tech upkeep
 ; "None"   - no upkeep
 ; "Basic"  - upkeep is calculated as:
-;     <Cost of technology> / tech_upkeep_divider - tech_upkeep_free
+;     <Cost of technology> / tech_upkeep_divider - <Free tech upkeep>
 ; "Cities" - upkeep is calculated like "Basic", but multiplied by number of cities
 tech_upkeep_style = "None"
 
