@@ -2,7 +2,7 @@ What freeciv commit modpacks are compatible with.
 
 ancients:    d7ac95dbda (18-Sep-24) (S3_2 frozen)
 mqtx:        33172 (svn)
-chess:       d9eacd28e8 (19-Dec-23)
+chess:       260c47f5c4 (20-Sep-24) (S3_2 frozen)
 alienmusic:  32309 (svn)
 freeland:    d77158ed87 (18-Sep-24) (S3_2 frozen)
 delta2:      8dc60dc418 (15-Sep-24) (S3_2 frozen)
