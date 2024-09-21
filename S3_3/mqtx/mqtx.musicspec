@@ -1,6 +1,9 @@
 [musicspec]
 ; Format and options of this spec file:
-options = "+Freeciv-2.6-musicset"
+options = "+Freeciv-3.2-musicspec"
+
+name = "mqtx"
+version = "0.5"
 
 [info]
 artists = "\
