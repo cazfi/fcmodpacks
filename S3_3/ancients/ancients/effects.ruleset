@@ -419,43 +419,43 @@ reqs	=
     }
 
 [effect_martial_law_each_0]
-type    = "Martial_Law_Each"
+type    = "Martial_Law_By_Unit"
 value   = 1
 reqs	=
-    { "type",       "name",      "range"
-      "Gov", "Anarchy",   "Player"
+    { "type", "name",    "range"
+      "Gov",  "Anarchy", "Player"
     }
 
 [effect_martial_law_each_1]
-type    = "Martial_Law_Each"
+type    = "Martial_Law_By_Unit"
 value   = 1
 reqs	=
-    { "type",       "name",      "range"
-      "Gov", "Despotism", "Player"
+    { "type", "name",      "range"
+      "Gov",  "Despotism", "Player"
     }
 
 [effect_martial_law_each_2]
-type    = "Martial_Law_Each"
+type    = "Martial_Law_By_Unit"
 value   = 2
 reqs	=
-    { "type",       "name",      "range"
-      "Gov", "Petty Monarchy",  "Player"
+    { "type", "name",           "range"
+      "Gov",  "Petty Monarchy", "Player"
     }
 
 [effect_martial_law_each_3]
-type    = "Martial_Law_Each"
+type    = "Martial_Law_By_Unit"
 value   = 1
 reqs	=
-    { "type",       "name",      "range"
-      "Gov", "Imperial Monarchy",  "Player"
+    { "type", "name",              "range"
+      "Gov",  "Imperial Monarchy", "Player"
     }
 
 [effect_martial_law_each_4]
-type    = "Martial_Law_Each"
+type    = "Martial_Law_By_Unit"
 value   = 1
 reqs	=
-    { "type",       "name",      "range"
-      "Gov", "Principate",  "Player"
+    { "type", "name",       "range"
+      "Gov",  "Principate", "Player"
     }
 
 [effect_martial_law_max_0]
