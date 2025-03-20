@@ -1,6 +1,6 @@
 What freeciv commit modpacks are compatible with.
 
-ancients:    4799c20de5 (01-Dec-24)
+ancients:    fc23f94be6 (16-Jan-25)
 mqtx:        16df63560b + capstr updates (21-Sep-24)
 chess:       ff77f12092 (22-May-24)
 alienmusic:  32309 (svn)

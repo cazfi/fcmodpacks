@@ -218,7 +218,6 @@ found_city_consuming_always = TRUE
 ; Blank ruleset defined user actions.
 ; See the section "Ruleset defined actions" in doc/README.actions
 ; Example: set up "User Action 1"
-;ui_name_user_action_1                = _("%sDisrupt Supply Lines%s")
 ;user_action_1_target_kind            = "Unit"
 ;user_action_1_min_range              = 1
 ;user_action_1_max_range              = 3
@@ -266,7 +265,6 @@ quiet_actions = "Transport Disembark 2", "Conquer City Shrink 2", "Enter Hut 2",
 ; README.actions lists the possible actions
 ;
 ; */ <-- avoid gettext warnings
-
 
 [action_poison_city]
 action  = "Poison City Escape"
@@ -995,5 +993,11 @@ target_reqs   =
 [enabler_gain_veterancy]
 action        = "Gain Veterancy"
 actor_reqs    =
-    { "type",         "name",         "range", "present"
+    { "type", "name", "range", "present"
+    }
+
+[enabler_civil_war]
+action        = "Civil War"
+actor_reqs    =
+    { "type", "name", "range", "present"
     }
