@@ -7,7 +7,7 @@
 [tilespec]
 
 ; Format and options of this tilespec file:
-options = "+Freeciv-tilespec-3.2-Devel-2022-Jun-21"
+options = "+Freeciv-tilespec-3.3-Devel-2024-Nov-16"
 
 ; A simple name for the tileset specified by this file:
 name = "Freeland-big"
@@ -98,6 +98,10 @@ tilelabel_offset_y = 20
 ; (e.g., in worklists, editor, and online help). Does not have to be a
 ; valid direction for the tileset.
 ;unit_default_orientation = "s"
+
+; How long (number of refreshes) it takes to move from an animation
+; frame to the next.
+time_per_frame = 3
 
 ; The map is rendered in "layers", just like any decent image editor
 ; supports. The setting below allows to change the layer drawing order. The
