@@ -1,0 +1,11 @@
+rulesetdir              variant2
+
+cheating
+
+; Explicitly create 6 threaded AI players
+create "" threaded
+create "" threaded
+create "" threaded
+create "" threaded
+create "" threaded
+create "" threaded

@@ -1,0 +1,404 @@
+
+; Modifying this file:
+; You should not modify this file except to make bugfixes or
+; for other "maintenance". If you want to make custom changes
+; you should create a new datadir subdirectory and copy this file
+; into that directory, and then modify that copy. Then use the
+; command "rulesetdir <mysubdir>" in the server to have freeciv
+; use your new customized file.
+
+; Note that the freeciv AI may not cope well with anything more
+; than minor changes.
+
+[datafile]
+description = "Variant2 government data for Freeciv"
+options = "+Freeciv-ruleset-3.3-Devel-2023.Feb.24"
+format_version = 40
+
+[governments]
+during_revolution = "Anarchy"
+
+; /* <-- avoid gettext warnings
+;
+; Below: The individual government types, one per section.
+;
+; The actual tag used (the * in [government_*]) does not matter, except
+; it must be unique within this file, and it may be used in debug
+; output when reading this file.
+;
+; For the "official" rulesets, the order of these sections should not
+; be changed because that would break backward compatibility with
+; savegames. (In particular, if Fundamentalism is added to default
+; ruleset, should be added at end.)
+;
+; Notes on fields:
+;
+; name         = translatable name as seen by user
+; rule_name    = (optional) internal name for savegames, rulesets etc; if
+;                not present, "name" is used for this purpose too. Since
+;                the name used in savegames must not change, if you want
+;                to rename an item after a ruleset has been released, you
+;                should set "rule_name" to the original value of "name".
+; reqs         = requirements for this government (see README.effects)
+; graphic      = tag specifying preferred graphic
+; graphic_alt  = alternate graphics tag if preferred is not found;
+;                should be a standard tag if preferred is not;
+;                otherwise may be "-"
+; sound        = Sound tag for the audio to play when player switch
+;                to government.
+; sound_alt    = Alternative sound tag, in case primary one is not found.
+; sound_alt2   = Second alternative sound tag, in case neither primary tag
+;                nor the first alt tag is found.
+; ai_better    = AI will not consider this government for use if the
+;                government listed here is available
+; ruler_male_title   = The default male ruler title for the government type.
+;                      It's a format string where name of the ruler is marked
+;                      by '%s'.
+;                      Individual nations may override this by their
+;                      own title.
+; ruler_female_title = The default female ruler title for the government type.
+;                      See above ruler_male_title.
+; helptext     = optional help text string; should escape all raw newlines
+;                so that xgettext parsing works
+;
+; */ <-- avoid gettext warnings
+
+;------------------------------------------------------------------------
+[government_anarchy]
+
+name        = _("Anarchy")
+; No reqs
+graphic     = "gov.anarchy"
+graphic_alt = "-"
+sound       = "g_anarchy"
+sound_alt   = "-"
+sound_alt2  = "-"
+
+ruler_male_title = _("Mr. %s")
+ruler_female_title = _("Ms. %s")
+
+helptext = _("\
+Anarchy is simply the absence of any recognizable government.\
+ Citizens are disorganized and unproductive, and will spend all\
+ income as quickly as possible, rather than paying taxes or\
+ conducting research.\
+"), _("\
+Anarchy offers slightly less corruption than Despotism,\
+ but slightly more unhappiness.\
+"), _("\
+Settlers consume 1 food per turn under Anarchy.  Squares which would\
+ normally yield more than 2 units of food, shields or trade suffer\
+ a 1-unit penalty (e.g., an irrigated grassland square which would\
+ normally yield 3 food only yields 2 food while you are in Anarchy).\
+ (This penalty is removed if the city is celebrating; see Happiness.)\
+"), _("\
+Under Anarchy, each of your cities can support 3 military\
+ units without paying shields for upkeep.\
+ (Additional units require 1 production shield each.)\
+"), _("\
+You may impose martial law under Anarchy: each military unit inside\
+ a city will keep one unhappy citizen content.  (Or at least, unhappy\
+ citizens will act content, and will not cause disorder.)\
+")
+
+;------------------------------------------------------------------------
+[government_despotism]
+
+name        = _("Despotism")
+; No reqs
+graphic     = "gov.despotism"
+graphic_alt = "-"
+sound       = "g_despotism"
+sound_alt   = "g_generic"
+sound_alt2  = "-"
+ai_better   = "Monarchy"
+
+ruler_male_title = _("Emperor %s")
+ruler_female_title = _("Empress %s")
+
+helptext = _("\
+Under Despotism, you are the absolute ruler of your people.  Your\
+ control over your citizens is maintained largely by martial law.\
+"), _("\
+Despotism suffers the highest level of corruption and waste of all\
+ forms of government.\
+"), _("\
+Settlers consume 1 food per turn under Despotism.  Squares which\
+ would normally yield more than 2 units of food, shields or trade\
+ suffer a 1-unit penalty (e.g., an irrigated grassland square which\
+ would normally yield 3 food only yields 2 food while you are under\
+ Despotic rule).  (This penalty is removed if the city is\
+ celebrating; see Happiness.)\
+"), _("\
+The maximum rate you can set for science, tax or luxuries is 60%.\
+"), _("\
+Under Despotism, each of your cities can support 3\
+ military units without paying shields for\
+ upkeep.  (Additional units require 1 production shield each.)\
+"), _("\
+You may impose martial law under Despotism: each military unit\
+ inside a city will keep one unhappy citizen content.  (Or at least,\
+ unhappy citizens will act content, and will not cause disorder.)\
+")
+
+;------------------------------------------------------------------------
+[government_monarchy]
+
+name        = _("Monarchy")
+reqs = { "type", "name", "range"
+         "tech", "Monarchy", "Player"
+       }
+graphic     = "gov.monarchy"
+graphic_alt = "-"
+sound       = "g_monarchy"
+sound_alt   = "g_generic"
+sound_alt2  = "-"
+ai_better   = "Communism"
+
+ruler_male_title = _("King %s")
+ruler_female_title = _("Queen %s")
+
+helptext = _("\
+Under Monarchy, a king or queen serves as a hereditary figurehead\
+ for your government.\
+"), _("\
+Monarchy suffers the same small amount of corruption that\
+ the Republic does.\
+"), _("\
+Settlers consume 1 food per turn under Monarchy.\
+"), _("\
+If a city governed by a Monarchy is celebrating, it will receive a\
+ bonus of 1 trade in each square which already produces at least 1\
+ trade.  See Happiness for details.\
+"), _("\
+The maximum rate you can set for science, tax or luxuries is 70%.\
+"), _("\
+Under Monarchy, your cities can support up to 2 military units\
+ without paying shields for upkeep.  (Additional units require 1\
+ production shield each.)\
+"), _("\
+You may impose limited martial law under Monarchy: each military\
+ unit in a city, up to a maximum of 3, will keep one unhappy citizen\
+ content.\
+")
+
+;------------------------------------------------------------------------
+[government_communism]
+
+name        = _("Communism")
+reqs = { "type", "name", "range"
+         "tech", "Communism", "Player"
+       }
+graphic     = "gov.communism"
+graphic_alt = "-"
+sound       = "g_communism"
+sound_alt   = "g_generic"
+sound_alt2  = "-"
+
+ruler_male_title = _("Comrade %s")
+ruler_female_title = _("?female:Comrade %s")
+
+helptext = _("\
+A Communist government is based on the ideal that all people are\
+ equal.  All goods are owned by the state, rather than by private\
+ citizens.  Communism gives a balance between military and commercial\
+ styles of government.\
+"), _("\
+Under Communism, corruption and waste does not vary by distance from\
+ the capital; all cities (including the capital) have a modest amount\
+ of corruption.  In addition, Communist cities more than 10\
+ squares away from the capital are considered to be only 10 squares\
+ away when computing the cost of inciting a revolt. \
+ See Units, Diplomat.\
+"), _("\
+Settlers consume 2 food per turn under Communism.\
+"), _("\
+If a city governed by Communism is celebrating, it will receive a\
+ bonus of 1 trade in each square which already produces at least 1\
+ trade.  See Happiness for details.\
+"), _("\
+The maximum rate you can set for science, tax or luxuries is 80%.\
+"), _("\
+Diplomats, Spies, and Cyborgs created under Communism are always veterans.\
+"), _("\
+Under Communism, your cities can support up to 3 military units\
+ without paying shields for upkeep.  (Additional units require 1\
+ production shield each.)\
+"), _("\
+You impose limited but efficient martial law under Communism.  Each\
+ military unit inside a city, up to a maximum of 3, will keep 2\
+ unhappy citizens content.\
+")
+
+;------------------------------------------------------------------------
+[government_republic]
+
+name        = _("Republic")
+reqs = { "type", "name", "range"
+         "tech", "The Republic", "Player"
+       }
+graphic     = "gov.republic"
+graphic_alt = "-"
+sound       = "g_republic"
+sound_alt   = "g_generic"
+sound_alt2  = "-"
+
+ruler_male_title = _("Consul %s")
+ruler_female_title = _("Consul %s")
+
+helptext = _("\
+Under a Republican government, citizens hold an election to select a\
+ representative who will govern them; since elected leaders must\
+ remain popular to remain in control, citizens are given a greater\
+ degree of freedom.  Citizens under the Republic become unhappy\
+ easily, but the self-sufficiency of your citizens allows high levels\
+ of trade.\
+"), _("\
+Cities under the Republic suffer a small amount of corruption and waste.\
+"), _("\
+Settlers consume 2 food per turn under the Republic.  Squares with\
+ at least 1 trade resource get a trade bonus of 1 under the Republic.\
+"), _("\
+Republican cities which are celebrating grow at a rate of 1 citizen\
+ per turn; see Happiness for details.\
+"), _("\
+The maximum rate you can set for science, tax or luxuries is 80%.\
+"), _("\
+Under the Republic, military units require 1 production shield each\
+ for upkeep.  In addition the following units are considered\
+ aggressive units:\
+"), _("\
+- units with an attack strength greater than 0 which are not\
+ inside a city or inside a fortress within 3 squares of a friendly\
+ city\
+"), _("\
+- Field units regardless of their location. Most sea and air units\
+  with attack strength greater than 0 are field units.\
+  Fighters and Stealth Fighters are exception.\
+"), _("\
+The citizens of a city will tolerate 1 aggressive unit; subsequent\
+ units will generate 1 unhappy citizen each.\
+"), _("\
+Having Republic as an government makes one citizen content in each city.\
+")
+
+;------------------------------------------------------------------------
+[government_democracy]
+
+name        = _("Democracy")
+reqs = { "type", "name", "range"
+         "tech", "Democracy", "Player"
+       }
+graphic     = "gov.democracy"
+graphic_alt = "-"
+sound       = "g_democracy"
+sound_alt   = "g_generic"
+sound_alt2  = "-"
+
+ruler_male_title = _("President %s")
+ruler_female_title = _("President %s")
+
+helptext = _("\
+Under Democracy, citizens govern directly by voting on issues.\
+ Democracy offers the highest possible level of trade, but also\
+ offers the most potential for unhappiness.  There is only minimal corruption\
+ and waste during Democracy, but citizens become very upset during\
+ wars.\
+"), _("\
+Settlers consume 2 food per turn under Democracy.  Squares with\
+ at least 1 trade resource get a trade bonus of 1 under Democracy.\
+"), _("\
+Democratic cities which are celebrating grow at a rate of 1 citizen\
+ per turn; see Happiness for details.\
+"), _("\
+There are no taxation limits under Democracy; you can set science, tax\
+ or luxuries to 100%.\
+"), _("\
+Under Democracy, military units require 1 production shield each for\
+ upkeep.  In addition the following units generate unhappiness:\
+"), _("\
+- Units with an attack strength greater than 0 which are not\
+ inside a city, or inside a fortress within 3 squares of a\
+ friendly city, generate 2 unhappy citizens.\
+"), _("\
+- Air/sea units with an attack strength greater than 0 which are\
+ inside a city generate only 1 unhappy citizen. Fighters generate\
+ no unhappiness.\\
+- Field units, which are inside a city generate only 1 unhappy citizen.\
+"), _("\
+If a city remains in disorder more than 2 turns under Democratic\
+ rule, the citizens will spontaneously revolt and plunge your\
+ civilization into Anarchy.\
+"), _("\
+Because (happy) citizens of Democracy believe strongly in the\
+ government, their loyalty is unswerving.  Military units of\
+ Democratic civilizations cannot be bribed, and Democratic cities\
+ cannot be incited to revolt by enemy Diplomats and Spies.\
+")
+
+;------------------------------------------------------------------------
+[government_fundamentalism]
+
+name        = _("Fundamentalism")
+reqs = { "type", "name", "range"
+         "tech", "Fundamentalism", "Player"
+       }
+graphic     = "gov.fundamentalism"
+graphic_alt = "-"
+sound       = "g_fundamentalism"
+sound_alt   = "g_generic"
+sound_alt2  = "-"
+ai_better   = "Communism"
+
+ruler_male_title = _("Highpriest %s")
+ruler_female_title = _("Highpriestess %s")
+
+helptext = _("\
+Fundamentalism suffers the same small amount of corruption that\
+ the Republic and the Monarchy do.\
+"), _("\
+Settlers consume 1 food per turn under Fundamentalism.\
+"), _("\
+If a city governed by a Fundamentalism is celebrating, it will receive a\
+ bonus of 1 trade in each square which already produces at least 1\
+ trade.  See Happiness for details.\
+"), _("\
+The maximum rate you can set for science, tax or luxuries is 70%.\
+"), _("\
+Under Fundamentalism, your cities can support up to 5 military units\
+ without paying shields for upkeep.  (Additional units require 1\
+ production shield each.)\
+"), _("\
+Temples and Cathedrals both provide one happy person in addition to their \
+normal bonuses.\
+"), _("\
+Having Fundamentalism as an government makes two citizens content in each city.\
+")
+
+; /* <-- avoid gettext warnings
+;
+; Multipliers (aka policies)
+;
+; name                    = translatable name as seen by user
+; rule_name               = (optional) internal name for savegames, rulesets
+;                           etc; if not present, "name" is used for this
+;                           purpose too. Since the name used in savegames must
+;                           not change, if you want to rename an item after a
+;                           ruleset has been released, you should set
+;                           "rule_name" to the original value of "name".
+; default                 = default value (as presented in UI)
+; start                   = minimum value (as presented in UI)
+; stop                    = maximum value (as presented in UI)
+; step                    = minimum increase/decrease (as presented in UI)
+; offset                  = offset/factor control how UI values are turned
+; factor                  = into effect values for use in effects.ruleset.
+;                           effect_value = (ui_value + offset) * (factor/100)
+;                           Optional; by default offset=0, factor=100, so
+;                           that UI values are used as-is.
+; minimum_turns           = how often multiplier can be changed, or: how long one is stuck
+;                           with the given value after changing to it
+; reqs                    = requirements for adjusting this policy (see README.effects)
+; helptext                = optional help text string; should escape all raw
+;                           newlines so that xgettext parsing works
+;
+; */ <-- avoid gettext warnings

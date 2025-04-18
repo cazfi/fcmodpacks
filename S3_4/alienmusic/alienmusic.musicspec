@@ -1,0 +1,21 @@
+[musicspec]
+; Format and options of this spec file:
+options = "+Freeciv-2.6-musicset"
+
+[info]
+artists = "\
+  Chris Abbott
+  Alistair 'Boz' Bowness
+  Rob Hubbard
+  Marcel Donne
+  Ben Daglish
+  Steve Scherer
+"
+
+[files]
+music_menu = "alienmusic/War_64kbps-_A_Space_Odyssey_-_First_Steps_Into_Cosmos.ogg"
+music_victory = "alienmusic/Flash_Gordon_64kbps-_A_Space_Odyssey_-_The_City_Escape.ogg"
+music_defeat = "alienmusic/Flash_Gordon_64kbps-_A_Space_Odyssey_-_The_City_Escape.ogg"
+
+music_peace = "alienmusic/Trap_64kbps-_A_Space_Odyssey_-_Battle_For_The_Planet_Part_1.ogg"
+music_combat = "alienmusic/Trap_64kbps-_A_Space_Odyssey_-_Battle_For_Planet_Part_2.ogg"

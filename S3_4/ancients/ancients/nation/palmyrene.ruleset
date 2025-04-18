@@ -1,0 +1,33 @@
+[nation_palmyrene]
+
+name   = _("Palmyrene")
+plural = _("?plural:Palmyrene")
+groups = _("Asian")
+legend = _("Palmyra was an Arab oasis trading city,\
+ between the Roman Empire and the Parthians.\
+ Its warrior Queen Zenobia rebelled against the Romans.")
+
+leaders = {
+ "name", "sex"
+ "Zenobia", "Female"
+}
+
+flag     = "palmyra"
+flag_alt = "syria"
+style    = "Classical"
+
+init_techs = ""
+init_buildings = ""
+init_units = ""
+civilwar_nations = "arab"
+
+is_playable = FALSE
+
+cities =
+  "Palmyra",
+  "Dura-Europus",
+  "Resapha",
+  ; Syrian cities
+  "Damascus", "Beyruth", "Aleppo", "Antiochia", "Edessa",
+  ; Syrian cities occupied by the Hittites:
+  "Carchemish", "Alalakh"
