@@ -24,7 +24,7 @@ std_tileset_compat = FALSE
 name = _("Ancients")
 
 ; Version of the ruleset
-version = "3.3-dev"
+version = "3.4-dev"
 
 ; Summary of the ruleset
 summary = _("You are playing Freeciv with Ancients ruleset. \
