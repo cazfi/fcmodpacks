@@ -32,7 +32,7 @@ std_tileset_compat = FALSE
 name = _("Variant2")
 
 ; Version of the ruleset
-version = "3.3-dev"
+version = "3.4-dev"
 
 ; When about to migrate ruleset under a new name in the future version, set
 ; alt_dir to the name of that future directory. Then savegames saved with this
