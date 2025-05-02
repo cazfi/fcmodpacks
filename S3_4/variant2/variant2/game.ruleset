@@ -11,8 +11,8 @@
 
 [datafile]
 description = "Variant2 game rules for Freeciv"
-options = "+Freeciv-ruleset-3.3-Devel-2023.Feb.24"
-format_version = 40
+options = "+Freeciv-ruleset-3.4-Devel-2025.Jan.17"
+format_version = 50
 
 ; This section contains meta information for freeciv-ruledit to recreate the ruleset
 ; file in a form wanted. These have no in-game effect whatsoever
@@ -414,7 +414,11 @@ negative_label = _("BC")
 ; name                    = translatable name as seen by user
 ; reqs                    = requirements for disaster to happen (see effects.ruleset
 ;                           and README.effects for help on requirements)
-; frequency               = how likely disaster is to occur
+; frequency               = how likely disaster is to occur.
+;                           Final probability for each city each turn is -
+;                           (this frequency) * (game settings option disasters
+;                           frequency) / 1000000.
+;                           If omitted, default is 0 and this disaster will not occur.
 ; effects
 ;   - "DestroyBuilding"   = Random building is destroyed
 ;   - "ReducePopulation"  = Reduce city size by one unless it's already 1
