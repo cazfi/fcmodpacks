@@ -575,9 +575,22 @@ reqs	=
 
 ; upkeep (general)
 
-[effect_base_unit_upkeep]
+[effect_base_unit_upkeep_not_gold]
 type    = "Upkeep_Factor"
-value	= 1
+value   = 1
+reqs    =
+    { "type",       "name", "range", "present"
+      "OutputType", "Gold", "Local", FALSE
+    }
+
+[effect_base_unit_upkeep_gold]
+type    = "Upkeep_Factor"
+value   = 1
+reqs    =
+    { "type",       "name",        "range"
+      "OutputType", "Gold",        "Local"
+      "UnitState",  "HasHomeCity", "Local"
+    }
 
 ; upkeep (shields)
 
@@ -632,13 +645,13 @@ reqs    =
 ; from old ruleset: '??' needed for anarchy?
 [effect_unit_upkeep_0]
 type    = "Upkeep_Factor"
-value	= -1
+value   = -1
 reqs    =
-    { "type", "name", "range"
-      "Gov", "Anarchy", "Player"
-      "OutputType", "Gold", "Local"
+    { "type",       "name",        "range"
+      "Gov",        "Anarchy",     "Player"
+      "OutputType", "Gold",        "Local"
+      "UnitState",  "HasHomeCity", "Local"
     }
-
 
 [effect_unit_upkeep_1]
 type    = "Upkeep_Factor"
