@@ -576,23 +576,23 @@ reqs	=
 ; upkeep (general)
 
 [effect_base_unit_upkeep_not_gold]
-type    = "Upkeep_Factor"
-value   = 1
+type    = "Upkeep_Pct"
+value   = 100
 reqs    =
     { "type",       "name", "range", "present"
       "OutputType", "Gold", "Local", FALSE
     }
 
 [effect_base_unit_upkeep_gold]
-type    = "Upkeep_Factor"
-value   = 1
+type    = "Upkeep_Pct"
+value   = 100
 reqs    =
     { "type",       "name",        "range"
       "OutputType", "Gold",        "Local"
       "UnitState",  "HasHomeCity", "Local"
     }
 
-; upkeep (shields)
+; Upkeep (shields)
 
 [effect_upkeep_free_units_0]
 type    = "Unit_Upkeep_Free_Per_City"
@@ -640,12 +640,12 @@ reqs    =
     }
 
 
-; upkeep factors
+; Upkeep factors
 
-; from old ruleset: '??' needed for anarchy?
+; From old ruleset: '??' needed for anarchy?
 [effect_unit_upkeep_0]
-type    = "Upkeep_Factor"
-value   = -1
+type    = "Upkeep_Pct"
+value   = -100
 reqs    =
     { "type",       "name",        "range"
       "Gov",        "Anarchy",     "Player"
@@ -654,30 +654,30 @@ reqs    =
     }
 
 [effect_unit_upkeep_1]
-type    = "Upkeep_Factor"
-value	= 1
-reqs   =
-    { "type", "name", "range"
-      "Gov", "Republic", "Player"
-      "OutputType", "Food", "Local"
+type    = "Upkeep_Pct"
+value   = 100
+reqs    =
+    { "type",       "name",     "range"
+      "Gov",        "Republic", "Player"
+      "OutputType", "Food",     "Local"
     }
 
 [effect_unit_upkeep_2]
-type    = "Upkeep_Factor"
-value	= 1
+type    = "Upkeep_Pct"
+value   = 100
 reqs    =
-    { "type", "name", "range"
-      "Gov", "Principate", "Player"
-      "OutputType", "Food", "Local"
+    { "type",       "name",       "range"
+      "Gov",        "Principate", "Player"
+      "OutputType", "Food",       "Local"
     }
 
 [effect_unit_upkeep_3]
-type    = "Upkeep_Factor"
-value	= 1
+type    = "Upkeep_Pct"
+value   = 100
 reqs    =
-    { "type", "name", "range"
-      "Gov", "Ancient Democracy", "Player"
-      "OutputType", "Food", "Local"
+    { "type",       "name",              "range"
+      "Gov",        "Ancient Democracy", "Player"
+      "OutputType", "Food",              "Local"
     }
 
 [effect_republic_unit_unhappiness]
