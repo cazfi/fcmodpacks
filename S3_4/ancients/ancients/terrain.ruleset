@@ -151,7 +151,7 @@ ocean_resources = FALSE
 ;   - "extra"            - Name of the extra
 ;   - "removal_time"     - Time for cleaning activities (0 = impossible)
 ;                          Nonzero values only affect extras with removal_time 0.
-; animal               = unit type that can appear as animal on the terrain
+; animals              = list of unit types that can appear as animal on the terrain
 ; warmer_wetter_result = result of global warming for wet terrains; one of:
 ;                        "no"  -- no change; does not count for warming
 ;                        "yes" -- no change; counts for warming
@@ -244,7 +244,6 @@ extra_settings       =
     { "extra", "removal_time"
       "Pollution", 3
     }
-animal               = "None"
 warmer_wetter_result = "no"
 warmer_drier_result  = "Swamp"
 cooler_wetter_result = "Glacier"
@@ -293,7 +292,6 @@ extra_settings       =
     { "extra", "removal_time"
       "Pollution", 3
     }
-animal               = "None"
 warmer_wetter_result = "no"
 warmer_drier_result  = "Swamp"
 cooler_wetter_result = "Glacier"
@@ -343,7 +341,6 @@ extra_settings       =
     { "extra", "removal_time"
       "Pollution", 3
     }
-animal               = "None"
 warmer_wetter_result = "no"
 warmer_drier_result  = "no"
 cooler_wetter_result = "no"
@@ -393,7 +390,6 @@ extra_settings       =
     { "extra", "removal_time"
       "Pollution", 3
     }
-animal               = "None"
 warmer_wetter_result = "Tundra"
 warmer_drier_result  = "Tundra"
 cooler_wetter_result = "no"
@@ -444,7 +440,6 @@ extra_settings       =
     { "extra", "removal_time"
       "Pollution", 3
     }
-animal               = "None"
 warmer_wetter_result = "Grassland"
 warmer_drier_result  = "no"
 cooler_wetter_result = "Plains"
@@ -496,7 +491,6 @@ extra_settings       =
     { "extra", "removal_time"
       "Pollution", 3
     }
-animal               = "None"
 warmer_wetter_result = "Jungle"
 warmer_drier_result  = "Plains"
 cooler_wetter_result = "Swamp"
@@ -549,7 +543,6 @@ extra_settings       =
     { "extra", "removal_time"
       "Pollution", 3
     }
-animal               = "None"
 warmer_wetter_result = "Lake"
 warmer_drier_result  = "Desert"
 cooler_wetter_result = "Glacier"
@@ -599,7 +592,6 @@ extra_settings       =
     { "extra", "removal_time"
       "Pollution", 3
     }
-animal               = "None"
 warmer_wetter_result = "no"
 warmer_drier_result  = "no"
 cooler_wetter_result = "no"
@@ -650,7 +642,6 @@ extra_settings       =
     { "extra", "removal_time"
       "Pollution", 3
     }
-animal               = "None"
 warmer_wetter_result = "Lake"
 warmer_drier_result  = "Desert"
 cooler_wetter_result = "Swamp"
@@ -702,7 +693,6 @@ extra_settings       =
     { "extra", "removal_time"
       "Pollution", 3
     }
-animal               = "None"
 warmer_wetter_result = "no"
 warmer_drier_result  = "no"
 cooler_wetter_result = "no"
@@ -752,7 +742,6 @@ extra_settings       =
     { "extra", "removal_time"
       "Pollution", 3
     }
-animal               = "None"
 warmer_wetter_result = "Lake"
 warmer_drier_result  = "Desert"
 cooler_wetter_result = "Glacier"
@@ -803,7 +792,6 @@ extra_settings       =
     { "extra", "removal_time"
       "Pollution", 3
     }
-animal               = "None"
 warmer_wetter_result = "Lake"
 warmer_drier_result  = "Desert"
 cooler_wetter_result = "Glacier"
@@ -856,7 +844,6 @@ extra_settings       =
     { "extra", "removal_time"
       "Pollution", 3
     }
-animal               = "None"
 warmer_wetter_result = "Lake"
 warmer_drier_result  = "Desert"
 cooler_wetter_result = "Glacier"
@@ -1047,7 +1034,7 @@ ui_name_base_airbase = _("?gui_type:Build Nothing")
 ; Bases, roads, and resources have additional sections for their specific features.
 ;
 ;
-; Extra types:
+; Extra types, there can be up to 250:
 ;
 ; name                    = translatable name as seen by user
 ; rule_name               = (optional) internal name for savegames, rulesets
