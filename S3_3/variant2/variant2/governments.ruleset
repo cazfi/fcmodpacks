@@ -377,7 +377,7 @@ Having Fundamentalism as an government makes two citizens content in each city.\
 
 ; /* <-- avoid gettext warnings
 ;
-; Multipliers (aka policies)
+; Multipliers (aka policies), there can be up to 50:
 ;
 ; name                    = translatable name as seen by user
 ; rule_name               = (optional) internal name for savegames, rulesets
