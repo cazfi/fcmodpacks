@@ -22,8 +22,8 @@ dy = 64
 pixel_border = 0
 
 tiles = { "row", "column","tag"
- 0, 0, "road.river_outlet_n"
- 0, 1, "road.river_outlet_e"
- 0, 2, "road.river_outlet_s"
- 0, 3, "road.river_outlet_w"
+ 0, 0, "road.river_outlet_n:0"
+ 0, 1, "road.river_outlet_e:0"
+ 0, 2, "road.river_outlet_s:0"
+ 0, 3, "road.river_outlet_w:0"
 }
