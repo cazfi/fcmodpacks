@@ -576,7 +576,8 @@ type = "Vision"
 type = "Embassy"
 
 ; /* <-- avoid gettext warnings
-;Counter types, there can be up to 20:
+;
+; Counter types, there can be up to 20:
 ;
 ;name                    = translatable name as seen by user
 ;rule_name               = (optional) internal name for savegames, rulesets
